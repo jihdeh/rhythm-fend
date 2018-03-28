@@ -8,9 +8,9 @@ export default class Payment extends Component {
                     <label>
                         Card Type:
                         <select>
-                            <option value="grapefruit">Mastercard</option>
-                            <option value="lime">Visa</option>
-                            <option value="mango">Verve</option>
+                            <option value="mastercard">Mastercard</option>
+                            <option value="visa">Visa</option>
+                            <option value="verve">Verve</option>
                         </select>
                     </label>
                     <label>
