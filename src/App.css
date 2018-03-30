@@ -1,5 +1,21 @@
-.body {
-    background-color: #000019;
-    width: 100%;
-    height: 100%;
+.banner {
+  background: url("/images/microphone-transparent-background-8.png");
+
+  background: url("/images/microphone-transparent-background-8.png"),
+    linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: 10% top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: -1;
+  padding: 3rem;
+  color: #fff;
 }
