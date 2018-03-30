@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "../styles/header.css";
 
 export default class Header extends Component {
   render() {
@@ -8,13 +9,13 @@ export default class Header extends Component {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">About</Link>
             </li>
             <li>
-              <Link to="/login">Log In</Link>
+              <Link to="/login">Contact</Link>
             </li>
             <li>
-              <Link to="/signup">Sign up</Link>
+              <Link to="/signup">Partners</Link>
             </li>
           </ul>
         </nav>

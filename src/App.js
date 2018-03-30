@@ -5,9 +5,10 @@ import Main from "./containers/main";
 import "./App.css";
 
 const App = () => (
-  <div>
-    <Header />
+  <div className="body">
+    
     <Main />
+    <Header />
   </div>
 );
 
