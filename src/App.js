@@ -5,8 +5,7 @@ import Main from "./containers/main";
 import "./App.css";
 
 const App = () => (
-  <div className="body">
-    
+  <div style={{ height: "100%" }}>
     <Main />
     <Header />
   </div>

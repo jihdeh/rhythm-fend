@@ -5,7 +5,7 @@ import Login from "./login";
 import Signup from "./signup";
 
 const Main = () => (
-  <main>
+  <main style={{ height: "100%" }}>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
