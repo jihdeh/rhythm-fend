@@ -10,6 +10,11 @@
   font-size: 1.1em;
 }
 
+.sb-text {
+  position: absolute;
+  bottom: -2em;
+}
+
 .background {
   display: block;
   position: relative;
@@ -19,7 +24,7 @@
 }
 
 .background__canvas {
-  position: abosolute;
+  position: absolute;
   top: 0;
   left: 0;
   display: flex;
@@ -28,10 +33,60 @@
   overflow: hidden;
 }
 
+canvas {
+  width: 100%;
+}
+
+.login, .signup {
+  color: #FFD700;
+}
+
+.mobile-sa-text {
+  text-align: center;
+  margin-top: -3.5em;
+}
+
+.mobile-sa-text__title {
+  display: block;
+  padding-top: 6em;
+}
+
+@media (max-width: 903px) {
+  .sa-text__title {
+    display: block;
+    text-align: center;
+    float: none;
+  }
+}
+
 @media (max-width: 864px) {
   .row {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 555px) {
+  .background {
+    margin-top: -2em;
+  }
+  .background__canvas {
+    margin-top: 2em;
+  }
+  .banner {
+    display: none;
+  }
+  .sb-text {
+    bottom: -4em;
+  }
+}
+
+@media(min-width:556px) {
+  .login, .signup {
+      display: none;
+  }
+  .mobile-sa-text {
+    display: none;
   }
 }

@@ -5,3 +5,14 @@ header {
   right: 2%;
   display: block;
 }
+
+@media(max-width: 555px) {
+  header {
+    display: none;
+  }
+}
+@media(min-width: 556px) {
+  .header__top {
+    display: none;
+  }
+}

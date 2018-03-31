@@ -9,13 +9,13 @@ export default class Header extends Component {
         <nav>
           <ul>
             <li>
-              <Link to="/">About</Link>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/login">Contact</Link>
+              <Link to="/contact">Contact</Link>
             </li>
             <li>
-              <Link to="/signup">Partners</Link>
+              <Link to="/partners">Partners</Link>
             </li>
           </ul>
         </nav>
