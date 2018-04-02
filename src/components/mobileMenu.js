@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Nav, NavbarCollapse, NavbarToggle, Navbar, NavbarBrand, NavbarHeader, NavItem, NavDropdown, MenuItem, } from 'react-bootstrap';
 import "../styles/header.css";
 
-export default class HeaderTop extends Component {
+export default class MobileMenu extends Component {
     render(){
         return (
           <div className="header__top">

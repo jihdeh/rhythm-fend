@@ -21,8 +21,8 @@ const Home = props => {
               />
               <h1>Welcome to SounditAfrica!</h1>
               <h4>Vote for your favourite rising star</h4>
-              <p><i className="fas fa-sign-in-alt login"></i> Login</p>
-              <p><i className="fas fa-user-plus signup"></i> Sign Up</p>
+              <p>Login</p>
+              <p>Sign Up</p>
             </span>
           </div>
         </div>
