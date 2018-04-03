@@ -1,0 +1,94 @@
+.dashboard-search {
+ background-color: white;
+ display: flex;
+ height: 4em;
+}
+
+.dashboard-upload {
+  background-color: #24243e;
+  padding: 10px 20px;
+  border-radius: 20px;
+  height: 2.5em;
+  color: white;
+  margin-left: auto;
+  margin-right: 2.5em;
+  margin-top: 1em;
+}
+
+form {
+  width: 40em;
+}
+
+input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: transparent;
+  width: 70%;
+  color: #24243e;
+  margin: 1em 0 1em 1em;
+  height: 2em;
+  padding-left: 1em;
+}
+
+.search-icon {
+  color: #24243e;
+  margin-left: .5em;
+}
+
+.row {
+  margin: 0;
+}
+
+.col-sm-3 {
+  float: left;
+  background-color: #DBE7F1;
+  height: stretch;
+  padding: 0;
+}
+
+.col-sm-9 {
+  float: right;
+  background-color: #F3F7FA;
+  height: stretch;
+  padding: 0;
+}
+
+.col-sm-9 > h3 {
+  margin-left: 2.3em;
+}
+
+.dashboard-body__thumbnails {
+  display: flex;
+  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-evenly;
+  margin-top: 3em;
+}
+
+.dashboard-body__menu1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu1-subtext {
+  margin-left: 1.5em;
+}
+
+.dashboard-body__menu2 {
+  justify-content: flex-start;
+}
+
+.thumbnail {
+  max-width: 204px;
+}
+
+.header {
+  display: none;
+}
+
+.btn-watch:hover{
+  background-color: #24243e;
+  color: white;
+}
