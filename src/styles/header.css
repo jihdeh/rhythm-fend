@@ -6,12 +6,83 @@ header {
   display: block;
 }
 
-@media(max-width: 555px) {
+.sa-liner {
+  width: 20px;
+  background-color: #ffffff;
+  height: 2px;
+  position: relative;
+
+  -webkit-animation: liner 10s infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation: liner 21s infinite;
+  x-transition: all 10s ease-in-out;
+}
+
+.sa-liner__container {
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes liner {
+  0% {
+    left: 0px;
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    background: #800080;
+  }
+  75% {
+    background-color: green;
+    left: 150px;
+  }
+  100% {
+    background-color: #ffffff;
+    left: 0px;
+  }
+}
+
+@keyframes liner {
+  0% {
+    left: 0px;
+  }
+  25% {
+    background-color: yellow;
+    /*left: 50px;*/
+  }
+  50% {
+    background: #800080;
+    /*left: 100px;*/
+  }
+  75% {
+    background-color: green;
+    left: 150px;
+  }
+  100% {
+    background-color: #ffffff;
+    left: 0px;
+  }
+}
+
+.sa-navigation {
+  padding-left: 0;
+}
+
+.sa-navigation li {
+  margin-top: 10px;
+}
+
+.sa-navigation li:first-child {
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+@media (max-width: 555px) {
   header {
     display: none;
   }
 }
-@media(min-width: 556px) {
+@media (min-width: 556px) {
   .header__top {
     display: none;
   }

@@ -178,5 +178,5 @@ function draw_canvas(el, color) {
       draw();
       loop();
     };
-  init();
+  // init();
 }
