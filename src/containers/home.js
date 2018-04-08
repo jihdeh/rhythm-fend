@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import SectionTwo from "../components/homepage/sectionTwo";
 import "../styles/home.css";
 
 const Home = props => {
@@ -69,31 +70,7 @@ const Home = props => {
           </p>
         </span>
       </div>
-      <div className="section second-section">
-        <div className="container-fluid">
-          <div className="row">
-            <h2 className="display-3 text-center sa-header">
-              MORE ON SOUND IT AFRICA
-            </h2>
-          </div>
-        </div>
-      </div>
-
-      <div className="section second-section">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-sm-4">
-              <p>hey</p>
-            </div>
-            <div className="col-sm-4">
-              <p>hey</p>
-            </div>
-            <div className="col-sm-4">
-              <p>hey</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <SectionTwo />
     </div>
   );
 };
