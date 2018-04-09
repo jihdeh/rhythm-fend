@@ -32,7 +32,6 @@ export default class DashBoard extends Component {
             </div>}
             
            </MenuItem>
-           
           <MenuItem>Blog</MenuItem>
           <MenuItem>Media</MenuItem>
           <MenuItem>Socials</MenuItem>
