@@ -1,14 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
+import SectionTwo from "../components/homepage/sectionTwo";
 import "../styles/home.css";
-// <div className="col-sm-6">
-//   <img className="microphone" src={microphone} alt="hand holding a microphone on stage"/>
-// </div>
 
 const Home = props => {
   return (
-    <div className="background">
-      <div className="background__canvas" />
+    <div>
       <div className="banner">
         <div className="row">
           <div className="sa-text">
@@ -19,10 +16,38 @@ const Home = props => {
                 style={{ width: "150px" }}
                 alt=""
               />
-              <h1>Welcome to SounditAfrica!</h1>
-              <h4>Vote for your favourite rising star</h4>
-              <p>Login</p>
-              <p>Sign Up</p>
+              <h1>
+                SoundIT{" "}
+                <img
+                  className="sa-brand__name-logo"
+                  src="/images/continent-icon-africa.png"
+                />frica.
+              </h1>
+              <h4>Be the next Rising Gospel Star</h4>
+              <div>
+                <form className="sa-form__login">
+                  <div className="form-group">
+                    <input
+                      type="email"
+                      className="form-control sa-form__login-input"
+                      aria-describedby="emailHelp"
+                      placeholder="Enter email"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="password"
+                      className="form-control sa-form__login-input"
+                      aria-describedby="emailHelp"
+                      placeholder="Enter password"
+                    />
+                  </div>
+                  <div className="sa-actions">
+                    <p className="sa-actions__createAccount">Create Account</p>
+                    <p className="sa-actions__login">Login</p>
+                  </div>
+                </form>
+              </div>
             </span>
           </div>
         </div>
@@ -35,16 +60,18 @@ const Home = props => {
             style={{ width: "150px" }}
             alt=""
           />
-          <h1>Welcome to SounditAfrica!</h1>
-          <h4>Vote for your favourite rising star</h4>
-          <p><i className="fas fa-sign-in-alt login"></i> Login</p>
-          <p><i className="fas fa-user-plus signup"></i> Sign Up</p>
+          <h1>SounditAfrica!</h1>
+          <h4>Be the next Rising Gospel Star</h4>
+          <p>
+            <i className="fas fa-sign-in-alt login" /> Login
+          </p>
+          <p>
+            <i className="fas fa-user-plus signup" /> Create Account
+          </p>
         </span>
       </div>
-      <p className="sb-text">HEY THERE</p>
+      <SectionTwo />
     </div>
-
-    
   );
 };
 

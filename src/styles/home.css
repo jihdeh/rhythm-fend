@@ -15,30 +15,41 @@
   bottom: -2em;
 }
 
-.background {
-  display: block;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  /*height: "100%;*/
+.sa-brand__name-logo {
+  width: 40px;
+  height: 40px;
+  vertical-align: sub;
+  display: inline-block;
 }
 
-.background__canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
+.sa-form__login {
+  width: 70%;
+  margin-top: 30px;
 }
 
-canvas {
-  width: 100%;
+.sa-form__login-input {
+  border-radius: 3px;
 }
 
-.login, .signup {
-  color: #FFD700;
+.sa-actions p {
+  display: inline-block;
+}
+
+.sa-actions__login {
+  float: right;
+}
+
+.sa-actions__createAccount {
+  float: left;
+}
+
+.sa-header {
+  margin: 40px;
+}
+
+.login,
+.signup {
+  color: #ffd700;
 }
 
 .mobile-sa-text {
@@ -56,6 +67,9 @@ canvas {
     display: block;
     text-align: center;
     float: none;
+  }
+  .sa-form__login {
+    margin: 0 auto;
   }
 }
 
@@ -82,11 +96,18 @@ canvas {
   }
 }
 
-@media(min-width:556px) {
-  .login, .signup {
-      display: none;
+@media (min-width: 556px) {
+  .login,
+  .signup {
+    display: none;
   }
   .mobile-sa-text {
     display: none;
+  }
+}
+
+@media (min-width: 904px) {
+  .sa-text__title {
+    width: 500px;
   }
 }

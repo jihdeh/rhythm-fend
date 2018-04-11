@@ -7,7 +7,10 @@ export default class Header extends Component {
     return (
       <header>
         <nav>
-          <ul>
+          <div className="sa-liner__container">
+            <div className="sa-liner" />
+          </div>
+          <ul className="sa-navigation">
             <li>
               <Link to="/about">About</Link>
             </li>
