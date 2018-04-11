@@ -1,13 +1,17 @@
 import React, { Component } from "react";
+import VoterView from "../components/dashboard/voterView";
+import ContestantView from "../components/dashboard/contestantView";
+import MobileDashBoardMenu from "../components/dashboard/mobileDashMenu";
 import "../styles/dashboard.css";
-import nobody from "../assets/images/nobody.jpg";
 
 export default class DashBoard extends Component {
-  constructor(props) {
-    super(props);
-  }
+  state = {
+    isContestant: false
+  };
 
   render() {
+    const { isContestant } = this.state;
+
     return (
       <div className="content">
         <div className="row dashboard-menu">
@@ -30,23 +34,7 @@ export default class DashBoard extends Component {
               <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
               <label htmlFor="drawer-toggle" id="drawer-toggle-label" />
               <nav id="drawer">
-                <ul className="drawer-menu">
-                  <li>
-                    <a href="#">VOTE</a>
-                  </li>
-                  <li>
-                    <a href="#">TRENDING</a>
-                  </li>
-                  <li>
-                    <a href="#">CONNECT</a>
-                  </li>
-                  <li>
-                    <a href="#">MOST LIKED</a>
-                  </li>
-                  <li>
-                    <a href="#">LOGOUT</a>
-                  </li>
-                </ul>
+                <MobileDashBoardMenu isContestant={isContestant} />
               </nav>
             </div>
             <div className="profile-right">
@@ -54,74 +42,17 @@ export default class DashBoard extends Component {
               <i className="far fa-bell profile-right__icon" />
               <i className="far fa-flag profile-right__icon" />
               <div className="profile-right__owner">
-                <img className="profile-right__image" src={nobody} alt="" />
+                <img
+                  className="profile-right__image"
+                  src="../../images/nobody.jpg"
+                  alt=""
+                />
                 <p>Doe</p>
               </div>
             </div>
           </div>
         </div>
-
-        <div className="row dashboard-container">
-          <div className="col-sm-3 col-lg-3 dashboard-container__left">
-            <div className="dashboard-search">
-              <form className="dashboard-form">
-                <input
-                  className="dashboard-input"
-                  type="search"
-                  name="search"
-                  placeholder="Search for contestant"
-                />
-                <i className="fas fa-search search-icon" />
-              </form>
-            </div>
-            <div className="dashboard-navigation">
-              <ul>
-                <li>
-                  <a href="#">VOTE</a>
-                </li>
-                <li>
-                  <a href="#">TRENDING</a>
-                </li>
-                <li>
-                  <a href="#">CONNECT</a>
-                </li>
-                <li>
-                  <a href="#">MOST LIKED</a>
-                </li>
-                <li>
-                  <a href="#">LOGOUT</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="col-sm-9 col-lg-9 dashboard-container dashboard-container__right">
-            <div className="row head">
-              <div className="col-md-6 col-left">
-                <div className="col-content">
-                  <h1>
-                    Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
-                  </h1>
-                </div>
-                <div className="col-content">
-                  <h1>Lorem ipsum</h1>
-                </div>
-              </div>
-              <div className="col-md-6 col-right">
-                <div className="col-content">
-                  <h1>
-                    Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem
-                    ipsum
-                  </h1>
-                </div>
-
-                <div className="col-content">
-                  <h1>Lorem ipsum</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {!this.state.isContestant ? <VoterView /> : <ContestantView />}
       </div>
     );
   }
