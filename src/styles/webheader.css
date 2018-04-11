@@ -2,7 +2,7 @@
   background-color: #24243e;
 }
 
-nav {
+.web-header__links {
   display: flex;
   justify-content: flex-end;
   margin-right: 3em;

@@ -9,7 +9,7 @@ export default class WebHeader extends Component {
         <div>
           <h3 className="web-header__title">SoundIT Africa</h3>
         </div>
-        <nav>
+        <nav className="web-header__links">
           <ul>
             <li>
               <Link to="/about">About</Link>

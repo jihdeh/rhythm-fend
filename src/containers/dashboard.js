@@ -19,7 +19,7 @@ export default class DashBoard extends Component {
             <div className="mobile-search">
               <form className="mobile-form">
                 <input className="mobile-input" type="search" name="search" placeholder="Search ..."/>
-                <i class="fas fa-search mobile-search-icon"></i>
+                <i className="fas fa-search mobile-search-icon"></i>
               </form>
             </div>
           </div>
@@ -42,9 +42,9 @@ export default class DashBoard extends Component {
         </nav>
         </div>
             <div className="right-b">
-              <i class="far fa-envelope right-b__icon"></i>
-              <i class="far fa-bell right-b__icon"></i>
-              <i class="far fa-flag right-b__icon"></i>
+              <i className="far fa-envelope right-b__icon"></i>
+              <i className="far fa-bell right-b__icon"></i>
+              <i className="far fa-flag right-b__icon"></i>
               <div className="right-b__owner">
                 <img className="owner__image" src={nobody} alt=""/>
                 <p>Doe</p>
@@ -58,7 +58,7 @@ export default class DashBoard extends Component {
             <div className="dashboard-search">
               <form className="dashboard-form">
                 <input className="dashboard-input" type="search" name="search" placeholder="Search ..."/>
-                <i class="fas fa-search search-icon"></i>
+                <i className="fas fa-search search-icon"></i>
               </form>
             </div>
             <div className="dashboard-navigation">

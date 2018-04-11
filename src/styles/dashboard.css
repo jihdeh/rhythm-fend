@@ -1,6 +1,7 @@
 header {
   display: none;
 }
+
 .header__top {
   display: none;
 }
@@ -11,6 +12,7 @@ header {
   z-index: 2;
   top: 0;
 }
+
 .dashboard-menu__left {
   background-color: #212531;
   height: 4em;
@@ -75,9 +77,11 @@ header {
   margin-bottom: 2em;
   margin-top: 6em;
 }
+
 .dashboard-body__left {
   margin-top: 5em;
 }
+
 .row {
   margin: 0;
 }
@@ -102,6 +106,7 @@ header {
   z-index: 1;
   margin-top: 10px;
 }
+
 .mobile-search-icon {
   display: flex;
   margin-left: auto;
@@ -123,134 +128,155 @@ header {
 .col1 {
   padding: 0;
   padding-right: 10px;
-    height: 20em;
-    margin-top: 1em;
+  height: 20em;
+  margin-top: 1em;
 }
+
 .col1 > h1 {
   height: 100%;
-    width: 100%;
-    background-color: white;
-    margin: 0;
-    border-radius: 5px;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  border-radius: 5px;
 }
+
 .col2 {
   padding: 0;
   padding-right: 10px;
-    height: 28em;
-    margin-top: 1em;
+  height: 28em;
+  margin-top: 1em;
 }
+
 .col2 > h1 {
   height: 100%;
-    width: 100%;
-    background-color: white;
-    margin: 0;
-    border-radius: 5px;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  border-radius: 5px;
 }
+
 .a1 {
   padding: 0;
   padding-right: 10px;
-    height: 12em;
+  height: 12em;
 }
+
 .a1 > h1 {
   height: 100%;
-    width: 100%;
-    background-color: white;
-    margin: 0;
-    border-radius: 5px;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  border-radius: 5px;
 }
+
 .a2 {
   padding: 0;
   padding-right: 10px;
-    height: 12em;
+  height: 12em;
 }
+
 .a2 > h1 {
   height: 100%;
-    width: 100%;
-    background-color: white;
-    margin: 0;
-    border-radius: 5px;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  border-radius: 5px;
 }
+
 .a {
   margin-top: 1em;
 }
+
 .b1 {
-   padding: 0;
+  padding: 0;
   padding-right: 10px;
-    height: 20em;
+  height: 20em;
 }
+
 .b2 {
   padding: 0;
   padding-right: 10px;
-    height: 20em;
+  height: 20em;
 }
+
 .b1 > h1 {
   height: 100%;
-    width: 100%;
-    background-color: white;
-    margin: 0;
-    border-radius: 5px;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  border-radius: 5px;
 }
+
 .b2 > h1 {
   height: 100%;
-    width: 100%;
-    background-color: white;
-    margin: 0;
-    border-radius: 5px;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  border-radius: 5px;
 }
 
 .b {
   margin-top: 1em;
 }
+
 .col3 {
   padding: 0;
   padding-right: 10px;
-    height: 20em;
-    margin-top: 1em;
+  height: 20em;
+  margin-top: 1em;
 }
+
 .col3 > h1 {
   height: 100%;
-    width: 100%;
-    background-color: white;
-    margin: 0;
-    border-radius: 5px;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  border-radius: 5px;
 }
+
 .col4 {
   padding: 0;
   padding-right: 10px;
-    height: 20em;
-    margin-top: 1em;
+  height: 20em;
+  margin-top: 1em;
 }
+
 .col4 > h1 {
   height: 100%;
-    width: 100%;
-    background-color: white;
-    margin: 0;
-    border-radius: 5px;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  border-radius: 5px;
 }
+
 .col5 {
   padding: 0;
   padding-right: 10px;
-    height: 10em;
-    margin-top: 1em;
+  height: 10em;
+  margin-top: 1em;
 }
+
 .col5 > h1 {
   height: 100%;
-    width: 100%;
-    background-color: white;
-    margin: 0;
-    border-radius: 5px;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  border-radius: 5px;
 }
+
 .c1 {
   padding: 0;
   padding-right: 10px;
-    height: 30em;
+  height: 30em;
 }
+
 .c2 {
  
   padding: 0;
   padding-right: 10px;
-    height: 30em;
+  height: 30em;
 }
+
 .c1 > h1 {
   height: 100%;
     width: 100%;
@@ -258,12 +284,13 @@ header {
     margin: 0;
     border-radius: 5px;
 }
+
 .c2 > h1 {
   height: 100%;
-    width: 100%;
-    background-color: white;
-    margin: 0;
-    border-radius: 5px;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  border-radius: 5px;
 }
 .c {
   margin-top: 1em;
@@ -275,11 +302,11 @@ header {
 
 .mobile-input {
   border-radius: 5px;
-    border: none;
-    margin-top: 0.7em;
-    height: 2em;
-    width: 12em;
-    padding: 5px;
+  border: none;
+  margin-top: 0.7em;
+  height: 2em;
+  width: 12em;
+  padding: 5px;
 }
 
 @media (max-width: 864px) {
@@ -309,11 +336,13 @@ header {
     display: none;
   }
 }
+
 @media (max-width: 344px) {
   .mobile-input {
     width: 10em;
   }
 }
+
 #drawer-toggle { 
   position: absolute; 
   opacity: 0; 
@@ -352,7 +381,6 @@ header {
   flex-direction: column;
 }
 
-
 #drawer-toggle:checked ~ #drawer-toggle-label { 
   height: 100%; 
   width: calc(100% - 300px); 
@@ -375,6 +403,7 @@ header {
 #drawer ul a:hover { 
   color:white; 
 } 
+
 @media (max-width: 437px) {
   #drawer {
     width: 225px;
