@@ -26,7 +26,7 @@ export default class DashBoard extends Component {
           <div className="col-sm-10 dashboard-menu__right">
           <div className="menu-icon">
             <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
-          <label for="drawer-toggle" id="drawer-toggle-label"></label>
+          <label htmlFor="drawer-toggle" id="drawer-toggle-label"></label>
           <nav id="drawer">
             <ul className="drawer-menu">
               <li><a href="#">Vote</a></li>
