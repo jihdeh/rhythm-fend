@@ -37,9 +37,10 @@ class SectionTwo extends PureComponent {
                   width="100%"
                   height="300"
                   src="https://www.youtube.com/embed/tiy1MeXzhfA"
-                  frameborder="0"
+                  frameBorder="0"
+                  title="soundit display video"
                   allow="autoplay; encrypted-media"
-                  allowfullscreen
+                  allowFullScreen
                 />
               </div>
               <div className="col-lg-4 col-sm-12 col-md-4">

@@ -39,6 +39,11 @@
   float: right;
 }
 
+.sa-actions__login,
+.sa-actions__createAccount {
+  cursor: pointer;
+}
+
 .sa-actions__createAccount {
   float: left;
 }
