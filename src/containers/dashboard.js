@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import VoterView from "../components/dashboard/voterView";
 import ContestantView from "../components/dashboard/contestantView";
 import MobileDashBoardMenu from "../components/dashboard/mobileDashMenu";
-import "../styles/dashboard.css";
+import AuthenticatedHeader from "../components/isAuthenticatedHeader";
 
 export default class DashBoard extends Component {
   state = {
@@ -52,7 +52,9 @@ export default class DashBoard extends Component {
             </div>
           </div>
         </div>
-        {!this.state.isContestant ? <VoterView /> : <ContestantView />}
+        <AuthenticatedHeader>
+          {!this.state.isContestant ? <VoterView /> : <ContestantView />}
+        </AuthenticatedHeader>
       </div>
     );
   }

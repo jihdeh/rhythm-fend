@@ -14,7 +14,7 @@ header {
 }
 
 .dashboard-menu__left {
-  background-color: #212531;
+  background-color: rgb(35, 35, 35);
   height: 4em;
 }
 
@@ -30,15 +30,61 @@ header {
 .dashboard-menu__right {
   display: flex;
   flex-direction: row;
-  background-color: #24243e;
+  background-color: rgb(35, 35, 35);
   height: 4em;
   color: white;
   padding-top: 15px;
 }
 
+.dashboard-navigation__sidenav-list li:hover {
+  background-color: hsl(0, 0%, 30%);
+}
+
+/*.dashboard-navigation__sidenav-list li:hover a i {
+  background-color: hsla(0, 0%, 6.7%, 0.8);
+}*/
+
+.dashboard-navigation__sidenav-list li:hover a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.dashboard-navigation__sidenav-list li {
+  margin-top: 1em;
+  padding: 10px 0 10px 1em;
+}
+
+.dashboard-navigation__sidenav-list li a {
+  padding: 0 24px;
+  padding-left: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: 0;
+  display: flex;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
 .menu-icon {
   margin-top: -1em;
   margin-left: -1em;
+}
+
+.guide-icon__default,
+.guide-icon__selected {
+  margin-right: 27px;
+}
+
+.guide-icon__default {
+  color: hsl(0, 0%, 53.3%);
+}
+
+.guide-icon__selected {
+  color: hsl(360, 100%, 50%);
 }
 
 .profile-right {
@@ -75,12 +121,11 @@ header {
   margin-top: 6em;
 }
 
-.dashboard-container__right {
-  border-left: 2px solid #bababa;
-}
-
 .dashboard-container__left {
-  margin-top: 5em;
+  margin-top: 4em;
+  height: 100vh;
+  padding: 0;
+  background-color: rgb(28, 28, 28);
 }
 
 .row {
@@ -100,7 +145,6 @@ header {
   border-radius: 5px;
   width: 100%;
   height: 2.5em;
-  margin-left: 8px;
 }
 
 .search-icon {
@@ -117,7 +161,7 @@ header {
 
 .dashboard-navigation > ul {
   flex-direction: column;
-  color: #909090;
+  padding: 0;
 }
 
 .dashboard-navigation > h4 {
@@ -151,9 +195,6 @@ header {
 }
 
 @media (max-width: 864px) {
-  .dashboard-container__right {
-    border: 0;
-  }
   .dashboard-menu__left {
     width: 100%;
   }
