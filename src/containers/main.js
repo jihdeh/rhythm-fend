@@ -7,13 +7,11 @@ import DashBoard from "./dashboard";
 import Search from "./searchpage";
 
 const Main = () => (
-  <main style={{ height: "100%" }}>
+  <main className="main-container">
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} />
-      <Route path="/dashboard" component={DashBoard} />
-      <Route path="/search" component={Search} />
+      <Route exact path="/dashboard" component={DashBoard} />
+      <Route exact path="/search" component={Search} />
     </Switch>
   </main>
 );

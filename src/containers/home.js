@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import LandingPage from "./landingPage";
 import DashBoard from "./dashboard";
+import VoterView from "../components/dashboard/voterView";
 
 class Home extends Component {
   state = {
@@ -9,7 +10,15 @@ class Home extends Component {
   };
 
   render() {
-    return <div>{this.state.isLoggedIn ? <DashBoard /> : <LandingPage />}</div>;
+    return (
+      <div>
+        {!this.state.isLoggedIn ? (
+          <LandingPage {...this.props} />
+        ) : (
+          <DashBoard {...this.props} />
+        )}
+      </div>
+    );
   }
 }
 

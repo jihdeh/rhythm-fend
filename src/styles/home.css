@@ -78,14 +78,6 @@
   }
 }
 
-@media (max-width: 864px) {
-  .row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 @media (max-width: 555px) {
   .background {
     margin-top: -2em;
