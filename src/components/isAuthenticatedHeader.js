@@ -9,25 +9,24 @@ class AuthenticatedHeader extends Component {
   };
   render() {
     const { isContestant } = this.state;
-    console.log(this.props);
+
     return (
       <div className="">
         <div className="row dashboard-menu">
-          <div className="col-sm-2 dashboard-menu__left">
-            <p onClick={() => this.props.history.push("/")}>SoundIT Africa</p>
-          </div>
-          <div className="col-sm-10 dashboard-menu__right">
-            <div className="menu-icon">
-              <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
-              <label htmlFor="drawer-toggle" id="drawer-toggle-label" />
-              <nav id="drawer">
-                <MobileDashBoardMenu isContestant={isContestant} />
-              </nav>
-            </div>
+          <div className="menu">
+            <p className="brand" onClick={() => this.props.history.push("/")}>
+              SoundIT Africa
+            </p>
+            <form className="sm-submenu--search-form">
+              <input
+                className="sm-submenu--search-input"
+                type="search"
+                name="search"
+                placeholder="Search for contestant"
+              />
+              <i className="fas fa-search search-icon" />
+            </form>
             <div className="profile-right">
-              <i className="far fa-envelope profile-right__icon" />
-              <i className="far fa-bell profile-right__icon" />
-              <i className="far fa-flag profile-right__icon" />
               <div className="profile-right__owner">
                 <img
                   className="profile-right__image"
