@@ -4,6 +4,7 @@ import Home from "./home";
 import Login from "./login";
 import Signup from "./signup";
 import DashBoard from "./dashboard";
+import Search from "./searchpage";
 
 const Main = () => (
   <main style={{ height: "100%" }}>
@@ -12,6 +13,7 @@ const Main = () => (
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
       <Route path="/dashboard" component={DashBoard} />
+      <Route path="/results" component={Search} />
     </Switch>
   </main>
 );
