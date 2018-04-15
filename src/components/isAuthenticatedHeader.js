@@ -1,18 +1,11 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import SearchInput from "./authHeaders/searchInput";
 import LargeScreenMenu from "./authHeaders/lgHeader";
 import SmallScreenMenu from "./authHeaders/smHeader";
 
 class AuthenticatedHeader extends Component {
-  state = {
-    isContestant: false
-  };
-
   render() {
-    const { isContestant } = this.state;
-
     return (
       <div className="">
         <div className="row dashboard-menu">

@@ -14,6 +14,7 @@ class VoterView extends Component {
                 <iframe
                   width="200"
                   height="200"
+                  title="This is a unique title"
                   src="https://www.youtube.com/embed/2Vv-BfVoq4g"
                   frameborder="0"
                   allow="autoplay; encrypted-media"
@@ -34,6 +35,7 @@ class VoterView extends Component {
                 <iframe
                   width="200"
                   height="200"
+                  title="This is a unique title 2"
                   src="https://www.youtube.com/embed/2Vv-BfVoq4g"
                   frameborder="0"
                   allow="autoplay; encrypted-media"
@@ -56,6 +58,7 @@ class VoterView extends Component {
                 width="200"
                 height="200"
                 src="https://www.youtube.com/embed/2Vv-BfVoq4g"
+                title="This is a unique title 3"
                 frameborder="0"
                 allow="autoplay; encrypted-media"
                 allowfullscreen
@@ -78,86 +81,3 @@ class VoterView extends Component {
 }
 
 export default VoterView;
-
-// <div className="col-result">
-//   <iframe
-//     width="200"
-//     height="200"
-//     src="https://www.youtube.com/embed/2Vv-BfVoq4g"
-//     frameborder="0"
-//     allow="autoplay; encrypted-media"
-//     allowfullscreen
-//   />
-//   <div className="">
-//     <p>
-//       loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
-//       loren ipsum loren ipsum v loren ipsum loren ipsum loren
-//       ipsum
-//     </p>
-//     <p>loren ipsum loren ipsum loren ipsum</p>
-//     <i className="fas fa-check" /> Vote{" "}
-//     <i className="fas fa-share" /> Share
-//   </div>
-// </div>
-// <div className="col-result">
-//   <iframe
-//     width="200"
-//     height="200"
-//     src="https://www.youtube.com/embed/2Vv-BfVoq4g"
-//     frameborder="0"
-//     allow="autoplay; encrypted-media"
-//     allowfullscreen
-//   />
-//   <div className="">
-//     <p>
-//       loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
-//       loren ipsum loren ipsum v loren ipsum loren ipsum loren
-//       ipsum
-//     </p>
-//     <p>loren ipsum loren ipsum loren ipsum</p>
-//     <i className="fas fa-check" /> Vote{" "}
-//     <i className="fas fa-share" /> Share
-//   </div>
-// </div>
-
-// <div className="col-result">
-//   <iframe
-//     width="200"
-//     height="200"
-//     src="https://www.youtube.com/embed/2Vv-BfVoq4g"
-//     frameborder="0"
-//     allow="autoplay; encrypted-media"
-//     allowfullscreen
-//   />
-//   <div className="">
-//     <p>
-//       loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
-//       loren ipsum loren ipsum v loren ipsum loren ipsum loren
-//       ipsum
-//     </p>
-//     <p>loren ipsum loren ipsum loren ipsum</p>
-//     <i className="fas fa-check" /> Vote{" "}
-//     <i className="fas fa-share" /> Share
-//   </div>
-// </div>
-
-// <div className="col-result">
-//   <iframe
-//     width="200"
-//     height="200"
-//     src="https://www.youtube.com/embed/2Vv-BfVoq4g"
-//     frameborder="0"
-//     allow="autoplay; encrypted-media"
-//     allowfullscreen
-//   />
-//   <div className="">
-//     <p>
-//       loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
-//       loren ipsum loren ipsum v loren ipsum loren ipsum loren
-//       ipsum
-//     </p>
-//     <p>loren ipsum loren ipsum loren ipsum</p>
-//     <i className="fas fa-check" /> Vote{" "}
-//     <i className="fas fa-share" /> Share
-//   </div>
-// </div>

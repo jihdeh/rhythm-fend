@@ -3,56 +3,103 @@ import React, { Component } from "react";
 class ContestantView extends Component {
   render() {
     return (
-      <div className="row dashboard-container">
-        <div className="col-sm-3 col-lg-3 dashboard-container__left">
-          <div className="dashboard-search">
-            <form className="dashboard-form">
-              <input
-                className="dashboard-input"
-                type="search"
-                name="search"
-                placeholder="Search for contestant"
-              />
-              <i className="fas fa-search search-icon" />
-            </form>
-          </div>
-          <div className="dashboard-navigation">
-            <ul>
-              <li>
-                <a href="#">TRENDING</a>
-              </li>
-              <li>
-                <a href="#">SHARE</a>
-              </li>
-              <li>
-                <a href="#">LOGOUT</a>
-              </li>
-            </ul>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="voter-container">
+            <div>
+              <p className="voter-section__title">
+                <b>Your Uploaded Video</b>
+                <span>Goodluck</span>
+              </p>
+            </div>
+            <div className="col-sm-4 col-md-4 col-lg-4">
+              <div className="col-contestant-fav">
+                <iframe
+                  width="100%"
+                  height="200px"
+                  src="https://www.youtube.com/embed/-oCCnxBos10"
+                  title="Contestant video"
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                />
+                <p className="col-contestant-fav-name">Name: Atom Dunra</p>
+                <p className="col-contestant-fav-location">Location: Anambra</p>
+                <p className="col-contestant-fav-code">Star Code: Atom231</p>
+                <div className="share-channel">
+                  <div className="share-channel-vote">
+                    <i className="fas fa-check" /> <span>Vote</span>
+                  </div>
+                  <div className="share-channel-social">
+                    <i className="vote-social-icons vote-social-icons-fb fab fa-facebook fa-2x" />
+                    <i className="vote-social-icons vote-social-icons-tw fab fa-twitter fa-2x" />
+                    <i className="vote-social-icons vote-social-icons-ig fab fa-instagram fa-2x" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm-4 col-md-4 col-lg-4">
+              <div className="col-contestant-fav">
+                <iframe
+                  width="100%"
+                  height="200px"
+                  src="https://www.youtube.com/embed/E4YRYDUPbQ8"
+                  title="Contestant video 1"
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                />
+                <p className="col-contestant-fav-name">Name: Jide Dunra</p>
+                <p className="col-contestant-fav-location">Location: Lagos</p>
+                <p className="col-contestant-fav-code">Star Code: Jide63u</p>
+                <div className="share-channel">
+                  <div className="share-channel-vote">
+                    <i className="fas fa-check" /> <span>Vote</span>
+                  </div>
+                  <div className="share-channel-social">
+                    <i className="vote-social-icons vote-social-icons-fb fab fa-facebook fa-2x" />
+                    <i className="vote-social-icons vote-social-icons-tw fab fa-twitter fa-2x" />
+                    <i className="vote-social-icons vote-social-icons-ig fab fa-instagram fa-2x" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="col-sm-9 col-lg-9 dashboard-container dashboard-container__right">
-          <div className="row head">
-            <div className="col-md-12 col-left">
-              <div className="col-content">
-                <p>
-                  You haven't uploaded any video. To get started, upload your
-                  video to youtube, copy the embed url and paste it in the input
-                  below.
-                </p>
-              </div>
+        <div className="grid-suspenders" />
+        <div className="row">
+          <div className="voter-container">
+            <div>
+              <p className="voter-section__title">
+                <b>Other People</b>
+                <span>you might like</span>
+              </p>
             </div>
-            <div className="col-md-6 col-right">
-              <div className="col-content">
-                <h1>
-                  Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem
-                  ipsum
-                </h1>
-              </div>
-            </div>
-            <div className="col-md-6 col-right">
-              <div className="col-content">
-                <h1>Lorem ipsum</h1>
+            <div className="col-sm-4 col-md-4 col-lg-4">
+              <div className="col-contestant-fav">
+                <iframe
+                  width="100%"
+                  height="200px"
+                  src="https://www.youtube.com/embed/-oCCnxBos10"
+                  title="Contestant video 2"
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                />
+                <p className="col-contestant-fav-name">Name: Atom Dunra</p>
+                <p className="col-contestant-fav-location">Location: Anambra</p>
+                <p className="col-contestant-fav-code">Star Code: Atom231</p>
+                <div className="share-channel">
+                  <div className="share-channel-vote">
+                    <i className="fas fa-check" /> <span>Vote</span>
+                  </div>
+                  <div className="share-channel-social">
+                    <i className="vote-social-icons vote-social-icons-fb fab fa-facebook fa-2x" />
+                    <i className="vote-social-icons vote-social-icons-tw fab fa-twitter fa-2x" />
+                    <i className="vote-social-icons vote-social-icons-ig fab fa-instagram fa-2x" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

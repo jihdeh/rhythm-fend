@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import SearchInput from "./searchInput";
 
 class SmallScreenMenuNavigation extends Component {
   state = {
@@ -20,6 +19,22 @@ class SmallScreenMenuNavigation extends Component {
     });
   };
 
+  isVoter() {
+    return (
+      <span>
+        <Link to="/search">
+          <i className="fas fa-cubes fa-lg guide-icon__default" />
+          <span>VOTE</span>
+        </Link>
+
+        <Link to="/search">
+          <i className="fab fa-hotjar fa-lg guide-icon__default" />
+          <span>TRENDING</span>
+        </Link>
+      </span>
+    );
+  }
+
   render() {
     return (
       <span>
@@ -28,16 +43,11 @@ class SmallScreenMenuNavigation extends Component {
             <i className="fas fa-times fa-lg" />
           </a>
           <div className="menuSideNavList">
-            <Link to="/search">
-              <i className="fas fa-cubes fa-lg guide-icon__default" />
-              <span>VOTE</span>
+            <Link to="/">
+              <i className="fas fa-home fa-lg guide-icon__default" />
+              <span>HOME</span>
             </Link>
-
-            <Link to="/search">
-              <i className="fab fa-hotjar fa-lg guide-icon__default" />
-              <span>TRENDING</span>
-            </Link>
-
+            {this.isVoter()}
             <Link to="/search">
               <i className="fas fa-handshake fa-lg guide-icon__default" />
               <span>CONNECT</span>
