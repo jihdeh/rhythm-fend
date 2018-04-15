@@ -18,6 +18,12 @@ class LandingPage extends Component {
     return emailPattern.test(email.toLowerCase());
   };
 
+  detectKey = e => {
+    if (e.keyCode === 13) {
+      this.onLogin(e);
+    }
+    return;
+  };
   onLogin = e => {
     let emailInput = this.state.emailInput.trim();
     let passwordInput = this.state.passwordInput.trim();
@@ -84,6 +90,7 @@ class LandingPage extends Component {
                         type="password"
                         className="form-control sa-form__login-input"
                         aria-describedby="passwordHelp"
+                        onKeyUp={this.detectKey}
                         onChange={evt =>
                           this.setState({ passwordInput: evt.target.value })
                         }
