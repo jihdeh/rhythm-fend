@@ -82,7 +82,7 @@ export const reset = details => dispatch => {
   //   });
 };
 
-export const logout = dispatch => {
+export const logout = () => dispatch => {
   dispatch({
     type: LOG_OUT,
     payload: null

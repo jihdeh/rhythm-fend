@@ -1,9 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { logout } from "../../actions/authActions";
 
 class SmallScreenMenuNavigation extends Component {
   state = {
     isSideNavActive: false
+  };
+
+  onLogout = () => {
+    this.props.logout();
   };
 
   toggleSideNav = e => {
@@ -53,10 +60,10 @@ class SmallScreenMenuNavigation extends Component {
               <span>CONNECT</span>
             </Link>
 
-            <Link to="/search">
+            <span className="sidenav-layer" onClick={this.onLogout}>
               <i className="fas fa-power-off fa-lg guide-icon__default" />
               <span>LOGOUT</span>
-            </Link>
+            </span>
           </div>
         </div>
         <span className="open-sideNav-btn" onClick={this.toggleSideNav}>
@@ -67,4 +74,8 @@ class SmallScreenMenuNavigation extends Component {
   }
 }
 
-export default SmallScreenMenuNavigation;
+const mapDispatchToProps = dispatch => ({
+  logout: bindActionCreators(logout, dispatch)
+});
+
+export default connect(null, mapDispatchToProps)(SmallScreenMenuNavigation);

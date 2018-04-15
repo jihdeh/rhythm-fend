@@ -1,8 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { logout } from "../../actions/authActions";
 import SearchInput from "./searchInput";
 
 class LargeScreenMenuNavigation extends Component {
+  onLogout = () => {
+    this.props.logout();
+  };
+
   isVoter() {
     return (
       <span style={{ display: "flex" }}>
@@ -47,10 +54,10 @@ class LargeScreenMenuNavigation extends Component {
               </Link>
             </li>
             <li>
-              <Link to="/">
+              <span onClick={this.onLogout}>
                 <i className="fas fa-power-off fa-lg guide-icon__default" />
                 <span>LOGOUT</span>
-              </Link>
+              </span>
             </li>
           </ul>
           <div className="sm-search-form">
@@ -65,4 +72,8 @@ class LargeScreenMenuNavigation extends Component {
   }
 }
 
-export default LargeScreenMenuNavigation;
+const mapDispatchToProps = dispatch => ({
+  logout: bindActionCreators(logout, dispatch)
+});
+
+export default connect(null, mapDispatchToProps)(LargeScreenMenuNavigation);
