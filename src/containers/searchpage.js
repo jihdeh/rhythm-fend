@@ -12,11 +12,7 @@ class Search extends Component {
     const { isContestant } = this.state;
     return (
       <div className="content">
-        {!this.state.isContestant ? (
-          <VoterSearchView />
-        ) : (
-          <ContestantSearchView />
-        )}
+        {!isContestant ? <VoterSearchView /> : <ContestantSearchView />}
       </div>
     );
   }

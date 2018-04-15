@@ -47,6 +47,7 @@ header {
 }
 
 .sm-submenu--search-form,
+.ssm-submenu--search-form,
 .submenu--search-form {
   position: relative;
   display: flex;
@@ -57,6 +58,7 @@ header {
 }
 
 .sm-submenu--search-input,
+.ssm-submenu--search-input,
 .submenu--search-input {
   position: absolute;
   width: 100%;
@@ -174,6 +176,77 @@ header {
   margin-right: 0.5em;
 }
 
+.sa-navigation {
+  padding-left: 0;
+}
+
+.sa-navigation li {
+  margin-top: 10px;
+}
+
+.sa-navigation li:first-child {
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.ssm-submenu--search-form {
+  width: 100%;
+}
+
+.sm-search-form {
+  margin: 20px 10% 10px;
+}
+
+.menuSideNavList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30%;
+}
+
+@media screen and (max-width: 994px) {
+  .submenu--search-form {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 995px) {
+  .sm-submenu--search-form {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .submenu--search-form {
+    bottom: -2px;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  header,
+  .submenu-list,
+  .sm-submenu--search-form,
+  .profile-right__owner {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 556px) {
+  .header__top,
+  .sm-search-form,
+  .open-sideNav-btn {
+    display: none !important;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes liner {
   0% {
@@ -201,11 +274,9 @@ header {
   }
   25% {
     background-color: yellow;
-    /*left: 50px;*/
   }
   50% {
     background: #800080;
-    /*left: 100px;*/
   }
   75% {
     background-color: green;
@@ -214,68 +285,5 @@ header {
   100% {
     background-color: #ffffff;
     left: 0px;
-  }
-}
-
-.sa-navigation {
-  padding-left: 0;
-}
-
-.sa-navigation li {
-  margin-top: 10px;
-}
-
-.sa-navigation li:first-child {
-  margin-top: 10px;
-  padding-left: 0;
-}
-
-@media screen and (max-width: 994px) {
-  .submenu--search-form {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 994px) {
-  .sm-submenu--search-form {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 975px) {
-  .submenu--search-form {
-    bottom: -2px;
-  }
-}
-
-@media screen and (max-width: 694px) {
-  .profile-right__owner {
-    display: none !important;
-  }
-}
-
-@media screen and (min-width: 695px) {
-  .open-sideNav-btn {
-    display: none !important;
-  }
-}
-
-@media screen and (max-width: 555px) {
-  header {
-    display: none;
-  }
-}
-@media screen and (min-width: 556px) {
-  .header__top {
-    display: none;
-  }
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
   }
 }

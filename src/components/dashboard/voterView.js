@@ -19,6 +19,7 @@ class VoterView extends Component {
                   width="100%"
                   height="200px"
                   src="https://www.youtube.com/embed/-oCCnxBos10"
+                  title="Contestant video"
                   frameBorder="0"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
@@ -44,6 +45,7 @@ class VoterView extends Component {
                   width="100%"
                   height="200px"
                   src="https://www.youtube.com/embed/E4YRYDUPbQ8"
+                  title="Contestant video 1"
                   frameBorder="0"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
@@ -81,6 +83,7 @@ class VoterView extends Component {
                   width="100%"
                   height="200px"
                   src="https://www.youtube.com/embed/-oCCnxBos10"
+                  title="Contestant video 2"
                   frameBorder="0"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
@@ -106,6 +109,7 @@ class VoterView extends Component {
                   width="100%"
                   height="200px"
                   src="https://www.youtube.com/embed/E4YRYDUPbQ8"
+                  title="Contestant video 3"
                   frameBorder="0"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
@@ -132,6 +136,7 @@ class VoterView extends Component {
                   width="100%"
                   height="200px"
                   src="https://www.youtube.com/embed/4wAu7KaMYPg"
+                  title="video 4"
                   frameBorder="0"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
