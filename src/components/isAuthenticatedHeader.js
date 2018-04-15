@@ -5,8 +5,23 @@ import MobileDashBoardMenu from "../components/dashboard/mobileDashMenu";
 
 class AuthenticatedHeader extends Component {
   state = {
-    isContestant: false
+    isContestant: false,
+    isSideNavActive: false
   };
+
+  toggleSideNav = e => {
+    e.preventDefault();
+    const { isSideNavActive } = this.state;
+    if (isSideNavActive) {
+      document.getElementById("menuSideNav").style.width = "250px";
+    } else {
+      document.getElementById("menuSideNav").style.width = "0";
+    }
+    this.setState({
+      isSideNavActive: !isSideNavActive
+    });
+  };
+
   render() {
     const { isContestant } = this.state;
 
@@ -35,6 +50,18 @@ class AuthenticatedHeader extends Component {
                 />
                 <p>Doe</p>
               </div>
+              <div id="menuSideNav" className="sidenav">
+                <a className="closebtn" onClick={this.toggleSideNav}>
+                  <i className="fas fa-times fa-lg" />
+                </a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
+              </div>
+              <span className="open-sideNav-btn" onClick={this.toggleSideNav}>
+                <i className="fas fa-bars fa-2x" />
+              </span>
             </div>
           </div>
         </div>
