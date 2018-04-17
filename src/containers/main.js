@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./home";
 import DashBoard from "./dashboard";
 import Search from "./searchpage";
+import SignUp from "./signup";
 
 const Main = () => (
   <main className="main-container">
@@ -10,6 +11,7 @@ const Main = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/dashboard" component={DashBoard} />
       <Route exact path="/search" component={Search} />
+      <Route exact path="/signup" component={SignUp} />
     </Switch>
   </main>
 );
