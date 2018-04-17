@@ -17,30 +17,31 @@ export default class Payment extends Component {
             <div className="form-group signup-form__input">
               <i className="fas fa-user signup-icon"/>
               <label htmlFor="inputFname"></label>
-              <input type="text" className="form-control" id="signup-firstname" placeholder="First Name" required/>
+              <input type="text" className="form-control signup-form-control" id="signup-firstname" placeholder="First Name" required/>
             </div>
+            
             <div className="form-group signup-form__input">
               <i className="fas fa-user signup-icon"/>
               <label htmlFor="inputLname"></label>
-              <input type="text" className="form-control" id="signup-lastname"  placeholder="Last Name" required/>    
+              <input type="text" className="form-control signup-form-control" id="signup-lastname"  placeholder="Last Name" required/>    
             </div>
                 
             <div className="form-group signup-form__input">
               <i className="fas fa-at signup-icon"/>
               <label htmlFor="inputEmail"></label>
-              <input type="username" className="form-control" id="signup-email" aria-describedby="emailHelp"  placeholder="Email Address" required/>    
+              <input type="username" className="form-control signup-form-control" id="signup-email" aria-describedby="emailHelp"  placeholder="Email Address" required/>    
             </div>
             
             <div className="form-group signup-form__input">
               <i className="fas fa-key signup-icon" />
               <label htmlFor="inputPassword"></label>
-              <input type="password" className="form-control" id="signup-password" minlength="4" placeholder="Password" required/>
+              <input type="password" className="form-control signup-form-control" id="signup-password" minlength="4" placeholder="Password" required/>
             </div>
 
             <div className="form-group signup-form__input">
               <i className="fas fa-key signup-icon" />
               <label htmlFor="inputConfirmPassword"></label>
-              <input type="password" className="form-control" id="signup-confirm-password" minlength="4" placeholder="Confirm Password" required/>
+              <input type="password" className="form-control signup-form-control" id="signup-confirm-password" minlength="4" placeholder="Confirm Password" required/>
             </div>
 
             <div className="signup-checkbox">
@@ -53,6 +54,9 @@ export default class Payment extends Component {
                 <p className="checkbox-voter__text">Voter</p>
               </div>
             </div>
+
+            <div class="g-recaptcha" data-sitekey="6Ldez1MUAAAAAAJBrOgBM2u5f0Jg_C9t4ahBRasu"></div>
+            
             <button type="submit" className="btn signup-submit">Create Account</button>
           </form>
           <p className="signup-footer">Already have an account? <span className="signup-signin">Sign in</span></p> 
