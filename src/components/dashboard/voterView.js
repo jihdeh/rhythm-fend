@@ -31,11 +31,14 @@ class VoterView extends Component {
                   <div className="share-channel-vote">
                     <i className="fas fa-check" /> <span>Vote</span>
                   </div>
-                  <div className="share-channel-social">
-                    <i className="vote-social-icons vote-social-icons-fb fab fa-facebook fa-2x" />
-                    <i className="vote-social-icons vote-social-icons-tw fab fa-twitter fa-2x" />
-                    <i className="vote-social-icons vote-social-icons-ig fab fa-instagram fa-2x" />
-                  </div>
+                 
+                    <div className="share-channel-social">
+                      <i className="vote-social-icons vote-social-icons-fb fab fa-facebook fa-2x" />
+                      <i className="vote-social-icons vote-social-icons-tw fab fa-twitter fa-2x" />
+                      <i className="vote-social-icons vote-social-icons-ig fab fa-instagram fa-2x" />
+                    </div>
+                  
+                  
                 </div>
               </div>
             </div>

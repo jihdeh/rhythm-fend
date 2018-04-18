@@ -21,6 +21,11 @@
   margin-top: 20px;
 }
 
+.sha {
+  color: white;
+}
+
+
 /*SOCIAL SHARING ICONS*/
 .share-channel {
   justify-content: space-between;
@@ -40,12 +45,13 @@
 }
 
 .share-channel-vote:hover {
-  color: #ff0000;
+  color: #008000;
 }
 
 .vote-social-icons {
   margin: 0 7px;
   cursor: pointer;
+  font-size: 1.5em;
 }
 
 .vote-social-icons-fb:hover {
