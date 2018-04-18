@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-class VoterView extends Component {
+class SignupView extends Component {
   render() {
     return(
       <div className="signup-body">
@@ -66,4 +66,4 @@ class VoterView extends Component {
   }
 }
 
-export default VoterView;
+export default SignupView;

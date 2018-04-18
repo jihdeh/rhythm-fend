@@ -4,6 +4,7 @@ import Home from "./home";
 import DashBoard from "./dashboard";
 import Search from "./searchpage";
 import SignUp from "./signup";
+import Payment from "./payment";
 
 const Main = () => (
   <main className="main-container">
@@ -12,6 +13,7 @@ const Main = () => (
       <Route exact path="/dashboard" component={DashBoard} />
       <Route exact path="/search" component={Search} />
       <Route exact path="/signup" component={SignUp} />
+      <Route exact path="/payments" component={Payment} />
     </Switch>
   </main>
 );

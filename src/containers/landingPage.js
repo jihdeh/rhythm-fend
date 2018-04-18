@@ -98,11 +98,11 @@ class LandingPage extends Component {
                       />
                     </div>
                     <div className="sa-actions">
-                      <p className="sa-actions__createAccount">
-                        Create Account
-                      </p>
                       <p className="sa-actions__login" onClick={this.onLogin}>
                         Login
+                      </p>
+                      <p className="sa-actions__createAccount">
+                        New user? <span>Create Account</span>
                       </p>
                     </div>
                   </form>
