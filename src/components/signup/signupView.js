@@ -48,7 +48,7 @@ class SignupView extends Component {
               <div className="form-group payment-form-input">
                 <label htmlFor="Card-number">Card Number</label>
                 <input 
-                  type="number" 
+                  type="text" 
                   className="form-control payment-form-control" 
                   id="" 
                   required 
@@ -60,7 +60,7 @@ class SignupView extends Component {
                 <div className="payment-expiry-date">
                   <div className="payment-expiry-date__month">
                     <input 
-                      type="number" 
+                      type="text" 
                       className="form-control payment-form-control" 
                       id="" 
                       placeholder="Month" 
@@ -69,7 +69,7 @@ class SignupView extends Component {
                   </div>
                   <div className="payment-expiry-date__year">
                     <input 
-                      type="number" 
+                      type="text" 
                       className="form-control payment-form-control" 
                       id="" 
                       placeholder="Year" 
@@ -83,7 +83,7 @@ class SignupView extends Component {
                 <div className="form-group payment-form-input payment-form-input__cvv">
                   <label htmlFor="CVV">CVV</label>
                   <input 
-                    type="number" 
+                    type="text" 
                     className="form-control payment-form-control cvv-pin" 
                     id="" 
                     required 
@@ -93,7 +93,7 @@ class SignupView extends Component {
                 <div className="form-group payment-form-input payment-form-input__pin">
                   <label htmlFor="Pin">Pin</label>
                   <input 
-                    type="password" 
+                    type="text" 
                     className="form-control payment-form-control cvv-pin" 
                     id="" 
                     required 
