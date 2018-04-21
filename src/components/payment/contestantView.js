@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/*import React, { Component } from "react";
 import { Modal, Button } from "react-bootstrap"
 import "../../styles/payment.css"
 
@@ -110,4 +110,4 @@ class ContestantView extends Component {
   }
 }
 
-export default ContestantView;
+export default ContestantView;*/
