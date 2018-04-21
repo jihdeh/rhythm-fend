@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/*import React, { Component } from "react";
 import VoterView from "../components/payment/voterView";
 import ContestantView from "../components/payment/contestantView";
 import "../styles/payment.css";
@@ -17,4 +17,4 @@ export default class Payment extends Component {
       </div>
     );
   }
-}
+}*/
