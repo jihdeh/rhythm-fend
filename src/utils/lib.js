@@ -22,14 +22,11 @@ export default {
       const response = await fetch(endpoints.paystack_charge, {
         method: "POST",
         headers: {
-          Authorization: process.env.Authorization
+          Authorization: process.env.REACT_APP_AUTH
         },
         body: JSON.stringify(body)
       });
       const json = await response.json();
-
-      //issue process.env not working
-      console.log(process.env.Authorization);
 
       if (json.data.status === "success") {
         const { reference } = json.data;

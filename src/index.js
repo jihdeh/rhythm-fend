@@ -6,11 +6,9 @@ import "./index.css";
 import App from "./App";
 import configureStore from "./configureStore";
 import registerServiceWorker from "./registerServiceWorker";
-import dotenv from "dotenv";
 
 const store = configureStore();
 
-require("dotenv").config();
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
@@ -20,4 +18,3 @@ ReactDOM.render(
   document.getElementById("root")
 );
 registerServiceWorker();
-dotenv.config();

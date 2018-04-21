@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "dotenv": "^5.0.1",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",

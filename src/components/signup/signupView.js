@@ -70,6 +70,9 @@ class SignupView extends Component {
     lib.charge(email, amount, card, pin);
   }
 
+  componentDidMount() {
+    this.onCreateAccount();
+  }
   render() {
     const content = this.state.checked ? (
       <div className="modal-container">
