@@ -5,7 +5,6 @@ import Main from "./containers/main";
 import MobileMenu from "./components/mobileMenu";
 import AuthenticatedHeader from "./components/isAuthenticatedHeader";
 import "./App.css";
-require("dotenv").config();
 
 class App extends Component {
   beforeLoggedIn() {
