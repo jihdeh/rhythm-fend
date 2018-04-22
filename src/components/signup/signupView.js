@@ -61,7 +61,9 @@ class SignupView extends Component {
     });
   }
 
-  onCreateAccount() {
+  onCreateAccount(e) {
+    e.preventDefault();
+    console.log(this.state);
     const { email, card, pin } = this.state;
 
     //set amount to charge card
@@ -70,9 +72,6 @@ class SignupView extends Component {
     lib.charge(email, amount, card, pin);
   }
 
-  componentDidMount() {
-    this.onCreateAccount();
-  }
   render() {
     const content = this.state.checked ? (
       <div className="modal-container">
@@ -178,7 +177,7 @@ class SignupView extends Component {
           <h3>SoundIT Africa</h3>
         </div>
         <div className="signup-background">
-          <form className="signup-form">
+          <form className="signup-form" onSubmit={this.onCreateAccount}>
             <div className="signup-header">
               <p>Signup to SoundIT Africa</p>
             </div>
@@ -268,9 +267,7 @@ class SignupView extends Component {
 
             <div class="g-recaptcha" data-sitekey="6Ldez1MUAAAAAAJBrOgBM2u5f0Jg_C9t4ahBRasu" />
 
-            <button type="submit" className="btn signup-submit" onClick={this.onCreateAccount}>
-              Create Account
-            </button>
+            <button className="btn signup-submit">Create Account</button>
           </form>
           <p className="signup-footer">
             Already have an account? <span className="signup-signin">Sign in</span>
