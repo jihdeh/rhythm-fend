@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../styles/searchpage.css";
-import "../styles/dashboard.css";
 import ContestantSearchView from "../components/searchpage/contestantSearchView";
 import VoterSearchView from "../components/searchpage/voterSearchView";
 
@@ -10,7 +9,6 @@ class Search extends Component {
   };
   render() {
     const { isContestant } = this.state;
-    console.log("here");
     return (
       <div className="content">
         <ContestantSearchView />

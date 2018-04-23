@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { login } from "../actions/authActions";
 import SectionTwo from "../components/homepage/sectionTwo";
 import MobileHome from "../components/homepage/mobileHome";
 import "../styles/home.css";
-import LoginPage from "../components/login"
+import LoginPage from "../components/login";
 
 class LandingPage extends Component {
-
   render() {
     return (
       <div>

@@ -57,9 +57,7 @@ class LoginPage extends Component {
               type="email"
               className="form-control sa-form__login-input"
               aria-describedby="emailHelp"
-              onChange={evt =>
-                this.setState({ emailInput: evt.target.value })
-              }
+              onChange={evt => this.setState({ emailInput: evt.target.value })}
               placeholder="Enter email"
             />
           </div>
@@ -76,15 +74,13 @@ class LoginPage extends Component {
             />
           </div>
           <div className="sa-actions">
-            <p className="sa-actions__createAccount">
-              Create Account
-            </p>
+            <p className="sa-actions__createAccount">Create Account</p>
             <p className="sa-actions__login" onClick={this.onLogin}>
-              Login
+              <Link to="/register">Create Account</Link>
             </p>
           </div>
         </form>
-      </div> 
+      </div>
     );
   }
 }

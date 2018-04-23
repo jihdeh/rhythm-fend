@@ -1,0 +1,329 @@
+.register-container {
+  margin: 0;
+  /*background: linear-gradient(left, #212531 50%, #333333 50%, #333333 100%),*/
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(https://wallpaper-house.com/data/out/10/wallpaper2you_411789.jpg)
+      no-repeat 0px 0px;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  padding: 4em 0;
+}
+
+a {
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+}
+a:hover {
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+}
+.wrap {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+::-webkit-input-placeholder {
+  color: #ffffff !important;
+}
+/*--slider--*/
+
+.rslides_tabs li:first-child {
+  margin-left: 0;
+}
+.rslides_tabs .rslides_here a {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-weight: bold;
+}
+
+.callbacks {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+}
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.rslides li {
+  position: relative;
+  display: block;
+  float: left;
+}
+.rslides img {
+  height: auto;
+  border: 0;
+}
+/*-- //slider --*/
+.content-info {
+  padding: 5em 3em;
+  text-align: center;
+}
+.content-info h2 {
+  color: #212121;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+.soundit-banner-info {
+  margin: 2em 0 0 0;
+  text-align: center;
+}
+.soundit-banner-info h3 {
+  color: #212121;
+  font-size: 1em;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.soundit-banner-info p {
+  color: #999999;
+  margin: 1em 0 0 0;
+  font-size: 0.9em;
+  line-height: 1.8em;
+}
+.agileinfo-follow {
+  margin: 4em 0 2em 0;
+  text-align: center;
+}
+.agileinfo-follow h4 {
+  color: #212121;
+  font-size: 1em;
+  font-weight: 600;
+}
+.agileinfo-social-grids {
+  text-align: center;
+}
+.agileinfo-social-grids ul {
+  padding: 0;
+  margin: 0;
+}
+.agileinfo-social-grids ul a {
+  color: #ffffff;
+  text-align: center;
+  display: inline-block;
+  margin: 0 0.5em 0 0;
+}
+.agileinfo-social-grids .social-icons {
+  height: 30px;
+  width: 30px;
+  border: solid 2px #212121;
+  line-height: 29px;
+  background: none;
+  color: #212121;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+}
+.agileinfo-social-grids .social-icons.fa-facebook-f:hover {
+  border: solid 2px #3b5998;
+  background: #3b5998;
+  color: #ffffff;
+}
+.agileinfo-social-grids .social-icons.fa-twitter:hover {
+  border: solid 2px #55acee;
+  background: #55acee;
+  color: #ffffff;
+}
+.agileinfo-social-grids .social-icons.fa-instagram:hover {
+  border: solid 2px #f26522;
+  background: #f26522;
+  color: #ffffff;
+}
+.agile-signin h4 {
+  text-align: center;
+  color: #212121;
+  font-size: 0.9em;
+  margin: 1em 0 0 0;
+}
+.agile-signin h4 a {
+  color: #f44336;
+  text-decoration: none;
+}
+.agile-signin h4 a:hover {
+  color: #212121;
+}
+.content-left {
+  float: left;
+  width: 50%;
+  height: 498px;
+  background: #ffffff;
+}
+.content-main {
+  float: left;
+  width: 50%;
+  height: 498px;
+}
+.soundIt-subscribe {
+  background: rgba(0, 0, 0, 0.56);
+  padding: 3em;
+  min-height: 426px;
+  height: 100%;
+}
+.soundIt-subscribe h3 {
+  color: #ffffff;
+  font-size: 2em;
+  margin: 0 0 1em 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.soundIt-subscribe input[type="email"],
+.soundIt-subscribe input[type="text"],
+.soundIt-subscribe input[type="password"] {
+  outline: none;
+  padding: 1em;
+  background: none;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 0.9em;
+  margin: 0 0 1.5em 0;
+  width: 93%;
+}
+.soundIt-subscribe input[type="submit"] {
+  color: #ffffff;
+  font-size: 0.9em;
+  text-decoration: none;
+  padding: 1em 2em;
+  cursor: pointer;
+  background: #f44336;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  border: solid 1px #f44336;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+}
+.soundIt-subscribe input[type="submit"]:hover {
+  background: none;
+  border: solid 1px #ffffff;
+}
+.soundIt-subscribe h4 {
+  color: #ffffff;
+  font-size: 1em;
+  margin: 0 0 1em 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/*-- responsive --*/
+@media (max-width: 1440px) {
+  .wrap {
+    width: 55%;
+  }
+}
+@media (max-width: 1366px) {
+  .wrap {
+    width: 60%;
+  }
+}
+@media (max-width: 1080px) {
+  .wrap {
+    width: 75%;
+  }
+}
+@media (max-width: 991px) {
+  .wrap {
+    width: 80%;
+  }
+}
+@media (max-width: 900px) {
+  .wrap {
+    width: 85%;
+  }
+}
+@media (max-width: 800px) {
+  .content-info h2 {
+    font-size: 1.2em;
+  }
+  .soundIt-subscribe {
+    min-height: 445px;
+  }
+}
+@media (max-width: 768px) {
+  .wrap {
+    width: 90%;
+  }
+}
+@media (max-width: 667px) {
+  .content-left {
+    float: none;
+    width: 100%;
+  }
+  .content-main {
+    float: none;
+    width: 100%;
+  }
+  .soundIt-subscribe {
+    min-height: 425px;
+  }
+  .wrap {
+    width: 85%;
+  }
+  .register-container {
+    height: 100%;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+@media (max-width: 414px) {
+  .soundIt-subscribe input[type="email"],
+  .soundIt-subscribe input[type="text"],
+  .soundIt-subscribe input[type="password"] {
+    width: 89%;
+  }
+  .content-info {
+    padding: 3em 2em;
+  }
+  .soundIt-subscribe {
+    padding: 2em;
+  }
+}
+@media (max-width: 375px) {
+  h1 {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 320px) {
+  .wrap {
+    width: 90%;
+  }
+  .content-info {
+    padding: 2em 1em;
+  }
+  .soundIt-subscribe input[type="email"],
+  .soundIt-subscribe input[type="text"],
+  .soundIt-subscribe input[type="password"] {
+    width: 86%;
+  }
+}
+/*-- //responsive --*/

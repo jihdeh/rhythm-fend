@@ -1,9 +1,18 @@
 header {
-  position: absolute;
+  /*  position: absolute;
   bottom: 2%;
   float: right;
   right: 2%;
+  display: block;*/
+  position: absolute;
+  top: 2%;
+  /* float: right; */
+  right: 2%;
   display: block;
+}
+
+.navbar {
+  margin-bottom: 0 !important;
 }
 
 .sa-liner {
