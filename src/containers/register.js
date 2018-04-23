@@ -3,6 +3,20 @@ import { Link } from "react-router-dom";
 import "../styles/register.css";
 
 class Register extends Component {
+  state = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    password: "",
+    confirmPassword: ""
+  };
+
+  onRegister = e => {
+    e.preventDefault();
+    console.log("here");
+  };
+
   render() {
     return (
       <div className="register-container">
@@ -52,37 +66,63 @@ class Register extends Component {
           <div className="content-main">
             <div className="soundIt-subscribe">
               <h4>New Contestant?</h4>
-              <form action="#" method="post">
+              <form onSubmit={this.onRegister}>
                 <input
                   type="text"
-                  name="Search"
+                  onChange={({ target }) =>
+                    this.setState({ firstName: target.value })
+                  }
+                  value={this.state.firstName || ""}
                   placeholder="First Name"
-                  required=""
+                  required
                 />
                 <input
                   type="text"
-                  name="Search"
                   placeholder="Last Name"
-                  required=""
+                  onChange={({ target }) =>
+                    this.setState({ lastName: target.value })
+                  }
+                  value={this.state.lastName || ""}
+                  required
                 />
-                <input type="text" placeholder="Phone number" required="" />
+                <input
+                  type="text"
+                  onChange={({ target }) =>
+                    this.setState({ phoneNumber: target.value })
+                  }
+                  value={this.state.phoneNumber || ""}
+                  placeholder="Phone number"
+                  required
+                />
                 <input
                   type="email"
-                  name="Search"
+                  name="Email"
+                  onChange={({ target }) =>
+                    this.setState({ email: target.value })
+                  }
+                  value={this.state.email || ""}
                   placeholder="Email"
-                  required=""
+                  required
                 />
                 <input
                   type="password"
                   name="Password"
+                  onChange={({ target }) =>
+                    this.setState({ password: target.value })
+                  }
+                  value={this.state.password || ""}
                   placeholder="Password"
-                  required=""
+                  required
                 />
                 <input
                   type="password"
                   name="Password"
+                  onChange={({ target }) =>
+                    this.setState({ confirmPassword: target.value })
+                  }
+                  value={this.state.confirmPassword || ""}
                   placeholder="Confirm Password"
-                  required=""
+                  required
                 />
                 <input type="submit" value="Sign Up" />
               </form>
