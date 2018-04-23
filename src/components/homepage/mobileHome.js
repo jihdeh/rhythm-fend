@@ -1,4 +1,5 @@
 import React from "react";
+import LoginPage from "../login";
 
 const MobileHome = () => {
   return (
@@ -12,12 +13,7 @@ const MobileHome = () => {
         />
         <h1>SounditAfrica!</h1>
         <h4>Be the next Rising Gospel Star</h4>
-        <p>
-          <i className="fas fa-sign-in-alt login" /> Login
-        </p>
-        <p>
-          <i className="fas fa-user-plus signup" /> Create Account
-        </p>
+        <LoginPage />
       </span>
     </div>
   );

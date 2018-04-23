@@ -49,11 +49,11 @@
 }
 
 .sa-header {
-  margin: 40px;
+  margin: 60px;
 }
 
-.login,
-.signup {
+.mobile-home__login,
+.mobile-home__signup {
   color: #ffd700;
 }
 
@@ -78,7 +78,7 @@
   }
 }
 
-@media (max-width: 555px) {
+@media (max-width: 638px) {
   .background {
     margin-top: -2em;
   }
@@ -93,9 +93,9 @@
   }
 }
 
-@media (min-width: 556px) {
-  .login,
-  .signup {
+@media (min-width: 639px) {
+  .mobile-home__login,
+  .mobile-home__signup {
     display: none;
   }
   .mobile-sa-text {
