@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { login } from "../actions/authActions";
@@ -74,9 +75,11 @@ class LoginPage extends Component {
             />
           </div>
           <div className="sa-actions">
-            <p className="sa-actions__createAccount">Create Account</p>
-            <p className="sa-actions__login" onClick={this.onLogin}>
+            <p className="sa-actions__createAccount">
               <Link to="/register">Create Account</Link>
+            </p>
+            <p className="sa-actions__login" onClick={this.onLogin}>
+              Login
             </p>
           </div>
         </form>

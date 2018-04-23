@@ -14,8 +14,36 @@ class Register extends Component {
 
   onRegister = e => {
     e.preventDefault();
+    this.loadPayStack();
     console.log("here");
   };
+
+  loadPayStack() {
+    var handler = window.PaystackPop.setup({
+      key: "pk_test_2f18b792a4e8f36bb7a5bcba1bd2e8d68add7603",
+      email: "customer@email.com",
+      amount: 10000,
+      ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+      firstname: "Stephen",
+      lastname: "King",
+      metadata: {
+        custom_fields: [
+          {
+            display_name: "Mobile Number",
+            variable_name: "mobile_number",
+            value: "+2348012345678"
+          }
+        ]
+      },
+      callback: function(response) {
+        alert("success. transaction ref is " + response.reference);
+      },
+      onClose: function() {
+        alert("window closed");
+      }
+    });
+    handler.openIframe();
+  }
 
   render() {
     return (

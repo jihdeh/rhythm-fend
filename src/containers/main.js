@@ -1,7 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./home";
-import DashBoard from "./dashboard";
 import Register from "./register";
 import Search from "./searchpage";
 

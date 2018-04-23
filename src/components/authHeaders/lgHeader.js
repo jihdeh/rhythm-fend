@@ -10,25 +10,6 @@ class LargeScreenMenuNavigation extends Component {
     this.props.logout();
   };
 
-  isVoter() {
-    return (
-      <span style={{ display: "flex" }}>
-        <li>
-          <Link to="/search">
-            <i className="fas fa-cubes fa-lg guide-icon__default" />
-            <span>VOTE</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/search">
-            <i className="fab fa-hotjar fa-lg guide-icon__default" />
-            <span>TRENDING</span>
-          </Link>
-        </li>
-      </span>
-    );
-  }
-
   render() {
     return (
       <div className="container submenu">
@@ -46,7 +27,6 @@ class LargeScreenMenuNavigation extends Component {
                 <span>HOME</span>
               </Link>
             </li>
-            {this.isVoter()}
             <li>
               <Link to="/search">
                 <i className="fas fa-handshake fa-lg guide-icon__default" />
