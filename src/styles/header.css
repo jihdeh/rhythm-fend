@@ -224,8 +224,19 @@ header {
   }
 }
 
+@media screen and (min-width: 639px) {
+  .header__top {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 638px) {
+  header {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 555px) {
-  header,
   .submenu-list,
   .sm-submenu--search-form,
   .profile-right__owner {
@@ -234,7 +245,6 @@ header {
 }
 
 @media screen and (min-width: 556px) {
-  .header__top,
   .sm-search-form,
   .open-sideNav-btn {
     display: none !important;
