@@ -51,40 +51,40 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="sa-form__login">
-                  <form>
-                    <div className="form-group">
-                      <input
-                        type="email"
-                        className="form-control sa-form__login-input"
-                        aria-describedby="emailHelp"
-                        onChange={evt =>
-                          this.setState({ emailInput: evt.target.value })
-                        }
-                        placeholder="Enter email"
-                      />
-                    </div>
-                    <div className="form-group">
-                      <input
-                        type="password"
-                        className="form-control sa-form__login-input"
-                        aria-describedby="passwordHelp"
-                        onKeyUp={this.detectKey}
-                        onChange={evt =>
-                          this.setState({ passwordInput: evt.target.value })
-                        }
-                        placeholder="Enter password"
-                      />
-                    </div>
-                    <div className="sa-actions">
-                      <p className="sa-actions__createAccount">
-                        Create Account
-                      </p>
-                      <p className="sa-actions__login" onClick={this.onLogin}>
-                        Login
-                      </p>
-                    </div>
-                  </form>
-                </div> 
+        <form>
+          <div className="form-group">
+            <input
+              type="email"
+              className="form-control sa-form__login-input"
+              aria-describedby="emailHelp"
+              onChange={evt =>
+                this.setState({ emailInput: evt.target.value })
+              }
+              placeholder="Enter email"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              className="form-control sa-form__login-input"
+              aria-describedby="passwordHelp"
+              onKeyUp={this.detectKey}
+              onChange={evt =>
+                this.setState({ passwordInput: evt.target.value })
+              }
+              placeholder="Enter password"
+            />
+          </div>
+          <div className="sa-actions">
+            <p className="sa-actions__createAccount">
+              Create Account
+            </p>
+            <p className="sa-actions__login" onClick={this.onLogin}>
+              Login
+            </p>
+          </div>
+        </form>
+      </div> 
     );
   }
 }
