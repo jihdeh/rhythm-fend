@@ -6,6 +6,7 @@ import SectionTwo from "../components/homepage/sectionTwo";
 import MobileHome from "../components/homepage/mobileHome";
 import "../styles/home.css";
 import LoginPage from "../components/login"
+import SectionThree from "../components/homepage/sectionThree";
 
 class LandingPage extends Component {
 
@@ -38,6 +39,7 @@ class LandingPage extends Component {
         </div>
         <MobileHome />
         <SectionTwo />
+        <SectionThree />
       </div>
     );
   }

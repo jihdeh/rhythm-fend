@@ -49,7 +49,7 @@
 }
 
 .sa-header {
-  margin: 60px;
+  margin: 60px 0 40px 0;
 }
 
 .mobile-home__login,
@@ -65,6 +65,84 @@
 .mobile-sa-text__title {
   display: block;
   padding-top: 6em;
+}
+
+.section-three {
+  background-color: #F5F5F5;
+}
+
+.section-three__thumbnail {
+  background-color: white;
+  width: 20em;
+  margin-bottom: 2em;
+}
+
+.section-three__picture {
+  height: 18em;
+  width: 20em
+}
+
+.section-three__text {
+  margin-top: -19px;
+  padding-top: 30px;
+  color: black;
+}
+
+.section-three__text > h4 {
+  margin-left: 5px;
+}
+
+.section-three__text-footer {
+  margin: 30px 5px 5px 5px;
+  display: flex;
+}
+
+.section-three__mediashare {
+  margin-left: auto;
+}
+
+.section-three__mediaicon {
+  margin-left: 10px;
+}
+
+.section-three__mediaicon:hover {
+  cursor: pointer;
+}
+
+.section-three__mediaicon-fb:hover {
+  color: #3b5998;
+}
+
+.section-three__mediaicon-tw:hover {
+  color: #1da1f2;
+}
+
+.section-three__mediaicon-ig:hover {
+  color: #5851db;
+}
+
+.section-three__sponsors {
+  margin-bottom: 3em;
+}
+
+.section-three__sponsors-logo {
+  margin-bottom: 2em;
+}
+
+@media (max-width: 991px) {
+  .section-three__sponsors {
+    margin-left: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .section-three__thumbnail {
+    width: 25em;
+  }
+  .section-three__picture {
+    width: 25em;
+  }
 }
 
 @media (max-width: 903px) {
@@ -106,5 +184,48 @@
 @media (min-width: 904px) {
   .sa-text__title {
     width: 500px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-three__thumbnail {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    width: 30em;
+  }
+  .section-three__picture {
+    width: 30em;
+  }
+  .section-three__sponsors {
+    display: flex;
+    justify-content: center
+  }
+}
+
+@media (max-width: 767px) {
+  .section-three__sponsors {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 482px) {
+  .section-three__thumbnail {
+    width: 25em;
+  }
+  .section-three__picture {
+    width: 25em;
+  }
+}
+
+@media (max-width: 482px) {
+  .section-three__thumbnail {
+    width: 19em;
+  }
+  .section-three__picture {
+    width: 19em;
   }
 }
