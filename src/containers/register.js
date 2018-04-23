@@ -9,11 +9,13 @@ class Register extends Component {
     email: "",
     phoneNumber: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
+    loadingPaystackModule: false
   };
 
   onRegister = e => {
     e.preventDefault();
+    this.setState({ loadingPaystackModule: true });
     this.loadPayStack();
     console.log("here");
   };
@@ -38,7 +40,8 @@ class Register extends Component {
       callback: function(response) {
         alert("success. transaction ref is " + response.reference);
       },
-      onClose: function() {
+      onClose: () => {
+        this.setState({ loadingPaystackModule: false });
         alert("window closed");
       }
     });
@@ -46,6 +49,7 @@ class Register extends Component {
   }
 
   render() {
+    const { loadingPaystackModule } = this.state;
     return (
       <div className="register-container">
         <div className="wrap">
@@ -152,7 +156,17 @@ class Register extends Component {
                   placeholder="Confirm Password"
                   required
                 />
-                <input type="submit" value="Sign Up" />
+                {loadingPaystackModule ? (
+                  <button className="sa-registration-btn spinner" disabled>
+                    <img src="/images/Spinner-1s-50px.svg" alt="" />
+                  </button>
+                ) : (
+                  <input
+                    className="sa-registration-btn"
+                    type="submit"
+                    value="Sign Up"
+                  />
+                )}
               </form>
             </div>
           </div>

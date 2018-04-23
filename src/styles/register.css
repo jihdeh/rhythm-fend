@@ -202,7 +202,7 @@ a:hover {
   margin: 0 0 1.5em 0;
   width: 93%;
 }
-.soundIt-subscribe input[type="submit"] {
+.soundIt-subscribe .sa-registration-btn {
   color: #ffffff;
   font-size: 0.9em;
   text-decoration: none;
@@ -219,7 +219,13 @@ a:hover {
   -moz-transition: 0.5s all;
   -ms-transition: 0.5s all;
 }
-.soundIt-subscribe input[type="submit"]:hover {
+
+.soundIt-subscribe .sa-registration-btn.spinner {
+  background: #582a2a;
+  padding: 0;
+  border: solid 1px #757474;
+}
+.soundIt-subscribe .sa-registration-btn:hover {
   background: none;
   border: solid 1px #ffffff;
 }
