@@ -20,7 +20,7 @@ class SectionFour extends PureComponent {
           <div className="col-sm-6 section-four__right">
             <img
               className="section-four__picture img-responsive"
-              src="../../images/city.jpeg"
+              src="../../images/artiste2.jpg"
               alt=""
             />
           </div>
