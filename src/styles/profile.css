@@ -1,0 +1,397 @@
+.profile--container{
+display: flex;
+flex-direction: column;
+justify-content: stretch
+}
+.profile--header{
+height: 250px;
+background-size: 100% auto;
+background-position: center;
+position: relative;
+}
+.no-padding{
+    margin:0 -15px;
+}
+.profile--body{
+flex:1;
+padding: 30px;
+background-color: #f2f2f6;
+}
+.ads--one{
+    height: 100px;
+    background-color: yellow;
+}
+.video--sq{
+    width: 100%;
+    background-color: white;
+    padding-top: 50%;
+    box-shadow: 1px 1px 30px 5px rgba(0,0,0,.1);
+    position: relative;
+}
+.contestant--profile{
+    background-color: white;
+    /* height: 300px; */
+    top: -150px;
+    position: relative;
+    padding-top: 250%;
+    box-shadow: 1px 1px 30px 5px rgba(0,0,0,.1);
+}
+.common-margin{
+    margin-bottom: 20px
+}
+.bio--aspect--ratio{
+    height: 50%;
+    width:100%
+}
+.contestant--cont{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contestant--image{
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative
+}
+.contestant--nav{
+padding: 0 30px;
+justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.nav-block{
+    width:calc(100%/12);
+}
+.nav--logo{
+    font-size: 30px;
+    color: white;
+}
+.nav-child{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:calc(100%/12*10);
+    padding: 0 15px;
+    height:100px;
+}
+.inp-cont{
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    padding-left: 25px;
+    border: 2px solid rgba(255,255,255,.5);
+    position:relative;
+    color:white;
+    font-size:15px
+}
+.inp{
+background-color:transparent;
+border:none;
+outline:none;
+height:100%;
+width:100%;
+z-index: 1;
+position: relative;
+}
+.myplaceholdder{
+    z-index: 0;
+    font-style: italic;
+    position: absolute;
+    top:2px;
+}
+.search--icon{
+    position:absolute;
+    top:5px;
+    left:5px;
+    color:white;
+}
+.profile-menu-icon{
+    color: white;
+    font-size: 20px;
+}
+.nav--discription{
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.profile--detail{
+    width:calc(100%/3*2);
+    padding-right:30px;
+    margin-left: -20px;
+    display: flex;
+    color:white;
+    justify-content: space-between;
+    align-items: center;
+}
+.bigger--block{
+    width:calc(100%/3);
+}
+.share-btn{
+    border:1px solid white;
+    border-radius: 30px;
+    padding:5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer
+}
+.share--icon{
+    font-size: 25px;
+    margin-right: 10px
+}
+.image--overlay{
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    display: flex;
+}
+.Vote--button{
+    color:black;
+    font-size: 20px;
+    background-color: white;
+    padding: 5px 50px;
+    border-radius: 30px;
+    cursor:pointer;
+}
+.Vote--button:hover{
+    background-color: rgba(255,255,255,.7)
+}
+.share-btn:hover,.more--button:hover{
+    background-color: rgba(255,255,255,.2)
+}
+.bio-buttons{
+    color:white;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-around;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+.more--button{
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid white;
+    border-radius: 50%;
+    margin:20px;
+    cursor: pointer;
+}
+.contestant--bio{
+    padding:20px
+}
+.mydetail--header{
+    display: block;
+    font-size: 16px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+.mydetail{
+    color:rgba(0,0,0,.5)
+}
+.video--cont{
+    position: absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+}
+.shape--triangle{
+    position: absolute;
+    bottom: -50px;
+    left:6%;
+    z-Index:0
+}
+.shape--circle{
+    position: absolute;
+    top: 90px;
+    left:30%;
+    z-Index:0
+}
+.to-hide{
+    display: none;
+}
+.no-padding-left{
+    margin-left:-15px;
+}
+.no-padding-right{
+    margin-right: -15px
+}
+@media(max-width:1298px){
+    .Vote--button{
+        font-size: 15px;
+        padding: 5px 30px;
+    }
+}
+
+@media(max-width:1200px){
+    .more--button{
+        margin:5px
+    }
+    .contestant--profile{
+        padding-top: 300%;
+    }
+    .mydetail{
+        font-size: 10px;
+    }
+}
+@media(max-width:918px){
+    .Vote--button{
+        font-size: 12px;
+        padding: 5px 15px;
+    }
+    .share-label{
+        font-size: 10px;
+    }
+    .share--icon{
+        font-size: 18px
+    }
+    .more--button{
+        padding: 8px
+    }
+    .inp-cont{
+        font-size: 12px
+    }
+    .search--icon{
+        top:7px
+    }
+    .myplaceholdder{
+        top:4px
+    }
+    .mydetail--header{
+        margin-bottom: 5px
+    }
+    .contestant--bio{
+        padding: 10px
+    }
+    .mydetail{
+        font-size: 7px;
+    }
+    .profile--name{
+        font-size: 22px
+    }
+    .profile-city{
+        font-size: 8px
+    }
+}
+@media(max-width:822px){
+    .mydetail--header{
+        margin-bottom: 0;
+        font-size: 10px
+    }
+}
+@media(max-width:767px){
+    .shape--circle,.shape--triangle{
+        display: none;
+    }
+    .no-padding-left,.no-padding-right{
+        margin-left:-15px;
+        margin-right: -15px;
+    }
+    .to-hide{
+        display: unset
+    }
+    .contestant--profile{
+        padding-top: 140%;
+    }
+    .mydetail--header{
+        font-size: 16px;
+        margin-bottom: 10px
+    }
+    .mydetail{
+        font-size: 15px;
+    }
+    .contestant--bio{
+        padding: 20px
+    }
+    .contestant--profile{
+        top:0
+    }
+    .profile--body{
+        padding: 10px
+    }
+    .bigger--block{
+        display: none
+    }
+    .profile--detail{
+        width:110%;
+        padding:0
+    }
+    .nav-block{
+        display: none;
+    }
+    .nav--discription{
+        padding: 0;
+        width:auto
+    }
+    .profile--name{
+        font-size: 18px
+    }
+    .profile--header{
+        display: none
+    }
+    .bio-buttons{
+        justify-content: space-evenly
+    }
+    .share-btn{
+        margin: 10px
+    }
+    .bio-buttons{
+        padding-left: 25px
+    }
+
+}
+@media(max-width:555px){
+    .nav-child{
+        display: none
+    }
+    .profile--body{
+        padding: 0
+    }
+    .share-btn{
+        padding: 3px 5px;
+        margin: 5px
+    }
+    .share-label{
+        font-size: 5px;
+        min-width: 40px;
+    }
+    .share--icon{
+        font-size: 14px;
+        margin: 0
+    }
+    .profile--name{
+        font-size: 12px;
+        min-width: 50%;
+    }
+    .profile-city{
+        font-size: 8px
+    }
+    .Vote--button{
+        font-size: 9px;
+        padding: 5px 6px
+    }
+    .more--button{
+        padding: 6px
+    }
+    .ads--one{
+        height: 50px;
+    }
+    .contestant--profile{
+        margin-bottom: 10px
+    }
+    .mydetail{
+        font-size: 7px
+    }
+}

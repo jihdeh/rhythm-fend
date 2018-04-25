@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./home";
 import Register from "./register";
 import Search from "./searchpage";
+import Profile from "./profile";
 
 const Main = () => (
   <main className="main-container">
@@ -10,6 +11,7 @@ const Main = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/search" component={Search} />
+      <Route exact path="/rsg" component={Profile} />
     </Switch>
   </main>
 );
