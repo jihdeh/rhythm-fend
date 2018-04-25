@@ -107,9 +107,10 @@
 }
 
 .clients-section__logo {
-  width: 8em;
-  height: 7em;
-  margin-left: 6em;
+  margin-left: 3em;
+  height: auto;
+  max-width: 100%;
+  vertical-align: top;
 }
 
 .section-four {
@@ -366,6 +367,12 @@
 @media (max-width: 553px) {
   .section-five__picture {
    height: 34em; 
+  }
+}
+
+@media (max-width: 507px) {
+  #recent-portfolio {
+    width: 92% !important;
   }
 }
 
