@@ -17,7 +17,7 @@ class SectionTwo extends PureComponent {
         <div className="section second-section">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-lg-4 col-sm-12 col-md-4">
+              <div className="col-lg-4 col-sm-12 col-md-4 second-section__text">
                 <h3>ONGOING COMPETITION</h3>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
@@ -43,7 +43,7 @@ class SectionTwo extends PureComponent {
                   allowFullScreen
                 />
               </div>
-              <div className="col-lg-4 col-sm-12 col-md-4">
+              <div className="col-lg-4 col-sm-12 col-md-4 second-section__text">
                 <h3>HOW TO BECOME A CONTESTANT</h3>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and

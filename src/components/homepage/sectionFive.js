@@ -7,10 +7,10 @@ class SectionFive extends PureComponent {
         <div className="row section-five__text">
           <div className="col-sm-6">
             <h5>FIND OUT MORE ABOUT SOUNDIT AFRICA</h5>
-            <h3>HAVE A LOOK AT OUR MOST RECENT PERFORMANCES</h3>
+            <p id="recent-portfolio">HAVE A LOOK AT OUR MOST RECENT WORK</p>
           </div>
           <div className="col-sm-6">
-            <h5 className="section-five__recentwork">RECENT WORK <i className="fas fa-arrow-right" /></h5>
+            <h5 className="section-five__recentwork">RECENT WORK <i className="section-five__recentwork-arrow fas fa-arrow-right" /></h5>
           </div>
         </div>
         <div className="section-five__work">
@@ -18,14 +18,14 @@ class SectionFive extends PureComponent {
           <div className="">
             <img
               className="section-five__picture img-responsive"
-              src="../../images/artiste.jpg"
+              src="https://www.artmakerz.net/wp-content/uploads/2016/01/starbucks-feature-image.jpg"
               alt=""
             />
           </div>
           <div className="">
             <img
               className="section-five__picture img-responsive"
-              src="../../images/artiste.jpg"
+              src="https://www.artmakerz.net/wp-content/uploads/2017/07/Tech20-Portfolio-Website3-960x960.jpg"
               alt=""
             />
           </div>
@@ -34,14 +34,14 @@ class SectionFive extends PureComponent {
           <div className="">
             <img
               className="section-five__picture img-responsive"
-              src="../../images/artiste.jpg"
+              src="https://www.artmakerz.net/wp-content/uploads/2016/01/starbucks-feature-image.jpg"
               alt=""
             />
           </div>
           <div className="">
             <img
               className="section-five__picture img-responsive"
-              src="../../images/artiste.jpg"
+              src="https://www.artmakerz.net/wp-content/uploads/2017/07/Tech20-Portfolio-Website3-960x960.jpg"
               alt=""
             />
           </div>

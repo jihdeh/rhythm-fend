@@ -15,12 +15,12 @@ class SectionFour extends PureComponent {
             
             <p>Set to know our three stages: REGISTER, UPLOAD and ENJOY.</p>
             <br />
-            <p>LEARN MORE <i class="fas fa-angle-down"></i></p>
+            <p>LEARN MORE <i className="fas fa-angle-down"></i></p>
           </div>
           <div className="col-sm-6 section-four__right">
             <img
               className="section-four__picture img-responsive"
-              src="../../images/artiste2.jpg"
+              src="https://www.artmakerz.net/wp-content/uploads/2016/11/artmakerz-digital-agency-portugal-braga-home3.jpg"
               alt=""
             />
           </div>

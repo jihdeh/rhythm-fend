@@ -7,92 +7,52 @@ class SectionThree extends PureComponent {
         <div className="clients-text">
           <h5>OUR TRUSTED PARTNERS</h5>
         </div>
+        
         <section className="clients-section">
           <div>
             <img
               className="clients-section__logo"
-              src="../../images/akwaibom.png"
+              src="https://www.artmakerz.net/wp-content/uploads/2016/11/justapp-one-colour-logo.png"
               alt=""
             />
           </div>
           <div>
           <img
               className="clients-section__logo"
-              src="../../images/google.jpg"
+              src="https://www.artmakerz.net/wp-content/uploads/2016/11/adexpert-logo-one-colour.png"
               alt=""
             />
           </div>
           <div>
             <img
               className="clients-section__logo"
-              src="../../images/award.jpg"
+              src="https://www.artmakerz.net/wp-content/uploads/2017/11/logo-myenglishteacher-client-artmakerz.png"
               alt=""
             />
           </div>
           <div>
             <img
               className="clients-section__logo"
-              src="../../images/akwaibom.png"
+              src="https://www.artmakerz.net/wp-content/uploads/2016/11/cannapy-one-colour.png"
               alt=""
             />
           </div>
           <div>
           <img
               className="clients-section__logo"
-              src="../../images/google.jpg"
+              src="https://www.artmakerz.net/wp-content/uploads/2016/11/spydernet-logo-one-colour.png"
               alt=""
             />
           </div>
           <div>
             <img
               className="clients-section__logo"
-              src="../../images/award.jpg"
+              src="https://www.artmakerz.net/wp-content/uploads/2016/11/devtech-one-logo.png"
               alt=""
             />
           </div>
-          <div>
-            <img
-              className="clients-section__logo"
-              src="../../images/akwaibom.png"
-              alt=""
-            />
-          </div>
-          <div>
-          <img
-              className="clients-section__logo"
-              src="../../images/google.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="clients-section__logo"
-              src="../../images/award.jpg"
-              alt=""
-            />
-         </div>
-         <div>
-            <img
-              className="clients-section__logo"
-              src="../../images/akwaibom.png"
-              alt=""
-            />
-          </div>
-          <div>
-          <img
-              className="clients-section__logo"
-              src="../../images/google.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="clients-section__logo"
-              src="../../images/award.jpg"
-              alt=""
-            />
-         </div>
         </section>
+        
       </div>
     );
   }
