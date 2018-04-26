@@ -1,15 +1,17 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./home";
-import DashBoard from "./dashboard";
+import Register from "./register";
 import Search from "./searchpage";
+import Profile from "./profile";
 
 const Main = () => (
   <main className="main-container">
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/dashboard" component={DashBoard} />
+      <Route exact path="/register" component={Register} />
       <Route exact path="/search" component={Search} />
+      <Route exact path="/rsg" component={Profile} />
     </Switch>
   </main>
 );

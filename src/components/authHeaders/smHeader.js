@@ -26,22 +26,6 @@ class SmallScreenMenuNavigation extends Component {
     });
   };
 
-  isVoter() {
-    return (
-      <span>
-        <Link to="/search">
-          <i className="fas fa-cubes fa-lg guide-icon__default" />
-          <span>VOTE</span>
-        </Link>
-
-        <Link to="/search">
-          <i className="fab fa-hotjar fa-lg guide-icon__default" />
-          <span>TRENDING</span>
-        </Link>
-      </span>
-    );
-  }
-
   render() {
     return (
       <span>
@@ -54,7 +38,6 @@ class SmallScreenMenuNavigation extends Component {
               <i className="fas fa-home fa-lg guide-icon__default" />
               <span>HOME</span>
             </Link>
-            {this.isVoter()}
             <Link to="/search">
               <i className="fas fa-handshake fa-lg guide-icon__default" />
               <span>CONNECT</span>

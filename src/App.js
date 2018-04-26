@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
 import Header from "./components/header";
 import Main from "./containers/main";
 import MobileMenu from "./components/mobileMenu";
@@ -27,9 +28,8 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.user, "---");
     return (
-      <div style={{ height: "100%" }}>
+      <div>
         {this.props.user ? this.afterLoggedIn() : this.beforeLoggedIn()}
       </div>
     );
@@ -40,4 +40,4 @@ const mapStateToProps = state => ({
   user: state.auth.userInfo
 });
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { login } from "../actions/authActions";
@@ -57,9 +58,7 @@ class LoginPage extends Component {
               type="email"
               className="form-control sa-form__login-input"
               aria-describedby="emailHelp"
-              onChange={evt =>
-                this.setState({ emailInput: evt.target.value })
-              }
+              onChange={evt => this.setState({ emailInput: evt.target.value })}
               placeholder="Enter email"
             />
           </div>
@@ -77,14 +76,14 @@ class LoginPage extends Component {
           </div>
           <div className="sa-actions">
             <p className="sa-actions__createAccount">
-              Create Account
+              <Link to="/register">Create Account</Link>
             </p>
             <p className="sa-actions__login" onClick={this.onLogin}>
               Login
             </p>
           </div>
         </form>
-      </div> 
+      </div>
     );
   }
 }

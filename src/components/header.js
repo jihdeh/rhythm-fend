@@ -12,7 +12,7 @@ export default class Header extends Component {
           </div>
           <ul className="sa-navigation">
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/search">About</Link>
             </li>
             <li>
               <Link to="/contact">Contact</Link>
