@@ -10,7 +10,7 @@ import {
 // import { displayError } from "./errorActions";
 
 export const login = ({ email, password }) => dispatch => {
-  console.log(process.env);
+  console.log(process.env, email, password);
   axios
     .post(`${process.env.REACT_APP_BASE_URL}/auth/signin`, { email, password })
     .then(({ data }) => {
