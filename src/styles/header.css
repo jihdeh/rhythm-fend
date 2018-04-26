@@ -5,7 +5,7 @@ header {
   right: 2%;
   display: block;*/
   position: absolute;
-  top: 2%;
+  top: 6%;
   /* float: right; */
   right: 2%;
   display: block;
@@ -233,7 +233,7 @@ header {
 }
 
 @media screen and (max-width: 826px) {
-  header{
+  header {
     bottom: -6%;
   }
 }

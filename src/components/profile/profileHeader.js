@@ -29,14 +29,25 @@ export default class ProfileHeader extends Component {
               <span className="nav--logo">SOUNDIT</span>
               <span className="inp-cont">
                 <Fasearch className="search--icon" />
-                {value ? null : <span className="myplaceholdder">search for artists</span>}
-                <input className="inp" value={value} onChange={this.handleType} />
+                {value ? null : (
+                  <span className="myplaceholdder">search for artists</span>
+                )}
+                <input
+                  className="inp"
+                  value={value}
+                  onChange={this.handleType}
+                />
               </span>
               <Fabar className="profile-menu-icon" />
             </div>
             <span className="nav-block" />
           </div>
-          <Description name={name} state={state} country={country} profilelink={profilelink} />
+          <Description
+            name={name}
+            state={state}
+            country={country}
+            profilelink={profilelink}
+          />
 
           <span className="shape--circle">
             <Circle

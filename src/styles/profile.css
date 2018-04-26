@@ -1,397 +1,399 @@
-.profile--container{
-display: flex;
-flex-direction: column;
-justify-content: stretch
+.profile--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
 }
-.profile--header{
-height: 250px;
-background-size: 100% auto;
-background-position: center;
-position: relative;
+.profile--header {
+    height: 250px;
+    background-size: 100% auto;
+    background-position: center;
+    position: relative;
 }
-.no-padding{
-    margin:0 -15px;
+.no-padding {
+    margin: 0 -15px;
 }
-.profile--body{
-flex:1;
-padding: 30px;
-background-color: #f2f2f6;
+.profile--body {
+    flex: 1;
+    padding: 30px;
+    background-color: #f2f2f6;
 }
-.ads--one{
+.ads--one {
     height: 100px;
     background-color: yellow;
 }
-.video--sq{
+.video--sq {
     width: 100%;
     background-color: white;
     padding-top: 50%;
-    box-shadow: 1px 1px 30px 5px rgba(0,0,0,.1);
+    box-shadow: 1px 1px 30px 5px rgba(0, 0, 0, 0.1);
     position: relative;
 }
-.contestant--profile{
+.contestant--profile {
     background-color: white;
     /* height: 300px; */
     top: -150px;
     position: relative;
     padding-top: 250%;
-    box-shadow: 1px 1px 30px 5px rgba(0,0,0,.1);
+    box-shadow: 1px 1px 30px 5px rgba(0, 0, 0, 0.1);
 }
-.common-margin{
-    margin-bottom: 20px
+.common-margin {
+    margin-bottom: 20px;
 }
-.bio--aspect--ratio{
+.bio--aspect--ratio {
     height: 50%;
-    width:100%
+    width: 100%;
 }
-.contestant--cont{
+.contestant--cont {
     position: absolute;
-    top:0;
+    top: 0;
     bottom: 0;
-    left:0;
-    right:0;
-    display:flex;
+    left: 0;
+    right: 0;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.contestant--image{
+.contestant--image {
     background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative
+    position: relative;
 }
-.contestant--nav{
-padding: 0 30px;
-justify-content: space-between;
+.contestant--nav {
+    padding: 0 30px;
+    justify-content: space-between;
     align-items: center;
     display: flex;
 }
-.nav-block{
-    width:calc(100%/12);
+.nav-block {
+    width: calc(100%/12);
 }
-.nav--logo{
+.nav--logo {
     font-size: 30px;
     color: white;
 }
-.nav-child{
+.nav-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width:calc(100%/12*10);
+    width: calc(100%/12*10);
     padding: 0 15px;
-    height:100px;
+    height: 100px;
 }
-.inp-cont{
+.inp-cont {
     width: 200px;
     height: 30px;
     border-radius: 20px;
     padding-left: 25px;
-    border: 2px solid rgba(255,255,255,.5);
-    position:relative;
-    color:white;
-    font-size:15px
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    color: white;
+    font-size: 15px;
+    margin: 0 auto;
 }
-.inp{
-background-color:transparent;
-border:none;
-outline:none;
-height:100%;
-width:100%;
-z-index: 1;
-position: relative;
+.inp {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
 }
-.myplaceholdder{
+.myplaceholdder {
     z-index: 0;
     font-style: italic;
     position: absolute;
-    top:2px;
+    top: 2px;
 }
-.search--icon{
-    position:absolute;
-    top:5px;
-    left:5px;
-    color:white;
+.search--icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: white;
 }
-.profile-menu-icon{
+.profile-menu-icon {
     color: white;
     font-size: 20px;
 }
-.nav--discription{
+.nav--discription {
     padding: 0 30px;
     display: flex;
     justify-content: space-between;
-
 }
-.profile--detail{
-    width:calc(100%/3*2);
-    padding-right:30px;
+.profile--detail {
+    width: calc(100%/3*2);
+    padding-right: 30px;
     margin-left: -20px;
     display: flex;
-    color:white;
+    color: white;
     justify-content: space-between;
     align-items: center;
 }
-.bigger--block{
-    width:calc(100%/3);
+.bigger--block {
+    width: calc(100%/3);
 }
-.share-btn{
-    border:1px solid white;
+.share-btn {
+    border: 1px solid white;
     border-radius: 30px;
-    padding:5px 10px;
+    padding: 5px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer
+    cursor: pointer;
 }
-.share--icon{
+.share--icon {
     font-size: 25px;
-    margin-right: 10px
+    margin-right: 10px;
 }
-.image--overlay{
-    position:absolute;
-    top:0;
-    bottom:0;
-    right:0;
-    left:0;
+.image--overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     display: flex;
 }
-.Vote--button{
-    color:black;
+.Vote--button {
+    color: black;
     font-size: 20px;
     background-color: white;
     padding: 5px 50px;
     border-radius: 30px;
-    cursor:pointer;
+    cursor: pointer;
 }
-.Vote--button:hover{
-    background-color: rgba(255,255,255,.7)
+.Vote--button:hover {
+    background-color: rgba(255, 255, 255, 0.7);
 }
-.share-btn:hover,.more--button:hover{
-    background-color: rgba(255,255,255,.2)
+.share-btn:hover,
+.more--button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
-.bio-buttons{
-    color:white;
+.bio-buttons {
+    color: white;
     align-self: flex-end;
     display: flex;
     justify-content: space-around;
     display: flex;
     justify-content: center;
     align-items: center;
-    width:100%;
+    width: 100%;
 }
-.more--button{
+.more--button {
     padding: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border:1px solid white;
+    border: 1px solid white;
     border-radius: 50%;
-    margin:20px;
+    margin: 20px;
     cursor: pointer;
 }
-.contestant--bio{
-    padding:20px
+.contestant--bio {
+    padding: 20px;
 }
-.mydetail--header{
+.mydetail--header {
     display: block;
     font-size: 16px;
     font-weight: bolder;
     margin-bottom: 10px;
 }
-.mydetail{
-    color:rgba(0,0,0,.5)
+.mydetail {
+    color: rgba(0, 0, 0, 0.5);
 }
-.video--cont{
+.video--cont {
     position: absolute;
-    top:0;
-    bottom:0;
-    right:0;
-    left:0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
-.shape--triangle{
+.shape--triangle {
     position: absolute;
     bottom: -50px;
-    left:6%;
-    z-Index:0
+    left: 6%;
+    z-index: 0;
 }
-.shape--circle{
+.shape--circle {
     position: absolute;
     top: 90px;
-    left:30%;
-    z-Index:0
+    left: 30%;
+    z-index: 0;
 }
-.to-hide{
+.to-hide {
     display: none;
 }
-.no-padding-left{
-    margin-left:-15px;
+.no-padding-left {
+    margin-left: -15px;
 }
-.no-padding-right{
-    margin-right: -15px
+.no-padding-right {
+    margin-right: -15px;
 }
-@media(max-width:1298px){
-    .Vote--button{
+@media (max-width: 1298px) {
+    .Vote--button {
         font-size: 15px;
         padding: 5px 30px;
     }
 }
 
-@media(max-width:1200px){
-    .more--button{
-        margin:5px
+@media (max-width: 1200px) {
+    .more--button {
+        margin: 5px;
     }
-    .contestant--profile{
+    .contestant--profile {
         padding-top: 300%;
     }
-    .mydetail{
+    .mydetail {
         font-size: 10px;
     }
 }
-@media(max-width:918px){
-    .Vote--button{
+@media (max-width: 918px) {
+    .Vote--button {
         font-size: 12px;
         padding: 5px 15px;
     }
-    .share-label{
+    .share-label {
         font-size: 10px;
     }
-    .share--icon{
-        font-size: 18px
+    .share--icon {
+        font-size: 18px;
     }
-    .more--button{
-        padding: 8px
+    .more--button {
+        padding: 8px;
     }
-    .inp-cont{
-        font-size: 12px
+    .inp-cont {
+        font-size: 12px;
     }
-    .search--icon{
-        top:7px
+    .search--icon {
+        top: 7px;
     }
-    .myplaceholdder{
-        top:4px
+    .myplaceholdder {
+        top: 4px;
     }
-    .mydetail--header{
-        margin-bottom: 5px
+    .mydetail--header {
+        margin-bottom: 5px;
     }
-    .contestant--bio{
-        padding: 10px
+    .contestant--bio {
+        padding: 10px;
     }
-    .mydetail{
+    .mydetail {
         font-size: 7px;
     }
-    .profile--name{
-        font-size: 22px
+    .profile--name {
+        font-size: 22px;
     }
-    .profile-city{
-        font-size: 8px
+    .profile-city {
+        font-size: 8px;
     }
 }
-@media(max-width:822px){
-    .mydetail--header{
+@media (max-width: 822px) {
+    .mydetail--header {
         margin-bottom: 0;
-        font-size: 10px
+        font-size: 10px;
     }
 }
-@media(max-width:767px){
-    .shape--circle,.shape--triangle{
+@media (max-width: 767px) {
+    .shape--circle,
+    .shape--triangle {
         display: none;
     }
-    .no-padding-left,.no-padding-right{
-        margin-left:-15px;
+    .no-padding-left,
+    .no-padding-right {
+        margin-left: -15px;
         margin-right: -15px;
     }
-    .to-hide{
-        display: unset
+    .to-hide {
+        display: unset;
     }
-    .contestant--profile{
+    .contestant--profile {
         padding-top: 140%;
     }
-    .mydetail--header{
+    .mydetail--header {
         font-size: 16px;
-        margin-bottom: 10px
+        margin-bottom: 10px;
     }
-    .mydetail{
+    .mydetail {
         font-size: 15px;
     }
-    .contestant--bio{
-        padding: 20px
+    .contestant--bio {
+        padding: 20px;
     }
-    .contestant--profile{
-        top:0
+    .contestant--profile {
+        top: 0;
     }
-    .profile--body{
-        padding: 10px
+    .profile--body {
+        padding: 10px;
     }
-    .bigger--block{
-        display: none
-    }
-    .profile--detail{
-        width:110%;
-        padding:0
-    }
-    .nav-block{
+    .bigger--block {
         display: none;
     }
-    .nav--discription{
+    .profile--detail {
+        width: 110%;
         padding: 0;
-        width:auto
     }
-    .profile--name{
-        font-size: 18px
+    .nav-block {
+        display: none;
     }
-    .profile--header{
-        display: none
+    .nav--discription {
+        padding: 0;
+        width: auto;
     }
-    .bio-buttons{
-        justify-content: space-evenly
+    .profile--name {
+        font-size: 18px;
     }
-    .share-btn{
-        margin: 10px
+    .profile--header {
+        display: none;
     }
-    .bio-buttons{
-        padding-left: 25px
+    .bio-buttons {
+        justify-content: space-evenly;
     }
-
+    .share-btn {
+        margin: 10px;
+    }
+    .bio-buttons {
+        padding-left: 25px;
+    }
 }
-@media(max-width:555px){
-    .nav-child{
-        display: none
+@media (max-width: 555px) {
+    .nav-child {
+        display: none;
     }
-    .profile--body{
-        padding: 0
+    .profile--body {
+        padding: 0;
     }
-    .share-btn{
+    .share-btn {
         padding: 3px 5px;
-        margin: 5px
+        margin: 5px;
     }
-    .share-label{
+    .share-label {
         font-size: 5px;
         min-width: 40px;
     }
-    .share--icon{
+    .share--icon {
         font-size: 14px;
-        margin: 0
+        margin: 0;
     }
-    .profile--name{
+    .profile--name {
         font-size: 12px;
         min-width: 50%;
     }
-    .profile-city{
-        font-size: 8px
+    .profile-city {
+        font-size: 8px;
     }
-    .Vote--button{
+    .Vote--button {
         font-size: 9px;
-        padding: 5px 6px
+        padding: 5px 6px;
     }
-    .more--button{
-        padding: 6px
+    .more--button {
+        padding: 6px;
     }
-    .ads--one{
+    .ads--one {
         height: 50px;
     }
-    .contestant--profile{
-        margin-bottom: 10px
+    .contestant--profile {
+        margin-bottom: 10px;
     }
-    .mydetail{
-        font-size: 7px
+    .mydetail {
+        font-size: 7px;
     }
 }
