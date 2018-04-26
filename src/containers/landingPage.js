@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import SectionTwo from "../components/homepage/sectionTwo";
 import MobileHome from "../components/homepage/mobileHome";
 import "../styles/home.css";
-import LoginPage from "../components/login";
+import LoginPage from "../components/login"
+import SectionThree from "../components/homepage/sectionThree";
+import SectionFour from "../components/homepage/sectionFour";
+import SectionFive from "../components/homepage/sectionFive";
 
 class LandingPage extends Component {
   render() {
@@ -33,6 +36,9 @@ class LandingPage extends Component {
           </div>
         </div>
         <MobileHome />
+        <SectionThree />
+        <SectionFour />
+        <SectionFive />
         <SectionTwo />
       </div>
     );

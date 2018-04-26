@@ -20,7 +20,6 @@ header {
   background-color: #ffffff;
   height: 2px;
   position: relative;
-
   -webkit-animation: liner 10s infinite;
   -webkit-animation-fill-mode: forwards;
   animation: liner 21s infinite;
@@ -233,13 +232,19 @@ header {
   }
 }
 
-@media screen and (min-width: 639px) {
+@media screen and (max-width: 826px) {
+  header{
+    bottom: -6%;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .header__top {
     display: none !important;
   }
 }
 
-@media screen and (max-width: 638px) {
+@media screen and (max-width: 767px) {
   header {
     display: none !important;
   }
