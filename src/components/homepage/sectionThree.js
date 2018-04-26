@@ -7,7 +7,6 @@ class SectionThree extends PureComponent {
         <div className="clients-text">
           <h5>OUR TRUSTED PARTNERS</h5>
         </div>
-        
         <section className="clients-section">
           <div>
             <img
@@ -17,7 +16,7 @@ class SectionThree extends PureComponent {
             />
           </div>
           <div>
-          <img
+            <img
               className="clients-section__logo"
               src="https://www.artmakerz.net/wp-content/uploads/2016/11/adexpert-logo-one-colour.png"
               alt=""
@@ -38,7 +37,7 @@ class SectionThree extends PureComponent {
             />
           </div>
           <div>
-          <img
+            <img
               className="clients-section__logo"
               src="https://www.artmakerz.net/wp-content/uploads/2016/11/spydernet-logo-one-colour.png"
               alt=""
@@ -51,8 +50,7 @@ class SectionThree extends PureComponent {
               alt=""
             />
           </div>
-        </section>
-        
+        </section>  
       </div>
     );
   }
