@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { createAccount } from "../actions/authActions";
 import "../styles/register.css";
 
 class Register extends Component {
@@ -13,32 +16,81 @@ class Register extends Component {
     loadingPaystackModule: false
   };
 
+  validateEmail = email => {
+    var emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailPattern.test(email.toLowerCase());
+  };
+
+  validateInput = () => {
+    let emailInput = this.state.email.trim();
+    let firstName = this.state.firstName.trim();
+    let lastName = this.state.lastName.trim();
+    let phoneNumber = this.state.phoneNumber;
+    let password = this.state.passwordInput;
+    let confirmPassword = this.state.confirmPassword;
+
+    // const hasFilledInputs = !emailInput || !passwordInput;
+    const isEmailValid = this.validateEmail(emailInput);
+    // if (hasFilledInputs) {
+    //   this.props.displayError("Both the email and password must be entered!");
+    //   return;
+    // }
+    // if (!isEmailValid) {
+    //   this.props.displayError("A valid email address is required.");
+    //   return;
+    // }
+  };
+
   onRegister = e => {
     e.preventDefault();
     this.setState({ loadingPaystackModule: true });
     this.loadPayStack();
-    console.log("here");
   };
 
   loadPayStack() {
+    const {
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      password,
+      confirmPassword
+    } = this.state;
     var handler = window.PaystackPop.setup({
-      key: "pk_test_2f18b792a4e8f36bb7a5bcba1bd2e8d68add7603",
-      email: "customer@email.com",
-      amount: 10000,
+      key: process.env.REACT_APP_PAYSTACK_KEY,
+      email: email,
+      amount: 100000, //in kobo
       ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-      firstname: "Stephen",
-      lastname: "King",
+      firstname: firstName,
+      lastname: lastName,
       metadata: {
         custom_fields: [
           {
             display_name: "Mobile Number",
             variable_name: "mobile_number",
-            value: "+2348012345678"
+            value: `+${phoneNumber}`
+          },
+          {
+            display_name: "Full Name",
+            variable_name: "full_name",
+            value: `${firstName} ${lastName}`
+          },
+          {
+            display_name: "Email",
+            variable_name: "email",
+            value: `${email}`
           }
         ]
       },
-      callback: function(response) {
-        alert("success. transaction ref is " + response.reference);
+      callback: response => {
+        this.props.register({
+          firstName,
+          lastName,
+          email,
+          phoneNumber,
+          password,
+          confirmPassword
+        });
       },
       onClose: () => {
         this.setState({ loadingPaystackModule: false });
@@ -49,6 +101,7 @@ class Register extends Component {
   }
 
   render() {
+    console.log(this.props);
     const { loadingPaystackModule } = this.state;
     return (
       <div className="register-container">
@@ -122,7 +175,7 @@ class Register extends Component {
                   onChange={({ target }) =>
                     this.setState({ phoneNumber: target.value })
                   }
-                  value={this.state.phoneNumber || ""}
+                  value={this.state.phoneNumber.replace(/[^+0-9]/g, "") || ""}
                   placeholder="Phone number"
                   required
                 />
@@ -177,4 +230,12 @@ class Register extends Component {
   }
 }
 
-export default Register;
+const mapStateToProps = ({ auth }) => ({
+  createAccountStatus: auth.createAccountStatus
+});
+
+const mapDispatchToProps = dispatch => ({
+  register: bindActionCreators(createAccount, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

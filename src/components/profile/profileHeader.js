@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Fasearch from "react-icons/lib/fa/search";
-import Fabar from "react-icons/lib/fa/bars";
 import { Circle, Triangle } from "react-shapes";
 import propTypes from "prop-types";
 import Description from "./description";
@@ -26,7 +25,6 @@ export default class ProfileHeader extends Component {
           <div className="contestant--nav">
             <span className="nav-block" />
             <div className="nav-child">
-              <span className="nav--logo">SOUNDIT</span>
               <span className="inp-cont">
                 <Fasearch className="search--icon" />
                 {value ? null : (
@@ -38,7 +36,6 @@ export default class ProfileHeader extends Component {
                   onChange={this.handleType}
                 />
               </span>
-              <Fabar className="profile-menu-icon" />
             </div>
             <span className="nav-block" />
           </div>
@@ -62,7 +59,7 @@ export default class ProfileHeader extends Component {
               width={80}
               height={80}
               fill={{ color: "transparent" }}
-              stroke={{ color: "yellow" }}
+              stroke={{ color: "#FA9300" }}
               strokeWidth={12}
             />
           </span>

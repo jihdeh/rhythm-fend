@@ -1,55 +1,52 @@
-// import axios from "axios";
+import axios from "axios";
+import jwt from "jsonwebtoken";
 import {
-  LOGIN_SUCCESS,
+  IS_AUTHENTICATED,
   CREATE_ACCOUNT_SUCCESS,
   REQUEST_RESET_SUCCESS,
   CHANGE_PASSWORD_SUCCESS,
   LOG_OUT
 } from "../constants/actionTypes";
-// import { BASE_URL } from "../constants/config";
 // import { displayError } from "./errorActions";
 
 export const login = ({ email, password }) => dispatch => {
-  console.log(process.env);
-  dispatch({
-    type: LOGIN_SUCCESS,
-    payload: {
-      firstName: "John",
-      lastName: "Doe",
-      type: "voter",
-      token: "a97audhia793iqhdj.uas87xujas9uijasknkas97uajs"
-    }
-  });
-  // axios
-  //   .post(`${BASE_URL}/auth/login`, { email, password })
-  //   .then(({ data }) => {
-  //     dispatch({
-  //       type: LOGIN_SUCCESS,
-  //       payload: data
-  //     });
-  //   })
-  //   .catch(error => {
-  //     const { data } = error.response;
-  //     displayError(data.msg)(dispatch);
-  //   });
+  axios
+    .post(`${process.env.REACT_APP_BASE_URL}/auth/signin`, { email, password })
+    .then(({ data }) => {
+      localStorage.setItem("token", data.data);
+      const decodeToken = jwt.verify(
+        data.data,
+        process.env.REACT_APP_AUTH_SECRET
+      );
+      dispatch({
+        type: IS_AUTHENTICATED,
+        payload: decodeToken
+      });
+    })
+    .catch(error => {
+      const { data } = error.response;
+      // displayError(data.msg)(dispatch);
+    });
 };
 
 export const createAccount = accountDetails => async dispatch => {
-  // axios
-  //   .post(`${BASE_URL}/users`, accountDetails)
-  //   .then(async ({ data }) => {
-  //     await dispatch({
-  //       type: CREATE_ACCOUNT_SUCCESS,
-  //       payload: data
-  //     });
-  //   })
-  //   .then(async () => {
-  //     await login(accountDetails)(dispatch);
-  //   })
-  //   .catch(error => {
-  //     const { data } = error.response;
-  //     displayError(data.msg)(dispatch);
-  //   });
+  axios
+    .post(`${process.env.REACT_APP_BASE_URL}/auth/signup`, accountDetails)
+    .then(async ({ data }) => {
+      console.log(data);
+      await dispatch({
+        type: CREATE_ACCOUNT_SUCCESS,
+        payload: data
+      });
+    })
+    .then(async () => {
+      await login(accountDetails)(dispatch);
+    })
+    .catch(error => {
+      // const { data } = error.response;
+      console.log(error.response);
+      // displayError(data.msg)(dispatch);
+    });
 };
 
 export const requestReset = email => dispatch => {
@@ -82,7 +79,21 @@ export const reset = details => dispatch => {
   //   });
 };
 
+export const fetchLocalUser = () => dispatch => {
+  try {
+    const decodeToken = localStorage.getItem("token");
+    dispatch({
+      type: IS_AUTHENTICATED,
+      payload: decodeToken
+    });
+  } catch (err) {
+    //send back to login
+    logout()(dispatch);
+  }
+};
+
 export const logout = () => dispatch => {
+  localStorage.clear();
   dispatch({
     type: LOG_OUT,
     payload: null

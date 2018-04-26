@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 import SearchInput from "./authHeaders/searchInput";
 import LargeScreenMenu from "./authHeaders/lgHeader";
 import SmallScreenMenu from "./authHeaders/smHeader";
@@ -10,9 +11,13 @@ class AuthenticatedHeader extends Component {
       <div className="">
         <div className="row dashboard-menu">
           <div className="menu">
-            <p className="brand" onClick={() => this.props.history.push("/")}>
-              SoundIT Africa
-            </p>
+            <Link to="/">
+              <img
+                style={{ width: "50px" }}
+                className="sa-logo"
+                src="/images/logo.png"
+              />
+            </Link>
             <SearchInput
               containerStyle="sm-submenu--search-form"
               inputStyle="sm-submenu--search-input"

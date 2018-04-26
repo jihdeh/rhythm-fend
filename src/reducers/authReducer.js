@@ -1,8 +1,12 @@
-import { LOGIN_SUCCESS, LOG_OUT } from "../constants/actionTypes";
+import {
+  IS_AUTHENTICATED,
+  LOG_OUT,
+  CREATE_ACCOUNT_SUCCESS
+} from "../constants/actionTypes";
 
 const authReducer = (state = {}, action) => {
   switch (action.type) {
-    case LOGIN_SUCCESS:
+    case IS_AUTHENTICATED:
       return {
         ...state,
         userInfo: action.payload
@@ -12,6 +16,12 @@ const authReducer = (state = {}, action) => {
       return {
         ...state,
         userInfo: action.payload
+      };
+
+    case CREATE_ACCOUNT_SUCCESS:
+      return {
+        ...state,
+        createAccountStatus: action.payload
       };
     default:
       return state;
