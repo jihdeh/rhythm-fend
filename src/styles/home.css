@@ -84,7 +84,7 @@
 }
 
 .clients {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   border-bottom: 0.1px solid #e8e8e8;
 }
 
@@ -92,15 +92,21 @@
   text-align: center;
   padding-top: 1em;
   padding-bottom: 1em;
-  color: #C0C0C0;
+  color: #c0c0c0;
 }
 
 .clients-section {
   display: flex;
   padding-bottom: 1em;
-  overflow-x: auto;
   min-width: 100%;
-  margin-left: -5em;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.clients-section div {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .clients-section::-webkit-scrollbar {
@@ -108,7 +114,7 @@
 }
 
 .clients-section__logo {
-  margin-left: 6em;
+  /*margin-left: 6em;*/
   height: auto;
   max-width: 100%;
   width: 8em;
@@ -159,7 +165,8 @@
   display: flex;
 }
 
-.section-five__left, .section-five__right {
+.section-five__left,
+.section-five__right {
   display: flex;
 }
 
@@ -229,7 +236,8 @@
 }
 
 @media (max-width: 991px) {
-  .section-five__left, .section-five__right {
+  .section-five__left,
+  .section-five__right {
     flex-direction: column;
   }
   .section-five__picture {
@@ -366,7 +374,7 @@
 
 @media (max-width: 553px) {
   .section-five__picture {
-   height: 34em; 
+    height: 34em;
   }
 }
 
@@ -378,7 +386,7 @@
 
 @media (max-width: 483px) {
   .section-five__picture {
-   height: 29em;
+    height: 29em;
   }
 }
 
@@ -398,7 +406,7 @@
 
 @media (max-width: 407px) {
   .section-five__picture {
-   height: 25em;
+    height: 25em;
   }
 }
 
@@ -407,4 +415,3 @@
     height: 22em;
   }
 }
-

@@ -1,13 +1,15 @@
 .banner {
-  background: url("/images/microphone-transparent-background-8.png");
+  /*background: url("/images/microphone-transparent-background-8.png");*/
 
-  background: url("/images/microphone-transparent-background-8.png"),
-    linear-gradient(to right bottom, #2f3441 50%, #212531 50%);
+  background: url("http://www.recall-entertainment.com/mizori/wp-content/themes/recall/img/bg/about_us_2_xxl.jpg"),
+    linear-gradient(to right, red, blue);
   height: 100vh;
+  background-blend-mode: overlay;
   overflow: hidden;
 
-  background-position: 10% top;
+  background-position: 100% top;
   background-repeat: no-repeat;
-  background-size: contain;
+  /*background-size: contain;*/
   padding: 3rem;
+  /*background-size: 100% 100%;*/
 }
