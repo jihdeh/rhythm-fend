@@ -1,17 +1,74 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Button, Modal } from "react-bootstrap";
+import { donate } from "../actions/miscActions";
 import "../styles/donate.css";
 
 class Donate extends Component {
   state = {
     name: "",
-    phonenumber: "",
+    phoneNumber: "",
     email: "",
-    donationAmount: ""
+    donationAmount: "",
+    successfulDonation: false
   };
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    if (nextProps.donation) {
+      this.setState({
+        successfulDonation: true
+      });
+    }
+  }
+
   submit = () => {
+    const { donationAmount, name } = this.state;
+    if (!donationAmount && name) {
+      return false;
+    }
+    this.loadPayStack();
     console.log("yes");
   };
+
+  loadPayStack() {
+    const { name, email, phoneNumber, donationAmount } = this.state;
+    var handler = window.PaystackPop.setup({
+      key: process.env.REACT_APP_PAYSTACK_KEY,
+      email: email.trim() || "jide.b.tade@gmail.com",
+      amount: donationAmount, //in kobo
+      ref: "" + Math.floor(Math.random() * 1000000000 + 1),
+      metadata: {
+        custom_fields: [
+          {
+            display_name: "Full Name",
+            variable_name: "name",
+            value: `${name}`
+          },
+          {
+            display_name: "Email",
+            variable_name: "email",
+            value: `${email}`
+          }
+        ]
+      },
+      callback: response => {
+        this.props.donate({
+          name,
+          email,
+          phoneNumber,
+          donationAmount
+        });
+        this.setState({ loadingPaystackModule: "verifying" });
+      },
+      onClose: () => {
+        this.setState({ loadingPaystackModule: false });
+        alert("window closed");
+      }
+    });
+    handler.openIframe();
+  }
 
   render() {
     return (
@@ -34,7 +91,7 @@ class Donate extends Component {
             className="donate-input"
             type="number"
             onChange={({ target }) =>
-              this.setState({ phonenumber: target.value })
+              this.setState({ phoneNumber: target.value })
             }
             placeholder="phonenumber"
           />
@@ -67,4 +124,12 @@ class Donate extends Component {
   }
 }
 
-export default Donate;
+const mapStateToProps = ({ donation }) => ({
+  donation
+});
+
+const mapDispatchToProps = dispatch => ({
+  donate: bindActionCreators(donate, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Donate);

@@ -14,13 +14,16 @@ export default class MobileMenu extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavItem eventKey={1} href="#">
+              <NavItem eventKey={1} href="/donate">
+                Donate
+              </NavItem>
+              <NavItem eventKey={1} href="/#about">
                 About
               </NavItem>
               <NavItem eventKey={2} href="#">
                 Contact
               </NavItem>
-              <NavItem eventKey={3} href="#">
+              <NavItem eventKey={3} href="/#partners">
                 Partners
               </NavItem>
             </Nav>

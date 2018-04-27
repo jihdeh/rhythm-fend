@@ -6,20 +6,20 @@ import Header from "./components/header";
 import Main from "./containers/main";
 import MobileMenu from "./components/mobileMenu";
 import AuthenticatedHeader from "./components/isAuthenticatedHeader";
+import ErrorModal from "./components/ErrorModal";
+import { clearError } from "./actions/errorActions";
 import { fetchLocalUser } from "./actions/authActions";
 import "./App.css";
 
 class App extends Component {
   componentWillMount() {
     this.props.fetchLocalUser();
-    console.log(this.props.user);
     if (this.props.user || localStorage.getItem("token")) {
       this.props.history.push("/");
     }
   }
 
   componentWillReceiveProps() {
-    console.log(this.props);
     if (
       (this.props.user || localStorage.getItem("token")) &&
       !this.props.location.pathname === "/"
@@ -47,9 +47,18 @@ class App extends Component {
     );
   }
 
+  onClose() {
+    this.props.dispatch(clearError());
+  }
+
   render() {
+    const { errorMessage } = this.props;
     return (
       <div>
+        <ErrorModal
+          errorMessage={errorMessage}
+          onClose={() => this.onClose()}
+        />
         {this.props.user ? this.afterLoggedIn() : this.beforeLoggedIn()}
       </div>
     );
@@ -57,7 +66,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.auth.userInfo
+  user: state.auth.userInfo,
+  errorMessage: state.error
 });
 const mapDispatchToProps = dispatch => ({
   fetchLocalUser: bindActionCreators(fetchLocalUser, dispatch)
