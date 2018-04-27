@@ -11,7 +11,7 @@ const Main = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/search" component={Search} />
-      <Route exact path="/rsg" component={Profile} />
+      <Route exact path="/rsg/:uniqueCode" component={Profile} />
     </Switch>
   </main>
 );

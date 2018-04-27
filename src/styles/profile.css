@@ -12,6 +12,14 @@
 .no-padding {
     margin: 0 -15px;
 }
+.share--cont{
+    display:flex;
+    align-items: center;
+}
+.sharebuttons{
+    margin-top:-5px;
+    margin-right: 5px
+}
 .profile--body {
     flex: 1;
     padding: 30px;
@@ -315,6 +323,9 @@
     }
     .to-hide {
         display: unset;
+    }
+    .share--cont{
+        flex-direction: column;
     }
     .contestant--profile {
         padding-top: 140%;
