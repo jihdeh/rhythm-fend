@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import get from "lodash/get";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -15,6 +16,12 @@ class Register extends Component {
     confirmPassword: "",
     loadingPaystackModule: false
   };
+
+  componentWillReceiveProps(nextProps) {
+    if (get(nextProps, "createAccountStatus.data")) {
+      this.props.history.push("/dashboard");
+    }
+  }
 
   validateEmail = email => {
     var emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -43,7 +50,7 @@ class Register extends Component {
 
   onRegister = e => {
     e.preventDefault();
-    this.setState({ loadingPaystackModule: true });
+    this.setState({ loadingPaystackModule: "Loading payment module" });
     this.loadPayStack();
   };
 
@@ -91,6 +98,7 @@ class Register extends Component {
           password,
           confirmPassword
         });
+        this.setState({ loadingPaystackModule: "Logging you in" });
       },
       onClose: () => {
         this.setState({ loadingPaystackModule: false });
@@ -211,7 +219,8 @@ class Register extends Component {
                 />
                 {loadingPaystackModule ? (
                   <button className="sa-registration-btn spinner" disabled>
-                    <img src="/images/Spinner-1s-50px.svg" alt="" />
+                    <img src="/images/Spinner-1s-50px.svg" alt="" />{" "}
+                    <span>{loadingPaystackModule}</span>
                   </button>
                 ) : (
                   <input
@@ -231,7 +240,8 @@ class Register extends Component {
 }
 
 const mapStateToProps = ({ auth }) => ({
-  createAccountStatus: auth.createAccountStatus
+  createAccountStatus: auth.createAccountStatus,
+  user: auth.userInfo
 });
 
 const mapDispatchToProps = dispatch => ({

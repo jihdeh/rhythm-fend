@@ -12,6 +12,20 @@ import "./App.css";
 class App extends Component {
   componentWillMount() {
     this.props.fetchLocalUser();
+    console.log(this.props.user);
+    if (this.props.user || localStorage.getItem("token")) {
+      this.props.history.push("/");
+    }
+  }
+
+  componentWillReceiveProps() {
+    console.log(this.props);
+    if (
+      (this.props.user || localStorage.getItem("token")) &&
+      !this.props.location.pathname === "/"
+    ) {
+      this.props.history.push("/");
+    }
   }
 
   beforeLoggedIn() {

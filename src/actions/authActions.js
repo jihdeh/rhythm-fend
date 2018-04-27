@@ -24,7 +24,7 @@ export const login = ({ email, password }) => dispatch => {
       });
     })
     .catch(error => {
-      const { data } = error.response;
+      // const { data } = error.response;
       // displayError(data.msg)(dispatch);
     });
 };
@@ -44,7 +44,7 @@ export const createAccount = accountDetails => async dispatch => {
     })
     .catch(error => {
       // const { data } = error.response;
-      console.log(error.response);
+      console.log(error);
       // displayError(data.msg)(dispatch);
     });
 };
