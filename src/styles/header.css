@@ -34,9 +34,9 @@ header {
   background-color: #ffffff;
   height: 2px;
   position: relative;
-  -webkit-animation: liner 10s infinite;
+  -webkit-animation: liner 35s infinite;
   -webkit-animation-fill-mode: forwards;
-  animation: liner 21s infinite;
+  animation: liner 35s infinite;
   x-transition: all 10s ease-in-out;
 }
 
@@ -295,7 +295,7 @@ header {
   }
   75% {
     background-color: green;
-    left: 150px;
+    left: 260px;
   }
   100% {
     background-color: #ffffff;
@@ -315,7 +315,7 @@ header {
   }
   75% {
     background-color: green;
-    left: 150px;
+    left: 260px;
   }
   100% {
     background-color: #ffffff;

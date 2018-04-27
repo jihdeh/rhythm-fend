@@ -1,9 +1,9 @@
 import React, { PureComponent } from "react";
 
 class SectionThree extends PureComponent {
-  render(){
+  render() {
     return (
-      <div className="clients">
+      <div className="clients" id="partners">
         <div className="clients-text">
           <h5>OUR TRUSTED PARTNERS</h5>
         </div>
@@ -50,7 +50,7 @@ class SectionThree extends PureComponent {
               alt=""
             />
           </div>
-        </section>  
+        </section>
       </div>
     );
   }

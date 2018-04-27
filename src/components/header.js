@@ -16,13 +16,19 @@ export default class Header extends Component {
             </div>
             <ul className="sa-navigation">
               <li>
-                <Link to="/search">About</Link>
+                <Link to="/donate">Donate</Link>
+              </li>
+              <li>
+                <Link to="/search">Vote</Link>
+              </li>
+              <li>
+                <a href="/#about">About</a>
               </li>
               <li>
                 <Link to="/contact">Contact</Link>
               </li>
               <li>
-                <Link to="/partners">Partners</Link>
+                <a href="/#partners">Partners</a>
               </li>
             </ul>
           </div>
