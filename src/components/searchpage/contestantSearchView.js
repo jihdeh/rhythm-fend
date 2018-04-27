@@ -6,9 +6,9 @@ class ContestantView extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="voter-container">
+          <div className="contestant-container">
             <div>
-              <p className="voter-section__title">
+              <p className="contestant-section__title">
                 <b>Search results</b>
               </p>
             </div>
