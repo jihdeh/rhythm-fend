@@ -6,6 +6,7 @@ import LoginPage from "../components/login";
 import SectionThree from "../components/homepage/sectionThree";
 import SectionFour from "../components/homepage/sectionFour";
 import SectionFive from "../components/homepage/sectionFive";
+import Footer from "../components/footer";
 
 class LandingPage extends Component {
   render() {
@@ -34,6 +35,7 @@ class LandingPage extends Component {
         <SectionFour />
         <SectionFive />
         <SectionTwo />
+        <Footer />
       </div>
     );
   }

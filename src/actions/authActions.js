@@ -81,7 +81,11 @@ export const reset = details => dispatch => {
 
 export const fetchLocalUser = () => dispatch => {
   try {
-    const decodeToken = localStorage.getItem("token");
+    const fetchLocalToken = localStorage.getItem("token");
+    const decodeToken = jwt.verify(
+      fetchLocalToken,
+      process.env.REACT_APP_AUTH_SECRET
+    );
     dispatch({
       type: IS_AUTHENTICATED,
       payload: decodeToken

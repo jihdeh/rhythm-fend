@@ -1,0 +1,220 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    margin: auto;
+}
+
+.footer {
+    position: relative;
+}
+
+.footer .footer__navs {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: #fafafa;
+}
+
+.footer .footer__navs .footer__navs_logo_container img {
+    position: absolute;
+    top: 1.6em;
+    width: 35px;
+    height: 22px;
+}
+
+@media (max-width: 767px) {
+    .footer
+        .footer__navs
+        .footer__navs_links.footer__navs_column_links-resources {
+        display: none;
+    }
+}
+
+.footer .footer__navs .footer__navs_links .footer__navs_column_title {
+    color: #000629;
+    font-family: Roboto_condensed;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 19px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1023px) {
+    .footer .footer__navs .footer__navs_links .footer__navs_column_title {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.8rem;
+    }
+}
+
+.footer .footer__navs .footer__navs_links nav {
+    margin-top: 20px;
+}
+
+@media (max-width: 1279px) {
+    .footer .footer__navs .footer__navs_links nav ul li {
+        margin-bottom: 1rem;
+    }
+    .footer .footer__navs .footer__navs_links nav ul li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.footer .footer__navs .footer__navs_links nav ul li a {
+    color: #999;
+    font-family: Avenir;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+.footer .footer__navs .footer__navs_links nav ul li a:hover {
+    color: #575757;
+}
+
+@media (max-width: 1279px) {
+    .footer .footer__navs .footer__navs_links nav ul li a {
+        font-size: 1.6rem;
+    }
+}
+
+.footer
+    .footer__navs
+    .footer__navs_links
+    nav
+    ul
+    li
+    .footer__navs_link_social_icon {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
+
+.footer
+    .footer__navs
+    .footer__navs_links
+    nav
+    ul
+    li
+    .footer__navs_link_social_icon:after {
+    content: " ";
+    width: 16px;
+    height: 16px;
+    background-size: 16px;
+    position: absolute;
+    top: 3px;
+}
+
+.footer
+    .footer__navs
+    .footer__navs_links
+    nav
+    ul
+    li
+    .footer__navs_link_social_icon.footer__navs_link_social_icon-snapchat:after {
+    background-image: url(https://www.reech.com/images/footer/snapchat.png);
+}
+
+.footer
+    .footer__navs
+    .footer__navs_links
+    nav
+    ul
+    li
+    .footer__navs_link_social_icon.footer__navs_link_social_icon-instagram:after {
+    background-image: url(https://www.reech.com/images/footer/instagram.png);
+}
+
+.footer
+    .footer__navs
+    .footer__navs_links
+    nav
+    ul
+    li
+    .footer__navs_link_social_icon.footer__navs_link_social_icon-facebook:after {
+    background-image: url(https://www.reech.com/images/footer/facebook.png);
+}
+
+.footer
+    .footer__navs
+    .footer__navs_links
+    nav
+    ul
+    li
+    .footer__navs_link_social_icon.footer__navs_link_social_icon-twitter:after {
+    background-image: url(https://www.reech.com/images/footer/twitter.png);
+}
+
+.footer
+    .footer__navs
+    .footer__navs_links
+    nav
+    ul
+    li
+    .footer__navs_link_social_icon.footer__navs_link_social_icon-youtube:after {
+    background-image: url(https://www.reech.com/images/footer/youtube.png);
+}
+
+.footer .footer__address_line {
+    background-color: #f4f4f4;
+}
+
+@media (max-width: 1023px) {
+    .footer .footer__address_line {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.footer .footer__address_line p {
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-family: Avenir;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #999;
+}
+
+@media (max-width: 1023px) {
+    .footer .footer__address_line p {
+        font-size: 1.6rem;
+    }
+}
+
+.footer .footer__address_line p .footer__address_line_separator {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+@media (max-width: 1023px) {
+    .footer .footer__address_line p .footer__address_line_separator {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .footer .footer__address_line p span {
+        display: block;
+    }
+}
+
+.footer .footer__address_line p a {
+    color: #999;
+}
+
+@media (max-width: 1023px) {
+    .footer .footer__navs .footer__navs_logo_container img {
+        position: inherit;
+        top: 0;
+    }
+    .footer {
+        text-align: center;
+    }
+}
+

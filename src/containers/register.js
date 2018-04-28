@@ -96,7 +96,8 @@ class Register extends Component {
           email,
           phoneNumber,
           password,
-          confirmPassword
+          confirmPassword,
+          hasPaid: true
         });
         this.setState({ loadingPaystackModule: "Logging you in" });
       },

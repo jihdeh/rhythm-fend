@@ -53,6 +53,7 @@ class App extends Component {
 
   render() {
     const { errorMessage } = this.props;
+    console.log(this.props.user);
     return (
       <div>
         <ErrorModal
