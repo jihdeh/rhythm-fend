@@ -4,6 +4,7 @@ import "../../styles/dashboard.css";
 
 class ContestantView extends Component {
   render() {
+    console.log(this.props)
     return (
       <div className="container-fluid">
         <div className="row">

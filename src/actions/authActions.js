@@ -31,7 +31,10 @@ export const login = ({ email, password }) => dispatch => {
 
 export const createAccount = accountDetails => async dispatch => {
   axios
-    .post(`${process.env.REACT_APP_BASE_URL}/auth/signup`, accountDetails)
+    .post(
+      `${process.env.REACT_APP_BASE_URL}/auth/signup/29102912`,
+      accountDetails
+    )
     .then(async ({ data }) => {
       console.log(data);
       await dispatch({

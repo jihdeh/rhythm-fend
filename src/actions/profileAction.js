@@ -14,7 +14,7 @@ export const getprofilepending = () => async dispatch => {
 
 export const getprofile = uniqueCode => async dispatch => {
   try {
-    const url = `${ajax.getcontestant + uniqueCode}`;
+    const url = `${process.env.REACT_APP_BASE_URL}/user/${uniqueCode}`;
     const res = await axios.get(url);
     const response = res.response.data;
 
