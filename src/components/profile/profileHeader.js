@@ -8,19 +8,32 @@ export default class ProfileHeader extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ""
+      value: "",
+      show: false
     };
     this.handleType = this.handleType.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   handleType(e) {
     const value = e.target.value;
     this.setState({ value });
   }
+  handleClick() {
+    this.setState(prevState => ({ show: !prevState.show }));
+  }
   render() {
-    const { value } = this.state;
-    const { name, state, country, profilelink } = this.props;
+    const { value, show } = this.state;
+    const {
+      myStyle,
+      firstName,
+      lastName,
+      state,
+      country,
+      profilelink,
+      bio
+    } = this.props;
     return (
-      <div className="profile--header" style={this.props.myStyle}>
+      <div className="profile--header" style={myStyle}>
         <div className="contestant--cont">
           <div className="contestant--nav">
             <span className="nav-block" />
@@ -39,12 +52,17 @@ export default class ProfileHeader extends Component {
             </div>
             <span className="nav-block" />
           </div>
-          <Description
-            name={name}
-            state={state}
-            country={country}
-            profilelink={profilelink}
-          />
+
+          {firstName ? (
+            <Description
+              name={`${firstName} ${lastName}`}
+              state={state}
+              country={country}
+              profilelink={profilelink}
+              click={this.handleClick}
+              show={show}
+            />
+          ) : null}
 
           <span className="shape--circle">
             <Circle
@@ -70,7 +88,8 @@ export default class ProfileHeader extends Component {
 }
 
 ProfileHeader.propTypes = {
-  name: propTypes.string.isRequired,
+  firstName: propTypes.string.isRequired,
+  lastName: propTypes.string.isRequired,
   state: propTypes.string.isRequired,
   country: propTypes.string.isRequired,
   profilelink: propTypes.string.isRequired
