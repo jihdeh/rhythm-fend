@@ -7,7 +7,7 @@ class SectionFive extends PureComponent {
         <div className="row section-five__text">
           <div className="col-sm-6">
             <h5>FIND OUT MORE ABOUT SOUNDIT AFRICA</h5>
-            <p id="recent-portfolio">HAVE A LOOK AT OUR MOST RECENT WORK</p>
+            <p id="recent-portfolio">HAVE A LOOK AT OUR PAST EVENTS</p>
           </div>
           <div className="col-sm-6">
             <h5 className="section-five__recentwork">

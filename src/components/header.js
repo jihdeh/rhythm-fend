@@ -8,7 +8,11 @@ export default class Header extends Component {
       <header className="sa-header__xs">
         <nav>
           <Link to="/">
-            <img className="sa-logo" src="/images/logo.png" />
+            <img
+              alt="soundit logo"
+              className="sa-logo"
+              src="/images/logo.png"
+            />
           </Link>
           <div className="sa-menu__right">
             <div className="sa-liner__container">
@@ -25,7 +29,7 @@ export default class Header extends Component {
                 <a href="/#about">About</a>
               </li>
               <li>
-                <Link to="/#contact">Contact</Link>
+                <a href="/#contact">Contact</a>
               </li>
               <li>
                 <a href="/#partners">Partners</a>

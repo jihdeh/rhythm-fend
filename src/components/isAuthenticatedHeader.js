@@ -16,6 +16,7 @@ class AuthenticatedHeader extends Component {
                 style={{ width: "50px" }}
                 className="sa-logo"
                 src="/images/logo.png"
+                alt="Soundit logo"
               />
             </Link>
             <SearchInput

@@ -39,7 +39,6 @@ export const createAccount = accountDetails => async dispatch => {
       accountDetails
     )
     .then(async ({ data }) => {
-      console.log(data);
       await dispatch({
         type: CREATE_ACCOUNT_SUCCESS,
         payload: data
@@ -49,8 +48,8 @@ export const createAccount = accountDetails => async dispatch => {
       await login(accountDetails)(dispatch);
     })
     .catch(error => {
-      const { data } = error;
-      console.log(data.message);
+      const { data } = error.response;
+      console.log(data);
       // displayError(data.msg)(dispatch);
     });
 };

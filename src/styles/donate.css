@@ -10,7 +10,7 @@
   padding: 4em 0;
 }
 
-.donate-container__form {
+.donate-container__form span {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -22,7 +22,7 @@
   border-radius: 10px;
 }
 
-.donate-container__form .donate-input {
+.donate-container__form span .donate-input {
   height: 40px;
   border-radius: 5px;
   border-style: ridge;
@@ -37,13 +37,28 @@
   font-size: 16px;
 }
 
-.donate-container__form label {
+.donate-container__form span label {
   margin-top: 20px;
 }
 
-.donate-container__form label small {
+.donate-container__form span label small {
   color: #eb232a;
 }
 .donate-container__form-reason {
   margin-top: 0;
+}
+
+.donation-thanks {
+  margin-bottom: 4vh !important;
+}
+
+.donation-thanks img {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.donation-thanks h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
 }

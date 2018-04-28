@@ -22,7 +22,7 @@ class App extends Component {
   componentWillReceiveProps() {
     if (
       (this.props.user || localStorage.getItem("token")) &&
-      !this.props.location.pathname === "/"
+      this.props.location.pathname !== "/"
     ) {
       this.props.history.push("/");
     }

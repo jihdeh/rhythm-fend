@@ -19,7 +19,7 @@ class Register extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (get(nextProps, "createAccountStatus.data")) {
-      this.props.history.push("/dashboard");
+      this.props.history.push("/");
     }
   }
 

@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/footer.css";
 
 const Footer = () => (
-  <footer id="footer">
+  <footer id="contact">
     <div className="wrapper">
       <div className="footer">
         <div className="footer__navs">
