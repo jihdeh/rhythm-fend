@@ -1,44 +1,84 @@
-.col-result {
-  margin-bottom: 2em;
-  display: flex;
+.search-container {
+  background: hsl(0, 0%, 7%);
+  width: 100%;
 }
 
-.search-container__right {
-  margin-top: 7em;
-}
-
-.col-result__text {
-  margin-left: 3em;
+.col-contestant-result {
+  margin-top: 1em;
   color: #fff;
+  box-shadow: 3px 4px 1px black;
 }
 
-.fa-share {
-  margin-left: 2em;
+.col-contestant-result-name,
+.col-contestant-result-location,
+.col-contestant-result-code {
+  font-size: 15px;
+  line-height: 12px;
+  margin-top: 20px;
 }
 
-@media (max-width: 864px) {
-  .col-result {
-    margin-left: -18%;
-  }
+/*SOCIAL SHARING ICONS*/
+.share-channel {
+  justify-content: space-between;
+  display: flex;
+  padding: 7px 0;
+}
+.share-channel-social {
+  display: inline-flex;
+  text-align: right;
 }
 
-@media (max-width: 767px) {
-  .search-container__right {
-    display: flex;
-    flex-direction: column;
-    margin-right: auto;
-    margin-left: 3.5em;
-    padding-left: 5.5em;
-  }
+.share-channel-vote {
+  font-size: 1.2em;
+  padding-top: 7px;
+  padding-left: 7px;
+  cursor: pointer;
 }
 
-@media (max-width: 563px) {
-  .col-result {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .search-container__right {
-    margin-left: -1em;
-  }
+.share-channel-vote:hover {
+  color: #ff0000;
+}
+
+.vote-social-icons {
+  margin: 0 7px;
+  cursor: pointer;
+}
+
+.vote-social-icons-fb:hover {
+  color: #3b5998;
+}
+.vote-social-icons-tw:hover {
+  color: #1da1f2;
+}
+.vote-social-icons-ig:hover {
+  color: #5851db;
+}
+
+/*END SOCIAL SHARING ICONS*/
+
+.view-all-search {
+  text-align: center;
+  margin-top: 25px;
+  color: #c1c1d4;
+}
+
+/*VOTING STYLE*/
+.contestant-container {
+  margin-top: 3%;
+}
+
+.contestant-section__title b {
+  color: #ffffff;
+  max-height: 2rem;
+  overflow: hidden;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2rem;
+}
+
+/*END VOTING STYLE*/
+
+.grid-suspenders {
+  border: 0.5px solid hsl(0, 0%, 53.3%);
+  margin: 20px;
 }
