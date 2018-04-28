@@ -4,7 +4,7 @@ import "../../styles/searchpage.css";
 class ContestantView extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid" style={{ marginTop: "14%" }}>
         <div className="row">
           <div className="contestant-container">
             <div>
@@ -24,7 +24,9 @@ class ContestantView extends Component {
                   allowFullScreen
                 />
                 <p className="col-contestant-result-name">Name: Atom Dunra</p>
-                <p className="col-contestant-result-location">Location: Anambra</p>
+                <p className="col-contestant-result-location">
+                  Location: Anambra
+                </p>
                 <p className="col-contestant-result-code">Star Code: Atom231</p>
                 <div className="share-channel">
                   <div className="share-channel-vote">
@@ -50,7 +52,9 @@ class ContestantView extends Component {
                   allowFullScreen
                 />
                 <p className="col-contestant-result-name">Name: Atom Dunra</p>
-                <p className="col-contestant-result-location">Location: Anambra</p>
+                <p className="col-contestant-result-location">
+                  Location: Anambra
+                </p>
                 <p className="col-contestant-result-code">Star Code: Atom231</p>
                 <div className="share-channel">
                   <div className="share-channel-vote">
@@ -76,7 +80,9 @@ class ContestantView extends Component {
                   allowFullScreen
                 />
                 <p className="col-contestant-result-name">Name: Atom Dunra</p>
-                <p className="col-contestant-result-location">Location: Anambra</p>
+                <p className="col-contestant-result-location">
+                  Location: Anambra
+                </p>
                 <p className="col-contestant-result-code">Star Code: Atom231</p>
                 <div className="share-channel">
                   <div className="share-channel-vote">
@@ -102,7 +108,9 @@ class ContestantView extends Component {
                   allowFullScreen
                 />
                 <p className="col-contestant-result-name">Name: Atom Dunra</p>
-                <p className="col-contestant-result-location">Location: Anambra</p>
+                <p className="col-contestant-result-location">
+                  Location: Anambra
+                </p>
                 <p className="col-contestant-result-code">Star Code: Atom231</p>
                 <div className="share-channel">
                   <div className="share-channel-vote">
@@ -128,7 +136,9 @@ class ContestantView extends Component {
                   allowFullScreen
                 />
                 <p className="col-contestant-result-name">Name: Atom Dunra</p>
-                <p className="col-contestant-result-location">Location: Anambra</p>
+                <p className="col-contestant-result-location">
+                  Location: Anambra
+                </p>
                 <p className="col-contestant-result-code">Star Code: Atom231</p>
                 <div className="share-channel">
                   <div className="share-channel-vote">
@@ -154,7 +164,9 @@ class ContestantView extends Component {
                   allowFullScreen
                 />
                 <p className="col-contestant-result-name">Name: Jide Dunra</p>
-                <p className="col-contestant-result-location">Location: Lagos</p>
+                <p className="col-contestant-result-location">
+                  Location: Lagos
+                </p>
                 <p className="col-contestant-result-code">Star Code: Jide63u</p>
                 <div className="share-channel">
                   <div className="share-channel-vote">

@@ -24,14 +24,20 @@ export const login = ({ email, password }) => dispatch => {
       });
     })
     .catch(error => {
-      // const { data } = error.response;
+      const { data } = error.response;
+      console.log(data, error.response, error.name);
       // displayError(data.msg)(dispatch);
     });
 };
 
 export const createAccount = accountDetails => async dispatch => {
   axios
-    .post(`${process.env.REACT_APP_BASE_URL}/auth/signup`, accountDetails)
+    .post(
+      `${process.env.REACT_APP_BASE_URL}/auth/signup/${
+        accountDetails.paymentReference
+      }`,
+      accountDetails
+    )
     .then(async ({ data }) => {
       console.log(data);
       await dispatch({
@@ -43,8 +49,8 @@ export const createAccount = accountDetails => async dispatch => {
       await login(accountDetails)(dispatch);
     })
     .catch(error => {
-      // const { data } = error.response;
-      console.log(error);
+      const { data } = error;
+      console.log(data.message);
       // displayError(data.msg)(dispatch);
     });
 };
