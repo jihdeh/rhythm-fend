@@ -5,7 +5,7 @@ import ContestantSearchView from "../components/searchpage/contestantSearchView"
 class Search extends Component {
   render() {
     return (
-      <div className="content">
+      <div className="container search-container">
         <ContestantSearchView />
       </div>
     );
