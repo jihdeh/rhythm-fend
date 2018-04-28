@@ -90,6 +90,7 @@ class Register extends Component {
         ]
       },
       callback: response => {
+        console.log(response, "--pay");
         this.props.register({
           firstName,
           lastName,
@@ -97,7 +98,8 @@ class Register extends Component {
           phoneNumber,
           password,
           confirmPassword,
-          hasPaid: true
+          hasPaid: true,
+          paymentReference: response.reference
         });
         this.setState({ loadingPaystackModule: "Logging you in" });
       },
