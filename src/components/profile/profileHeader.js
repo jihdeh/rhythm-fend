@@ -55,7 +55,7 @@ export default class ProfileHeader extends Component {
 
           {firstName ? (
             <Description
-              name={`${firstName + " " + lastName}`}
+              name={`${firstName} ${lastName}`}
               state={state}
               country={country}
               profilelink={profilelink}

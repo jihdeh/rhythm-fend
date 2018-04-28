@@ -21,7 +21,7 @@ const bio = ({
             <div className="bio-buttons">
               <span className="to-hide">
                 <Description
-                  name={`${firstName + " " + lastName}`}
+                  name={`${firstName} ${lastName}`}
                   state={state}
                   country={country}
                   profilelink={profilelink}
