@@ -11,14 +11,12 @@ export default class ProfileHeader extends Component {
       value: "",
       show: false
     };
-    this.handleType = this.handleType.bind(this);
-    this.handleClick = this.handleClick.bind(this);
   }
-  handleType(e) {
+  handleType=(e)=>{
     const value = e.target.value;
     this.setState({ value });
   }
-  handleClick() {
+  handleClick=()=> {
     this.setState(prevState => ({ show: !prevState.show }));
   }
   render() {
