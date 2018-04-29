@@ -9,7 +9,7 @@ export default class NoMatch extends Component {
         <div className="nomatch">
           <img className="nomatch-logo" src="/images/logo.png" alt="" />
           <div className="nomatch-text">
-            <h3>Page not found</h3>
+            <h3>Oops, Page not found</h3>
             <p>Click to go <Link to="/"><span className="nomatch-home">Home</span></Link></p>
           </div>
         </div>
