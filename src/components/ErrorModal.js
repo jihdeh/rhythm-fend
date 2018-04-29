@@ -6,20 +6,17 @@ export default class ErrorModal extends Component {
     const { errorMessage, onClose } = this.props;
     const toggleModal = errorMessage && errorMessage.error ? true : false;
     return (
-      <Modal show={toggleModal}>
+      <Modal onHide={() => onClose()} show={toggleModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Something went wrong!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Text in a modal</h4>
+          <h4>{errorMessage.error}</h4>
 
           <hr />
-
-          <h4>Overflowing text to show scroll behavior</h4>
-          <p>{errorMessage && errorMessage.error}</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button>Close</Button>
+          <Button onClick={() => onClose()}>Close</Button>
         </Modal.Footer>
       </Modal>
     );

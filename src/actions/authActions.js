@@ -7,7 +7,7 @@ import {
   CHANGE_PASSWORD_SUCCESS,
   LOG_OUT
 } from "../constants/actionTypes";
-// import { displayError } from "./errorActions";
+import { displayError } from "./errorActions";
 
 export const login = ({ email, password }) => dispatch => {
   axios
@@ -25,8 +25,7 @@ export const login = ({ email, password }) => dispatch => {
     })
     .catch(error => {
       const { data } = error.response;
-      console.log(data, error.response, error.name);
-      // displayError(data.msg)(dispatch);
+      displayError(data.message)(dispatch);
     });
 };
 
@@ -50,7 +49,7 @@ export const createAccount = accountDetails => async dispatch => {
     .catch(error => {
       const { data } = error.response;
       console.log(data);
-      // displayError(data.msg)(dispatch);
+      displayError(data.message)(dispatch);
     });
 };
 

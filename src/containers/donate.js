@@ -25,7 +25,7 @@ class Donate extends Component {
   submit = e => {
     e.preventDefault();
     const { amount, name } = this.state;
-    if (!amount && name) {
+    if (!amount && !name) {
       return false;
     }
     this.setState({ loadingPaystackModule: "Verifying" });

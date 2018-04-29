@@ -48,12 +48,11 @@ class App extends Component {
   }
 
   onClose() {
-    this.props.dispatch(clearError());
+    this.props.clearError();
   }
 
   render() {
     const { errorMessage } = this.props;
-    console.log(this.props.user);
     return (
       <div>
         <ErrorModal
@@ -71,6 +70,7 @@ const mapStateToProps = state => ({
   errorMessage: state.error
 });
 const mapDispatchToProps = dispatch => ({
-  fetchLocalUser: bindActionCreators(fetchLocalUser, dispatch)
+  fetchLocalUser: bindActionCreators(fetchLocalUser, dispatch),
+  clearError: bindActionCreators(clearError, dispatch)
 });
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { login } from "../actions/authActions";
+import { displayError } from "../actions/errorActions";
 import "../styles/home.css";
 
 class LoginPage extends Component {
@@ -31,11 +32,11 @@ class LoginPage extends Component {
     const hasFilledInputs = !emailInput || !passwordInput;
     const isEmailValid = this.validateEmail(emailInput);
     if (hasFilledInputs) {
-      // this.props.displayError("Both the email and password must be entered!");
+      this.props.displayError("Both the email and password must be entered!");
       return;
     }
     if (!isEmailValid) {
-      // this.props.displayError("A valid email address is required.");
+      this.props.displayError("A valid email address is required.");
       return;
     }
 
@@ -58,6 +59,7 @@ class LoginPage extends Component {
               type="email"
               className="form-control sa-form__login-input"
               aria-describedby="emailHelp"
+              required
               onChange={evt => this.setState({ emailInput: evt.target.value })}
               placeholder="Enter email"
             />
@@ -67,6 +69,7 @@ class LoginPage extends Component {
               type="password"
               className="form-control sa-form__login-input"
               aria-describedby="passwordHelp"
+              required
               onKeyUp={this.detectKey}
               onChange={evt =>
                 this.setState({ passwordInput: evt.target.value })
@@ -93,7 +96,8 @@ const mapStateToProps = ({ auth }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  login: bindActionCreators(login, dispatch)
+  login: bindActionCreators(login, dispatch),
+  displayError: bindActionCreators(displayError, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

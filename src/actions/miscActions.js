@@ -1,7 +1,7 @@
 // DONATE_SUCCESS
 import axios from "axios";
 import { DONATE_SUCCESS } from "../constants/actionTypes";
-// import { displayError } from "./errorActions";
+import { displayError } from "./errorActions";
 
 export const donate = donation => async dispatch => {
   axios
@@ -18,6 +18,6 @@ export const donate = donation => async dispatch => {
     .catch(error => {
       const { data } = error.response;
       console.log(data, error.response, error.name);
-      // displayError(data.msg)(dispatch);
+      displayError(data.message)(dispatch);
     });
 };
