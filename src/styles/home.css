@@ -48,6 +48,12 @@
   float: left;
 }
 
+@media (max-width: 767px) {
+  .sa-actions__createAccount > a {
+    color: #000;
+  }
+}
+
 .sa-header {
   margin: 60px 0 40px 0;
 }
