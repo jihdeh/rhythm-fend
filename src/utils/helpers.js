@@ -1,11 +1,9 @@
-import ajax from "./ajax";
-
 export const getStyle = (type, activity, profilePicture) =>
   activity
     ? {
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))`
       }
-    : type == "myStyle"
+    : type === "myStyle"
       ? {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${profilePicture})`
         }

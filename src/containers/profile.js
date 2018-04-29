@@ -6,7 +6,6 @@ import ProfileHeader from "../components/profile/profileHeader";
 import Video from "../components/profile/video";
 import Singlerowads from "../components/profile/singlerowads";
 import helpers, { getStyle } from "../utils/helpers";
-import ajax from "../utils/ajax";
 import { connect } from "react-redux";
 import { getprofile, getprofilepending } from "../actions/profileAction";
 import { bindActionCreators } from "redux";
@@ -17,7 +16,7 @@ class Profile extends Component {
     const { contestant, fetching } = this.props.profile;
     this.state = {
       fetching: true,
-      profilePicture: ajax.backupbackground,
+      profilePicture:process.env.REACT_APP_DEFAULT_BACKGROUND,
       country: "United States",
       state: "San Francisco CA",
       firstName: "Jessie",
