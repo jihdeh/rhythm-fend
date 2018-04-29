@@ -16,7 +16,7 @@ class Profile extends Component {
     const { contestant, fetching } = this.props.profile;
     this.state = {
       fetching: true,
-      profilePicture:process.env.REACT_APP_DEFAULT_BACKGROUND,
+      profilePicture: process.env.REACT_APP_DEFAULT_BACKGROUND,
       country: "United States",
       state: "San Francisco CA",
       firstName: "Jessie",
@@ -27,7 +27,6 @@ class Profile extends Component {
       uniqueCode: null,
       show: false
     };
-    this.handleClick = this.handleClick.bind(this);
   }
   async componentDidMount() {
     const {
@@ -36,9 +35,9 @@ class Profile extends Component {
     this.props.getprofilepending();
     this.props.getprofile(params.uniqueCode);
   }
-  handleClick() {
+  handleClick = () => {
     this.setState(prevState => ({ show: !prevState.show }));
-  }
+  };
 
   componentWillReceiveProps(nextProps) {
     const state = {

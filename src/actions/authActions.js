@@ -31,16 +31,12 @@ export const login = ({ email, password }) => dispatch => {
 
 export const createAccount = accountDetails => async dispatch => {
   axios
-<<<<<<< HEAD
     .post(
       `${process.env.REACT_APP_BASE_URL}/auth/signup/${
         accountDetails.paymentReference
       }`,
       accountDetails
     )
-=======
-    .post(`${process.env.REACT_APP_BASE_URL}/auth/signup`, accountDetails)
->>>>>>> profilepage fix
     .then(async ({ data }) => {
       await dispatch({
         type: CREATE_ACCOUNT_SUCCESS,
