@@ -16,8 +16,8 @@ const Main = () => (
       <Route exact path="/register" component={Register} />
       <Route exact path="/donate" component={Donate} />
       <Route exact path="/search" component={Search} />
-      <Route component={NoMatch} />
       <Route exact path="/rsg/:uniqueCode" component={Profile} />
+      <Route component={NoMatch} />
     </Switch>
   </main>
 );

@@ -16,7 +16,7 @@ export const getprofile = uniqueCode => async dispatch => {
     const moldResponse = Object.assign(
       {},
       { profileUrl: `${process.env.REACT_APP_PROFILE_URL}${uniqueCode}` },
-      res.response.data
+      res.data.data
     );
 
     await dispatch({

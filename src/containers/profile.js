@@ -22,8 +22,8 @@ class Profile extends Component {
       firstName: "Jessie",
       lastName: "Schwartz",
       profileUrl: "google.com",
-      bio: helpers.mybio,
-      videoUrl: "https://www.youtube.com/embed/-oCCnxBos10",
+      about: helpers.mybio,
+      contestantVideo: "https://www.youtube.com/embed/-oCCnxBos10",
       uniqueCode: null,
       show: false
     };
@@ -59,8 +59,8 @@ class Profile extends Component {
       firstName,
       lastName,
       profileUrl,
-      bio,
-      videoUrl,
+      about,
+      contestantVideo,
       show
     } = this.state;
 
@@ -76,7 +76,7 @@ class Profile extends Component {
           profilelink={profileUrl}
           firstName={firstName}
           lastName={lastName}
-          bio={bio}
+          bio={about}
         />
         <div className="profile--body">
           <div className="row">
@@ -89,7 +89,7 @@ class Profile extends Component {
                 profilelink={profileUrl}
                 firstName={firstName}
                 lastName={lastName}
-                bio={bio}
+                bio={about}
                 click={this.handleClick}
                 show={show}
               />
@@ -97,7 +97,7 @@ class Profile extends Component {
             <div className="col-sm-7">
               <Singlerowads />
               <Splitads />
-              <Video videoUrl={videoUrl} />
+              <Video videoUrl={contestantVideo} />
               <Splitads />
             </div>
             <div className="col-sm-1" />

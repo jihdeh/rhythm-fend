@@ -155,14 +155,14 @@
 .share-btn {
     border: 1px solid white;
     border-radius: 30px;
-    padding: 5px 10px;
+    padding: 3px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
 }
 .share--icon {
-    font-size: 25px;
+    font-size: 20px;
     margin-right: 10px;
 }
 .image--overlay {
@@ -247,6 +247,9 @@
 }
 .no-padding-right {
     margin-right: -15px;
+}
+.share-label{
+    font-size: 12px;
 }
 @media (max-width: 1298px) {
     .Vote--button {
