@@ -314,6 +314,13 @@
         font-size: 10px;
     }
 }
+
+@media (max-width: 868px) {
+    .inp-cont {
+        margin-left: 0em;
+    }
+}
+
 @media (max-width: 767px) {
     .shape--circle,
     .shape--triangle {
