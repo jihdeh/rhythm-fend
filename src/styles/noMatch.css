@@ -24,7 +24,7 @@
   margin-top: 0em;
 }
 
-.sa-logo, .sa-liner, .collapsed {
+.sa-liner,
+.collapsed {
   display: none;
 }
-
