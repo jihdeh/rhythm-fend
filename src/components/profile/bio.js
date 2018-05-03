@@ -30,7 +30,9 @@ const bio = ({
                   show={show}
                 />
               </span>
-              <span className="Vote--button">Vote {firstName}</span>
+              <span className="Vote--button">
+                Vote {formatString(firstName)}
+              </span>
               <span className="more--button">
                 <Iomore />
               </span>
