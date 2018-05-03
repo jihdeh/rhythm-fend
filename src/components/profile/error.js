@@ -10,7 +10,7 @@ const errorpage = ({ error }) => {
   console.log(response);
   return response ? (
     response.data.message === "user not found" ? (
-      <Redirect to="/error" />
+      <Redirect to="/404" />
     ) : null
   ) : null;
 };
