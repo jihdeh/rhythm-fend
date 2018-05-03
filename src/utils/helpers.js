@@ -9,12 +9,12 @@ export const getStyle = (type, activity, profilePicture) =>
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${profilePicture})`
           }
         : {
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(/images/logo.png)`
+            backgroundImage: `linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.71)),url(/images/logo.png)`
           }
       : profilePicture
         ? { backgroundImage: `url(${profilePicture})` }
         : {
-            backgroundImage: `linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.71)), url(/images/logo.png)`
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, .71))`
           };
 
 export const formatString = _ => {
@@ -28,6 +28,8 @@ export const formatString = _ => {
   } else ans = str.charAt(0).toUpperCase() + str.slice(1);
   return ans;
 };
+
+export const firstLetter = _ => _.charAt(0).toUpperCase();
 export default {
   mybio: `It is a long established fact that a reader will be distracted by the readable content of
 a page when looking at its layout. The point of using Lorem Ipsum is that it has a

@@ -1,6 +1,7 @@
 import React from "react";
 import Iomore from "react-icons/lib/io/more";
 import Description from "./description";
+import Nameoverlay from "./nameoverlay";
 import { formatString } from "../../utils/helpers";
 
 const bio = ({
@@ -12,11 +13,17 @@ const bio = ({
   profilelink,
   bio,
   show,
-  click
+  click,
+  profilePicture
 }) => (
   <div className="contestant--profile">
     <div className="contestant--cont">
       <div className="contestant--image bio--aspect--ratio" style={myStyle}>
+        <Nameoverlay
+          firstName={firstName}
+          lastName={lastName}
+          profilePicture={profilePicture}
+        />
         <div className="image--overlay">
           {firstName ? (
             <div className="bio-buttons">

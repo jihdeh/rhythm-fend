@@ -68,7 +68,7 @@ class Profile extends Component {
     const myStyle = getStyle("myStyle", fetching, profilePicture);
     const myStyleProfile = getStyle("myStyleProfile", fetching, profilePicture);
     const { error } = this.props.profile;
-    console.log(this.state);
+    console.log(myStyleProfile);
 
     return (
       <div className="profile--container">
@@ -92,6 +92,7 @@ class Profile extends Component {
                 profilelink={profileUrl}
                 firstName={firstName}
                 lastName={lastName}
+                profilePicture={profilePicture}
                 bio={about}
                 click={this.handleClick}
                 show={show}

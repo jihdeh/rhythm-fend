@@ -10,7 +10,9 @@ const Description = ({ name, state, country, profilelink, show, click }) => (
     <div className="profile--detail">
       <span>
         <h2 className="profile--name">{formatString(name)}</h2>
-        <h6 className="profile-city">{formatString(`${state}, ${country}`)}</h6>
+        <h6 className="profile-city">
+          {country && state ? formatString(`${state}, ${country}`) : ""}
+        </h6>
       </span>
       <span className="share--cont">
         {show ? <Sharebutton /> : null}
