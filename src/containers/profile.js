@@ -5,6 +5,7 @@ import Splitads from "../components/profile/splitads";
 import ProfileHeader from "../components/profile/profileHeader";
 import Video from "../components/profile/video";
 import Singlerowads from "../components/profile/singlerowads";
+import Errorpage from "../components/profile/error";
 import helpers, { getStyle } from "../utils/helpers";
 import { connect } from "react-redux";
 import { getprofile, getprofilepending } from "../actions/profileAction";
@@ -17,13 +18,13 @@ class Profile extends Component {
     this.state = {
       fetching: true,
       profilePicture: process.env.REACT_APP_DEFAULT_BACKGROUND,
-      country: "United States",
-      state: "San Francisco CA",
-      firstName: "Jessie",
-      lastName: "Schwartz",
-      profileUrl: "google.com",
-      about: helpers.mybio,
-      contestantVideo: "https://www.youtube.com/embed/-oCCnxBos10",
+      country: "",
+      state: "",
+      firstName: "",
+      lastName: "",
+      profileUrl: "",
+      about: "",
+      contestantVideo: process.env.REACT_APP_ADVERT,
       uniqueCode: null,
       show: false
     };
@@ -66,6 +67,8 @@ class Profile extends Component {
 
     const myStyle = getStyle("myStyle", fetching, profilePicture);
     const myStyleProfile = getStyle("myStyleProfile", fetching, profilePicture);
+    const { error } = this.props.profile;
+    console.log(this.state);
 
     return (
       <div className="profile--container">
@@ -103,6 +106,7 @@ class Profile extends Component {
             <div className="col-sm-1" />
           </div>
         </div>
+        <Errorpage error={error} />
       </div>
     );
   }

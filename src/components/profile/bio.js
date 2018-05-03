@@ -1,6 +1,7 @@
 import React from "react";
 import Iomore from "react-icons/lib/io/more";
 import Description from "./description";
+import { formatString } from "../../utils/helpers";
 
 const bio = ({
   myStyle,
@@ -21,7 +22,7 @@ const bio = ({
             <div className="bio-buttons">
               <span className="to-hide">
                 <Description
-                  name={`${firstName} ${lastName}`}
+                  name={formatString(`${firstName} ${lastName}`)}
                   state={state}
                   country={country}
                   profilelink={profilelink}

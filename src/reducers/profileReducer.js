@@ -7,7 +7,7 @@ import {
 const initialstate = {
   fetching: false,
   contestant: {},
-  error: null
+  error: {}
 };
 
 export default function profileReducer(state = initialstate, action) {
