@@ -130,7 +130,7 @@ footer {
   ul
   li
   .footer__navs_link_social_icon.footer__navs_link_social_icon-snapchat:after {
-  background-image: url(https://www.reech.com/images/footer/snapchat.png);
+  background-image: url(/images/social/snapchat.png);
 }
 
 .footer
@@ -140,7 +140,7 @@ footer {
   ul
   li
   .footer__navs_link_social_icon.footer__navs_link_social_icon-instagram:after {
-  background-image: url(https://www.reech.com/images/footer/instagram.png);
+  background-image: url(/images/social/instagram.png);
 }
 
 .footer
@@ -150,7 +150,7 @@ footer {
   ul
   li
   .footer__navs_link_social_icon.footer__navs_link_social_icon-facebook:after {
-  background-image: url(https://www.reech.com/images/footer/facebook.png);
+  background-image: url(/images/social/facebook.png);
 }
 
 .footer
@@ -160,7 +160,7 @@ footer {
   ul
   li
   .footer__navs_link_social_icon.footer__navs_link_social_icon-twitter:after {
-  background-image: url(https://www.reech.com/images/footer/twitter.png);
+  background-image: url(/images/social/twitter.png);
 }
 
 .footer
@@ -170,7 +170,7 @@ footer {
   ul
   li
   .footer__navs_link_social_icon.footer__navs_link_social_icon-youtube:after {
-  background-image: url(https://www.reech.com/images/footer/youtube.png);
+  background-image: url(/images/social/youtube.png);
 }
 
 .footer .footer__address_line {
