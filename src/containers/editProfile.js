@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class EditProfile extends Component {
   render() {
-    <p>hello</p>;
+    return <p>hello</p>;
   }
 }
 

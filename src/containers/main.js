@@ -7,6 +7,7 @@ import Donate from "./donate";
 import Search from "./searchpage";
 import Profile from "./profile";
 import NoMatch from "./noMatch";
+import EditProfile from "./editProfile";
 
 const Main = () => (
   <main className="main-container">
@@ -16,7 +17,7 @@ const Main = () => (
       <Route exact path="/register" component={Register} />
       <Route exact path="/donate" component={Donate} />
       <Route exact path="/search" component={Search} />
-      <Route exact path="/edit/profile" component={Search} />
+      <Route exact path="/edit/profile" component={EditProfile} />
       <Route exact path="/rsg/:uniqueCode" component={Profile} />
       <Route component={NoMatch} />
     </Switch>
