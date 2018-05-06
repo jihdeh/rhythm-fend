@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { createAccount } from "../actions/authActions";
+import { displayError } from "../actions/errorActions";
 import "../styles/register.css";
 
 class Register extends Component {
@@ -21,6 +22,9 @@ class Register extends Component {
     if (get(nextProps, "createAccountStatus.data")) {
       this.props.history.push("/");
     }
+    if (get(nextProps.errorMessage, "error")) {
+      this.setState({ loadingPaystackModule: false });
+    }
   }
 
   validateEmail = email => {
@@ -33,23 +37,25 @@ class Register extends Component {
     let firstName = this.state.firstName.trim();
     let lastName = this.state.lastName.trim();
     let phoneNumber = this.state.phoneNumber;
-    let password = this.state.passwordInput;
+    let password = this.state.password;
     let confirmPassword = this.state.confirmPassword;
 
-    // const hasFilledInputs = !emailInput || !passwordInput;
+    const hasNotFilledInputs = !emailInput || !password;
     const isEmailValid = this.validateEmail(emailInput);
-    // if (hasFilledInputs) {
-    //   this.props.displayError("Both the email and password must be entered!");
-    //   return;
-    // }
-    // if (!isEmailValid) {
-    //   this.props.displayError("A valid email address is required.");
-    //   return;
-    // }
+    if (hasNotFilledInputs) {
+      this.props.displayError("Both the email and password must be entered!");
+      return false;
+    }
+    if (!isEmailValid) {
+      this.props.displayError("A valid email address is required.");
+      return false;
+    }
+    return true;
   };
 
   onRegister = e => {
     e.preventDefault();
+    if (!this.validateInput()) return;
     this.setState({ loadingPaystackModule: "Loading payment module" });
     this.loadPayStack();
   };
@@ -112,7 +118,6 @@ class Register extends Component {
   }
 
   render() {
-    console.log(this.props);
     const { loadingPaystackModule } = this.state;
     return (
       <div className="register-container">
@@ -242,13 +247,15 @@ class Register extends Component {
   }
 }
 
-const mapStateToProps = ({ auth }) => ({
+const mapStateToProps = ({ auth, error }) => ({
   createAccountStatus: auth.createAccountStatus,
-  user: auth.userInfo
+  user: auth.userInfo,
+  errorMessage: error
 });
 
 const mapDispatchToProps = dispatch => ({
-  register: bindActionCreators(createAccount, dispatch)
+  register: bindActionCreators(createAccount, dispatch),
+  displayError: bindActionCreators(displayError, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

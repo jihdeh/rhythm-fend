@@ -42,13 +42,10 @@ export const createAccount = accountDetails => async dispatch => {
         type: CREATE_ACCOUNT_SUCCESS,
         payload: data
       });
-    })
-    .then(async () => {
       await login(accountDetails)(dispatch);
     })
     .catch(error => {
       const { data } = error.response;
-      console.log(data);
       displayError(data.message)(dispatch);
     });
 };
