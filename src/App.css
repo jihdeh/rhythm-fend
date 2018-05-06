@@ -1,6 +1,6 @@
 .banner {
-  background: url("//www.recall-entertainment.com/mizori/wp-content/themes/recall/img/bg/about_us_2_xxl.jpg");
-  background: url("//www.recall-entertainment.com/mizori/wp-content/themes/recall/img/bg/about_us_2_xxl.jpg"),
+  background: url("/images/about_us_2_xxl.jpg");
+  background: url("/images/about_us_2_xxl.jpg"),
     linear-gradient(to right, #653200, #666666);
   height: 100vh;
   background-blend-mode: overlay;
