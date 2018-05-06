@@ -192,7 +192,8 @@ a:hover {
 }
 .soundIt-subscribe input[type="email"],
 .soundIt-subscribe input[type="text"],
-.soundIt-subscribe input[type="password"] {
+.soundIt-subscribe input[type="password"],
+.intl-tel-input {
   outline: none;
   padding: 1em;
   background: none;
@@ -237,6 +238,26 @@ a:hover {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 2px;
+}
+
+.intl-tel-input {
+  color: #000000;
+}
+
+.intl-tel-input.allow-dropdown .selected-flag {
+  background: #ffffff;
+}
+
+.intl-tel-input .country-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.register-phone-input {
+  background: transparent;
+  color: #fff;
+  border: 0;
 }
 
 /*-- responsive --*/

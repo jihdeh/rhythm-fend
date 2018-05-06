@@ -5,6 +5,10 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { createAccount } from "../actions/authActions";
 import { displayError } from "../actions/errorActions";
+import IntlTelInput from "react-intl-tel-input";
+import "../../node_modules/react-intl-tel-input/dist/libphonenumber.js";
+import "../../node_modules/react-intl-tel-input/dist/main.css";
+
 import "../styles/register.css";
 
 class Register extends Component {
@@ -199,6 +203,11 @@ class Register extends Component {
                   value={this.state.phoneNumber.replace(/[^+0-9]/g, "") || ""}
                   placeholder="Phone number"
                   required
+                />
+                <IntlTelInput
+                  preferredCountries={["ng"]}
+                  css={["intl-tel-input", "register-phone-input"]}
+                  utilsScript={"libphonenumber.js"}
                 />
                 <input
                   type="email"

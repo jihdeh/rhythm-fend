@@ -5639,7 +5639,7 @@ prop-types-extra@^1.0.1:
   dependencies:
     warning "^3.0.0"
 
-prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0:
+prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -5918,6 +5918,15 @@ react-icons@^2.2.7:
   dependencies:
     react-icon-base "2.1.0"
 
+react-intl-tel-input@^5.0.4:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/react-intl-tel-input/-/react-intl-tel-input-5.0.4.tgz#f470b84d598668939c2108011fcd1879f3db815d"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.1"
+    react-style-proptype "^3.0.0"
+    underscore.deferred "^0.4.0"
+
 react-json-fork@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/react-json-fork/-/react-json-fork-0.0.2.tgz#e5585d9069653141a115ae09b4c3fdefa30a2d81"
@@ -6064,6 +6073,12 @@ react-simple-share@^0.1.2:
     react-dom "^15.0.0"
     react-icons "^2.2.7"
     webpack "^2.6.1"
+
+react-style-proptype@^3.0.0:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/react-style-proptype/-/react-style-proptype-3.2.1.tgz#7cfeb9b87ec7ab9dcbde9715170ed10c11fb86aa"
+  dependencies:
+    prop-types "^15.5.4"
 
 react-tinymce@^0.4.0:
   version "0.4.0"
@@ -7196,6 +7211,10 @@ uncontrollable@^4.1.0:
   resolved "https://registry.yarnpkg.com/uncontrollable/-/uncontrollable-4.1.0.tgz#e0358291252e1865222d90939b19f2f49f81c1a9"
   dependencies:
     invariant "^2.1.0"
+
+underscore.deferred@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/underscore.deferred/-/underscore.deferred-0.4.0.tgz#2753de633b9ff7db601a2f3fa2af92b3dd290e6c"
 
 union-value@^1.0.0:
   version "1.0.0"
