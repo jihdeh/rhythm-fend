@@ -6,7 +6,7 @@
       no-repeat 0px 0px;
   background-attachment: fixed;
   background-size: cover;
-  height: 100vh;
+  height: 60em;
   padding: 4em 0;
 }
 
@@ -168,13 +168,11 @@ a:hover {
 .content-left {
   float: left;
   width: 50%;
-  height: 498px;
   background: #ffffff;
 }
 .content-main {
   float: left;
   width: 50%;
-  height: 498px;
 }
 .soundIt-subscribe {
   background: rgba(0, 0, 0, 0.56);

@@ -38,6 +38,8 @@ class Register extends Component {
     phoneNumber: "",
     password: "",
     confirmPassword: "",
+    country: "",
+    state: "",
     loadingPaystackModule: false
   };
 
@@ -96,7 +98,9 @@ class Register extends Component {
       email,
       phoneNumber,
       password,
-      confirmPassword
+      confirmPassword,
+      country,
+      state
     } = this.state;
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
@@ -121,6 +125,11 @@ class Register extends Component {
             display_name: "Email",
             variable_name: "email",
             value: `${email}`
+          },
+          {
+            display_name: "Country",
+            variable_name: "country",
+            value: `${country}`
           }
         ]
       },
@@ -133,6 +142,8 @@ class Register extends Component {
           password,
           confirmPassword,
           hasPaid: true,
+          country,
+          state,
           paymentReference: response.reference
         });
         this.setState({ loadingPaystackModule: "Logging you in" });
@@ -161,6 +172,17 @@ class Register extends Component {
               <h2>Brief History About Us</h2>
               <div className="slider">
                 <div className="">
+                  <ul className="rslides callbacks callbacks1" id="slider4">
+                    <li>
+                      <div className="soundit-banner-info">
+                        <h3>Vivamus dui dolor</h3>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit. Aenean et placerat leo, non condimentum justo
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
                   <ul className="rslides callbacks callbacks1" id="slider4">
                     <li>
                       <div className="soundit-banner-info">
@@ -259,6 +281,27 @@ class Register extends Component {
                   placeholder="Confirm Password"
                   required
                 />
+                <input
+                  type="text"
+                  name="Country"
+                  onChange={({ target }) =>
+                    this.setState({ country: target.value.trim() })
+                  }
+                  value={this.state.country || ""}
+                  placeholder="Country"
+                  required
+                />
+                <input
+                  type="text"
+                  name="State"
+                  onChange={({ target }) =>
+                    this.setState({ state: target.value.trim() })
+                  }
+                  value={this.state.state || ""}
+                  placeholder="State"
+                  required
+                />
+
                 {loadingPaystackModule ? (
                   <button className="sa-registration-btn spinner" disabled>
                     <img src="/images/Spinner-1s-50px.svg" alt="" />{" "}
