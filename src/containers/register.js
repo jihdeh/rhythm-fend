@@ -41,9 +41,15 @@ class Register extends Component {
     let confirmPassword = this.state.confirmPassword;
 
     const hasNotFilledInputs = !emailInput || !password;
+    const doPasswordMatch = confirmPassword !== password;
+
     const isEmailValid = this.validateEmail(emailInput);
     if (hasNotFilledInputs) {
       this.props.displayError("Both the email and password must be entered!");
+      return false;
+    }
+    if (doPasswordMatch) {
+      this.props.displayError("Passwords don't match!");
       return false;
     }
     if (!isEmailValid) {
@@ -96,7 +102,6 @@ class Register extends Component {
         ]
       },
       callback: response => {
-        console.log(response, "--pay");
         this.props.register({
           firstName,
           lastName,
