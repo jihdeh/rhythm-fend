@@ -245,7 +245,7 @@ a:hover {
 }
 
 .intl-tel-input.allow-dropdown .selected-flag {
-  background: #ffffff;
+  background: #ffffff !important;
 }
 
 .intl-tel-input .country-list {
@@ -258,6 +258,8 @@ a:hover {
   background: transparent;
   color: #fff;
   border: 0;
+  padding-left: 41%;
+  height: 100%;
 }
 
 /*-- responsive --*/

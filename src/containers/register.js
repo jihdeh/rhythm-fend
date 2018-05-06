@@ -11,6 +11,25 @@ import "../../node_modules/react-intl-tel-input/dist/main.css";
 
 import "../styles/register.css";
 
+const loadJSONP = (url, callback) => {
+  const ref = window.document.getElementsByTagName("script")[0];
+  const script = window.document.createElement("script");
+  script.src = `${url +
+    (url.indexOf("?") + 1 ? "&" : "?")}callback=${callback}`;
+  ref.parentNode.insertBefore(script, ref);
+  script.onload = () => {
+    script.remove();
+  };
+};
+
+const lookup = callback => {
+  loadJSONP("https://ipinfo.io", "sendBack");
+  window.sendBack = resp => {
+    const countryCode = resp && resp.country ? resp.country : "";
+    callback(countryCode);
+  };
+};
+
 class Register extends Component {
   state = {
     firstName: "",
@@ -126,6 +145,12 @@ class Register extends Component {
     handler.openIframe();
   }
 
+  handler = (status, value, countryData, number, id) => {
+    if (status) {
+      this.setState({ phoneNumber: number });
+    }
+  };
+
   render() {
     const { loadingPaystackModule } = this.state;
     return (
@@ -195,17 +220,12 @@ class Register extends Component {
                   value={this.state.lastName || ""}
                   required
                 />
-                <input
-                  type="text"
-                  onChange={({ target }) =>
-                    this.setState({ phoneNumber: target.value })
-                  }
-                  value={this.state.phoneNumber.replace(/[^+0-9]/g, "") || ""}
-                  placeholder="Phone number"
-                  required
-                />
                 <IntlTelInput
-                  preferredCountries={["ng"]}
+                  placeholder="Phone number"
+                  defaultCountry={"auto"}
+                  geoIpLookup={lookup}
+                  onPhoneNumberBlur={this.handler}
+                  onPhoneNumberChange={this.handler}
                   css={["intl-tel-input", "register-phone-input"]}
                   utilsScript={"libphonenumber.js"}
                 />
