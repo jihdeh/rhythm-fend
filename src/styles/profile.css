@@ -331,6 +331,13 @@
     font-size: 110px;
   }
 }
+
+@media (max-width: 868px) {
+    .inp-cont {
+        margin-left: 0em;
+    }
+}
+
 @media (max-width: 767px) {
   .sharebuttons {
     margin-top: -5px;

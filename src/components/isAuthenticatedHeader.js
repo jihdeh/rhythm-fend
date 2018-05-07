@@ -5,6 +5,7 @@ import SearchInput from "./authHeaders/searchInput";
 import LargeScreenMenu from "./authHeaders/lgHeader";
 import SmallScreenMenu from "./authHeaders/smHeader";
 
+
 class AuthenticatedHeader extends Component {
   render() {
     return (

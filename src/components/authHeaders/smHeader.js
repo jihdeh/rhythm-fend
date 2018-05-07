@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { logout } from "../../actions/authActions";
 
+
 class SmallScreenMenuNavigation extends Component {
   state = {
     isSideNavActive: false
@@ -33,19 +34,29 @@ class SmallScreenMenuNavigation extends Component {
           <a className="closebtn" onClick={this.toggleSideNav}>
             <i className="fas fa-times fa-lg" />
           </a>
+          <div className="sidenav-profile">
+            <div className="sidenav__owner">
+              <img
+                className="sidenav-right__image"
+                src="../../images/nobody.jpg"
+                alt=""
+              />
+              <p>Doe</p>
+            </div>
+          </div>
           <div className="menuSideNavList">
             <Link to="/">
               <i className="fas fa-home fa-lg guide-icon__default" />
-              <span>HOME</span>
+              <span className="sidenav-home__border-right">HOME</span>
             </Link>
             <Link to="/search">
               <i className="fas fa-handshake fa-lg guide-icon__default" />
-              <span>CONNECT</span>
+              <span className="sidenav-connect__border-right">CONNECT</span>
             </Link>
 
             <span className="sidenav-layer" onClick={this.onLogout}>
               <i className="fas fa-power-off fa-lg guide-icon__default" />
-              <span>LOGOUT</span>
+              <span className="sidenav-menu__border-right">LOGOUT</span>
             </span>
           </div>
         </div>

@@ -57,12 +57,16 @@ input:focus {
   float: left;
 }
 
-@media (max-width: 767px) {
+/*@media (max-width: 767px) {
   .sa-actions__createAccount > a {
     color: #000;
   }
+}*/
+@media (max-width: 767px) {
+  .sa-actions__login {
+    color: #fff;
+  }
 }
-
 .sa-header {
   margin: 60px 0 40px 0;
 }
@@ -79,7 +83,22 @@ input:focus {
 
 .mobile-sa-text__title {
   display: block;
-  padding-top: 6em;
+  padding-top: 11em !important;
+  background: url("//www.recall-entertainment.com/mizori/wp-content/themes/recall/img/bg/about_us_2_xxl.jpg"),
+    linear-gradient(to right, #653200, #666666);
+  height: 100vh;
+  background-blend-mode: multiply;
+  overflow: hidden;
+  background-position: 50% top;
+  background-repeat: no-repeat;
+}
+
+.mobile-sa-logo {
+  width: 200px;
+}
+
+.mobile-sa-text__title > h1, h4 {
+  color: #ffffff;
 }
 
 .sa-header {
@@ -365,9 +384,6 @@ input:focus {
   }
   .sb-text {
     bottom: -4em;
-  }
-  .clients {
-    margin-top: 6em;
   }
   .section-four {
     margin-left: 2em !important;
