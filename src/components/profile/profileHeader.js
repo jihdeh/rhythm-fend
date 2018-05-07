@@ -12,13 +12,13 @@ export default class ProfileHeader extends Component {
       show: false
     };
   }
-  handleType=(e)=>{
+  handleType = e => {
     const value = e.target.value;
     this.setState({ value });
-  }
-  handleClick=()=> {
+  };
+  handleClick = () => {
     this.setState(prevState => ({ show: !prevState.show }));
-  }
+  };
   render() {
     const { value, show } = this.state;
     const {
@@ -30,6 +30,7 @@ export default class ProfileHeader extends Component {
       profilelink,
       bio
     } = this.props;
+    console.log(myStyle);
     return (
       <div className="profile--header" style={myStyle}>
         <div className="contestant--cont">

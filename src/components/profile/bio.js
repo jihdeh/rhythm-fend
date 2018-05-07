@@ -1,6 +1,8 @@
 import React from "react";
 import Iomore from "react-icons/lib/io/more";
 import Description from "./description";
+import Nameoverlay from "./nameoverlay";
+import { formatString } from "../../utils/helpers";
 
 const bio = ({
   myStyle,
@@ -11,17 +13,23 @@ const bio = ({
   profilelink,
   bio,
   show,
-  click
+  click,
+  profilePicture
 }) => (
   <div className="contestant--profile">
     <div className="contestant--cont">
       <div className="contestant--image bio--aspect--ratio" style={myStyle}>
+        <Nameoverlay
+          firstName={firstName}
+          lastName={lastName}
+          profilePicture={profilePicture}
+        />
         <div className="image--overlay">
           {firstName ? (
             <div className="bio-buttons">
               <span className="to-hide">
                 <Description
-                  name={`${firstName} ${lastName}`}
+                  name={formatString(`${firstName} ${lastName}`)}
                   state={state}
                   country={country}
                   profilelink={profilelink}
@@ -29,7 +37,9 @@ const bio = ({
                   show={show}
                 />
               </span>
-              <span className="Vote--button">Vote {firstName}</span>
+              <span className="Vote--button">
+                Vote {formatString(firstName)}
+              </span>
               <span className="more--button">
                 <Iomore />
               </span>

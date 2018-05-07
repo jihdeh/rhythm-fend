@@ -14,35 +14,40 @@ import "./App.css";
 class App extends Component {
   componentWillMount() {
     this.props.fetchLocalUser();
-    if (this.props.user || localStorage.getItem("token")) {
-      this.props.history.push("/");
-    }
-  }
-
-  componentWillReceiveProps() {
     if (
       (this.props.user || localStorage.getItem("token")) &&
-      this.props.location.pathname !== "/"
+      this.props.location.pathname === "/register"
     ) {
       this.props.history.push("/");
     }
   }
 
+  componentWillReceiveProps() {
+    // if (
+    //   (this.props.user || localStorage.getItem("token")) &&
+    //   this.props.location.pathname === "/register"
+    // ) {
+    //   this.props.history.push("/");
+    // }
+  }
+
   beforeLoggedIn() {
+    const isAuthenticated = this.props.user || localStorage.getItem("token");
     return (
       <span>
         <MobileMenu />
         <Header />
-        <Main />
+        <Main {...this.props} authed={isAuthenticated} />
       </span>
     );
   }
 
   afterLoggedIn() {
+    const isAuthenticated = this.props.user || localStorage.getItem("token");
     return (
       <span>
         <AuthenticatedHeader />
-        <Main />
+        <Main {...this.props} authed={isAuthenticated} />
       </span>
     );
   }
