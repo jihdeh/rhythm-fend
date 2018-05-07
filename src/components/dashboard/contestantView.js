@@ -7,7 +7,6 @@ class ContestantView extends Component {
   render() {
     const { user } = this.props;
     const { token } = user;
-    console.log(token);
 
     return (
       <div className="container-fluid">
