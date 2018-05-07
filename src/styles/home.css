@@ -78,10 +78,14 @@
   background: url("//www.recall-entertainment.com/mizori/wp-content/themes/recall/img/bg/about_us_2_xxl.jpg"),
     linear-gradient(to right, #653200, #666666);
   height: 100vh;
-  background-blend-mode: overlay;
+  background-blend-mode: multiply;
   overflow: hidden;
-  background-position: 100% top;
+  background-position: 50% top;
   background-repeat: no-repeat;
+}
+
+.mobile-sa-logo {
+  width: 200px;
 }
 
 .mobile-sa-text__title > h1, h4 {
