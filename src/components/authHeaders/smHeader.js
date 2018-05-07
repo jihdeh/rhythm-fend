@@ -47,11 +47,11 @@ class SmallScreenMenuNavigation extends Component {
           <div className="menuSideNavList">
             <Link to="/">
               <i className="fas fa-home fa-lg guide-icon__default" />
-              <span className="sidenav-menu__border-right">HOME</span>
+              <span className="sidenav-home__border-right">HOME</span>
             </Link>
             <Link to="/search">
               <i className="fas fa-handshake fa-lg guide-icon__default" />
-              <span className="sidenav-menu__border-right">CONNECT</span>
+              <span className="sidenav-connect__border-right">CONNECT</span>
             </Link>
 
             <span className="sidenav-layer" onClick={this.onLogout}>
