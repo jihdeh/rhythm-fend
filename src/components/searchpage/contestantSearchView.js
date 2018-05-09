@@ -31,7 +31,7 @@ class ContestantView extends Component {
                 <p className="col-contestant-result-location">
                   Location: <span className="col-contestant-result__right">Anambra</span>
                 </p>
-                <p className="col-contestant-result-code">Unique Code: <span className="col-contestant-result__right">Atom231</span></p>
+                <p className="col-contestant-result-code">Username: <span className="col-contestant-result__right">Atom231</span></p>
                 <div className="share-channel">
                   <div className="share-channel-vote">
                     <i className="fas fa-check" /> <span>Vote</span>
@@ -59,7 +59,7 @@ class ContestantView extends Component {
                 <p className="col-contestant-result-location">
                   Location: <span className="col-contestant-result__right">Anambra</span>
                 </p>
-                <p className="col-contestant-result-code">Unique Code: <span className="col-contestant-result__right">Atom231</span></p>
+                <p className="col-contestant-result-code">Username: <span className="col-contestant-result__right">Atom231</span></p>
                 <div className="share-channel">
                   <div className="share-channel-vote">
                     <i className="fas fa-check" /> <span>Vote</span>
@@ -87,7 +87,7 @@ class ContestantView extends Component {
                 <p className="col-contestant-result-location">
                   Location: <span className="col-contestant-result__right">Anambra</span>
                 </p>
-                <p className="col-contestant-result-code">Unique Code: <span className="col-contestant-result__right">Atom231</span></p>
+                <p className="col-contestant-result-code">Username: <span className="col-contestant-result__right">Atom231</span></p>
                 <div className="share-channel">
                   <div className="share-channel-vote">
                     <i className="fas fa-check" /> <span>Vote</span>
@@ -115,7 +115,7 @@ class ContestantView extends Component {
                 <p className="col-contestant-result-location">
                   Location: <span className="col-contestant-result__right">Anambra</span>
                 </p>
-                <p className="col-contestant-result-code">Unique Code: <span className="col-contestant-result__right">Atom231</span></p>
+                <p className="col-contestant-result-code">Username: <span className="col-contestant-result__right">Atom231</span></p>
                 <div className="share-channel">
                   <div className="share-channel-vote">
                     <i className="fas fa-check" /> <span>Vote</span>
@@ -143,7 +143,7 @@ class ContestantView extends Component {
                 <p className="col-contestant-result-location">
                   Location: <span className="col-contestant-result__right">Anambra</span>
                 </p>
-                <p className="col-contestant-result-code">Unique Code: <span className="col-contestant-result__right">Atom231</span></p>
+                <p className="col-contestant-result-code">Username: <span className="col-contestant-result__right">Atom231</span></p>
                 <div className="share-channel">
                   <div className="share-channel-vote">
                     <i className="fas fa-check" /> <span>Vote</span>
@@ -171,7 +171,7 @@ class ContestantView extends Component {
                 <p className="col-contestant-result-location">
                   Location: <span className="col-contestant-result__right">Lagos</span>
                 </p>
-                <p className="col-contestant-result-code">Unique Code: <span className="col-contestant-result__right">Jide63u</span></p>
+                <p className="col-contestant-result-code">Username: <span className="col-contestant-result__right">Jide63u</span></p>
                 <div className="share-channel">
                   <div className="share-channel-vote">
                     <i className="fas fa-check" /> <span>Vote</span>
@@ -199,7 +199,7 @@ class ContestantView extends Component {
                 <p className="col-contestant-result-location">
                   Location: <span className="col-contestant-result__right">Anambra</span>
                 </p>
-                <p className="col-contestant-result-code">Unique Code: <span className="col-contestant-result__right">Atom231</span></p>
+                <p className="col-contestant-result-code">Username: <span className="col-contestant-result__right">Atom231</span></p>
                 <div className="share-channel">
                   <div className="share-channel-vote">
                     <i className="fas fa-check" /> <span>Vote</span>
@@ -227,7 +227,7 @@ class ContestantView extends Component {
                 <p className="col-contestant-result-location">
                   Location: <span className="col-contestant-result__right">Anambra</span>
                 </p>
-                <p className="col-contestant-result-code">Unique Code: <span className="col-contestant-result__right">Atom231</span></p>
+                <p className="col-contestant-result-code">Username: <span className="col-contestant-result__right">Atom231</span></p>
                 <div className="share-channel">
                   <div className="share-channel-vote">
                     <i className="fas fa-check" /> <span>Vote</span>
