@@ -1,0 +1,9 @@
+.navbar-inverse .navbar-nav>li>a {
+  color: #fff;
+}
+
+.collapse-sa-logo {
+  width: 3em;
+  height: 3em;
+  padding: 0em;
+}

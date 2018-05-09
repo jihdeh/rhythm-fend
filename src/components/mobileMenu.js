@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
+import "../styles/mobileMenu.css";
 
 export default class MobileMenu extends Component {
   render() {
     return (
       <div className="header__top">
-        <Navbar collapseOnSelect>
+        <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#brand" />
+              <img alt="soundit logo" className="collapse-sa-logo" src="/images/logo.png" />
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
