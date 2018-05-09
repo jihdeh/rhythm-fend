@@ -4,9 +4,10 @@ class SearchInput extends Component {
   render() {
     const { containerStyle, inputStyle } = this.props;
     return (
-      <form className={containerStyle}>
+      <form id="search-input-form" className={containerStyle}>
         <input
           className={inputStyle}
+          id="contestant-searchinput"
           type="search"
           name="search"
           placeholder="Search for contestant"

@@ -5,7 +5,7 @@ import "../styles/header.css";
 export default class Header extends Component {
   render() {
     return (
-      <header className="sa-header__xs">
+      <header className="sa-header__xs sa-header__search">
         <nav>
           <Link to="/">
             <img
