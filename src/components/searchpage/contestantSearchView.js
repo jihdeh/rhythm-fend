@@ -6,9 +6,7 @@ class ContestantView extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <div className="contestant-search__input">
-          <SearchInput />
-        </div>
+        
         <div className="row">
           <div className="contestant-container">
             <div>
