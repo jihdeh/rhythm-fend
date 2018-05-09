@@ -1,0 +1,74 @@
+.edit-profile-container {
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+  padding-top: 9em;
+}
+
+.edit-profile-body {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.edit-profile__image {
+  height: 17em;
+  width: 17em;
+  border-radius: 50%;
+}
+
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-profile__picture {
+  display: flex;
+  flex-direction: column;
+}
+
+.change-picture__button {
+  width: 17em;
+  margin-top: 1em;
+  height: 3em;
+}
+
+.edit-profile-input {
+  background-color: #000;
+  color: #fff;
+  padding-left: 5px;
+  width: 100%;
+  height: 3.5em;
+  margin-top: 1em;
+}
+
+.edit-profile-input__save {
+  margin-top: 2em;
+  width: 12em;
+  height: 3em;
+}
+
+@media (max-width: 991px) {
+  .edit-profile__picture {
+    display: flex;
+    align-items: center;
+  }
+  .edit-profile-edit {
+    display: flex;
+    justify-content: center;
+  }
+  .edit-profile-input {
+    width: 30em;
+  }
+}
+
+@media (max-width: 493px) {
+  .edit-profile-input {
+    width: 25em;
+  }
+}
+
+@media (max-width: 391px) {
+  .edit-profile-input {
+    width: 20em;
+  }
+}
