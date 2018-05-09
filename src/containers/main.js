@@ -32,12 +32,16 @@ const Main = props => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/donate" component={Donate} />
         <Route exact path="/search" component={Search} />
-        <Route exact path="/edit/profile" component={EditProfile} />
         <Route exact path="/rsg/:uniqueCode" component={Profile} />
         <PrivateRoute
           authed={props.authed}
           path="/dashboard"
           component={Dashboard}
+        />
+        <PrivateRoute
+          authed={props.authed}
+          path="/edit/profile"
+          component={EditProfile}
         />
         <Route component={NoMatch} />
       </Switch>
