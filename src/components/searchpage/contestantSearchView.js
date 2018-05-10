@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../../styles/searchpage.css";
-import SearchInput from "../authHeaders/searchInput"
 
 class ContestantView extends Component {
   render() {
