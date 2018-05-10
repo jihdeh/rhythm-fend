@@ -9,13 +9,13 @@ export const getprofilepending = () => async dispatch => {
   await dispatch({ type: GET_PROFILE_PENDING });
 };
 
-export const getprofile = uniqueCode => async dispatch => {
+export const getprofile = username => async dispatch => {
   try {
-    const url = `${process.env.REACT_APP_BASE_URL}/user/${uniqueCode}`;
+    const url = `${process.env.REACT_APP_BASE_URL}/user/${username}`;
     const res = await axios.get(url);
     const moldResponse = Object.assign(
       {},
-      { profileUrl: `${process.env.REACT_APP_PROFILE_URL}${uniqueCode}` },
+      { profileUrl: `${process.env.REACT_APP_PROFILE_URL}${username}` },
       res.data.data
     );
 
