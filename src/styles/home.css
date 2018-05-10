@@ -97,7 +97,8 @@ input:focus {
   width: 200px;
 }
 
-.mobile-sa-text__title > h1, h4 {
+.mobile-sa-text__title > h1,
+.mobile-sa-text__title > h4 {
   color: #ffffff;
 }
 
