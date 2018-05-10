@@ -28,26 +28,28 @@ export default class ProfileHeader extends Component {
       state,
       country,
       profilelink,
-      bio
+      bio,
+      isAuthticated
     } = this.props;
-    console.log(myStyle);
     return (
       <div className="profile--header" style={myStyle}>
         <div className="contestant--cont">
           <div className="contestant--nav">
             <span className="nav-block" />
             <div className="nav-child">
-              <span className="inp-cont">
-                <Fasearch className="search--icon" />
-                {value ? null : (
-                  <span className="myplaceholdder">search for artists</span>
-                )}
-                <input
-                  className="inp"
-                  value={value}
-                  onChange={this.handleType}
-                />
-              </span>
+              {!isAuthticated ? (
+                <span className="inp-cont">
+                  <Fasearch className="search--icon" />
+                  {value ? null : (
+                    <span className="myplaceholdder">search for artists</span>
+                  )}
+                  <input
+                    className="inp"
+                    value={value}
+                    onChange={this.handleType}
+                  />
+                </span>
+              ) : null}
             </div>
             <span className="nav-block" />
           </div>

@@ -32,7 +32,8 @@ const Main = props => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/donate" component={Donate} />
         <Route exact path="/search" component={Search} />
-        <Route exact path="/rsg/:uniqueCode" component={Profile} />
+        <Route exact path="/edit/profile" component={EditProfile} />
+        <Route exact path="/rsg/:username" component={Profile} />
         <PrivateRoute
           authed={props.authed}
           path="/dashboard"
