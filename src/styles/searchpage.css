@@ -5,34 +5,8 @@
   padding-top: 9em;
 }
 
-#search-input-form {
-  display: flex;
-  position: absolute;
-  z-index: 11;
-}
-
-.contestant-search__input {
-  display: flex;
-  justify-content: center;
-  margin-top: -7em;
-  margin-left: -17em;
-}
-
-#contestant-searchinput {
-  height: 2em;
-  width: 20em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  background-color: #000;
-  color: #fff;
-}
-
 .search-icon {
   height: 2em;
-}
-
-.contestant-container {
-  margin-top: 5em;
 }
 
 .col-contestant-result {
@@ -103,10 +77,6 @@
 }
 
 /*VOTING STYLE*/
-/*.contestant-section__title {
-  margin-top: -12%;
-  margin-bottom: 2%;
-}*/
 
 .contestant-section__title b {
   color: #ffffff;
@@ -123,20 +93,4 @@
 .grid-suspenders {
   border: 0.5px solid hsl(0, 0%, 53.3%);
   margin: 20px;
-}
-
-@media (max-width: 767px) {
-  /*.contestant-section__title {
-    margin-top: -8%;
-    margin-bottom: 7%;
-  }*/
-  .contestant-search__input {
-    margin-left: 0em;
-  }
-}
-
-@media (max-width: 394px) {
-  #contestant-searchinput {
-    width: 76%;
-  }
 }
