@@ -32,17 +32,17 @@ class Edit extends Component {
               <input
                 type="text"
                 className="edit-profile-input" 
-                placeholder="Phone Number" 
-              />
-              <input
-                type="text"
-                className="edit-profile-input" 
-                placeholder="Email" 
-              />
-              <input
-                type="text"
-                className="edit-profile-input" 
                 placeholder="Password" 
+              />
+              <input
+                type="text"
+                className="edit-profile-input" 
+                placeholder="Country" 
+              />
+              <input
+                type="text"
+                className="edit-profile-input" 
+                placeholder="State" 
               />
               <div>
                 <input 
