@@ -28,7 +28,6 @@ export default class ProfileHeader extends Component {
       state,
       country,
       profilelink,
-      bio,
       isAuthticated
     } = this.props;
     return (

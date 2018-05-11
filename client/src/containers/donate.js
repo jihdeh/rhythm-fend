@@ -127,7 +127,10 @@ class Donate extends Component {
             </span>
           ) : (
             <span className="donation-thanks">
-              <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/743250-200.png" />
+              <img
+                alt="confetti"
+                src="https://d30y9cdsu7xlg0.cloudfront.net/png/743250-200.png"
+              />
               <h2>Thank you for your donations {name}! </h2>
               <p>
                 We sincerely appreciate your kindness towards the success of our

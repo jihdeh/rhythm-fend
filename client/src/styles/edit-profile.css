@@ -1,6 +1,6 @@
 .edit-profile-container {
   background-color: #000;
-  height: -webkit-fill-available;
+  height: stretch;
   width: 100%;
   padding-top: 9em;
 }

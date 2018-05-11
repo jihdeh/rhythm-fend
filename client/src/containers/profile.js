@@ -9,14 +9,13 @@ import ProfileHeader from "../components/profile/profileHeader";
 import Video from "../components/profile/video";
 import Singlerowads from "../components/profile/singlerowads";
 import Errorpage from "../components/profile/error";
-import helpers, { getStyle } from "../utils/helpers";
+import { getStyle } from "../utils/helpers";
 import { getprofile, getprofilepending } from "../actions/profileAction";
 import vote from "../actions/voteAction";
 
 class Profile extends Component {
   constructor(props) {
     super(props);
-    const { contestant, fetching } = this.props.profile;
     this.state = {
       fetching: true,
       profilePicture: process.env.REACT_APP_DEFAULT_BACKGROUND,
@@ -31,8 +30,7 @@ class Profile extends Component {
       voteCount: "1",
       email: "",
       show: false,
-      showcastvote: false,
-      email: "test@test.com"
+      showcastvote: false
     };
   }
   async componentDidMount() {
@@ -83,7 +81,6 @@ class Profile extends Component {
       amount: 5000 * Number(voteCount), //in kobo
       ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
       callback: response => {
-        console.log(response, "--pay");
         this.props.vote({
           reference: response.reference,
           username,
