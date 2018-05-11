@@ -1,0 +1,29 @@
+{
+  "name": "rhythm-fend",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:4450/",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "jsonwebtoken": "^8.2.1",
+    "ramda": "^0.25.0",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.2.0",
+    "react-icons": "^2.2.7",
+    "react-intl-tel-input": "^5.0.4",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "react-shapes": "^0.1.0",
+    "react-simple-share": "^0.1.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
