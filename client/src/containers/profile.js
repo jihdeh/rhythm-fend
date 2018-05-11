@@ -77,7 +77,7 @@ class Profile extends Component {
   loadPayStack = (username, voteCount, email) => {
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
-      email,
+      email: email || "jide.b.tade@gmail.com",
       amount: 5000 * Number(voteCount), //in kobo
       ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
       callback: response => {
