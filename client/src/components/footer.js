@@ -29,11 +29,11 @@ const Footer = () => (
                   <ul>
                     <li className="footer__navs_link">
                       <div className="footer__navs_link_social_icon footer__navs_link_social_icon-instagram" />
-                      <a href="https://www.instagram.com/rsg/">Instagram</a>
+                      <a href="https://www.instagram.com/RisingStarG" target="_blank">Instagram</a>
                     </li>
                     <li className="footer__navs_link">
                       <div className="footer__navs_link_social_icon footer__navs_link_social_icon-facebook" />
-                      <a href="https://www.facebook.com/RisingStarGospel">
+                      <a href="https://www.facebook.com/RisingStarGospel/" target="_blank">
                         Facebook
                       </a>
                     </li>
@@ -45,11 +45,11 @@ const Footer = () => (
                     </li> */}
                     <li className="footer__navs_link">
                       <div className="footer__navs_link_social_icon footer__navs_link_social_icon-twitter" />
-                      <a href="https://twitter.com/rsg">Twitter</a>
+                      <a href="https://twitter.com/RisingStarG" target="_blank">Twitter</a>
                     </li>
                     <li className="footer__navs_link">
                       <div className="footer__navs_link_social_icon footer__navs_link_social_icon-youtube" />
-                      <a href="https://www.youtube.com/channel/UC4DXXuFtnz1eQ_WLhtBOGsg">
+                      <a href="https://www.youtube.com/risingstargospel" target="_blank">
                         YouTube
                       </a>
                     </li>
@@ -61,13 +61,13 @@ const Footer = () => (
                 <nav className="footer__nav">
                   <ul>
                     <li>
-                      <a href="../en/terms">Terms and Conditions of Use</a>
+                      <a href="../en/terms" target="_blank">Terms and Conditions of Use</a>
                     </li>
                     <li>
-                      <a href="../en/privacy">Privacy policy</a>
+                      <a href="../en/privacy" target="_blank">Privacy policy</a>
                     </li>
                     <li>
-                      <a href="../en/legal">Legal notices</a>
+                      <a href="../en/legal" target="_blank">Legal notices</a>
                     </li>
                   </ul>
                 </nav>
