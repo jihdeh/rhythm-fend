@@ -7,12 +7,14 @@ import SectionThree from "../components/homepage/sectionThree";
 import SectionFour from "../components/homepage/sectionFour";
 import SectionFive from "../components/homepage/sectionFive";
 import Footer from "../components/footer";
+import Slider from "../components/homepage/slider";
 
 class LandingPage extends Component {
   render() {
     return (
       <div>
-        <div className="banner">
+        <Slider />
+        {/* <div className="banner">
           <div className="row">
             <div className="sa-text">
               <span className="sa-text__title">
@@ -29,12 +31,13 @@ class LandingPage extends Component {
               </span>
             </div>
           </div>
-        </div>
+    </div>*/}
         <MobileHome />
         <SectionThree />
         <SectionFour />
         <SectionFive />
         <SectionTwo />
+
         <Footer />
       </div>
     );

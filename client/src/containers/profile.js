@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { ToastContainer } from "react-toastr";
+import { connect } from "react-redux";
 import "../styles/profile.css";
 import Bio from "../components/profile/bio";
 import Splitads from "../components/profile/splitads";
@@ -7,11 +10,8 @@ import Video from "../components/profile/video";
 import Singlerowads from "../components/profile/singlerowads";
 import Errorpage from "../components/profile/error";
 import helpers, { getStyle } from "../utils/helpers";
-import { connect } from "react-redux";
 import { getprofile, getprofilepending } from "../actions/profileAction";
 import vote from "../actions/voteAction";
-import { bindActionCreators } from "redux";
-import { ToastContainer } from "react-toastr";
 
 class Profile extends Component {
   constructor(props) {
@@ -36,9 +36,7 @@ class Profile extends Component {
     };
   }
   async componentDidMount() {
-    const {
-      match: { params }
-    } = this.props;
+    const { match: { params } } = this.props;
     this.props.getprofilepending();
     this.props.getprofile(params.username);
   }
