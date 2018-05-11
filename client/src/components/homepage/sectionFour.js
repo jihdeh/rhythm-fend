@@ -7,20 +7,15 @@ class SectionFour extends PureComponent {
         <div className="row section-four">
           <div className="col-sm-6 section-four__left">
             <h6>MAKING GOSPEL MUSIC GLOBAL!</h6>
-            <h1>A full-service group.</h1>
+            <h1>SoundIT Africa</h1>
             <br />
             <p>
-              We are a gospel music group focused on getting results through
-              effective, creative and innovative music promotion strategies.
+              SoundIT Africa is an online singing competition with an aim of leveraging on the simplicity of the Digital Media to discover and showcase new talents across Africa hence cutting loads of protocols to give these talents an easily way to be heard across Africa and Around the world.
             </p>
 
             <p>
-              With the goal of making gospel music more accessible, we have
-              divided our services into 3 practical stages that’ll be beneficial
-              for you.
+              In 2017, with over 1,000 entries from different part of Africa especially Nigeria, Senegal and South Africa, Sound It had its first edition and the 5 finalist came to Lagos for the Grand finale. The panel of Judges was lead by Uncle Ben (MTN Project Fame West Africa).
             </p>
-
-            <p>Set to know our three stages: REGISTER, UPLOAD and ENJOY.</p>
             <br />
             <p>
               LEARN MORE <i className="fas fa-angle-down" />
