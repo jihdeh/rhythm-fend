@@ -40,6 +40,7 @@ class Register extends Component {
     confirmPassword: "",
     country: "",
     state: "",
+    username:"",
     loadingPaystackModule: false
   };
 
@@ -61,6 +62,7 @@ class Register extends Component {
     let emailInput = this.state.email.trim();
     let firstName = this.state.firstName.trim();
     let lastName = this.state.lastName.trim();
+    let username = this.state.username.trim()
     let phoneNumber = this.state.phoneNumber;
     let password = this.state.password;
     let confirmPassword = this.state.confirmPassword;
@@ -100,7 +102,8 @@ class Register extends Component {
       password,
       confirmPassword,
       country,
-      state
+      state,
+      username
     } = this.state;
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
@@ -144,6 +147,7 @@ class Register extends Component {
           hasPaid: true,
           country,
           state,
+          username,
           paymentReference: response.reference
         });
         this.setState({ loadingPaystackModule: "Logging you in" });
@@ -240,6 +244,15 @@ class Register extends Component {
                     this.setState({ lastName: target.value })
                   }
                   value={this.state.lastName || ""}
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="username"
+                  onChange={({ target }) =>
+                    this.setState({ username: target.value })
+                  }
+                  value={this.state.username || ""}
                   required
                 />
                 <IntlTelInput

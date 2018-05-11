@@ -2,10 +2,16 @@
   background: hsl(0, 0%, 7%);
   width: 100%;
   padding-bottom: 1em;
+  padding-top: 9em;
+}
+
+.search-icon {
+  height: 2em;
 }
 
 .col-contestant-result {
   margin-top: 1em;
+  margin-bottom: 2em;
   color: #fff;
   box-shadow: 3px 4px 1px black;
 }
@@ -13,9 +19,14 @@
 .col-contestant-result-name,
 .col-contestant-result-location,
 .col-contestant-result-code {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 12px;
   margin-top: 20px;
+}
+
+.col-contestant-result__right {
+  float: right;
+  padding-right: 5px;
 }
 
 /*SOCIAL SHARING ICONS*/
@@ -23,6 +34,7 @@
   justify-content: space-between;
   display: flex;
   padding: 7px 0;
+  margin-top: 2em;
 }
 .share-channel-social {
   display: inline-flex;
@@ -30,8 +42,8 @@
 }
 
 .share-channel-vote {
-  font-size: 1.2em;
-  padding-top: 7px;
+  font-size: 1em;
+  padding-top: 0px;
   padding-left: 7px;
   cursor: pointer;
 }
@@ -43,6 +55,7 @@
 .vote-social-icons {
   margin: 0 7px;
   cursor: pointer;
+  font-size: 1em !important;
 }
 
 .vote-social-icons-fb:hover {
@@ -64,9 +77,6 @@
 }
 
 /*VOTING STYLE*/
-.contestant-container {
-  margin-top: -8%;
-}
 
 .contestant-section__title b {
   color: #ffffff;

@@ -9,7 +9,9 @@ import Errorpage from "../components/profile/error";
 import helpers, { getStyle } from "../utils/helpers";
 import { connect } from "react-redux";
 import { getprofile, getprofilepending } from "../actions/profileAction";
+import vote from "../actions/voteAction";
 import { bindActionCreators } from "redux";
+import { ToastContainer } from "react-toastr";
 
 class Profile extends Component {
   constructor(props) {
@@ -25,8 +27,12 @@ class Profile extends Component {
       profileUrl: "",
       about: "",
       contestantVideo: process.env.REACT_APP_ADVERT,
-      uniqueCode: null,
-      show: false
+      username: null,
+      voteCount: "1",
+      email: "",
+      show: false,
+      showcastvote: false,
+      email: "test@test.com"
     };
   }
   async componentDidMount() {
@@ -34,12 +40,19 @@ class Profile extends Component {
       match: { params }
     } = this.props;
     this.props.getprofilepending();
-    this.props.getprofile(params.uniqueCode);
+    this.props.getprofile(params.username);
   }
   handleClick = () => {
     this.setState(prevState => ({ show: !prevState.show }));
   };
-
+  onchangeVoteCount = e => {
+    this.setState({ voteCount: e.target.value });
+  };
+  onShowcastvote = () => {
+    this.setState(prevState => ({
+      showcastvote: !prevState.showcastvote
+    }));
+  };
   componentWillReceiveProps(nextProps) {
     const state = {
       ...nextProps.profile.contestant,
@@ -50,6 +63,46 @@ class Profile extends Component {
       this.setState({ ...prev, ...state });
     }
   }
+
+  onVote = () => {
+    const { voteCount, username, email } = this.state;
+    this.loadPayStack(username, voteCount, email);
+  };
+  successMesage = (username, voteCount) => {
+    this.refs.container.success(
+      `You have suuccesfully casted ${voteCount} vote(s) for ${username}`,
+      "",
+      {
+        timeOut: 30000,
+        extendedTimeOut: 10000
+      }
+    );
+  };
+  loadPayStack = (username, voteCount, email) => {
+    var handler = window.PaystackPop.setup({
+      key: process.env.REACT_APP_PAYSTACK_KEY,
+      email,
+      amount: 5000 * Number(voteCount), //in kobo
+      ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+      callback: response => {
+        console.log(response, "--pay");
+        this.props.vote({
+          reference: response.reference,
+          username,
+          voteCount
+        });
+        this.onShowcastvote();
+        this.successMesage(username, voteCount);
+      },
+      onClose: () => {
+        alert("window closed");
+      }
+    });
+    handler.openIframe();
+  };
+  onClear = () => {
+    this.refs.container.clear();
+  };
 
   render() {
     const {
@@ -62,16 +115,20 @@ class Profile extends Component {
       profileUrl,
       about,
       contestantVideo,
-      show
+      show,
+      voteCount,
+      showcastvote
     } = this.state;
 
     const myStyle = getStyle("myStyle", fetching, profilePicture);
     const myStyleProfile = getStyle("myStyleProfile", fetching, profilePicture);
     const { error } = this.props.profile;
-    console.log(myStyleProfile);
+    const { userInfo } = this.props.auth;
+    const isAuthticated = userInfo ? true : false;
 
     return (
       <div className="profile--container">
+        <ToastContainer ref="container" className="toast-top-right" />
         <ProfileHeader
           myStyle={myStyle}
           state={state}
@@ -80,6 +137,7 @@ class Profile extends Component {
           firstName={firstName}
           lastName={lastName}
           bio={about}
+          isAuthticated={isAuthticated}
         />
         <div className="profile--body">
           <div className="row">
@@ -96,6 +154,11 @@ class Profile extends Component {
                 bio={about}
                 click={this.handleClick}
                 show={show}
+                onchangeVoteCount={this.onchangeVoteCount}
+                voteCount={voteCount}
+                onShowcastvote={this.onShowcastvote}
+                showcastvote={showcastvote}
+                onVote={this.onVote}
               />
             </div>
             <div className="col-sm-7">
@@ -117,7 +180,8 @@ const mapStateToProps = state => state;
 
 const mapDispatchToProps = dispatch => ({
   getprofile: bindActionCreators(getprofile, dispatch),
-  getprofilepending: bindActionCreators(getprofilepending, dispatch)
+  getprofilepending: bindActionCreators(getprofilepending, dispatch),
+  vote: bindActionCreators(vote, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

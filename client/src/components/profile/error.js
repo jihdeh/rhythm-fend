@@ -7,7 +7,6 @@ const errorpage = ({ error }) => {
       ? error.response
       : undefined
     : undefined;
-  console.log(response);
   return response ? (
     response.data.message === "user not found" ? (
       <Redirect to="/404" />
