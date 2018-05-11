@@ -8,6 +8,7 @@ import Search from "./searchpage";
 import Profile from "./profile";
 import NoMatch from "./noMatch";
 import EditProfile from "./editProfile";
+import Slide from "../components/homepage/slider";
 
 function PrivateRoute({ component: Component, authed, ...rest }) {
   return (
@@ -29,6 +30,7 @@ const Main = props => {
     <main className="main-container">
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/slide" component={Slide} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/donate" component={Donate} />
         <Route exact path="/search" component={Search} />
