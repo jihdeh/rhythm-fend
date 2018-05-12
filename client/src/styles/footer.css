@@ -31,6 +31,7 @@ footer {
 .footer .footer__navs .footer__navs_logo_container img {
   position: absolute;
   top: 1.6em;
+  right: 15px;
   width: 100px;
   height: 100px;
 }

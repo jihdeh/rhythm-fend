@@ -9,8 +9,8 @@ import LoginPage from "../login";
 class Slide extends Component {
   constructor(props) {
     super(props);
-    
-    this.state = {displayForm: false};
+
+    this.state = { displayForm: false };
   }
   render() {
     const settings = {
@@ -28,40 +28,34 @@ class Slide extends Component {
         <h2 className="slider-menu__title" />
         <Slider {...settings}>
           <div className="banner">
-            {displayForm ? <div className="row">
-              <div className="sa-text">
-                <span className="sa-text__title">
-                  <h1 className="sa-text-title__company-name">
-                    SoundIT{" "}
-                    <img
-                      className="sa-brand__name-logo"
-                      src="/images/continent-icon-africa.png"
-                      alt=""
-                    />frica.
-                  </h1>
-                  <h4>Be the next Rising Gospel Star</h4>
-                  <LoginPage />
-                </span>
+            {displayForm ? (
+              <div className="row">
+                <div className="sa-text">
+                  <span className="sa-text__title">
+                    <h1 className="sa-text-title__company-name">
+                      SoundIT{" "}
+                      <img
+                        className="sa-brand__name-logo"
+                        src="/images/continent-icon-africa.png"
+                        alt=""
+                      />frica.
+                    </h1>
+                    <h4>Be the next Rising Gospel Star</h4>
+                    <LoginPage />
+                  </span>
+                </div>
               </div>
-            </div> : 
+            ) : (
+              <div className="sa-text__promo">
+                <h2>How well would you sing for $5000</h2>
+              </div>
+            )}
+          </div>
+          <div className="banner-slide2">
             <div className="sa-text__promo">
-              <h2>Stand a chance to win $5000</h2>
-            </div>}
-          </div>
-          <div>
-            <h3>Hi</h3>
-          </div>
-          <div>
-            <h3>Hey</h3>
-          </div>
-          <div>
-            <h3>Hello again</h3>
-          </div>
-          <div>
-            <h3>Hi people</h3>
-          </div>
-          <div>
-            <h3>Hey there</h3>
+              <h2>Brace yourself for SoundIT Africa 2</h2>
+              <h4>27.05.2018</h4>
+            </div>
           </div>
         </Slider>
       </div>

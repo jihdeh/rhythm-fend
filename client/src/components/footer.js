@@ -29,11 +29,19 @@ const Footer = () => (
                   <ul>
                     <li className="footer__navs_link">
                       <div className="footer__navs_link_social_icon footer__navs_link_social_icon-instagram" />
-                      <a href="https://www.instagram.com/RisingStarG" target="_blank">Instagram</a>
+                      <a
+                        href="https://www.instagram.com/RisingStarG"
+                        target="_blank"
+                      >
+                        Instagram
+                      </a>
                     </li>
                     <li className="footer__navs_link">
                       <div className="footer__navs_link_social_icon footer__navs_link_social_icon-facebook" />
-                      <a href="https://www.facebook.com/RisingStarGospel/" target="_blank">
+                      <a
+                        href="https://www.facebook.com/RisingStarGospel/"
+                        target="_blank"
+                      >
                         Facebook
                       </a>
                     </li>
@@ -45,11 +53,16 @@ const Footer = () => (
                     </li> */}
                     <li className="footer__navs_link">
                       <div className="footer__navs_link_social_icon footer__navs_link_social_icon-twitter" />
-                      <a href="https://twitter.com/RisingStarG" target="_blank">Twitter</a>
+                      <a href="https://twitter.com/RisingStarG" target="_blank">
+                        Twitter
+                      </a>
                     </li>
                     <li className="footer__navs_link">
                       <div className="footer__navs_link_social_icon footer__navs_link_social_icon-youtube" />
-                      <a href="https://www.youtube.com/risingstargospel" target="_blank">
+                      <a
+                        href="https://www.youtube.com/risingstargospel"
+                        target="_blank"
+                      >
                         YouTube
                       </a>
                     </li>
@@ -57,7 +70,7 @@ const Footer = () => (
                 </nav>
               </div>
               <div className="col-lg-5 col-md-5 footer__navs_links footer__navs_column_links-resources">
-                <h4 className="footer__navs_column_title">Resources</h4>
+                {/* <h4 className="footer__navs_column_title">Resources</h4>
                 <nav className="footer__nav">
                   <ul>
                     <li>
@@ -68,6 +81,20 @@ const Footer = () => (
                     </li>
                     <li>
                       <a href="../en/legal" target="_blank">Legal notices</a>
+                    </li>
+                  </ul>
+                </nav> */}
+                <h4 className="footer__navs_column_title">Secured By</h4>
+                <nav className="footer__nav">
+                  <ul>
+                    <li style={{ marginTop: 0 }}>
+                      <img
+                        height="80"
+                        src="/images/secured/comodo_secure_seal_100x85_transp.png"
+                      />
+                    </li>
+                    <li style={{ marginTop: 0 }}>
+                      <img height="73" src="/images/secured/cards.png" />
                     </li>
                   </ul>
                 </nav>
