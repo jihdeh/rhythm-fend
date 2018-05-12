@@ -88,10 +88,15 @@ const Footer = () => (
                 <nav className="footer__nav">
                   <ul>
                     <li style={{ marginTop: 0 }}>
-                      <img
-                        height="80"
-                        src="/images/secured/comodo_secure_seal_100x85_transp.png"
-                      />
+                      <a
+                        href="https://secure.comodo.com/ttb_searcher/trustlogo?v_querytype=W&v_shortname=CL1&v_search=https://www.soundit.africa/rsg/soco&x=6&y=5"
+                        target="_blank"
+                      >
+                        <img
+                          height="80"
+                          src="/images/secured/comodo_secure_seal_100x85_transp.png"
+                        />
+                      </a>
                     </li>
                     <li style={{ marginTop: 0 }}>
                       <img height="73" src="/images/secured/cards.png" />
