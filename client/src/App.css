@@ -12,8 +12,8 @@
 }
 
 .banner-slide2 {
-  background: url("https://www.artsfon.com/pic/201605/1920x1080/artsfon.com-84504.jpg");
-  background: url("https://www.artsfon.com/pic/201605/1920x1080/artsfon.com-84504.jpg"),
+  background: url("/images/voiceout.jpg");
+  background: url("/images/voiceout.jpg"),
     linear-gradient(to left, #653200, #666666);
   height: 100vh;
   background-blend-mode: overlay;

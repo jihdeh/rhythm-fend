@@ -47,7 +47,7 @@ class Slide extends Component {
               </div>
             ) : (
               <div className="sa-text__promo">
-                <h2>How well would you sing for $5000</h2>
+                <h2>How well would you sing for $5000?</h2>
               </div>
             )}
           </div>
