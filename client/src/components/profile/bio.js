@@ -1,5 +1,4 @@
 import React from "react";
-import Iomore from "react-icons/lib/io/more";
 import Description from "./description";
 import Nameoverlay from "./nameoverlay";
 import { formatString } from "../../utils/helpers";
@@ -58,9 +57,6 @@ const bio = ({
                 <span className="Vote--button" onClick={onShowcastvote}>
                   Vote {formatString(firstName)}
                 </span>
-              </span>
-              <span className="more--button">
-                <Iomore />
               </span>
             </div>
           ) : null}
