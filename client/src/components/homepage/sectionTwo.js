@@ -32,7 +32,10 @@ class SectionTwo extends PureComponent {
                   like Aldus PageMaker including versions of Lorem Ipsum.
                 </p>
               </div>
-              <div className="col-lg-4 col-sm-12 col-md-4">
+              <div
+                className="col-lg-4 col-sm-12 col-md-4"
+                style={{ paddingTop: "20px" }}
+              >
                 <iframe
                   width="100%"
                   height="300"
