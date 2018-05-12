@@ -47,6 +47,12 @@
   background: lightgray;
 }
 
+.sa-text__promo {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16em;
+}
+
 @media (max-width: 767px) {
   .slick-next, .slick-prev {
     display: none !important;

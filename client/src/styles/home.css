@@ -32,8 +32,13 @@ input:focus {
 }
 
 .sa-form__login {
-  width: 70%;
+  width: 100%;
   margin-top: 30px;
+}
+
+.sa-text-title__company-name {
+  display: flex;
+  justify-content: center;
 }
 
 .sa-form__login-input {
