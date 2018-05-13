@@ -26,6 +26,9 @@ export default class Header extends Component {
             </div>
             <ul className="sa-navigation">
               <li>
+                <Link to="/account">Account</Link>
+              </li>
+              <li>
                 <Link to="/donate">Donate</Link>
               </li>
               <li>

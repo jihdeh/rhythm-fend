@@ -28,9 +28,9 @@ class LargeScreenMenuNavigation extends Component {
               </Link>
             </li>
             <li>
-              <Link to="/search">
+              <Link to="/edit/profile">
                 <i className="fas fa-handshake fa-lg guide-icon__default" />
-                <span>CONNECT</span>
+                <span>PROFILE</span>
               </Link>
             </li>
             <li>

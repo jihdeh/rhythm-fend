@@ -10,7 +10,7 @@ class Slide extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { displayForm: true };
+    this.state = { displayForm: false };
   }
   render() {
     const settings = {
@@ -48,6 +48,7 @@ class Slide extends Component {
             ) : (
               <div className="sa-text__promo">
                 <h2>How well would you sing for $5000?</h2>
+                <h4>Praise.Worship.Blessed</h4>
               </div>
             )}
           </div>
