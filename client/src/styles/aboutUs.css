@@ -6,9 +6,9 @@
 }
 
 .about-us-logo__logo {
-  height: 30em;
-  width: 30em;
-  margin-left: -2em;
+  height: 20em;
+  width: 20em;
+  margin-left: 2em;
 }
 
 .about-us-text {
@@ -21,7 +21,7 @@
 }
 
 .about-us__programs {
-  color: #653200;
+  color: #fe9910
 }
 
 @media (max-width: 991px) {
