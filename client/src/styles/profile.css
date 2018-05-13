@@ -99,7 +99,7 @@
   padding: 0 15px;
   height: 100px;
 }
-.inp-cont {
+.search-profile-input-cont {
   width: 200px;
   height: 30px;
   border-radius: 20px;
@@ -110,7 +110,7 @@
   font-size: 15px;
   margin: 0 auto;
 }
-.inp {
+.search-profile-input {
   background-color: transparent;
   border: none;
   outline: none;
@@ -367,7 +367,7 @@
   .more--button {
     padding: 5px;
   }
-  .inp-cont {
+  .search-profile-input-cont {
     font-size: 11px;
     width: 120px;
   }

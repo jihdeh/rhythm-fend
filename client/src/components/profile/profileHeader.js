@@ -37,13 +37,13 @@ export default class ProfileHeader extends Component {
             <span className="nav-block" />
             <div className="nav-child">
               {!isAuthticated ? (
-                <span className="inp-cont">
+                <span className="search-profile-input-cont">
                   <Fasearch className="search--icon" />
                   {value ? null : (
                     <span className="myplaceholdder">search for artists</span>
                   )}
                   <input
-                    className="inp"
+                    className="search-profile-input"
                     value={value}
                     onChange={this.handleType}
                   />
