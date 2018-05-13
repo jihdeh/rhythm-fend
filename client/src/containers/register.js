@@ -44,7 +44,7 @@ class Register extends Component {
     country: "",
     state: "",
     username: "",
-    registrationOpen: true,
+    registrationOpen: false,
     loadingPaystackModule: false
   };
 
