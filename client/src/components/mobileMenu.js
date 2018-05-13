@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../styles/mobileMenu.css";
 
 export default class MobileMenu extends Component {
@@ -9,7 +10,13 @@ export default class MobileMenu extends Component {
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <img alt="soundit logo" className="collapse-sa-logo" src="/images/logo.png" />
+              <Link to="/">
+                <img
+                  alt="soundit logo"
+                  className="collapse-sa-logo"
+                  src="/images/logo.png"
+                />
+              </Link>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>

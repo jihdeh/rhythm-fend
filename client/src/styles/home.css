@@ -356,12 +356,6 @@ h4 {
   }
 }
 
-@media (max-width: 826px) {
-  .banner {
-    height: 62em !important;
-  }
-}
-
 @media (max-width: 814px) {
   .section-five__picture {
     height: 29em;
@@ -384,9 +378,6 @@ h4 {
   }
   .background__canvas {
     margin-top: 2em;
-  }
-  .banner {
-    display: none;
   }
   .sb-text {
     bottom: -4em;
