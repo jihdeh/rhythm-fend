@@ -14,7 +14,7 @@ class SectionFive extends PureComponent {
               <a
                 href="https://www.facebook.com/RisingStarGospel/"
                 target="_blank"
-                style={{ color: "inherit" }}
+                style={{ color: "inherit", textDecoration: "none" }}
                 rel="noopener noreferrer"
               >
                 RECENT WORK{" "}
