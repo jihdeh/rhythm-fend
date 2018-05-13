@@ -8,6 +8,7 @@ import Search from "./searchpage";
 import Profile from "./profile";
 import NoMatch from "./noMatch";
 import EditProfile from "./editProfile";
+import AboutUs from "./aboutUs";
 
 function PrivateRoute({ component: Component, authed, ...rest }) {
   return (
@@ -34,6 +35,7 @@ const Main = props => {
         <Route exact path="/search" component={Search} />
         <Route exact path="/edit/profile" component={EditProfile} />
         <Route exact path="/rsg/:username" component={Profile} />
+        <Route exact path="/about" component={AboutUs} />
         <PrivateRoute
           authed={props.authed}
           path="/dashboard"

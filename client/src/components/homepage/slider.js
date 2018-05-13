@@ -55,7 +55,7 @@ class Slide extends Component {
           <div className="banner-slide2">
             <div className="sa-text__promo">
               <h2>Brace yourself for SoundIT Africa 2</h2>
-              <h4>27.05.2018</h4>
+              <h4>01.06.2018</h4>
             </div>
           </div>
         </Slider>

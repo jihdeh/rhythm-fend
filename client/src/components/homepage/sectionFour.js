@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import { Link } from "react-router-dom";
 
 class SectionFour extends PureComponent {
   render() {
@@ -26,7 +27,11 @@ class SectionFour extends PureComponent {
             </p>
             <br />
             <p>
-              LEARN MORE <i className="fas fa-angle-down" />
+              <Link to="/about">
+                <span className="section-four__link">
+                  LEARN MORE <i className="fas fa-angle-down" />
+                </span>
+              </Link>
             </p>
           </div>
           <div className="col-sm-6 section-four__right">

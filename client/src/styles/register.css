@@ -9,7 +9,31 @@
   height: 60em;
   padding: 4em 0;
 }
-
+.username--cont {
+  position: relative;
+}
+.danger {
+  color: red;
+}
+.success {
+  color: green;
+}
+.usernameInput {
+  padding-right: 35px;
+}
+.no-click {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.activityI {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 a {
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
@@ -169,10 +193,14 @@ a:hover {
   float: left;
   width: 50%;
   background: #ffffff;
+  height: stretch;
 }
 .content-main {
   float: left;
   width: 50%;
+  height: stretch;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .soundIt-subscribe {
   background: rgba(0, 0, 0, 0.56);

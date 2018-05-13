@@ -25,6 +25,9 @@ export default class MobileMenu extends Component {
               <NavItem eventKey={1} href="/">
                 Home
               </NavItem>
+              <NavItem eventKey={1} href="/about">
+                About
+              </NavItem>
               <NavItem eventKey={1} href="/donate">
                 Donate
               </NavItem>

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import get from "lodash/get";
 import CurrentlyClosedComponent from "../currentlyClosed";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import "../../styles/searchpage.css";
 
 class ContestantView extends Component {
