@@ -21,15 +21,15 @@ class SectionFive extends PureComponent {
             <div className="section-five-img">
               <img
                 className="section-five__picture img-responsive"
-                src="https://www.artmakerz.net/wp-content/uploads/2016/01/starbucks-feature-image.jpg"
-                alt=""
+                src="/images/gallery/A.png"
+                alt="SoundIT show gallery"
               />
             </div>
             <div className="section-five-img">
               <img
                 className="section-five__picture img-responsive"
-                src="https://www.artmakerz.net/wp-content/uploads/2017/07/Tech20-Portfolio-Website3-960x960.jpg"
-                alt=""
+                src="/images/gallery/C.png"
+                alt="SoundIT Africa show gallery"
               />
             </div>
           </div>
@@ -37,15 +37,15 @@ class SectionFive extends PureComponent {
             <div className="section-five-img">
               <img
                 className="section-five__picture img-responsive"
-                src="https://www.artmakerz.net/wp-content/uploads/2016/01/starbucks-feature-image.jpg"
-                alt=""
+                src="/images/gallery/D.png"
+                alt="SoundIT Africa show gallery"
               />
             </div>
             <div className="section-five-img">
               <img
                 className="section-five__picture img-responsive"
-                src="https://www.artmakerz.net/wp-content/uploads/2017/07/Tech20-Portfolio-Website3-960x960.jpg"
-                alt=""
+                src="/images/gallery/B.png"
+                alt="SoundIT Africa show gallery"
               />
             </div>
           </div>

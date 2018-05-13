@@ -117,9 +117,10 @@ const Footer = () => (
                   <p>
                     <span>&copy; Rising Star Gospel.</span>
                     <span className="footer__address_line_separator">|</span>
-                    <span>82 rue d'Hauteville 75010 Lagos</span>
+                    <span>Lekki, Lagos Nigeria.</span>
                     <span className="footer__address_line_separator">|</span>
-                    <span>+234 (80) 6979 0405</span>
+                    <span>+234 (80) 3298 8276</span>, &nbsp;
+                    <span>+234 (81) 5046 8397</span>
                     <span className="footer__address_line_separator">|</span>
                     <a href="mailto:contact@soundit.africa">
                       contact@soundit.africa

@@ -1,6 +1,6 @@
 .banner {
-  background: url("/images/about_us_2_xxl.jpg");
-  background: url("/images/about_us_2_xxl.jpg"),
+  background: url("/images/banner1.png");
+  background: url("/images/banner1.png"),
     linear-gradient(to right, #653200, #666666);
   height: 100vh;
   background-blend-mode: overlay;
@@ -12,8 +12,8 @@
 }
 
 .banner-slide2 {
-  background: url("/images/voiceout.jpg");
-  background: url("/images/voiceout.jpg"),
+  background: url("/images/banner2.png");
+  background: url("/images/banner2.png"),
     linear-gradient(to left, #653200, #666666);
   height: 100vh;
   background-blend-mode: overlay;
