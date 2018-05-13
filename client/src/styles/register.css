@@ -18,6 +18,13 @@
 .success {
   color: green;
 }
+.usernameInput {
+  padding-right: 35px;
+}
+.no-click {
+  pointer-events: none;
+  opacity: 0.5;
+}
 .activityI {
   position: absolute;
   top: 0;
@@ -186,10 +193,18 @@ a:hover {
   float: left;
   width: 50%;
   background: #ffffff;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
 }
 .content-main {
   float: left;
   width: 50%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .soundIt-subscribe {
   background: rgba(0, 0, 0, 0.56);

@@ -7,7 +7,7 @@ import { createAccount } from "../actions/authActions";
 import { displayError } from "../actions/errorActions";
 import { verifyUsername } from "../actions/verifyUsernameAction";
 import CurrentlyClosedComponent from "../components/currentlyClosed";
-import _ from "lodash";
+import debounce from "lodash/debounce";
 import IntlTelInput from "react-intl-tel-input";
 import "../../node_modules/react-intl-tel-input/dist/libphonenumber.js";
 import "../../node_modules/react-intl-tel-input/dist/main.css";
@@ -44,11 +44,11 @@ class Register extends Component {
     country: "",
     state: "",
     username: "",
-    registrationOpen: false,
+    registrationOpen: true,
     loadingPaystackModule: false
   };
 
-  verify = _.debounce(this.props.verifyUsernm, 1200);
+  verify = debounce(this.props.verifyUsernm, 1000);
 
   componentWillReceiveProps(nextProps) {
     if (get(nextProps, "createAccountStatus.data")) {
@@ -259,12 +259,15 @@ class Register extends Component {
                     />
                     <span className="username--cont">
                       <input
+                        className="usernameInput"
                         type="text"
                         placeholder="username"
                         onChange={({ target }) =>
                           this.setState({ username: target.value })
                         }
-                        onKeyUp={({ target }) => this.verify(target.value)}
+                        onKeyUp={({ target }) =>
+                          this.verify(target.value.trim())
+                        }
                         value={this.state.username || ""}
                         required
                       />
@@ -340,7 +343,11 @@ class Register extends Component {
                       </button>
                     ) : (
                       <input
-                        className="sa-registration-btn"
+                        className={
+                          verifyusername.taken || !username
+                            ? "sa-registration-btn no-click"
+                            : "sa-registration-btn"
+                        }
                         type="submit"
                         value="Sign Up"
                       />

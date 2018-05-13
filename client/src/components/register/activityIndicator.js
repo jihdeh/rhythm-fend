@@ -6,7 +6,7 @@ const activityI = ({ verifyusername, username }) => (
   <span className="activityI">
     {verifyusername.fetching ? (
       <Spinner color="#ffffff" />
-    ) : verifyusername.taken ? (
+    ) : verifyusername.taken && username ? (
       <span className="danger">
         <i className="fas fa-times" />
       </span>

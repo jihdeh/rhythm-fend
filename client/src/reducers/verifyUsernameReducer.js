@@ -6,7 +6,7 @@ import {
 
 const initialstate = {
   fetching: false,
-  taken: false
+  taken: true
 };
 
 export default function verifyUsernameReducer(state = initialstate, action) {
