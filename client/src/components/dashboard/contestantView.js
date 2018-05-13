@@ -31,12 +31,12 @@ class ContestantView extends Component {
                   (Instagram, Facebook or twitter).
                 </p>
                 <p>
-                  Use the hashtag #soundItAfrica along with your uniqueCode #{
-                    token.uniqueCode
+                  Use the hashtag #soundItAfrica along with your username #{
+                    token.username
                   }{" "}
                   i.e{" "}
                   <span style={{ color: "#e33235" }}>
-                    #soundItAfrica #{token.uniqueCode}
+                    #soundItAfrica #{token.username}
                   </span>
                 </p>
                 <p>
@@ -102,8 +102,8 @@ class ContestantView extends Component {
                   <Link
                     target="_blank"
                     style={{ color: "#e33235" }}
-                    to={`${window.location}rsg/${token.uniqueCode}`}
-                  >{`${window.location}rsg/${token.uniqueCode}`}</Link>{" "}
+                    to={`${window.location}rsg/${token.username}`}
+                  >{`${window.location}rsg/${token.username}`}</Link>{" "}
                   .<br /> Share this link with your friends and network to show
                   them where they can vote and see more about you.
                 </p>
@@ -113,12 +113,12 @@ class ContestantView extends Component {
                   (Instagram, Facebook or twitter).
                 </p>
                 <p>
-                  Use the hashtag #soundItAfrica along with your uniqueCode #{
-                    token.uniqueCode
+                  Use the hashtag #soundItAfrica along with your username #{
+                    token.username
                   }{" "}
                   i.e{" "}
                   <span style={{ color: "#e33235" }}>
-                    #soundItAfrica #{token.uniqueCode}
+                    #soundItAfrica #{token.username}
                   </span>
                 </p>
                 <p>

@@ -305,7 +305,7 @@
 @media (max-width: 1298px) {
   .Vote--button {
     font-size: 15px;
-    padding: 3px 60px;
+    padding: 9px 60px;
   }
   .quantity--input {
     width: 100px;
@@ -313,7 +313,7 @@
   }
   .child--vote {
     right: 0;
-    top: -180%;
+    top: -49px;
   }
 }
 .hide--this {

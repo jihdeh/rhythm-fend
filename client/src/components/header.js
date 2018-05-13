@@ -5,7 +5,13 @@ import "../styles/header.css";
 export default class Header extends Component {
   render() {
     return (
-      <header className="sa-header__xs sa-header__search">
+      <header
+        className={
+          window.location.pathname === "/"
+            ? "sa-header__xs_landing sa-header__xs sa-header__search"
+            : "sa-header__xs sa-header__search"
+        }
+      >
         <nav>
           <Link to="/">
             <img

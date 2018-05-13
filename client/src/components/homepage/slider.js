@@ -10,7 +10,7 @@ class Slide extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { displayForm: false };
+    this.state = { displayForm: true };
   }
   render() {
     const settings = {

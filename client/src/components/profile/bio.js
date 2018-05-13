@@ -18,7 +18,8 @@ const bio = ({
   onchangeVoteCount,
   onShowcastvote,
   showcastvote,
-  onVote
+  onVote,
+  loadingPaystack
 }) => (
   <div className="contestant--profile">
     <div className="contestant--cont">
@@ -50,13 +51,21 @@ const bio = ({
                     onChange={onchangeVoteCount}
                     className="quantity--input"
                   />
-                  <label className="click--vote" onClick={onVote}>
-                    Cast
-                  </label>
+                  {!loadingPaystack ? (
+                    <label className="click--vote" onClick={onVote}>
+                      Cast
+                    </label>
+                  ) : (
+                    <label className="click--vote">Loading....</label>
+                  )}
                 </span>
-                <span className="Vote--button" onClick={onShowcastvote}>
-                  Vote {formatString(firstName)}
-                </span>
+                {!loadingPaystack ? (
+                  <span className="Vote--button" onClick={onShowcastvote}>
+                    Vote {formatString(firstName)}
+                  </span>
+                ) : (
+                  <span className="Vote--button">Please hold!</span>
+                )}
               </span>
             </div>
           ) : null}

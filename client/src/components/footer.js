@@ -99,7 +99,9 @@ const Footer = () => (
                       </a>
                     </li>
                     <li style={{ marginTop: 0 }}>
-                      <img height="73" src="/images/secured/cards.png" />
+                      <a href="https://paystack.com" target="_blank">
+                        <img height="73" src="/images/secured/cards.png" />
+                      </a>
                     </li>
                   </ul>
                 </nav>

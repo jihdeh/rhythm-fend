@@ -30,7 +30,8 @@ class Profile extends Component {
       voteCount: "1",
       email: "",
       show: false,
-      showcastvote: false
+      showcastvote: false,
+      loadingPaystack: false
     };
   }
   async componentDidMount() {
@@ -62,6 +63,9 @@ class Profile extends Component {
 
   onVote = () => {
     const { voteCount, username, email } = this.state;
+    this.setState({
+      loadingPaystack: true
+    });
     this.loadPayStack(username, voteCount, email);
   };
   successMesage = (username, voteCount) => {
@@ -91,6 +95,9 @@ class Profile extends Component {
       },
       onClose: () => {
         alert("window closed");
+        this.setState({
+          loadingPaystack: false
+        });
       }
     });
     handler.openIframe();
@@ -112,7 +119,8 @@ class Profile extends Component {
       contestantVideo,
       show,
       voteCount,
-      showcastvote
+      showcastvote,
+      loadingPaystack
     } = this.state;
 
     const myStyle = getStyle("myStyle", fetching, profilePicture);
@@ -154,6 +162,7 @@ class Profile extends Component {
                 onShowcastvote={this.onShowcastvote}
                 showcastvote={showcastvote}
                 onVote={this.onVote}
+                loadingPaystack={loadingPaystack}
               />
             </div>
             <div className="col-sm-7">
