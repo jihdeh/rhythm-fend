@@ -16,11 +16,9 @@ const Description = ({ name, state, country, profilelink, show, click }) => (
       </span>
       <span className="share--cont">
         {show ? <Sharebutton /> : null}
-        <span className="share-btn">
+        <span className="share-btn" onClick={click}>
           <Ioshare className="share--icon" />
-          <span className="share-label" onClick={click}>
-            SHARE PROFILE
-          </span>
+          <span className="share-label">SHARE PROFILE</span>
         </span>
       </span>
     </div>
