@@ -353,7 +353,7 @@ class ContestantView extends Component {
           <CurrentlyClosedComponent
             title="Vote for your favourite Rising Star Gospel Contestant"
             subtitle="Vote for your favourite contestant."
-            statustitle="Voting is currently closed."
+            statustitle="Voting is currently closed. Check back on 01.06.2018"
           />
         )}
       </span>

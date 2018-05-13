@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import { Link } from "react-router-dom";
 
 class SectionTwo extends PureComponent {
   render() {
@@ -18,18 +19,20 @@ class SectionTwo extends PureComponent {
           <div className="container-fluid">
             <div className="row">
               <div className="col-lg-4 col-sm-12 col-md-4 second-section__text">
-                <h3>ONGOING COMPETITION</h3>
+                <h3>COMPETITION TERMS</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum.
+                  There's a registration cost N1000 (For contestants in Nigeria)
+                  and $5 (for contestants from other African countries).
+                  <br />
+                  1. Record 1 minute video of you singing a gospel song of your
+                  choice (Sing well, give it your best).<br />
+                  2. Post on your Facebook, Twitter or Instagram with the
+                  hashtags (#SoundIt2 #RisingStarGospelAfrica) and tag
+                  @RisingStarG (for Instagram and twitter) or Rising Star Gospel
+                  Africa on Facebook.<br />
+                  3. Post the video also on your YouTube Channel and copy the
+                  Url (Link).<br />
+                  <br />
                 </p>
               </div>
               <div
@@ -47,18 +50,20 @@ class SectionTwo extends PureComponent {
                 />
               </div>
               <div className="col-lg-4 col-sm-12 col-md-4 second-section__text">
-                <h3>HOW TO BECOME A CONTESTANT</h3>
+                <h3>AFTER COMPETITION TERMS</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum.
+                  1. Log on to{" "}
+                  <Link style={{ color: "rgb(254, 99, 15)" }} to="/register">
+                    www.soundit.africa/register
+                  </Link>{" "}
+                  to register.<br />
+                  2. At the completion of your registration, a Thank you mail
+                  will be sent to your mail address containing more information<br />
+                  3. Invite your friends to follow us on Facebook, Twitter and
+                  Instagram.
+                  <br />
+                  N/B: Good visuals and audio is an added advantage.
+                  <br />
                 </p>
               </div>
             </div>

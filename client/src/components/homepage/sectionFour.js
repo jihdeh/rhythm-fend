@@ -22,8 +22,8 @@ class SectionFour extends PureComponent {
               In 2017, with over 1,000 entries from different part of Africa
               especially Nigeria, Senegal and South Africa, Sound It had its
               first edition and the 5 finalist came to Lagos for the Grand
-              finale. The panel of Judges was lead by Uncle Ben (MTN Project
-              Fame West Africa).
+              finale. The panel of Judges was led by Uncle Ben (MTN Project Fame
+              West Africa).
             </p>
             <br />
             <p>

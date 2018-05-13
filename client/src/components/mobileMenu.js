@@ -34,9 +34,9 @@ export default class MobileMenu extends Component {
               <NavItem eventKey={1} href="/search">
                 Vote
               </NavItem>
-              <NavItem eventKey={2} href="/account">
+              {/*<NavItem eventKey={2} href="/account">
                 Account
-              </NavItem>
+              </NavItem>*/}
             </Nav>
           </Navbar.Collapse>
         </Navbar>

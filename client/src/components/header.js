@@ -25,9 +25,9 @@ export default class Header extends Component {
               <div className="sa-liner" />
             </div>
             <ul className="sa-navigation">
-              <li>
+              {/*<li>
                 <Link to="/account">Account</Link>
-              </li>
+              </li>*/}
               <li>
                 <Link to="/donate">Donate</Link>
               </li>
@@ -35,7 +35,7 @@ export default class Header extends Component {
                 <Link to="/search">Vote</Link>
               </li>
               <li>
-                <a href="/about">About</a>
+                <Link to="/about">About</Link>
               </li>
               <li>
                 <a href="/#contact">Contact</a>

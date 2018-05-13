@@ -34,6 +34,6 @@ export const openStatus = () => async dispatch => {
   } catch (error) {
     const { data } = error.response;
     console.log(data, error.response, error.name);
-    displayError(data.message)(dispatch);
+    // displayError(data.message)(dispatch);
   }
 };
