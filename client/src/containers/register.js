@@ -43,7 +43,6 @@ class Register extends Component {
     country: "",
     state: "",
     username: "",
-    registrationOpen: false,
     loadingPaystackModule: false
   };
 
@@ -170,10 +169,12 @@ class Register extends Component {
   };
 
   render() {
-    const { loadingPaystackModule, registrationOpen } = this.state;
+    const { loadingPaystackModule } = this.state;
+    const { openStatus } = this.props;
+    console.log(openStatus);
     return (
       <span>
-        {registrationOpen ? (
+        {get(openStatus, "registrationOpen") ? (
           <div className="register-container">
             <div className="wrap">
               <div className="content-left">
@@ -354,9 +355,10 @@ class Register extends Component {
   }
 }
 
-const mapStateToProps = ({ auth, error }) => ({
+const mapStateToProps = ({ auth, error, misc }) => ({
   createAccountStatus: auth.createAccountStatus,
   user: auth.userInfo,
+  openStatus: misc.openStatus,
   errorMessage: error
 });
 

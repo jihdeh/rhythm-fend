@@ -1,16 +1,16 @@
 import React, { Component } from "react";
+import get from "lodash/get";
 import CurrentlyClosedComponent from "../currentlyClosed";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import "../../styles/searchpage.css";
 
 class ContestantView extends Component {
-  state = {
-    votingOpen: false
-  };
   render() {
-    const { votingOpen } = this.state;
+    const { openStatus } = this.props;
     return (
       <span>
-        {votingOpen ? (
+        {get(openStatus, "votingOpen") ? (
           <div className="container-fluid">
             <div className="row">
               <div className="contestant-container">
@@ -362,4 +362,8 @@ class ContestantView extends Component {
   }
 }
 
-export default ContestantView;
+const mapStateToProps = ({ misc }) => ({
+  openStatus: misc.openStatus
+});
+
+export default connect(mapStateToProps)(ContestantView);
