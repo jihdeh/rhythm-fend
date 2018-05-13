@@ -43,7 +43,7 @@ class Register extends Component {
     country: "",
     state: "",
     username: "",
-    votingOpen: false,
+    registrationOpen: false,
     loadingPaystackModule: false
   };
 
@@ -170,10 +170,10 @@ class Register extends Component {
   };
 
   render() {
-    const { loadingPaystackModule, votingOpen } = this.state;
+    const { loadingPaystackModule, registrationOpen } = this.state;
     return (
       <span>
-        {votingOpen ? (
+        {registrationOpen ? (
           <div className="register-container">
             <div className="wrap">
               <div className="content-left">
