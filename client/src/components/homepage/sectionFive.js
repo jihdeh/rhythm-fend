@@ -11,8 +11,15 @@ class SectionFive extends PureComponent {
           </div>
           <div className="col-sm-6">
             <h5 className="section-five__recentwork">
-              RECENT WORK{" "}
-              <i className="section-five__recentwork-arrow fas fa-arrow-right" />
+              <a
+                href="https://www.facebook.com/RisingStarGospel/"
+                target="_blank"
+                style={{ color: "inherit" }}
+                rel="noopener noreferrer"
+              >
+                RECENT WORK{" "}
+                <i className="section-five__recentwork-arrow fas fa-arrow-right" />
+              </a>
             </h5>
           </div>
         </div>
