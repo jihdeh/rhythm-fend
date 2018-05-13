@@ -32,6 +32,7 @@ const Footer = () => (
                       <a
                         href="https://www.instagram.com/RisingStarG"
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         Instagram
                       </a>
@@ -41,6 +42,7 @@ const Footer = () => (
                       <a
                         href="https://www.facebook.com/RisingStarGospel/"
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         Facebook
                       </a>
@@ -53,7 +55,11 @@ const Footer = () => (
                     </li> */}
                     <li className="footer__navs_link">
                       <div className="footer__navs_link_social_icon footer__navs_link_social_icon-twitter" />
-                      <a href="https://twitter.com/RisingStarG" target="_blank">
+                      <a
+                        href="https://twitter.com/RisingStarG"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Twitter
                       </a>
                     </li>
@@ -62,6 +68,7 @@ const Footer = () => (
                       <a
                         href="https://www.youtube.com/risingstargospel"
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         YouTube
                       </a>
@@ -74,13 +81,13 @@ const Footer = () => (
                 <nav className="footer__nav">
                   <ul>
                     <li>
-                      <a href="../en/terms" target="_blank">Terms and Conditions of Use</a>
+                      <a href="../en/terms" target="_blank" rel="noopener noreferrer">Terms and Conditions of Use</a>
                     </li>
                     <li>
-                      <a href="../en/privacy" target="_blank">Privacy policy</a>
+                      <a href="../en/privacy" target="_blank" rel="noopener noreferrer">Privacy policy</a>
                     </li>
                     <li>
-                      <a href="../en/legal" target="_blank">Legal notices</a>
+                      <a href="../en/legal" target="_blank" rel="noopener noreferrer">Legal notices</a>
                     </li>
                   </ul>
                 </nav> */}
@@ -91,16 +98,26 @@ const Footer = () => (
                       <a
                         href="https://secure.comodo.com/ttb_searcher/trustlogo?v_querytype=W&v_shortname=CL1&v_search=https://www.soundit.africa/rsg/soco&x=6&y=5"
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <img
                           height="80"
                           src="/images/secured/comodo_secure_seal_100x85_transp.png"
+                          alt="Soundit comodo security"
                         />
                       </a>
                     </li>
                     <li style={{ marginTop: 0 }}>
-                      <a href="https://paystack.com" target="_blank">
-                        <img height="73" src="/images/secured/cards.png" />
+                      <a
+                        href="https://paystack.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          height="73"
+                          src="/images/secured/cards.png"
+                          alt="soundit africa paystack logo"
+                        />
                       </a>
                     </li>
                   </ul>

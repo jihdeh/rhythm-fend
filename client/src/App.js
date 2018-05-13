@@ -9,11 +9,13 @@ import AuthenticatedHeader from "./components/isAuthenticatedHeader";
 import ErrorModal from "./components/ErrorModal";
 import { clearError } from "./actions/errorActions";
 import { fetchLocalUser } from "./actions/authActions";
+import { openStatus } from "./actions/miscActions";
 import "./App.css";
 
 class App extends Component {
   componentWillMount() {
     this.props.fetchLocalUser();
+    this.props.checkOpenStatus();
     if (
       (this.props.user || localStorage.getItem("token")) &&
       this.props.location.pathname === "/register"
@@ -76,6 +78,7 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
   fetchLocalUser: bindActionCreators(fetchLocalUser, dispatch),
-  clearError: bindActionCreators(clearError, dispatch)
+  clearError: bindActionCreators(clearError, dispatch),
+  checkOpenStatus: bindActionCreators(openStatus, dispatch)
 });
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

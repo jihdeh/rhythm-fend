@@ -1,0 +1,53 @@
+.about-us-container {
+  background-color: #000;
+  width: 100%;
+  padding-bottom: 1em;
+  padding-top: 9em;
+}
+
+.about-us-logo__logo {
+  height: 20em;
+  width: 20em;
+  margin-left: 2em;
+}
+
+.about-us-text {
+  color: #fff;
+  padding: 0em 2em 1em 2em;
+}
+
+.about-us-text > p {
+  font-size: 1.2em;
+}
+
+.about-us__programs {
+  color: #fe9910;
+}
+
+@media (max-width: 991px) {
+  .about-us-logo__logo {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-us-container {
+    padding-top: 1em;
+  }
+}
+
+@media (max-width: 436px) {
+  .about-us-logo__logo {
+    width: 20em;
+    height: 20em;
+  }
+}
+
+@media (max-width: 296px) {
+  .about-us-logo__logo {
+    width: 16em;
+    height: 16em;
+  }
+}

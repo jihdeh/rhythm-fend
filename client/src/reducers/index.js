@@ -5,6 +5,7 @@ import errorReducer from "./errorReducer";
 import profileReducer from "./profileReducer";
 import miscReducer from "./miscReducer";
 import voteReducer from "./voteReducer";
+import verifyUsernameReducer from "./verifyUsernameReducer";
 
 export default combineReducers({
   user: usersReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   error: errorReducer,
   profile: profileReducer,
   misc: miscReducer,
-  votes: voteReducer
+  votes: voteReducer,
+  verifyusername: verifyUsernameReducer
 });
