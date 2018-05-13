@@ -5,13 +5,14 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { createAccount } from "../actions/authActions";
 import { displayError } from "../actions/errorActions";
+import { verifyUsername } from "../actions/verifyUsernameAction";
 import CurrentlyClosedComponent from "../components/currentlyClosed";
-
+import debounce from "lodash/debounce";
 import IntlTelInput from "react-intl-tel-input";
 import "../../node_modules/react-intl-tel-input/dist/libphonenumber.js";
 import "../../node_modules/react-intl-tel-input/dist/main.css";
-
 import "../styles/register.css";
+import ActivityI from "../components/register/activityIndicator";
 
 const loadJSONP = (url, callback) => {
   const ref = window.document.getElementsByTagName("script")[0];
@@ -43,9 +44,11 @@ class Register extends Component {
     country: "",
     state: "",
     username: "",
-    registrationOpen: false,
+    registrationOpen: true,
     loadingPaystackModule: false
   };
+
+  verify = debounce(this.props.verifyUsernm, 1000);
 
   componentWillReceiveProps(nextProps) {
     if (get(nextProps, "createAccountStatus.data")) {
@@ -170,7 +173,8 @@ class Register extends Component {
   };
 
   render() {
-    const { loadingPaystackModule, registrationOpen } = this.state;
+    const { loadingPaystackModule, registrationOpen, username } = this.state;
+    const { verifyusername } = this.props;
     return (
       <span>
         {registrationOpen ? (
@@ -253,15 +257,25 @@ class Register extends Component {
                       value={this.state.lastName || ""}
                       required
                     />
-                    <input
-                      type="text"
-                      placeholder="username"
-                      onChange={({ target }) =>
-                        this.setState({ username: target.value })
-                      }
-                      value={this.state.username || ""}
-                      required
-                    />
+                    <span className="username--cont">
+                      <input
+                        className="usernameInput"
+                        type="text"
+                        placeholder="username"
+                        onChange={({ target }) =>
+                          this.setState({ username: target.value })
+                        }
+                        onKeyUp={({ target }) =>
+                          this.verify(target.value.trim())
+                        }
+                        value={this.state.username || ""}
+                        required
+                      />
+                      <ActivityI
+                        username={username}
+                        verifyusername={verifyusername}
+                      />
+                    </span>
                     <IntlTelInput
                       placeholder="Phone number"
                       defaultCountry={"auto"}
@@ -329,7 +343,11 @@ class Register extends Component {
                       </button>
                     ) : (
                       <input
-                        className="sa-registration-btn"
+                        className={
+                          verifyusername.taken || !username
+                            ? "sa-registration-btn no-click"
+                            : "sa-registration-btn"
+                        }
                         type="submit"
                         value="Sign Up"
                       />
@@ -354,15 +372,17 @@ class Register extends Component {
   }
 }
 
-const mapStateToProps = ({ auth, error }) => ({
+const mapStateToProps = ({ auth, error, verifyusername }) => ({
   createAccountStatus: auth.createAccountStatus,
   user: auth.userInfo,
-  errorMessage: error
+  errorMessage: error,
+  verifyusername: verifyusername
 });
 
 const mapDispatchToProps = dispatch => ({
   register: bindActionCreators(createAccount, dispatch),
-  displayError: bindActionCreators(displayError, dispatch)
+  displayError: bindActionCreators(displayError, dispatch),
+  verifyUsernm: bindActionCreators(verifyUsername, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);
