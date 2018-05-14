@@ -8,11 +8,8 @@ import Search from "./searchpage";
 import Profile from "./profile";
 import NoMatch from "./noMatch";
 import EditProfile from "./editProfile";
-<<<<<<< bd0a7d751b1428acfa38dec2405f99251fc1d1a8
 import AboutUs from "./aboutUs";
-=======
 import Gallery from "./gallery";
->>>>>>> added gallery
 
 function PrivateRoute({ component: Component, authed, ...rest }) {
   return (
@@ -39,11 +36,8 @@ const Main = props => {
         <Route exact path="/search" component={Search} />
         <Route exact path="/edit/profile" component={EditProfile} />
         <Route exact path="/rsg/:username" component={Profile} />
-<<<<<<< bd0a7d751b1428acfa38dec2405f99251fc1d1a8
         <Route exact path="/about" component={AboutUs} />
-=======
         <Route exact path="/gallery" component={Gallery} />
->>>>>>> added gallery
         <PrivateRoute
           authed={props.authed}
           path="/dashboard"
