@@ -1,0 +1,52 @@
+.gall-pic {
+  width: 100%;
+  height: auto;
+}
+.gall--cont {
+  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 100px 0;
+}
+.pic--cont {
+  margin: 30px 0;
+}
+.sect--two {
+  border-top: 1px solid white;
+  padding-top: 50px;
+}
+.overlay--image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 30px 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.overlay--image:hover span {
+  display: none;
+}
+.overlay--image:hover {
+  background-color: transparent;
+}
+.image--title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.image--description {
+  font-size: 12px;
+}
+@media (max-width: 800px) {
+  .image--title {
+    font-size: 20px;
+  }
+}
