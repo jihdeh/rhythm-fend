@@ -32,6 +32,7 @@ export const openStatus = () => async dispatch => {
       payload: result.data
     });
   } catch (error) {
+    console.log(error);
     const { data } = error.response;
     console.log(data, error.response, error.name);
     // displayError(data.message)(dispatch);
