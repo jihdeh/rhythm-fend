@@ -100,7 +100,6 @@ class Donate extends Component {
                   onChange={({ target }) =>
                     this.setState({ phoneNumber: target.value })
                   }
-                  placeholder="Phonenumber"
                 />
                 <label>Your Email Sir/Ma</label>
                 <input
