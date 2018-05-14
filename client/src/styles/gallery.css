@@ -67,6 +67,8 @@
 .image-holder {
   width: 50%;
   background-color: transparent;
+  position: relative;
+  bottom: 15%;
 }
 @media (max-width: 800px) {
   .image--title {
@@ -76,10 +78,14 @@
 @media (max-width: 767px) {
   .image-holder {
     width: 500px;
+    position: relative;
+    bottom: 45%;
   }
 }
 @media (max-width: 550px) {
   .image-holder {
     width: 320px;
+    position: relative;
+    bottom: 45%;
   }
 }
