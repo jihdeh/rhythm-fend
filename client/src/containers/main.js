@@ -9,6 +9,7 @@ import Profile from "./profile";
 import NoMatch from "./noMatch";
 import EditProfile from "./editProfile";
 import AboutUs from "./aboutUs";
+import Gallery from "./gallery";
 
 function PrivateRoute({ component: Component, authed, ...rest }) {
   return (
@@ -36,6 +37,7 @@ const Main = props => {
         <Route exact path="/edit/profile" component={EditProfile} />
         <Route exact path="/rsg/:username" component={Profile} />
         <Route exact path="/about" component={AboutUs} />
+        <Route exact path="/gallery" component={Gallery} />
         <PrivateRoute
           authed={props.authed}
           path="/dashboard"
