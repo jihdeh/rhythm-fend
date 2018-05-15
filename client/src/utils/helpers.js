@@ -37,3 +37,53 @@ a page when looking at its layout. The point of using Lorem Ipsum is that it has
 more-or-less normal distribution of letters, as opposed to using 'Content here, content
 here', making it look like readable English. Many desktop publishing packages`
 };
+
+export const PHOTO_SET = [
+  {
+    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    width: 4,
+    height: 3
+  }
+];
+
+export const VIDEO_SET = [
+  "https://www.youtube.com/embed/5J69oiaLUN0",
+  "https://www.youtube.com/embed/ZgzRQUQV35M",
+  "https://www.youtube.com/embed/PIdZfqNaq_Q",
+  "https://www.youtube.com/embed/oynB0sGUsBU"
+];
