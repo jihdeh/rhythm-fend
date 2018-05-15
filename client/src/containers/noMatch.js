@@ -5,7 +5,7 @@ import "../styles/noMatch.css"
 export default class NoMatch extends Component {
   render() {
     return (
-      <div>
+      <div className="nomatch-container">
         <div className="nomatch">
           <img className="nomatch-logo" src="/images/logo.png" alt="" />
           <div className="nomatch-text">

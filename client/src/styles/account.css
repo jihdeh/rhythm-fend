@@ -1,0 +1,61 @@
+.account-container {
+  background: hsl(0, 0%, 7%);
+  width: 100%;
+  padding-bottom: 1em;
+  padding-top: 9em;
+  height: stretch;
+}
+
+.account-form {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  width: 35em;
+  background: #2e2f33;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+  flex-direction: column;
+}
+
+.account-form__header {
+  border-bottom: 1px solid #585858;
+  padding-left: 10px;
+  padding-top: 5px;
+  font-size: 15px;
+}
+
+.account-form__footer {
+  text-align: center;
+  border-top: 1px solid #585858;
+  padding-top: 5px;
+  font-size: 10px;
+}
+
+.account-form__form {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.account-form p {
+  color: #fff;
+}
+
+.sa-actions__login {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .account-form {
+    margin-top: 3em;
+  }
+}
+
+@media (max-width: 479px) {
+  .account-form {
+    width: 85%;
+  }
+}
