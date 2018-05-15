@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { Link } from "react-router-dom";
 import { donate } from "../actions/miscActions";
 import "../styles/donate.css";
-import { Link } from "react-router-dom";
-
 
 class Donate extends Component {
   state = {
@@ -72,86 +71,136 @@ class Donate extends Component {
     return (
       <div className="donate-container">
         <div className="wrap">
-          <div className="donate-left">
-            <p className="donate-left__title">Your donation will help us to</p>
-            <p className="donate-left__body">Go into more African nations; to Discover talents, develop them to become global musical stars.</p>
-            <p className="donate-left__body">Take the Gospel of Jesus Christ to more communities and nations in Africa through music Concerts, Talent Hunt events and our Campus Tours.</p>
+          <div className="content-left">
+            <div className="content-info">
+              <h2>Your donation will help us to</h2>
+              <div className="slider">
+                <div className="">
+                  <ul className="rslides callbacks callbacks1" id="slider4">
+                    <li>
+                      <div className="soundit-banner-info">
+                        <h3>Spread!</h3>
+                        <p>
+                          Go into more African nations; to Discover talents,
+                          develop them to become global musical stars.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul className="rslides callbacks callbacks1" id="slider4">
+                    <li>
+                      <div className="soundit-banner-info">
+                        <h3>Reach!</h3>
+                        <p>
+                          Take the Gospel of Jesus Christ to more communities
+                          and nations in Africa through music Concerts, Talent
+                          Hunt events and our Campus Tours.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div className="clear"> </div>
+              </div>
+              <div className="agileinfo-follow">
+                <h4>Follow us on:</h4>
+              </div>
+              <div className="agileinfo-social-grids">
+                <ul>
+                  <a
+                    href="https://www.facebook.com/RisingStarGospel/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="social-icons fab fa-facebook-f fa-lg" />
+                  </a>
+                  <a
+                    href="https://twitter.com/RisingStarG"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="social-icons fab fa-twitter fa-lg" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/RisingStarG"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="social-icons fab fa-instagram fa-lg" />
+                  </a>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div className="donate-main donate-subscribe">
-            <form className="donate-container__form">
+          <div className="content-main">
+            <div className="soundIt-subscribe">
               {!successfulDonation ? (
-              <span>
-                <h3 className="donate-container__form-reason">
-                  Please for appreciation! we'd like some information about you
-                </h3>
-                <label>
-                  Name or Organization name: <small>*</small>
-                </label>
-                <input
-                  className="donate-input"
-                  type="text"
-                  onChange={({ target }) => this.setState({ name: target.value })}
-                  placeholder="Your name or organization name e.g One Love International"
-                />
-                <label>Phone number</label>
-                <input
-                  className="donate-input"
-                  type="number"
-                  onChange={({ target }) =>
-                    this.setState({ phoneNumber: target.value })
-                  }
-                />
-                <label>Your Email Sir/Ma</label>
-                <input
-                  className="donate-input"
-                  type="email"
-                  onChange={({ target }) =>
-                    this.setState({ email: target.value })
-                  }
-                />
-                <label>
-                  How much would you like to donate: <small>*</small>
-                </label>
-                <input
-                  className="donate-input"
-                  type="number"
-                  onChange={({ target }) =>
-                    this.setState({ amount: target.value })
-                  }
-                  placeholder="How much donation?"
-                />
-                {loadingPaystackModule ? (
-                  <button className="donate-submit" disabled>
-                    <img src="/images/Spinner-1s-50px.svg" alt="" />{" "}
-                  </button>
-                 ) : (
-                <input
-                  className="donate-submit"
-                  onClick={this.submit}
-                  value="Donate"
-                  type="submit"
-                />
+                <span>
+                  <h4>
+                    Please for appreciation! we'd like some information about
+                    you
+                  </h4>
+                  <form onSubmit={this.submit}>
+                    <label>
+                      Name or Organization name: <small>*</small>
+                    </label>
+                    <input
+                      type="text"
+                      onChange={({ target }) =>
+                        this.setState({ name: target.value })
+                      }
+                      placeholder="Your name or organization name e.g One Love International"
+                    />
+                    <label>Phone number</label>
+                    <input
+                      type="tel"
+                      onChange={({ target }) =>
+                        this.setState({ phoneNumber: target.value })
+                      }
+                    />
+                    <label>Your Email Sir/Ma</label>
+                    <input
+                      type="email"
+                      onChange={({ target }) =>
+                        this.setState({ email: target.value })
+                      }
+                    />
+                    <label>
+                      How much would you like to donate: <small>*</small>
+                    </label>
+                    <input
+                      type="number"
+                      onChange={({ target }) =>
+                        this.setState({ amount: target.value })
+                      }
+                      placeholder="How much donation?"
+                    />
+
+                    {loadingPaystackModule ? (
+                      <button className="sa-btn spinner" disabled>
+                        <img src="/images/Spinner-1s-50px.svg" alt="" />{" "}
+                      </button>
+                    ) : (
+                      <input className="sa-btn" value="Donate" type="submit" />
                     )}
-                  </span>
-                ) : (
+                  </form>
+                </span>
+              ) : (
                 <span className="donation-thanks">
-                  <img
-                    alt="confetti"
-                    src="https://d30y9cdsu7xlg0.cloudfront.net/png/743250-200.png"
-                  />
                   <h2>Thank you for your donations {name}! </h2>
                   <p>
-                    We sincerely appreciate your kindness towards the success of our
-                    show.
+                    We sincerely appreciate your kindness towards the success of
+                    our show.
                   </p>
                   <p>
-                    In the spirit of giving, we would be giving half of your
-                    donations to charity.
+                    In the spirit of giving, we pray that your find favour and
+                    mercy in all that you do
                   </p>
                 </span>
               )}
-            </form>  
+            </div>
           </div>
+          <div className="clear"> </div>
         </div>
       </div>
     );

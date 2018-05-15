@@ -216,13 +216,25 @@ class Register extends Component {
                   </div>
                   <div className="agileinfo-social-grids">
                     <ul>
-                      <a href="#">
+                      <a
+                        href="https://www.facebook.com/RisingStarGospel/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <i className="social-icons fab fa-facebook-f fa-lg" />
                       </a>
-                      <a href="#">
+                      <a
+                        href="https://twitter.com/RisingStarG"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <i className="social-icons fab fa-twitter fa-lg" />
                       </a>
-                      <a href="#">
+                      <a
+                        href="https://www.instagram.com/RisingStarG"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <i className="social-icons fab fa-instagram fa-lg" />
                       </a>
                     </ul>
