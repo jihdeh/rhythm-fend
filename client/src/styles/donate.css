@@ -12,7 +12,7 @@
 .wrap {
   width: 50%;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 4em;
 }
 
 ::-webkit-input-placeholder {
@@ -156,13 +156,14 @@
   float: left;
   width: 50%;
   background: #ffffff;
-  height: stretch;
+  height: 650px;
 }
 .content-main {
   float: left;
   width: 50%;
   overflow: hidden;
   text-overflow: ellipsis;
+  height: 650px;
 }
 
 .soundIt-subscribe {
@@ -276,6 +277,11 @@
 @media (max-width: 768px) {
   .wrap {
     width: 90%;
+  }
+}
+@media (max-width: 767px) {
+  .wrap {
+    margin-top: 0;
   }
 }
 @media (max-width: 667px) {
