@@ -55,6 +55,10 @@ class gallery extends Component {
     const { show, image, url, width } = this.state;
     return (
       <div className="gall--cont">
+        <div className="gallery__section-title">
+          <h2>PAST SHOW IMAGES</h2>
+          <hr />
+        </div>
         <div className="sect--one">
           <Measure
             bounds
@@ -96,7 +100,11 @@ class gallery extends Component {
             }}
           </Measure>
         </div>
-        <div className="sect--two ">
+        <div className="gallery__section-title">
+          <h2>PAST SHOW VIDEOS</h2>
+          <hr />
+        </div>
+        <div className="sect--two">
           <div>
             <div className="row">
               <Video videoUrl={VIDEO_SET} click={this.onShowVideo} />

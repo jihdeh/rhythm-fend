@@ -5,7 +5,7 @@
 .gall--cont {
   background-color: rgba(0, 0, 0, 0.8);
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 100px 0;
+  padding: 10% 0;
   position: relative;
 }
 .pic--cont {
@@ -15,9 +15,17 @@
   padding: 50px 15px;
 }
 .sect--two {
-  border-top: 1px solid white;
   padding-top: 50px;
 }
+
+.gallery__section-title {
+  margin: 0 20px;
+}
+
+.gallery__section-title h2 {
+  color: #ffffff;
+}
+
 .overlay--image {
   position: absolute;
   top: 0;
@@ -71,7 +79,7 @@
   width: 50%;
   background-color: transparent;
   position: relative;
-  bottom: 15%;
+  top: 27%;
 }
 @media (max-width: 800px) {
   .image--title {
@@ -89,6 +97,6 @@
   .image-holder {
     width: 320px;
     position: relative;
-    bottom: 45%;
+    top: 30%;
   }
 }

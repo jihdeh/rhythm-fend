@@ -85,12 +85,5 @@
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 2rem;
-  margin-left: 1em
-}
-
-/*END VOTING STYLE*/
-
-.grid-suspenders {
-  border: 0.5px solid hsl(0, 0%, 53.3%);
-  margin: 20px;
+  margin-left: 1em;
 }
