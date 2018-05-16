@@ -53,7 +53,7 @@ export const PHOTO_SET = [
   },
   {
     src:
-      "http://miketurnerblog.com/wp-content/uploads/2017/09/millennial-worship.jpg",
+      "https://static1.squarespace.com/static/5537e36fe4b08042f031cccb/t/56f2c121f8508203ebe32d1b/1458749733556/Worship-Background_crop1.jpg?format=1500w",
     width: 4,
     height: 2.8
   },
@@ -71,7 +71,7 @@ export const PHOTO_SET = [
   },
   {
     src:
-      "http://fjalaejetes.org/wp-content/uploads/2018/03/tumblr_mn8b8sLRb61rkz363o1_1280.jpg",
+      "https://static1.squarespace.com/static/5537e36fe4b08042f031cccb/t/56f2c121f8508203ebe32d1b/1458749733556/Worship-Background_crop1.jpg?format=1500w",
     width: 4,
     height: 2.8
   },

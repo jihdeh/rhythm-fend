@@ -41,7 +41,7 @@ class ContestantView extends Component {
 
     return (
       <span>
-        {get(openStatus, "votingOpen") ? (
+        {!get(openStatus, "votingOpen") ? (
           <div className="container-fluid">
             <div className="row">
               <div className="contestant-container">
@@ -49,7 +49,10 @@ class ContestantView extends Component {
                   <p className="contestant-section__title">
                     <b>Search results</b>
                   </p>
-                  <form className="contestant-container__form" onSubmit={this.fetchResult}>
+                  <form
+                    className="contestant-container__form"
+                    onSubmit={this.fetchResult}
+                  >
                     <span className="username--cont">
                       <input
                         className="usernameInput searchInput"
@@ -59,16 +62,16 @@ class ContestantView extends Component {
                           this.setState({ username: target.value })
                         }
                         value={this.state.username || ""}
-                        required 
+                        required
                       />
-                      <button className="search-input__button"><i className="fas fa-search searchpage-icon"></i></button>
-                      
+                      <button className="search-input__button">
+                        <i className="fas fa-search searchpage-icon" />
+                      </button>
+
                       {/*<input className="searchButton" type="submit" value="Search" />*/}
                       {isLoading ? <Spinner color="#ffffff" /> : null}
                     </span>
                   </form>
-                  
-                  
                 </div>
                 <h4>SoundIT Africa Contestants</h4>
                 <div className="grid-suspenders" />
@@ -105,7 +108,7 @@ class ContestantView extends Component {
                         </p>
                         <p className="col-contestant-result-code">
                           <a
-                            href={`${window.location}rsg/${
+                            href={`${window.location.origin}/rsg/${
                               contestant.username
                             }`}
                             target="_blank"
