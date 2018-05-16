@@ -40,7 +40,8 @@ here', making it look like readable English. Many desktop publishing packages`
 
 export const PHOTO_SET = [
   {
-    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    src:
+      "https://d2rd7etdn93tqb.cloudfront.net/wp-content/uploads/2017/04/concert-truths-featured-040417.jpg",
     width: 4,
     height: 3
   },
@@ -50,7 +51,8 @@ export const PHOTO_SET = [
     height: 3
   },
   {
-    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    src:
+      "http://miketurnerblog.com/wp-content/uploads/2017/09/millennial-worship.jpg",
     width: 4,
     height: 3
   },
@@ -60,17 +62,20 @@ export const PHOTO_SET = [
     height: 3
   },
   {
-    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    src:
+      "https://i.amz.mshcdn.com/cqmQmotDq-a1oTLigqcxzqHiync=/950x534/filters:quality(90)/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fcard%2Fimage%2F290843%2FAP_344699431569.jpg",
     width: 4,
     height: 3
   },
   {
-    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    src:
+      "http://fjalaejetes.org/wp-content/uploads/2018/03/tumblr_mn8b8sLRb61rkz363o1_1280.jpg",
     width: 4,
     height: 3
   },
   {
-    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    src:
+      "https://static1.squarespace.com/static/5537e36fe4b08042f031cccb/t/56f2c121f8508203ebe32d1b/1458749733556/Worship-Background_crop1.jpg?format=1500w",
     width: 4,
     height: 3
   },

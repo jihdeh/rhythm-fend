@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "../styles/gallery.css";
-import Galleryimage from "../components/gallery/galleryimage";
 import Video from "../components/gallery/video";
 import Gallery from "react-photo-gallery";
 import Measure from "react-measure";
 import Lightbox from "react-images";
 import { PHOTO_SET, VIDEO_SET } from "../utils/helpers";
 import Popover from "../components/gallery/popover";
+
 class gallery extends Component {
   constructor(props) {
     super(props);
