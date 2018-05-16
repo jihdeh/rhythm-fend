@@ -1,4 +1,8 @@
-import { DONATE_SUCCESS, STATUS_STREAM } from "../constants/actionTypes";
+import {
+  DONATE_SUCCESS,
+  STATUS_STREAM,
+  GET_CONTESTANTS
+} from "../constants/actionTypes";
 
 const authReducer = (state = {}, action) => {
   switch (action.type) {
@@ -11,6 +15,11 @@ const authReducer = (state = {}, action) => {
       return {
         ...state,
         openStatus: action.payload
+      };
+    case GET_CONTESTANTS:
+      return {
+        ...state,
+        searchResults: action.payload
       };
     default:
       return state;

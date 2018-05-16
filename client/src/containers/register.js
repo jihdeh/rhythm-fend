@@ -47,7 +47,7 @@ class Register extends Component {
     loadingPaystackModule: false
   };
 
-  verify = debounce(this.props.verifyUsernm, 1000);
+  verify = debounce(this.props.verifyUsername, 1000);
 
   componentWillReceiveProps(nextProps) {
     if (get(nextProps, "createAccountStatus.data")) {
@@ -394,7 +394,7 @@ const mapStateToProps = ({ auth, error, misc, verifyusername }) => ({
 const mapDispatchToProps = dispatch => ({
   register: bindActionCreators(createAccount, dispatch),
   displayError: bindActionCreators(displayError, dispatch),
-  verifyUsernm: bindActionCreators(verifyUsername, dispatch)
+  verifyUsername: bindActionCreators(verifyUsername, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);
