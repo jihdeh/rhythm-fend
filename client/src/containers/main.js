@@ -47,21 +47,27 @@ const Main = props => {
     <main className="main-container">
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/donate" component={Donate} />
+        <Route exact path="/search" component={Search} />
+        <Route exact path="/rsg/:username" component={Profile} />
+        <Route exact path="/about" component={AboutUs} />
+        <Route exact path="/gallery" component={Gallery} />
+
         <PublicRoute
           authed={props.authed}
           path="/register"
           component={Register}
         />
-        <Route exact path="/donate" component={Donate} />
-        <Route exact path="/search" component={Search} />
-        <Route exact path="/edit/profile" component={EditProfile} />
-        <Route exact path="/rsg/:username" component={Profile} />
-        <Route exact path="/about" component={AboutUs} />
-        <Route exact path="/gallery" component={Gallery} />
         <PublicRoute
           authed={props.authed}
           path="/account"
           component={Account}
+        />
+
+        <PrivateRoute
+          authed={props.authed}
+          path="/edit/profile"
+          component={EditProfile}
         />
         <PrivateRoute
           authed={props.authed}

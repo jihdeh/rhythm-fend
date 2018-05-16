@@ -9,7 +9,7 @@ class ContestantView extends Component {
     const { openStatus } = this.props;
     return (
       <span>
-        {get(openStatus, "votingOpen") ? (
+        {!get(openStatus, "votingOpen") ? (
           <div className="container-fluid">
             <div className="row">
               <div className="contestant-container">
