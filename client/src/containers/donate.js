@@ -69,9 +69,9 @@ class Donate extends Component {
     const { loadingPaystackModule, successfulDonation, name } = this.state;
     return (
       <div className="donate-container">
-        <div className="wrap">
-          <div className="content-left">
-            <div className="content-info">
+        <div className="donate-wrapper">
+          <div className="donate-content__left">
+            <div className="donate-content__info">
               <h2>Your donation will help us to</h2>
               <div className="slider">
                 <div className="">
@@ -131,7 +131,7 @@ class Donate extends Component {
               </div>
             </div>
           </div>
-          <div className="content-main">
+          <div className="donate-content__main">
             <div className="soundIt-subscribe">
               {!successfulDonation ? (
                 <span>

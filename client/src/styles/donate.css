@@ -9,8 +9,8 @@
   padding: 4em 0;
   height: 106vh;
 }
-.wrap {
-  width: 50%;
+.donate-wrapper {
+  width: 60%;
   margin: 0 auto;
   margin-top: 4em;
 }
@@ -62,11 +62,11 @@
   border: 0;
 }
 /*-- //slider --*/
-.content-info {
-  padding: 5em 3em;
+.donate-content__info {
+  padding: 3em;
   text-align: center;
 }
-.content-info h2 {
+.donate-content__info h2 {
   color: #212121;
   font-size: 1.5em;
   font-weight: 800;
@@ -152,18 +152,16 @@
 .agile-signin h4 a:hover {
   color: #212121;
 }
-.content-left {
+.donate-content__left {
   float: left;
   width: 50%;
   background: #ffffff;
-  height: 650px;
 }
-.content-main {
+.donate-content__main {
   float: left;
   width: 50%;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 650px;
 }
 
 .soundIt-subscribe {
@@ -242,32 +240,32 @@
 
 /*-- responsive --*/
 @media (max-width: 1440px) {
-  .wrap {
+  .donate-wrapper {
     width: 55%;
   }
 }
 @media (max-width: 1366px) {
-  .wrap {
+  .donate-wrapper {
     width: 60%;
   }
 }
 @media (max-width: 1080px) {
-  .wrap {
+  .donate-wrapper {
     width: 75%;
   }
 }
 @media (max-width: 991px) {
-  .wrap {
+  .donate-wrapper {
     width: 80%;
   }
 }
 @media (max-width: 900px) {
-  .wrap {
+  .donate-wrapper {
     width: 85%;
   }
 }
 @media (max-width: 800px) {
-  .content-info h2 {
+  .donate-content__info h2 {
     font-size: 1.2em;
   }
   .soundIt-subscribe {
@@ -275,12 +273,12 @@
   }
 }
 @media (max-width: 768px) {
-  .wrap {
+  .donate-wrapper {
     width: 90%;
   }
 }
 @media (max-width: 767px) {
-  .wrap {
+  .donate-wrapper {
     margin-top: 0;
   }
 }
@@ -289,18 +287,18 @@
     height: 100%;
   }
 
-  .content-left {
+  .donate-content__left {
     float: none;
     width: 100%;
   }
-  .content-main {
+  .donate-content__main {
     float: none;
     width: 100%;
   }
   .soundIt-subscribe {
     min-height: 425px;
   }
-  .wrap {
+  .donate-wrapper {
     width: 85%;
   }
   .register-container {
@@ -318,7 +316,7 @@
   .soundIt-subscribe input[type="password"] {
     width: 89%;
   }
-  .content-info {
+  .donate-content__info {
     padding: 3em 2em;
   }
   .soundIt-subscribe {
@@ -331,10 +329,10 @@
   }
 }
 @media (max-width: 320px) {
-  .wrap {
+  .donate-wrapper {
     width: 90%;
   }
-  .content-info {
+  .donate-content__info {
     padding: 2em 1em;
   }
   .soundIt-subscribe input[type="email"],
