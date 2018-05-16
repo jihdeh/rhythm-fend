@@ -2,24 +2,22 @@ import React, { Component } from "react";
 import "../styles/gallery.css";
 import Galleryimage from "../components/gallery/galleryimage";
 import Video from "../components/gallery/video";
-
+import Gallery from "react-photo-gallery";
+import Measure from "react-measure";
+import Lightbox from "react-images";
+import { PHOTO_SET, VIDEO_SET } from "../utils/helpers";
+import Popover from "../components/gallery/popover";
 class gallery extends Component {
   constructor(props) {
     super(props);
     this.state = {
       show: false,
       image: false,
-      url: null
+      url: null,
+      width: -1,
+      currentImage: 0
     };
   }
-  onShowImage = e => {
-    const url = e.currentTarget.dataset.img;
-    this.setState({
-      image: true,
-      show: true,
-      url
-    });
-  };
   onShowVideo = e => {
     const url = e.currentTarget.dataset.video;
     this.setState({
@@ -31,103 +29,81 @@ class gallery extends Component {
   onClose = e => {
     this.setState({ show: false });
   };
+  openLightbox = (event, obj) => {
+    this.setState({
+      currentImage: obj.index,
+      lightboxIsOpen: true
+    });
+  };
+  closeLightbox = () => {
+    this.setState({
+      currentImage: 0,
+      lightboxIsOpen: false
+    });
+  };
+  gotoPrevious = () => {
+    this.setState({
+      currentImage: this.state.currentImage - 1
+    });
+  };
+  gotoNext = () => {
+    this.setState({
+      currentImage: this.state.currentImage + 1
+    });
+  };
   render() {
-    const { show, image, url } = this.state;
+    const { show, image, url, width } = this.state;
     return (
       <div className="gall--cont">
         <div className="sect--one">
-          <div className="row pic--cont">
-            <Galleryimage
-              src="https://www.fentybeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-FENTY-Library/default/v1526044799688/about-pages/explore-right.jpg"
-              title="Rihanna Navy"
-              desc="The most beautiful girl in the world"
-              click={this.onShowImage}
-            />
-            <Galleryimage
-              src="https://www.fentybeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-FENTY-Library/default/v1526044799688/about-pages/explore-right.jpg"
-              title="Rihanna Navy"
-              desc="The most beautiful girl in the world"
-              click={this.onShowImage}
-            />
-            <Galleryimage
-              src="https://www.fentybeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-FENTY-Library/default/v1526044799688/about-pages/explore-right.jpg"
-              title="Rihanna Navy"
-              desc="The most beautiful girl in the world"
-              click={this.onShowImage}
-            />
-            <Galleryimage
-              src="https://www.fentybeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-FENTY-Library/default/v1526044799688/about-pages/explore-right.jpg"
-              title="Rihanna Navy"
-              desc="The most beautiful girl in the world"
-              click={this.onShowImage}
-            />
-          </div>
-          <div className="row pic--cont">
-            <Galleryimage
-              src="https://www.fentybeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-FENTY-Library/default/v1526044799688/about-pages/explore-right.jpg"
-              title="Rihanna Navy"
-              desc="The most beautiful girl in the world"
-              click={this.onShowImage}
-            />
-            <Galleryimage
-              src="https://www.fentybeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-FENTY-Library/default/v1526044799688/about-pages/explore-right.jpg"
-              title="Rihanna Navy"
-              desc="The most beautiful girl in the world"
-              click={this.onShowImage}
-            />
-            <Galleryimage
-              src="https://www.fentybeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-FENTY-Library/default/v1526044799688/about-pages/explore-right.jpg"
-              title="Rihanna Navy"
-              desc="The most beautiful girl in the world"
-              click={this.onShowImage}
-            />
-            <Galleryimage
-              src="https://www.fentybeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-FENTY-Library/default/v1526044799688/about-pages/explore-right.jpg"
-              title="Rihanna Navy"
-              desc="The most beautiful girl in the world"
-              click={this.onShowImage}
-            />
-          </div>
+          <Measure
+            bounds
+            onResize={contentRect =>
+              this.setState({ width: contentRect.bounds.width })
+            }
+          >
+            {({ measureRef }) => {
+              if (width < 1) {
+                return <div ref={measureRef} />;
+              }
+              let columns = 1;
+              if (width >= 480) {
+                columns = 2;
+              }
+              if (width >= 1024) {
+                columns = 3;
+              }
+              if (width >= 1440) {
+                columns = 4;
+              }
+              return (
+                <div ref={measureRef}>
+                  <Gallery
+                    photos={PHOTO_SET}
+                    columns={columns}
+                    onClick={this.openLightbox}
+                  />
+                  <Lightbox
+                    images={PHOTO_SET}
+                    onClose={this.closeLightbox}
+                    onClickPrev={this.gotoPrevious}
+                    onClickNext={this.gotoNext}
+                    currentImage={this.state.currentImage}
+                    isOpen={this.state.lightboxIsOpen}
+                  />
+                </div>
+              );
+            }}
+          </Measure>
         </div>
         <div className="sect--two ">
           <div>
             <div className="row">
-              <Video
-                videoUrl={process.env.REACT_APP_ADVERT}
-                click={this.onShowVideo}
-              />
-              <Video videoUrl={process.env.REACT_APP_ADVERT} />
-              <Video videoUrl={process.env.REACT_APP_ADVERT} />
-              <Video videoUrl={process.env.REACT_APP_ADVERT} />
+              <Video videoUrl={VIDEO_SET} click={this.onShowVideo} />
             </div>
           </div>
         </div>
-        {show ? (
-          <div className="popup--enlarge" onClick={this.onClose}>
-            <div className="image-holder">
-              {image ? (
-                <img
-                  className="gall-pic"
-                  src={url}
-                  alt="gallery image"
-                  onClick={e => e.stopPropagation()}
-                />
-              ) : (
-                <iframe
-                  width="100%"
-                  height="500px"
-                  src={url}
-                  title="Contestant video 2"
-                  frameBorder="0"
-                  allow="autoplay; encrypted-media"
-                  allowFullScreen
-                  onClick={e => e.stopPropagation()}
-                />
-              )}
-            </div>
-            }
-          </div>
-        ) : null}
+        <Popover onClose={this.onClose} url={url} image={image} show={show} />
       </div>
     );
   }
