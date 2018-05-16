@@ -41,7 +41,7 @@ class ContestantView extends Component {
 
     return (
       <span>
-        {!get(openStatus, "votingOpen") ? (
+        {get(openStatus, "votingOpen") ? (
           <div className="container-fluid">
             <div className="row">
               <div className="contestant-container">
