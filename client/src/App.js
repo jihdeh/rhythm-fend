@@ -16,21 +16,15 @@ class App extends Component {
   componentWillMount() {
     this.props.fetchLocalUser();
     this.props.checkOpenStatus();
-    if (
-      (this.props.user || localStorage.getItem("token")) &&
-      this.props.location.pathname === "/register"
-    ) {
-      this.props.history.push("/");
-    }
   }
 
   componentWillReceiveProps() {
-    // if (
-    //   (this.props.user || localStorage.getItem("token")) &&
-    //   this.props.location.pathname === "/register"
-    // ) {
-    //   this.props.history.push("/");
-    // }
+    if (
+      (this.props.user || localStorage.getItem("token")) &&
+      this.props.location.pathname === "/account"
+    ) {
+      this.props.history.push("/dashboard");
+    }
   }
 
   beforeLoggedIn() {
