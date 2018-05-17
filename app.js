@@ -17,9 +17,9 @@ function App() {
   const app = new koa();
   const router = new koaRouter();
 
-  // if (process.env.NODE_ENV === "production") {
-  //   app.use(enforceHttps());
-  // }
+  if (process.env.NODE_ENV === "production") {
+    app.use(enforceHttps());
+  }
   app.use(logger());
   app.use(cors());
   forward(app);
