@@ -6,16 +6,26 @@ import serve from "koa-static";
 import path from "path";
 import mount from "koa-mount";
 import Api from "./api";
-import koaRouter from "koa-router";
+import compress from "koa-compress";
 
 import Frontend from "./frontend";
 
 function App() {
   const app = new koa();
-  const router = new koaRouter();
 
   app.use(logger());
   app.use(cors());
+
+  app.use(
+    compress({
+      filter: function(content_type) {
+        return /text/i.test(content_type);
+      },
+      threshold: 2048,
+      flush: require("zlib").Z_SYNC_FLUSH
+    })
+  );
+
   forward(app);
 
   // if (process.env.NODE_ENV === "production") {
@@ -49,11 +59,6 @@ function App() {
     .use(mount("/register", Frontend()))
     .use(mount("/edit/profile", Frontend()))
     .use(mount("/api", Api()));
-
-  // Serve static files
-  app.use(async ctx => {
-    await serve(path.join(__dirname, "/client/build"));
-  });
 
   return app;
 }
