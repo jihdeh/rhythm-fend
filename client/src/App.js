@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { bindActionCreators } from "redux";
+import { Redirect } from "react-router-dom";
 import Header from "./components/header";
 import Main from "./containers/main";
 import MobileMenu from "./components/mobileMenu";
@@ -14,6 +15,7 @@ import "./App.css";
 
 class App extends Component {
   componentWillMount() {
+    this.enforceSSL();
     this.props.fetchLocalUser();
     this.props.checkOpenStatus();
   }
@@ -24,6 +26,16 @@ class App extends Component {
       this.props.location.pathname === "/account"
     ) {
       this.props.history.push("/dashboard");
+    }
+  }
+
+  enforceSSL() {
+    const { protocol, host, pathname } = window.location;
+    if (
+      process.env.REACT_APP_NODE_ENV === "production" &&
+      protocol !== "https:"
+    ) {
+      window.location.replace(`https://${host}${pathname}`);
     }
   }
 
