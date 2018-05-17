@@ -22,9 +22,10 @@ function App() {
     app.use(async (ctx, next) => {
       if (!ctx.secure) {
         await next();
+        ctx.status = 301;
         ctx.redirect(`https://${ctx.request.header.host}${ctx.originalUrl}`);
+        ctx.body = "Redirecting to secure site";
       }
-      return;
     });
   }
 
