@@ -22,11 +22,12 @@ function App() {
     app.use(async (ctx, next) => {
       console.log(
         "is secure",
+        ctx.protocol,
         ctx.secure,
         ctx.request.header.host,
         ctx.originalUrl
       );
-      if (!ctx.secure) {
+      if (ctx.protocol === "http") {
         await next();
         ctx.status = 301;
         ctx.redirect(`https://${ctx.request.header.host}${ctx.originalUrl}`);
