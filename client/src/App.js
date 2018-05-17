@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { bindActionCreators } from "redux";
-import { Redirect } from "react-router-dom";
 import Header from "./components/header";
 import Main from "./containers/main";
 import MobileMenu from "./components/mobileMenu";
