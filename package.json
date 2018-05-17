@@ -12,10 +12,11 @@
     "koa-cache-control": "^2.0.0",
     "koa-forward-request": "^0.8.0",
     "koa-logger": "^3.2.0",
-    "koa-mount": "git+https://github.com/jihdeh/mount#v3.0.1",
+    "koa-mount": "git+https://github.com/jihdeh/mount#v3.0.3",
     "koa-response-time": "^2.0.0",
     "koa-rewrite": "^3.0.1",
     "koa-router": "^7.4.0",
+    "koa-sslify": "^2.1.2",
     "koa-static": "^4.0.2"
   },
   "scripts": {

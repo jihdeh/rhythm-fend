@@ -31,7 +31,7 @@ function App() {
     .use(mount("/account", Frontend()))
     .use(mount("/dashboard", Frontend()))
     .use(mount("/about", Frontend()))
-    .use(mount("/rsg", Frontend(), true))
+    .use(mount("/rsg/*", Frontend(), true))
     .use(mount("/register", Frontend()))
     .use(mount("/edit/profile", Frontend()))
     .use(mount("/api", Api()));
