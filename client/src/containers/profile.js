@@ -12,6 +12,7 @@ import Errorpage from "../components/profile/error";
 import { getStyle } from "../utils/helpers";
 import { getprofile, getprofilepending } from "../actions/profileAction";
 import vote from "../actions/voteAction";
+import VoteModal from "../components/voteModal";
 
 class Profile extends Component {
   constructor(props) {
@@ -35,7 +36,9 @@ class Profile extends Component {
     };
   }
   async componentDidMount() {
-    const { match: { params } } = this.props;
+    const {
+      match: { params }
+    } = this.props;
     this.props.getprofilepending();
     this.props.getprofile(params.username);
   }
@@ -44,6 +47,9 @@ class Profile extends Component {
   };
   onchangeVoteCount = e => {
     this.setState({ voteCount: e.target.value });
+  };
+  onchangeVoteAmount = val => {
+    this.setState({ voteCount: val });
   };
   onShowcastvote = () => {
     this.setState(prevState => ({
@@ -64,7 +70,8 @@ class Profile extends Component {
   onVote = () => {
     const { voteCount, username, email } = this.state;
     this.setState({
-      loadingPaystack: true
+      loadingPaystack: true,
+      showcastvote: false
     });
     this.loadPayStack(username, voteCount, email);
   };
@@ -131,6 +138,14 @@ class Profile extends Component {
 
     return (
       <div className="profile--container">
+        <VoteModal
+          voteCount={voteCount}
+          showcastvote={showcastvote}
+          onVote={this.onVote}
+          onchangeVoteAmount={this.onchangeVoteAmount}
+          onchangeVoteCount={this.onchangeVoteCount}
+          loadingPaystack={loadingPaystack}
+        />
         <ToastContainer ref="container" className="toast-top-right" />
         <ProfileHeader
           myStyle={myStyle}
