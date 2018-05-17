@@ -18,25 +18,25 @@ function App() {
   app.use(cors());
   forward(app);
 
-  if (process.env.NODE_ENV === "production") {
-    app.use(async (ctx, next) => {
-      console.log(
-        "is secure",
-        ctx.protocol,
-        ctx.secure,
-        ctx.request.header.host,
-        ctx.originalUrl
-      );
-      if (ctx.protocol === "http") {
-        await next();
-        ctx.status = 301;
-        ctx.redirect(`https://${ctx.request.header.host}${ctx.originalUrl}`);
-        ctx.body = "Redirecting to secure site";
-      } else {
-        await next();
-      }
-    });
-  }
+  // if (process.env.NODE_ENV === "production") {
+  //   app.use(async (ctx, next) => {
+  //     console.log(
+  //       "is secure",
+  //       ctx.protocol,
+  //       ctx.secure,
+  //       ctx.request.header.host,
+  //       ctx.originalUrl
+  //     );
+  //     if (ctx.protocol === "http") {
+  //       await next();
+  //       ctx.status = 301;
+  //       ctx.redirect(`https://${ctx.request.header.host}${ctx.originalUrl}`);
+  //       ctx.body = "Redirecting to secure site";
+  //     } else {
+  //       await next();
+  //     }
+  //   });
+  // }
 
   app
     .use(mount("/", Frontend()))
