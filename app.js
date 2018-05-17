@@ -20,11 +20,19 @@ function App() {
 
   if (process.env.NODE_ENV === "production") {
     app.use(async (ctx, next) => {
+      console.log(
+        "is secure",
+        ctx.secure,
+        ctx.request.header.host,
+        ctx.originalUrl
+      );
       if (!ctx.secure) {
         await next();
         ctx.status = 301;
         ctx.redirect(`https://${ctx.request.header.host}${ctx.originalUrl}`);
         ctx.body = "Redirecting to secure site";
+      } else {
+        await next();
       }
     });
   }
