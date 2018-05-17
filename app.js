@@ -9,7 +9,7 @@ import Api from "./api";
 import koaRouter from "koa-router";
 import koaRewrite from "koa-rewrite";
 
-// import enforceHttps from "koa-sslify";
+import enforceHttps from "koa-sslify";
 
 import Frontend from "./frontend";
 
@@ -17,18 +17,21 @@ function App() {
   const app = new koa();
   const router = new koaRouter();
 
-  // app.use(enforceHttps());
+  // if (process.env.NODE_ENV === "production") {
+  //   app.use(enforceHttps());
+  // }
   app.use(logger());
   app.use(cors());
   forward(app);
 
   app
-    .use(mount("/", Frontend(app)))
+    .use(mount("/", Frontend()))
     .use(mount("/search", Frontend()))
     .use(mount("/gallery", Frontend()))
     .use(mount("/account", Frontend()))
     .use(mount("/dashboard", Frontend()))
     .use(mount("/about", Frontend()))
+    .use(mount("/rsg", Frontend(), true))
     .use(mount("/register", Frontend()))
     .use(mount("/edit/profile", Frontend()))
     .use(mount("/api", Api()));
