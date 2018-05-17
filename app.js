@@ -7,9 +7,6 @@ import path from "path";
 import mount from "koa-mount";
 import Api from "./api";
 import koaRouter from "koa-router";
-import koaRewrite from "koa-rewrite";
-
-import enforceHttps from "koa-sslify";
 
 import Frontend from "./frontend";
 
@@ -17,9 +14,6 @@ function App() {
   const app = new koa();
   const router = new koaRouter();
 
-  if (process.env.NODE_ENV === "production") {
-    app.use(enforceHttps());
-  }
   app.use(logger());
   app.use(cors());
   forward(app);
