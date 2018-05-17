@@ -66,11 +66,6 @@ const Main = props => {
 
         <PrivateRoute
           authed={props.authed}
-          path="/edit/profile"
-          component={EditProfile}
-        />
-        <PrivateRoute
-          authed={props.authed}
           path="/dashboard"
           component={Dashboard}
         />

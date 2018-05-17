@@ -14,11 +14,12 @@
     "koa-logger": "^3.2.0",
     "koa-mount": "^3.0.0",
     "koa-response-time": "^2.0.0",
+    "koa-rewrite": "^3.0.1",
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.2"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "NODE_ENV=production node index.js",
     "client": "cd client && yarn start",
     "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
   }
