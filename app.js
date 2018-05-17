@@ -18,6 +18,16 @@ function App() {
   app.use(cors());
   forward(app);
 
+  if (process.env.NODE_ENV === "production") {
+    app.use(async (ctx, next) => {
+      if (!ctx.secure) {
+        await next();
+        ctx.redirect(`https://${ctx.request.header.host}${ctx.originalUrl}`);
+      }
+      return;
+    });
+  }
+
   app
     .use(mount("/", Frontend()))
     .use(mount("/search", Frontend()))
