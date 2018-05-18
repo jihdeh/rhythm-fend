@@ -2,17 +2,89 @@ import React, { Component } from "react";
 import get from "lodash/get";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { getSearchResult } from "../../actions/miscActions";
 import { displayError } from "../../actions/errorActions";
 import Spinner from "react-activity/lib/Spinner";
 import CurrentlyClosedComponent from "../currentlyClosed";
 import "../../styles/searchpage.css";
 import "react-activity/lib/Spinner/Spinner.css";
+import { ToastContainer } from "react-toastr";
+import VoteModal from "../voteModal";
+import vote from "../../actions/voteAction";
 
 class ContestantView extends Component {
-  state = {
-    username: "",
-    isLoading: false
+  constructor(props) {
+    super(props);
+    state = {
+      username: "",
+      isLoading: false,
+      voteCount: "",
+      showcastvote: false,
+      loadingPaystack: false,
+      email: ""
+    };
+  }
+  onchangeVoteCount = e => {
+    this.setState({ voteCount: e.target.value });
+  };
+  onchangeVoteAmount = val => {
+    this.setState({ voteCount: val });
+  };
+  onShowcastvote = e => {
+    const username = e.currentTarget.dataset.username;
+    this.setState(prevState => ({
+      showcastvote: !prevState.showcastvote,
+      username
+    }));
+  };
+  onVote = e => {
+    const { voteCount, email, username } = this.state;
+    this.setState({
+      loadingPaystack: true
+    });
+    this.loadPayStack(username, voteCount, email);
+  };
+  successMesage = (username, voteCount) => {
+    this.refs.container.success(
+      `You have succesfully casted ${voteCount} vote(s) for ${username}`,
+      "",
+      {
+        timeOut: 30000,
+        extendedTimeOut: 10000
+      }
+    );
+  };
+  loadPayStack = (username, voteCount, email) => {
+    var handler = window.PaystackPop.setup({
+      key: process.env.REACT_APP_PAYSTACK_KEY,
+      email: email || "jide.b.tade@gmail.com",
+      amount: 10000 * Number(voteCount), //in kobo
+      ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+      callback: response => {
+        this.props.vote({
+          reference: response.reference,
+          username,
+          voteCount
+        });
+        this.setState({
+          voteCount: "",
+          loadingPaystack: false,
+          showcastvote: false
+        });
+        this.successMesage(username, voteCount);
+      },
+      onClose: () => {
+        alert("window closed");
+        this.setState({
+          loadingPaystack: false,
+          showcastvote: false,
+          voteCount: ""
+        });
+      }
+    });
+    handler.openIframe();
+  };
+  onClear = () => {
+    this.refs.container.clear();
   };
 
   componentWillMount() {
@@ -36,11 +108,21 @@ class ContestantView extends Component {
 
   render() {
     const { openStatus, searchResults = [] } = this.props;
-    const { isLoading } = this.state;
+    const { isLoading, voteCount, showcastvote, loadingPaystack } = this.state;
 
     return (
       <span>
-        {get(openStatus, "votingOpen") ? (
+        <VoteModal
+          voteCount={voteCount}
+          showcastvote={showcastvote}
+          onVote={this.onVote}
+          onchangeVoteAmount={this.onchangeVoteAmount}
+          onchangeVoteCount={this.onchangeVoteCount}
+          loadingPaystack={loadingPaystack}
+        />
+        <ToastContainer ref="container" className="toast-top-right" />
+        {// get(openStatus, "votingOpen")
+        true ? (
           <div className="container-fluid">
             <div className="row">
               <div className="contestant-container">
@@ -118,7 +200,13 @@ class ContestantView extends Component {
                         </p>
                         <div className="share-channel">
                           <div className="share-channel-vote">
-                            <i className="fas fa-check" /> <span>Vote</span>
+                            <i className="fas fa-check" />{" "}
+                            <span
+                              data-username="soco"
+                              onClick={this.onShowcastvote}
+                            >
+                              Vote
+                            </span>
                           </div>
                           <div className="share-channel-social">
                             <i className="vote-social-icons vote-social-icons-fb fab fa-facebook fa-2x" />
@@ -155,6 +243,9 @@ const mapStateToProps = ({ misc }) => ({
 const mapDispatchToProps = dispatch => ({
   displayError: bindActionCreators(displayError, dispatch),
   getSearchResult: bindActionCreators(getSearchResult, dispatch)
+});
+const mapDispatchToProps = dispatch => ({
+  vote: bindActionCreators(vote, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContestantView);
