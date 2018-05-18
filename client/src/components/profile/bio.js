@@ -43,13 +43,9 @@ const bio = ({
                 />
               </span>
               <span className="pa--vote">
-                {!loadingPaystack ? (
                   <span className="Vote--button" onClick={onShowcastvote}>
                     Vote {formatString(firstName)}
                   </span>
-                ) : (
-                  <span className="Vote--button">Please hold!</span>
-                )}
               </span>
             </div>
           ) : null}
