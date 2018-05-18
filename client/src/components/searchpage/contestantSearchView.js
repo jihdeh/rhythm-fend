@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import get from "lodash/get";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { getSearchResult } from "../../actions/miscActions";
 import { displayError } from "../../actions/errorActions";
 import Spinner from "react-activity/lib/Spinner";
 import CurrentlyClosedComponent from "../currentlyClosed";
@@ -14,7 +15,7 @@ import vote from "../../actions/voteAction";
 class ContestantView extends Component {
   constructor(props) {
     super(props);
-    state = {
+    this.state = {
       username: "",
       isLoading: false,
       voteCount: "",
@@ -121,8 +122,7 @@ class ContestantView extends Component {
           loadingPaystack={loadingPaystack}
         />
         <ToastContainer ref="container" className="toast-top-right" />
-        {// get(openStatus, "votingOpen")
-        true ? (
+        {get(openStatus, "votingOpen") ? (
           <div className="container-fluid">
             <div className="row">
               <div className="contestant-container">
@@ -202,7 +202,7 @@ class ContestantView extends Component {
                           <div className="share-channel-vote">
                             <i className="fas fa-check" />{" "}
                             <span
-                              data-username="soco"
+                              data-username={contestant.username}
                               onClick={this.onShowcastvote}
                             >
                               Vote
@@ -242,9 +242,7 @@ const mapStateToProps = ({ misc }) => ({
 
 const mapDispatchToProps = dispatch => ({
   displayError: bindActionCreators(displayError, dispatch),
-  getSearchResult: bindActionCreators(getSearchResult, dispatch)
-});
-const mapDispatchToProps = dispatch => ({
+  getSearchResult: bindActionCreators(getSearchResult, dispatch),
   vote: bindActionCreators(vote, dispatch)
 });
 
