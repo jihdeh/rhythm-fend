@@ -44,6 +44,26 @@ class Edit extends Component {
                 className="edit-profile-input" 
                 placeholder="State" 
               />
+              <input
+                type="text"
+                className="edit-profile-input" 
+                placeholder="Facebook Link" 
+              />
+              <input
+                type="text"
+                className="edit-profile-input" 
+                placeholder="Twitter Link" 
+              />
+              <input
+                type="text"
+                className="edit-profile-input" 
+                placeholder="Instagram Link" 
+              />
+              <textarea
+                className="edit-profile-textarea"
+                placeholder="A short bio about you"
+                rows="5"
+              />
               <div>
                 <input 
                   type="submit" 
