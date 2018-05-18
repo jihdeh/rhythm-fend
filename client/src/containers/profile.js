@@ -28,7 +28,7 @@ class Profile extends Component {
       about: "",
       contestantVideo: process.env.REACT_APP_ADVERT,
       username: null,
-      voteCount: "1",
+      voteCount: "",
       email: "",
       show: false,
       showcastvote: false,
@@ -52,9 +52,12 @@ class Profile extends Component {
     this.setState({ voteCount: val });
   };
   onShowcastvote = () => {
-    this.setState(prevState => ({
-      showcastvote: !prevState.showcastvote
-    }));
+    this.setState(
+      prevState => ({
+        showcastvote: !prevState.showcastvote
+      }),
+      () => console.log(this.state)
+    );
   };
   componentWillReceiveProps(nextProps) {
     const state = {
@@ -70,14 +73,13 @@ class Profile extends Component {
   onVote = () => {
     const { voteCount, username, email } = this.state;
     this.setState({
-      loadingPaystack: true,
-      showcastvote: false
+      loadingPaystack: true
     });
     this.loadPayStack(username, voteCount, email);
   };
   successMesage = (username, voteCount) => {
     this.refs.container.success(
-      `You have suuccesfully casted ${voteCount} vote(s) for ${username}`,
+      `You have succesfully casted ${voteCount} vote(s) for ${username}`,
       "",
       {
         timeOut: 30000,
@@ -89,7 +91,7 @@ class Profile extends Component {
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
       email: email || "jide.b.tade@gmail.com",
-      amount: 5000 * Number(voteCount), //in kobo
+      amount: 10000 * Number(voteCount), //in kobo
       ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
       callback: response => {
         this.props.vote({
@@ -97,13 +99,19 @@ class Profile extends Component {
           username,
           voteCount
         });
+        this.setState({
+          voteCount: "",
+          loadingPaystack: false,
+        });
         this.onShowcastvote();
         this.successMesage(username, voteCount);
       },
       onClose: () => {
         alert("window closed");
         this.setState({
-          loadingPaystack: false
+          loadingPaystack: false,
+          showcastvote: false,
+          voteCount: ""
         });
       }
     });
