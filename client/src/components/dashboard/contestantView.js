@@ -27,7 +27,7 @@ class ContestantView extends Component {
       });
     } catch (e) {
       console.log("error", e.message);
-      alert("Invalid URL");
+      alert("Sorry,the link you entered might be broken");
     }
   };
   render() {
