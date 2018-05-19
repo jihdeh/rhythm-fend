@@ -3,7 +3,6 @@
   width: 100%;
   padding-bottom: 1em;
   padding-top: 8em;
-  height: 100vh;
 }
 
 .contestant-container__form {
@@ -31,7 +30,7 @@
 }
 
 .searchpage-icon {
-  font-size: 2em;  
+  font-size: 2em;
 }
 
 .search-input__button {

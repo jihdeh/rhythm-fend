@@ -33,7 +33,7 @@ export default class voteModal extends Component {
             <span className="vote--modal">
               <span className="vote--modal--top--cont">
                 <span className="vote--modal--title">
-                  select number of votes
+                  Select Number of Votes
                 </span>
                 <span className="vote--modal--amount-cont">
                   <span
@@ -94,7 +94,7 @@ export default class voteModal extends Component {
               </span>
               <span className="vote--modal--bottom--cont">
                 <span className="vote--modal--input--title">
-                  or enter an amount
+                  Or Enter Number of Votes
                 </span>
                 <input
                   ref="amountInput"

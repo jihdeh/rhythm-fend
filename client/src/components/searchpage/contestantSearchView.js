@@ -158,7 +158,7 @@ class ContestantView extends Component {
                 <div className="grid-suspenders" />
                 {searchResults.length ? (
                   searchResults.map((contestant, key) => (
-                    <div key={key} className="col-sm-3 col-md-3 col-lg-3">
+                    <div key={key} className="col-sm-6 col-md-4 col-lg-3">
                       <div className="col-contestant-result">
                         <iframe
                           width="100%"
