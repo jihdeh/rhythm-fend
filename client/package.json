@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:4450/",
+  "engines": {
+    "node": "8.9.4"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "js-video-url-parser": "^0.2.7",
