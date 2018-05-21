@@ -135,6 +135,10 @@
   font-size: 15px;
 }
 
+.holds-the-iframe {
+  background: url(/images/Spinner-1s-200px.svg) center center no-repeat;
+}
+
 .col-contestant-fav-name,
 .col-contestant-fav-location,
 .col-contestant-fav-code {

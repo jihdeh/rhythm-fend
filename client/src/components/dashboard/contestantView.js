@@ -63,6 +63,7 @@ class ContestantView extends Component {
         videoInfo: videoparser.parse(url),
         format: "embed"
       });
+      console.log("---", videoUrl);
       this.setState({
         canSave: true,
         videoUrl
@@ -168,15 +169,17 @@ class ContestantView extends Component {
                       <p className="col-contestant-profile__key">
                         YouTube Video:
                       </p>
-                      <iframe
-                        width="100%"
-                        height="200px"
-                        src={videoUrl || profile.contestantVideo[0]}
-                        title="Contestant video 2"
-                        frameBorder="0"
-                        allow="autoplay; encrypted-media"
-                        allowFullScreen
-                      />
+                      <div className="holds-the-iframe">
+                        <iframe
+                          width="100%"
+                          height="200px"
+                          src={videoUrl || profile.contestantVideo[0]}
+                          title="Contestant video 2"
+                          frameBorder="0"
+                          allow="autoplay; encrypted-media"
+                          allowFullScreen
+                        />
+                      </div>
                     </div>
                   ) : (
                     <div className="youtube-video-upload">
