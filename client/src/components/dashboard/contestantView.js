@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import size from "lodash/size";
 import get from "lodash/get";
-import videoparser from "js-video-url-parser";
-import "js-video-url-parser/lib/provider/youtube";
+import videoparser from "../../utils/youtubeParser/base";
+import "../../utils/youtubeParser/youtube";
 import "../../styles/dashboard.css";
 import {
   updateProfile,
