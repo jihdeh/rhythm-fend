@@ -120,17 +120,18 @@
 }
 
 .youtube-video-save-button {
-  width: 7em;
   background: none;
+  text-transform: uppercase;
   border: none;
   height: 2.5em;
 }
 
 .youtube-video-upload > span {
   color: #000;
+  text-align: center;
+  font-weight: bold;
   background: #fff;
-  width: 7em;
-  border-radius: 10px;
+  width: 50%;
   font-size: 15px;
 }
 

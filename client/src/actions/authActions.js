@@ -8,6 +8,7 @@ import {
   LOG_OUT
 } from "../constants/actionTypes";
 import { displayError } from "./errorActions";
+import { getProfile } from "./profileAction";
 
 export const login = ({ email, password }) => dispatch => {
   axios
@@ -91,6 +92,8 @@ export const fetchLocalUser = () => dispatch => {
       type: IS_AUTHENTICATED,
       payload: decodeToken
     });
+    const { token: { username } } = decodeToken;
+    getProfile(username)(dispatch);
   } catch (err) {
     //send back to login
     logout()(dispatch);

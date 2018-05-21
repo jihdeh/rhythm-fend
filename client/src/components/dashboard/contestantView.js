@@ -1,45 +1,91 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import "../../styles/dashboard.css";
+import { bindActionCreators } from "redux";
+import get from "lodash/get";
 import videoparser from "js-video-url-parser";
 import "js-video-url-parser/lib/provider/youtube";
+import "../../styles/dashboard.css";
+import {
+  updateProfile,
+  getProfile,
+  resetUpdateProfile
+} from "../../actions/profileAction";
 
 class ContestantView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasVideo: false,
-      videourl: "",
+      canSave: false,
+      videoUrl: "",
       url: ""
     };
   }
+
+  formatYoutubeUrl(url) {
+    var newUrl;
+    if (url.indexOf("https://www.youtube.com/watch") !== -1) {
+      newUrl = url.replace(
+        "https://www.youtube.com/watch?v=",
+        "https://www.youtube.com/embed/"
+      );
+    } else if (url.indexOf("https://youtu.be/") !== -1) {
+      newUrl = url.replace(
+        "https://youtu.be/",
+        "https://www.youtube.com/embed/"
+      );
+    } else if (url.indexOf("https://m.youtube.com/watch") !== -1) {
+      newUrl = url.replace(
+        "https://m.youtube.com/watch?v=",
+        "https://www.youtube.com/embed/"
+      );
+    } else {
+      return url;
+    }
+    return newUrl;
+  }
+
   onSave = async => {
+    const { user: { token: profile } } = this.props;
+    const { url } = this.state;
+    const youtubeUrl = this.formatYoutubeUrl(url);
+    this.props.updateProfile({ contestantVideo: [youtubeUrl] }, profile);
+    this.setState({
+      canSave: false
+    });
+  };
+
+  onPreview = async => {
     try {
       const { url } = this.state;
-      let videourl = videoparser.create({
+
+      let videoUrl = videoparser.create({
         videoInfo: videoparser.parse(url),
         format: "embed"
       });
       this.setState({
-        hasVideo: true,
-        videourl
+        canSave: true,
+        videoUrl
       });
     } catch (e) {
       console.log("error", e.message);
+      this.setState({
+        canSave: false
+      });
       alert("Sorry,the link you entered might be broken");
     }
   };
+
   render() {
-    const { user } = this.props;
-    const { token } = user;
-    const { hasVideo, videourl } = this.state;
+    const { user, profile } = this.props;
+    const { canSave, videoUrl } = this.state;
+
     return (
       <div className="container-fluid">
         <div className="row">
           <div className="voter-container">
             <p className="voter-section__title">
-              <b>HI {token.firstName}</b>
+              <b>HI {profile.firstName}</b>
               <span>good to have you on here!</span>
             </p>
 
@@ -57,7 +103,7 @@ class ContestantView extends Component {
                   <Link
                     target="_blank"
                     style={{ color: "#e33235" }}
-                    to={`${window.location}rsg/${token.username}`}
+                    to={`${window.location}rsg/${profile.username}`}
                   >
                     Public Profile
                   </Link>
@@ -88,32 +134,36 @@ class ContestantView extends Component {
               <div className="col-sm-6 col-md-6 col-lg-6 info-profile">
                 <div className="col-contestant-profile">
                   <div className="col-contestant-profile-items">
-                    <p className="col-contestant-profile__key">First Name:</p>
-                    <p className="col-contestant-profile__value">John</p>
-                  </div>
-                  <div className="col-contestant-profile-items">
-                    <p className="col-contestant-profile__key">Last Name:</p>
-                    <p className="col-contestant-profile__value">Doe</p>
+                    <p className="col-contestant-profile__key">Name:</p>
+                    <p className="col-contestant-profile__value">
+                      {profile.firstName} {profile.lastName}
+                    </p>
                   </div>
                   <div className="col-contestant-profile-items">
                     <p className="col-contestant-profile__key">Username:</p>
-                    <p className="col-contestant-profile__value">johndoe</p>
+                    <p className="col-contestant-profile__value">
+                      {profile.username}
+                    </p>
                   </div>
                   <div className="col-contestant-profile-items">
                     <p className="col-contestant-profile__key">Email:</p>
                     <p className="col-contestant-profile__value">
-                      johndoe@x.com
+                      {profile.email}
                     </p>
                   </div>
                   <div className="col-contestant-profile-items">
                     <p className="col-contestant-profile__key">Country:</p>
-                    <p className="col-contestant-profile__value">Nigeria</p>
+                    <p className="col-contestant-profile__value">
+                      {profile.country}
+                    </p>
                   </div>
                   <div className="col-contestant-profile-items">
                     <p className="col-contestant-profile__key">State:</p>
-                    <p className="col-contestant-profile__value">Lagos</p>
+                    <p className="col-contestant-profile__value">
+                      {profile.state}
+                    </p>
                   </div>
-                  {hasVideo ? (
+                  {get(profile, "contestantVideo.length") || videoUrl ? (
                     <div>
                       <p className="col-contestant-profile__key">
                         YouTube Video:
@@ -121,7 +171,7 @@ class ContestantView extends Component {
                       <iframe
                         width="100%"
                         height="200px"
-                        src={videourl}
+                        src={videoUrl || profile.contestantVideo[0]}
                         title="Contestant video 2"
                         frameBorder="0"
                         allow="autoplay; encrypted-media"
@@ -144,9 +194,22 @@ class ContestantView extends Component {
                       <span>
                         <button
                           className="youtube-video-save-button"
+                          onClick={this.onPreview}
+                        >
+                          Preview Video before save
+                        </button>
+                      </span>
+                    </div>
+                  )}
+                  <br />
+                  {this.state.canSave && (
+                    <div className="youtube-video-upload">
+                      <span>
+                        <button
+                          className="youtube-video-save-button"
                           onClick={this.onSave}
                         >
-                          Save Video
+                          Save
                         </button>
                       </span>
                     </div>
@@ -200,8 +263,8 @@ class ContestantView extends Component {
                   <Link
                     target="_blank"
                     style={{ color: "#e33235" }}
-                    to={`${window.location}rsg/${token.username}`}
-                  >{`${window.location}rsg/${token.username}`}</Link>{" "}
+                    to={`${window.location}rsg/${profile.username}`}
+                  >{`${window.location}rsg/${profile.username}`}</Link>{" "}
                   .<br /> Share this link with your friends and network to show
                   them where they can vote and see more about you.
                 </p>
@@ -212,11 +275,11 @@ class ContestantView extends Component {
                 </p>
                 <p>
                   Use the hashtag #soundItAfrica along with your username #{
-                    token.username
+                    profile.username
                   }{" "}
                   i.e{" "}
                   <span style={{ color: "#e33235" }}>
-                    #soundItAfrica #{token.username}
+                    #soundItAfrica #{profile.username}
                   </span>
                 </p>
                 <p>
@@ -232,8 +295,16 @@ class ContestantView extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  user: state.auth.userInfo
+const mapStateToProps = ({ auth, profile }) => ({
+  user: auth.userInfo,
+  profile: profile.contestant,
+  profileUpdated: profile.profileUpdated
 });
 
-export default connect(mapStateToProps)(ContestantView);
+const mapDispatchToProps = dispatch => ({
+  updateProfile: bindActionCreators(updateProfile, dispatch),
+  getProfile: bindActionCreators(getProfile, dispatch),
+  resetUpdateProfile: bindActionCreators(resetUpdateProfile, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContestantView);

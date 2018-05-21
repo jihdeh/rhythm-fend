@@ -81,9 +81,11 @@ const mapStateToProps = state => ({
   user: state.auth.userInfo,
   errorMessage: state.error
 });
+
 const mapDispatchToProps = dispatch => ({
   fetchLocalUser: bindActionCreators(fetchLocalUser, dispatch),
   clearError: bindActionCreators(clearError, dispatch),
   checkOpenStatus: bindActionCreators(openStatus, dispatch)
 });
+
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
