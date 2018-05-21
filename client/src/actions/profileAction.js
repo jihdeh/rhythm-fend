@@ -32,11 +32,12 @@ export const getProfile = username => async dispatch => {
 export const updateProfile = (profile, { username }) => async dispatch => {
   try {
     const url = `${process.env.REACT_APP_BASE_URL}/auth/${username}`;
-    const res = await axios.put(url, profile);
+    await axios.put(url, profile);
     await dispatch({
       type: UPDATE_PROFILE,
       payload: true
     });
+    getProfile(username)(dispatch);
   } catch (error) {
     const { data: { message } } = error.response;
     displayError(message.message)(dispatch);

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import get from "lodash/get";
+import size from "lodash/size";
 import videoparser from "js-video-url-parser";
 import "js-video-url-parser/lib/provider/youtube";
 import "../../styles/dashboard.css";
@@ -18,8 +18,18 @@ class ContestantView extends Component {
     this.state = {
       canSave: false,
       videoUrl: "",
-      url: ""
+      url: "",
+      isLoading: null
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.profileUpdated || nextProps.error) {
+      this.props.resetUpdateProfile();
+      this.setState({
+        isLoading: null
+      });
+    }
   }
 
   formatYoutubeUrl(url) {
@@ -51,7 +61,8 @@ class ContestantView extends Component {
     const youtubeUrl = this.formatYoutubeUrl(url);
     this.props.updateProfile({ contestantVideo: [youtubeUrl] }, profile);
     this.setState({
-      canSave: false
+      canSave: false,
+      isLoading: true
     });
   };
 
@@ -63,13 +74,11 @@ class ContestantView extends Component {
         videoInfo: videoparser.parse(url),
         format: "embed"
       });
-      console.log("---", videoUrl);
       this.setState({
         canSave: true,
         videoUrl
       });
     } catch (e) {
-      console.log("error", e.message);
       this.setState({
         canSave: false
       });
@@ -77,9 +86,13 @@ class ContestantView extends Component {
     }
   };
 
+  uppercaseFirst(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   render() {
-    const { user, profile } = this.props;
-    const { canSave, videoUrl } = this.state;
+    const { profile } = this.props;
+    const { canSave, videoUrl, isLoading } = this.state;
 
     return (
       <div className="container-fluid">
@@ -109,26 +122,49 @@ class ContestantView extends Component {
                     Public Profile
                   </Link>
                   <div className="contestants-media-icons">
-                    <a href="">
-                      <i className="social-profile fab fa-facebook-f" />{" "}
-                    </a>
-                    <a href="">
-                      <i className="social-profile fab fa-twitter" />{" "}
-                    </a>
-                    <a href="">
-                      <i className="social-profile fab fa-instagram" />
-                    </a>
+                    {profile.facebook && (
+                      <a href={profile.facebook} target="_blank" rel="noopener">
+                        <i className="social-profile fab fa-facebook-f" />{" "}
+                      </a>
+                    )}
+                    {profile.twitter && (
+                      <a href={profile.twitter}>
+                        <i className="social-profile fab fa-twitter" />{" "}
+                      </a>
+                    )}
+                    {profile.instagram && (
+                      <a href={profile.instagram}>
+                        <i className="social-profile fab fa-instagram" />
+                      </a>
+                    )}
                   </div>
                 </div>
                 <div className="col-contestant-bio">
-                  <h2>Jim James</h2>
-                  <p>
-                    Jim James is a sales marketer from ABC Industries, Lagos, an
-                    inbound marketing and sales platform that helps companies
-                    attract visitors, convert leads, and close customers. He
-                    graduated with honors from Lagos State University with a
-                    dual degree in Business Administration and Creative Writing.
-                  </p>
+                  <h2>
+                    {this.uppercaseFirst(profile.firstName || "")}{" "}
+                    {this.uppercaseFirst(profile.lastName || "")}
+                  </h2>
+                  {profile.about ? (
+                    <p>{profile.about}</p>
+                  ) : (
+                    <p>
+                      {profile.firstName} {profile.lastName} is a contestant on
+                      soundItAfrica Season 2. We believe he has great talent,
+                      and would give all it takes to get you entertained.
+                      Cheers.
+                    </p>
+                  )}
+                  {!profile.about && (
+                    <Link
+                      style={{
+                        color: "rgb(254, 95, 16)",
+                        textDecoration: "underline"
+                      }}
+                      to="/edit/profile"
+                    >
+                      Update Profile
+                    </Link>
+                  )}
                 </div>
               </div>
 
@@ -164,58 +200,69 @@ class ContestantView extends Component {
                       {profile.state}
                     </p>
                   </div>
-                  {get(profile, "contestantVideo.length") || videoUrl ? (
-                    <div>
-                      <p className="col-contestant-profile__key">
-                        YouTube Video:
-                      </p>
-                      <div className="holds-the-iframe">
-                        <iframe
-                          width="100%"
-                          height="200px"
-                          src={videoUrl || profile.contestantVideo[0]}
-                          title="Contestant video 2"
-                          frameBorder="0"
-                          allow="autoplay; encrypted-media"
-                          allowFullScreen
+                  {size(profile) ? (
+                    size(profile, "contestantVideo") || videoUrl ? (
+                      <div>
+                        <p className="col-contestant-profile__key">
+                          YouTube Video:
+                        </p>
+                        <div className="holds-the-iframe">
+                          <iframe
+                            width="100%"
+                            height="300px"
+                            src={videoUrl || profile.contestantVideo[0]}
+                            title="Contestant video 2"
+                            frameBorder="0"
+                            allow="autoplay; encrypted-media"
+                            allowFullScreen
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="youtube-video-upload">
+                        <div className="youtube-video-container">
+                          <p>Please provide the link to your youtube video</p>
+                        </div>
+                        <input
+                          className="youtube-video-input"
+                          type="text"
+                          placeholder="Your youtube link here"
+                          onChange={({ target }) =>
+                            this.setState({ url: target.value })
+                          }
                         />
+                        <span>
+                          <button
+                            className="youtube-video-save-button"
+                            onClick={this.onPreview}
+                          >
+                            Preview Video before save
+                          </button>
+                        </span>
                       </div>
-                    </div>
+                    )
                   ) : (
-                    <div className="youtube-video-upload">
-                      <div className="youtube-video-container">
-                        <p>Please provide the link to your youtube video</p>
-                      </div>
-                      <input
-                        className="youtube-video-input"
-                        type="text"
-                        placeholder="Your youtube link here"
-                        onChange={({ target }) =>
-                          this.setState({ url: target.value })
-                        }
-                      />
-                      <span>
-                        <button
-                          className="youtube-video-save-button"
-                          onClick={this.onPreview}
-                        >
-                          Preview Video before save
-                        </button>
-                      </span>
-                    </div>
+                    <p>Loading....</p>
                   )}
                   <br />
-                  {this.state.canSave && (
-                    <div className="youtube-video-upload">
-                      <span>
-                        <button
-                          className="youtube-video-save-button"
-                          onClick={this.onSave}
-                        >
-                          Save
-                        </button>
-                      </span>
-                    </div>
+                  {canSave && (
+                    <span>
+                      <div className="youtube-video-upload">
+                        <span>
+                          <button
+                            className="youtube-video-save-button"
+                            onClick={this.onSave}
+                          >
+                            Save
+                          </button>
+                        </span>
+                      </div>
+                      {isLoading && (
+                        <span>
+                          <p>Loading...</p>
+                        </span>
+                      )}
+                    </span>
                   )}
                 </div>
               </div>
