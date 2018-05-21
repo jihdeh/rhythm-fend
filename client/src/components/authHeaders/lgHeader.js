@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { logout } from "../../actions/authActions";
-import SearchInput from "./searchInput";
 
 class LargeScreenMenuNavigation extends Component {
   onLogout = () => {
@@ -15,12 +14,6 @@ class LargeScreenMenuNavigation extends Component {
       <div className="container submenu">
         <div className="row">
           <ul className="submenu-list">
-            <li>
-              <SearchInput
-                containerStyle="submenu--search-form"
-                inputStyle="submenu--search-input"
-              />
-            </li>
             <li>
               <Link to="/">
                 <i className="fas fa-home fa-lg guide-icon__default" />
@@ -40,12 +33,6 @@ class LargeScreenMenuNavigation extends Component {
               </span>
             </li>
           </ul>
-          <div className="sm-search-form">
-            <SearchInput
-              containerStyle="ssm-submenu--search-form"
-              inputStyle="ssm-submenu--search-input"
-            />
-          </div>
         </div>
       </div>
     );

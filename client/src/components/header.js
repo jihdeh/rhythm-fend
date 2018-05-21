@@ -29,6 +29,9 @@ export default class Header extends Component {
                 <Link to="/account">Account</Link>
               </li>*/}
               <li>
+                <Link to="/gallery">Gallery</Link>
+              </li>
+              <li>
                 <Link to="/donate">Donate</Link>
               </li>
               <li>
@@ -39,9 +42,6 @@ export default class Header extends Component {
               </li>
               <li>
                 <a href="/#contact">Contact</a>
-              </li>
-              <li>
-                <a href="/#partners">Partners</a>
               </li>
             </ul>
           </div>

@@ -5,7 +5,6 @@ import SearchInput from "./authHeaders/searchInput";
 import LargeScreenMenu from "./authHeaders/lgHeader";
 import SmallScreenMenu from "./authHeaders/smHeader";
 
-
 class AuthenticatedHeader extends Component {
   render() {
     return (
@@ -20,10 +19,6 @@ class AuthenticatedHeader extends Component {
                 alt="Soundit logo"
               />
             </Link>
-            <SearchInput
-              containerStyle="sm-submenu--search-form"
-              inputStyle="sm-submenu--search-input"
-            />
             <div className="profile-right">
               <div className="profile-right__owner">
                 <img

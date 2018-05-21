@@ -276,7 +276,7 @@ class ContestantView extends Component {
           <div className="voter-container">
             <div>
               <p className="voter-section__title">
-                <b>Other People</b>
+                <b>Other Information</b>
                 <span>you might like</span>
               </p>
             </div>
@@ -285,7 +285,7 @@ class ContestantView extends Component {
                 <iframe
                   width="100%"
                   height="200px"
-                  src="https://www.youtube.com/embed/-oCCnxBos10"
+                  src="https://www.youtube.com/embed/uObZkBUWgew"
                   title="Contestant video 2"
                   frameBorder="0"
                   allow="autoplay; encrypted-media"

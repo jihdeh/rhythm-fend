@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import { Link } from "react-router-dom";
 
 class SectionFive extends PureComponent {
   render() {
@@ -11,15 +12,13 @@ class SectionFive extends PureComponent {
           </div>
           <div className="col-sm-6">
             <h5 className="section-five__recentwork">
-              <a
-                href="https://www.facebook.com/RisingStarGospel/"
-                target="_blank"
+              <Link
+                to="/gallery"
                 style={{ color: "inherit", textDecoration: "none" }}
-                rel="noopener noreferrer"
               >
                 RECENT WORK{" "}
                 <i className="section-five__recentwork-arrow fas fa-arrow-right" />
-              </a>
+              </Link>
             </h5>
           </div>
         </div>

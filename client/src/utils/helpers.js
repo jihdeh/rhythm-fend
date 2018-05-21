@@ -40,49 +40,67 @@ here', making it look like readable English. Many desktop publishing packages`
 
 export const PHOTO_SET = [
   {
-    src:
-      "https://d2rd7etdn93tqb.cloudfront.net/wp-content/uploads/2017/04/concert-truths-featured-040417.jpg",
+    src: "/images/gallery/1.png",
     width: 4,
     height: 2.8
   },
   {
-    src:
-      "https://www.telegraph.co.uk/content/dam/news/2016/04/20/rexfeatures_RESTRCTED-ADELE_trans_NvBQzQNjv4Bqeo_i_u9APj8RuoebjoAHt0k9u7HhRJvuo-ZLenGRumA.jpg?imwidth=450",
+    src: "/images/gallery/2.png",
     width: 4,
     height: 2.8
   },
   {
-    src:
-      "https://static1.squarespace.com/static/5537e36fe4b08042f031cccb/t/56f2c121f8508203ebe32d1b/1458749733556/Worship-Background_crop1.jpg?format=1500w",
+    src: "/images/gallery/3.png",
     width: 4,
     height: 2.8
   },
   {
-    src:
-      "https://media.newyorker.com/photos/59c919daca68b438f0435294/master/w_727,c_limit/Petrusich-Courage-Soul-Singer-Charles-Bradley.jpg",
+    src: "/images/gallery/6.png",
     width: 4,
     height: 2.8
   },
   {
-    src:
-      "https://i.amz.mshcdn.com/cqmQmotDq-a1oTLigqcxzqHiync=/950x534/filters:quality(90)/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fcard%2Fimage%2F290843%2FAP_344699431569.jpg",
+    src: "/images/gallery/7.png",
     width: 4,
     height: 2.8
   },
   {
-    src:
-      "https://static1.squarespace.com/static/5537e36fe4b08042f031cccb/t/56f2c121f8508203ebe32d1b/1458749733556/Worship-Background_crop1.jpg?format=1500w",
+    src: "/images/gallery/8.png",
     width: 4,
     height: 2.8
   },
   {
-    src:
-      "https://static1.squarespace.com/static/5537e36fe4b08042f031cccb/t/56f2c121f8508203ebe32d1b/1458749733556/Worship-Background_crop1.jpg?format=1500w",
+    src: "/images/gallery/9.png",
     width: 4,
     height: 2.8
   },
   {
-    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    src: "/images/gallery/10.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/11.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/12.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/13.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/14.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/15.png",
     width: 4,
     height: 2.8
   }
