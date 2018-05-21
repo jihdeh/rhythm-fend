@@ -183,6 +183,7 @@ class Profile extends Component {
                 onShowcastvote={this.onShowcastvote}
                 showcastvote={showcastvote}
                 onVote={this.onVote}
+                isAuthticated={isAuthticated}
                 loadingPaystack={loadingPaystack}
               />
             </div>

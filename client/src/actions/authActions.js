@@ -23,6 +23,8 @@ export const login = ({ email, password }) => dispatch => {
         type: IS_AUTHENTICATED,
         payload: decodeToken
       });
+      const { token: { username } } = decodeToken;
+      getProfile(username)(dispatch);
     })
     .catch(error => {
       const { data } = error.response;

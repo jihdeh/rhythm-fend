@@ -20,7 +20,6 @@ export default class voteModal extends Component {
       onchangeVoteCount,
       loadingPaystack
     } = this.props;
-    console.log(amount);
     return (
       <Modal
         onHide={() => this.setState({ showcastvote: false })}

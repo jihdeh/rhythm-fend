@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import size from "lodash/size";
+import get from "lodash/get";
 import videoparser from "js-video-url-parser";
 import "js-video-url-parser/lib/provider/youtube";
 import "../../styles/dashboard.css";
@@ -201,7 +202,7 @@ class ContestantView extends Component {
                     </p>
                   </div>
                   {size(profile) ? (
-                    size(profile, "contestantVideo") || videoUrl ? (
+                    get(profile, "contestantVideo.length") || videoUrl ? (
                       <div>
                         <p className="col-contestant-profile__key">
                           YouTube Video:

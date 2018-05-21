@@ -19,7 +19,8 @@ const bio = ({
   onShowcastvote,
   showcastvote,
   onVote,
-  loadingPaystack
+  loadingPaystack,
+  isAuthticated
 }) => (
   <div className="contestant--profile">
     <div className="contestant--cont">
@@ -42,11 +43,13 @@ const bio = ({
                   show={show}
                 />
               </span>
-              <span className="pa--vote">
+              {!isAuthticated && (
+                <span className="pa--vote">
                   <span className="Vote--button" onClick={onShowcastvote}>
                     Vote {formatString(firstName)}
                   </span>
-              </span>
+                </span>
+              )}
             </div>
           ) : null}
         </div>
