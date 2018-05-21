@@ -13,7 +13,16 @@ class Edit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: null
+      isLoading: null,
+      firstName: "",
+      lastName: "",
+      country: "",
+      state: "",
+      facebook: "",
+      twitter: "",
+      instagram: "",
+      about: "",
+      profilePhoto: ""
     };
   }
 
@@ -23,6 +32,12 @@ class Edit extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (nextProps.profile) {
+      this.setState({
+        ...this.state,
+        ...nextProps.profile
+      });
+    }
     if (nextProps.profileUpdated || nextProps.error) {
       this.props.resetUpdateProfile();
       this.setState({
@@ -104,7 +119,7 @@ class Edit extends Component {
                 onChange={({ target: { value } }) =>
                   this.onInputChange(value, "firstName")
                 }
-                value={firstName || profile.firstName || ""}
+                value={firstName || ""}
               />
               <input
                 type="text"
@@ -113,7 +128,7 @@ class Edit extends Component {
                 onChange={({ target: { value } }) =>
                   this.onInputChange(value, "lastName")
                 }
-                value={lastName || profile.lastName || ""}
+                value={lastName || ""}
               />
               <input
                 type="text"
@@ -122,7 +137,7 @@ class Edit extends Component {
                 onChange={({ target: { value } }) =>
                   this.onInputChange(value, "country")
                 }
-                value={country || profile.country || ""}
+                value={country || ""}
               />
               <input
                 type="text"
@@ -131,7 +146,7 @@ class Edit extends Component {
                 onChange={({ target: { value } }) =>
                   this.onInputChange(value, "state")
                 }
-                value={state || profile.state || ""}
+                value={state || ""}
               />
               <input
                 type="text"
@@ -140,7 +155,7 @@ class Edit extends Component {
                 onChange={({ target: { value } }) =>
                   this.onInputChange(value, "facebook")
                 }
-                value={facebook || profile.facebook || ""}
+                value={facebook || ""}
               />
               <input
                 type="text"
@@ -149,7 +164,7 @@ class Edit extends Component {
                 onChange={({ target: { value } }) =>
                   this.onInputChange(value, "twitter")
                 }
-                value={twitter || profile.twitter || ""}
+                value={twitter || ""}
               />
               <input
                 type="text"
@@ -158,7 +173,7 @@ class Edit extends Component {
                 onChange={({ target: { value } }) =>
                   this.onInputChange(value, "instagram")
                 }
-                value={instagram || profile.instagram || ""}
+                value={instagram || ""}
               />
               <textarea
                 className="edit-profile-textarea"
@@ -167,7 +182,7 @@ class Edit extends Component {
                 onChange={({ target: { value } }) =>
                   this.onInputChange(value, "about")
                 }
-                value={about || profile.about || ""}
+                value={about || ""}
               />
               <div>
                 <input
