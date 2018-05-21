@@ -149,7 +149,6 @@ class ContestantView extends Component {
                         <i className="fas fa-search searchpage-icon" />
                       </button>
 
-                      {/*<input className="searchButton" type="submit" value="Search" />*/}
                       {isLoading ? <Spinner color="#ffffff" /> : null}
                     </span>
                   </form>
@@ -209,9 +208,15 @@ class ContestantView extends Component {
                             </span>
                           </div>
                           <div className="share-channel-social">
-                            <i className="vote-social-icons vote-social-icons-fb fab fa-facebook fa-2x" />
-                            <i className="vote-social-icons vote-social-icons-tw fab fa-twitter fa-2x" />
-                            <i className="vote-social-icons vote-social-icons-ig fab fa-instagram fa-2x" />
+                            {contestant.facebook && (
+                              <i className="vote-social-icons vote-social-icons-fb fab fa-facebook fa-2x" />
+                            )}
+                            {contestant.twitter && (
+                              <i className="vote-social-icons vote-social-icons-tw fab fa-twitter fa-2x" />
+                            )}
+                            {contestant.instagram && (
+                              <i className="vote-social-icons vote-social-icons-ig fab fa-instagram fa-2x" />
+                            )}
                           </div>
                         </div>
                       </div>

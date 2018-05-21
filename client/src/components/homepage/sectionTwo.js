@@ -22,7 +22,8 @@ class SectionTwo extends PureComponent {
                 <h3>COMPETITION TERMS</h3>
                 <p>
                   There's a registration cost N1000 (For contestants in Nigeria)
-                  and $5 (for contestants from other African countries).
+                  and the equivalent (for contestants in other African
+                  countries).
                   <br />
                   1. Record 1 minute video of you singing a gospel song of your
                   choice (Sing well, give it your best).<br />
@@ -57,8 +58,8 @@ class SectionTwo extends PureComponent {
                     www.soundit.africa/register
                   </Link>{" "}
                   to register.<br />
-                  2. At the completion of your registration, a Thank you mail
-                  will be sent to your mail address containing more information<br />
+                  2. At the completion of your registration, a Thank you SMS
+                  will be sent to your phone number containing more information<br />
                   3. Invite your friends to follow us on Facebook, Twitter and
                   Instagram.
                   <br />
