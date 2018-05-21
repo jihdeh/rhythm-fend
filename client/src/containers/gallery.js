@@ -19,6 +19,9 @@ class gallery extends Component {
       currentImage: 0
     };
   }
+  componentWillMount() {
+    window.scrollTo(0, 0);
+  }
   onShowVideo = e => {
     const url = e.currentTarget.dataset.video;
     this.setState({

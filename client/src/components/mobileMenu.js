@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../styles/mobileMenu.css";
 
-export default class MobileMenu extends Component {
+export default class MobileMenu extends PureComponent {
   render() {
     return (
       <div className="header__top">

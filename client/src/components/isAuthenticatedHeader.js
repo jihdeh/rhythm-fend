@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import SearchInput from "./authHeaders/searchInput";
 import LargeScreenMenu from "./authHeaders/lgHeader";
 import SmallScreenMenu from "./authHeaders/smHeader";
 
-class AuthenticatedHeader extends Component {
+class AuthenticatedHeader extends PureComponent {
   render() {
     return (
       <div className="">
