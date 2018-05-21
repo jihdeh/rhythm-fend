@@ -43,7 +43,7 @@ class Register extends Component {
     confirmPassword: "",
     country: "",
     state: "",
-    username: "",
+    username: { value: "", error: "" },
     loadingPaystackModule: false
   };
 
@@ -152,7 +152,7 @@ class Register extends Component {
           hasPaid: true,
           country,
           state,
-          username,
+          username: username.value,
           paymentReference: response.reference
         });
         this.setState({ loadingPaystackModule: "Logging you in" });
@@ -170,13 +170,20 @@ class Register extends Component {
       this.setState({ phoneNumber: number });
     }
   };
+  onUsername = target => {
+    let error = "";
+    if (target.value.length < 3 && target.value) error = "username too short";
+    if (target.value.length > 8) error = "username too long";
+    this.setState({ username: { value: target.value, error } });
+  };
 
   render() {
     const { loadingPaystackModule, username } = this.state;
     const { openStatus, verifyusername } = this.props;
     return (
       <span>
-        {get(openStatus, "registrationOpen") ? (
+        {// get(openStatus, "registrationOpen")
+        true ? (
           <div className="register-container">
             <div className="wrap">
               <div className="content-left">
@@ -273,19 +280,23 @@ class Register extends Component {
                         className="usernameInput"
                         type="text"
                         placeholder="username"
-                        onChange={({ target }) =>
-                          this.setState({ username: target.value })
-                        }
+                        onChange={({ target }) => this.onUsername(target)}
                         onKeyUp={({ target }) =>
                           this.verify(target.value.trim())
                         }
-                        value={this.state.username || ""}
+                        value={this.state.username.value || ""}
                         required
                       />
                       <ActivityI
                         username={username}
                         verifyusername={verifyusername}
                       />
+                      {this.state.username.error.length ? (
+                        <span className="error--holder">
+                          <i className="fas fa-exclamation-circle spacing--it" />
+                          {this.state.username.error}
+                        </span>
+                      ) : null}
                     </span>
                     <IntlTelInput
                       placeholder="Phone number"

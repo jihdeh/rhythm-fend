@@ -9,6 +9,17 @@
   height: 60em;
   padding: 4em 0;
 }
+.error--holder {
+  position: absolute;
+  left: 12px;
+  right: 0px;
+  bottom: -32px;
+  color: red;
+}
+.spacing--it {
+  margin-right: 5px;
+  margin-top: 2px;
+}
 .username--cont {
   position: relative;
 }
