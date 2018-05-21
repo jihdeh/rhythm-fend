@@ -22,10 +22,18 @@
   color: #fff;
   box-shadow: 3px 4px 1px black;
 }
+.col-contestant-fav.lead-section {
+  /*display: flex;*/
+}
+
+.media-profile,
+.info-profile {
+  margin: 0 auto;
+}
 
 .col-contestant-profile-photo {
   border-bottom: 1px solid hsl(0, 0%, 53.3%);
-  padding-bottom: 5em; 
+  padding-bottom: 5em;
 }
 
 .col-contestant-social-icons {
@@ -89,7 +97,7 @@
   flex-direction: column;
 }
 
-.youtube-video-container{
+.youtube-video-container {
   background: #2e2f33;
   color: #fff;
   width: 100%;
@@ -220,7 +228,7 @@
   .dashboard-profile__image {
     display: flex;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
   }
 }
 

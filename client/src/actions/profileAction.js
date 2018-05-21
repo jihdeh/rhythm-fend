@@ -2,14 +2,16 @@ import axios from "axios";
 import {
   GET_PROFILE_PENDING,
   GET_PROFILE_FULFILLED,
-  GET_PROFILE_REJECTED
+  GET_PROFILE_REJECTED,
+  UPDATE_PROFILE
 } from "../constants/actionTypes";
+import { displayError } from "./errorActions";
 
-export const getprofilepending = () => async dispatch => {
+export const getProfilePending = () => async dispatch => {
   await dispatch({ type: GET_PROFILE_PENDING });
 };
 
-export const getprofile = username => async dispatch => {
+export const getProfile = username => async dispatch => {
   try {
     const url = `${process.env.REACT_APP_BASE_URL}/user/${username}`;
     const res = await axios.get(url);
@@ -18,7 +20,6 @@ export const getprofile = username => async dispatch => {
       { profileUrl: `${process.env.REACT_APP_PROFILE_URL}${username}` },
       res.data
     );
-
     await dispatch({
       type: GET_PROFILE_FULFILLED,
       payload: moldResponse
@@ -26,4 +27,25 @@ export const getprofile = username => async dispatch => {
   } catch (err) {
     await dispatch({ type: GET_PROFILE_REJECTED, payload: err });
   }
+};
+
+export const updateProfile = (profile, { username }) => async dispatch => {
+  try {
+    const url = `${process.env.REACT_APP_BASE_URL}/auth/${username}`;
+    const res = await axios.put(url, profile);
+    await dispatch({
+      type: UPDATE_PROFILE,
+      payload: true
+    });
+  } catch (error) {
+    const { data: { message } } = error.response;
+    displayError(message.message)(dispatch);
+  }
+};
+
+export const resetUpdateProfile = () => async dispatch => {
+  dispatch({
+    type: UPDATE_PROFILE,
+    payload: false
+  });
 };

@@ -10,7 +10,7 @@ import Video from "../components/profile/video";
 import Singlerowads from "../components/profile/singlerowads";
 import Errorpage from "../components/profile/error";
 import { getStyle } from "../utils/helpers";
-import { getprofile, getprofilepending } from "../actions/profileAction";
+import { getProfile, getProfilePending } from "../actions/profileAction";
 import vote from "../actions/voteAction";
 import VoteModal from "../components/voteModal";
 
@@ -36,11 +36,9 @@ class Profile extends Component {
     };
   }
   async componentDidMount() {
-    const {
-      match: { params }
-    } = this.props;
-    this.props.getprofilepending();
-    this.props.getprofile(params.username);
+    const { match: { params } } = this.props;
+    this.props.getProfilePending();
+    this.props.getProfile(params.username);
   }
   handleClick = () => {
     this.setState(prevState => ({ show: !prevState.show }));
@@ -101,7 +99,7 @@ class Profile extends Component {
         });
         this.setState({
           voteCount: "",
-          loadingPaystack: false,
+          loadingPaystack: false
         });
         this.onShowcastvote();
         this.successMesage(username, voteCount);
@@ -206,8 +204,8 @@ class Profile extends Component {
 const mapStateToProps = state => state;
 
 const mapDispatchToProps = dispatch => ({
-  getprofile: bindActionCreators(getprofile, dispatch),
-  getprofilepending: bindActionCreators(getprofilepending, dispatch),
+  getProfile: bindActionCreators(getProfile, dispatch),
+  getProfilePending: bindActionCreators(getProfilePending, dispatch),
   vote: bindActionCreators(vote, dispatch)
 });
 

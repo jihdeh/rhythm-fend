@@ -45,7 +45,6 @@ export const createAccount = accountDetails => async dispatch => {
       await login(accountDetails)(dispatch);
     })
     .catch(error => {
-      console.log(error.response, error.name);
       const { data } = error.response;
       displayError(data.message)(dispatch);
     });

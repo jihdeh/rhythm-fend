@@ -2,16 +2,27 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import get from "lodash/get";
+import Spinner from "react-activity/lib/Spinner";
 import { login } from "../actions/authActions";
 import { displayError } from "../actions/errorActions";
+import "react-activity/lib/Spinner/Spinner.css";
 import "../styles/home.css";
 
 class LoginPage extends Component {
   state = {
     emailInput: "",
     passwordInput: "",
-    loading: null
+    isLogginIn: null
   };
+
+  componentWillReceiveProps(nextProps) {
+    if (get(nextProps.error, "error")) {
+      this.setState({
+        isLogginIn: null
+      });
+    }
+  }
 
   validateEmail = email => {
     var emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -24,6 +35,7 @@ class LoginPage extends Component {
     }
     return;
   };
+
   onLogin = e => {
     let emailInput = this.state.emailInput.trim();
     let passwordInput = this.state.passwordInput.trim();
@@ -41,7 +53,7 @@ class LoginPage extends Component {
     }
 
     this.setState({
-      loading: true
+      isLogginIn: true
     });
 
     this.props.login({
@@ -81,9 +93,15 @@ class LoginPage extends Component {
             <p className="sa-actions__createAccount">
               <Link to="/register">Create Account</Link>
             </p>
-            <p className="sa-actions__login" onClick={this.onLogin}>
-              Login
-            </p>
+            {this.state.isLogginIn ? (
+              <div className="sa-actions__login">
+                <Spinner color="#ffffff" />
+              </div>
+            ) : (
+              <p className="sa-actions__login" onClick={this.onLogin}>
+                Login
+              </p>
+            )}
           </div>
         </form>
       </div>
@@ -91,8 +109,9 @@ class LoginPage extends Component {
   }
 }
 
-const mapStateToProps = ({ auth }) => ({
-  auth: auth.userInfo
+const mapStateToProps = ({ auth, error }) => ({
+  auth: auth.userInfo,
+  error: error
 });
 
 const mapDispatchToProps = dispatch => ({

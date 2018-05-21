@@ -44,8 +44,8 @@ class ContestantView extends Component {
             </p>
 
             <h2>Profile Details</h2>
-            <div className="col-contestant-fav">
-              <div className="col-sm-6 col-md-6 col-lg-6">
+            <div className="col-contestant-fav lead-section">
+              <div className="col-sm-6 col-md-6 col-lg-6 media-profile">
                 <div className="col-contestant-profile-photo">
                   <img
                     className="dashboard-profile__image img-responsive"
@@ -54,7 +54,13 @@ class ContestantView extends Component {
                   />
                 </div>
                 <div className="col-contestant-social-icons">
-                  <a href="">Public Profile</a>
+                  <Link
+                    target="_blank"
+                    style={{ color: "#e33235" }}
+                    to={`${window.location}rsg/${token.username}`}
+                  >
+                    Public Profile
+                  </Link>
                   <div className="contestants-media-icons">
                     <a href="">
                       <i className="social-profile fab fa-facebook-f" />{" "}
@@ -79,7 +85,7 @@ class ContestantView extends Component {
                 </div>
               </div>
 
-              <div className="col-sm-6 col-md-4 col-lg-4">
+              <div className="col-sm-6 col-md-6 col-lg-6 info-profile">
                 <div className="col-contestant-profile">
                   <div className="col-contestant-profile-items">
                     <p className="col-contestant-profile__key">First Name:</p>
@@ -145,11 +151,6 @@ class ContestantView extends Component {
                       </span>
                     </div>
                   )}
-                  <div className="col-contestant-button">
-                    <button className="col-contestant-update-button">
-                      Update Profile
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>

@@ -1,7 +1,8 @@
 import {
   GET_PROFILE_PENDING,
   GET_PROFILE_FULFILLED,
-  GET_PROFILE_REJECTED
+  GET_PROFILE_REJECTED,
+  UPDATE_PROFILE
 } from "../constants/actionTypes";
 
 const initialstate = {
@@ -32,6 +33,12 @@ export default function profileReducer(state = initialstate, action) {
         fetching: false,
         error: action.payload,
         contestant: {}
+      };
+
+    case UPDATE_PROFILE:
+      return {
+        ...state,
+        profileUpdated: action.payload
       };
     default:
       return state;
