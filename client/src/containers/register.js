@@ -170,16 +170,16 @@ class Register extends Component {
       this.setState({ phoneNumber: number });
     }
   };
-  onUsername = target => {
+  onUsername = ({ value }) => {
     let error = "";
-    if (target.value.length < 3 && target.value) error = "username too short";
-    if (target.value.length > 8) error = "username too long";
-    this.setState({ username: { value: target.value, error } });
+    if (value.length < 3 && value) error = "username too short";
+    if (value.length > 8) error = "username too long";
+    this.setState({ username: { value, error } });
   };
 
   render() {
     const { loadingPaystackModule, username } = this.state;
-    const { openStatus, verifyusername } = this.props;
+    const { openStatus, verifyUsername } = this.props;
     return (
       <span>
         {// get(openStatus, "registrationOpen")
@@ -284,14 +284,14 @@ class Register extends Component {
                         onKeyUp={({ target }) =>
                           this.verify(target.value.trim())
                         }
-                        value={this.state.username.value || ""}
+                        value={username.value || ""}
                         required
                       />
                       <ActivityI
-                        username={username}
-                        verifyusername={verifyusername}
+                        username={username.value}
+                        verifyUsername={verifyUsername}
                       />
-                      {this.state.username.error.length ? (
+                      {username.error.length ? (
                         <span className="error--holder">
                           <i className="fas fa-exclamation-circle spacing--it" />
                           {this.state.username.error}
@@ -366,7 +366,7 @@ class Register extends Component {
                     ) : (
                       <input
                         className={
-                          verifyusername.taken || !username
+                          verifyUsername.taken || !username
                             ? "sa-registration-btn no-click"
                             : "sa-registration-btn"
                         }
@@ -394,12 +394,12 @@ class Register extends Component {
   }
 }
 
-const mapStateToProps = ({ auth, error, misc, verifyusername }) => ({
+const mapStateToProps = ({ auth, error, misc, verifyUsername }) => ({
   createAccountStatus: auth.createAccountStatus,
   openStatus: misc.openStatus,
   user: auth.userInfo,
   errorMessage: error,
-  verifyusername: verifyusername
+  verifyUsername: verifyUsername
 });
 
 const mapDispatchToProps = dispatch => ({

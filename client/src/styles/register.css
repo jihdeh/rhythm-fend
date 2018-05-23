@@ -19,6 +19,7 @@
 .spacing--it {
   margin-right: 5px;
   margin-top: 2px;
+  font-size: 10px;
 }
 .username--cont {
   position: relative;
