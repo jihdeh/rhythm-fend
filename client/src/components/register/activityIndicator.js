@@ -2,15 +2,15 @@ import React from "react";
 import Spinner from "react-activity/lib/Spinner";
 import "react-activity/lib/Spinner/Spinner.css";
 
-const activityI = ({ verifyusername, username }) => (
+const activityI = ({ verifyUsername, username }) => (
   <span className="activityI">
-    {verifyusername.fetching ? (
+    {verifyUsername.fetching ? (
       <Spinner color="#ffffff" />
-    ) : verifyusername.taken && username ? (
+    ) : verifyUsername.taken && username ? (
       <span className="danger">
         <i className="fas fa-times" />
       </span>
-    ) : !verifyusername.taken && username ? (
+    ) : !verifyUsername.taken && username ? (
       <span className="success">
         <i className="fas fa-check" />
       </span>
