@@ -55,7 +55,6 @@ class ContestantView extends Component {
     );
   };
   loadPayStack = (username, voteCount, email) => {
-    console.log(process.env.REACT_APP_PAYSTACK_KEY);
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
       email: email || "jide.b.tade@gmail.com",
