@@ -330,7 +330,7 @@ class Register extends Component {
                       type="text"
                       name="Country"
                       onChange={({ target }) =>
-                        this.setState({ country: target.value.trim() })
+                        this.setState({ country: target.value })
                       }
                       value={this.state.country || ""}
                       placeholder="Country"
@@ -340,7 +340,7 @@ class Register extends Component {
                       type="text"
                       name="State"
                       onChange={({ target }) =>
-                        this.setState({ state: target.value.trim() })
+                        this.setState({ state: target.value })
                       }
                       value={this.state.state || ""}
                       placeholder="State"
