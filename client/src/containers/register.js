@@ -43,7 +43,7 @@ class Register extends Component {
     confirmPassword: "",
     country: "",
     state: "",
-    username: "",
+    username: { value: "", error: "" },
     loadingPaystackModule: false
   };
 
@@ -152,7 +152,7 @@ class Register extends Component {
           hasPaid: true,
           country,
           state,
-          username,
+          username: username.value,
           paymentReference: response.reference
         });
         this.setState({ loadingPaystackModule: "Logging you in" });
@@ -170,10 +170,16 @@ class Register extends Component {
       this.setState({ phoneNumber: number });
     }
   };
+  onUsername = ({ value }) => {
+    let error = "";
+    if (value.length <= 3 && value) error = "username too short";
+    if (value.length > 8) error = "username too long";
+    this.setState({ username: { value, error } });
+  };
 
   render() {
     const { loadingPaystackModule, username } = this.state;
-    const { openStatus, verifyusername } = this.props;
+    const { openStatus, verifyUsername } = this.props;
     return (
       <span>
         {get(openStatus, "registrationOpen") ? (
@@ -273,19 +279,23 @@ class Register extends Component {
                         className="usernameInput"
                         type="text"
                         placeholder="username"
-                        onChange={({ target }) =>
-                          this.setState({ username: target.value })
-                        }
+                        onChange={({ target }) => this.onUsername(target)}
                         onKeyUp={({ target }) =>
                           this.verify(target.value.trim())
                         }
-                        value={this.state.username || ""}
+                        value={username.value || ""}
                         required
                       />
                       <ActivityI
-                        username={username}
-                        verifyusername={verifyusername}
+                        username={username.value}
+                        verifyUsername={verifyUsername}
                       />
+                      {username.error.length ? (
+                        <span className="error--holder">
+                          <i className="fas fa-exclamation-circle spacing--it" />
+                          {this.state.username.error}
+                        </span>
+                      ) : null}
                     </span>
                     <IntlTelInput
                       placeholder="Phone number"
@@ -355,7 +365,7 @@ class Register extends Component {
                     ) : (
                       <input
                         className={
-                          verifyusername.taken || !username
+                          verifyUsername.taken || !username
                             ? "sa-registration-btn no-click"
                             : "sa-registration-btn"
                         }
@@ -383,12 +393,12 @@ class Register extends Component {
   }
 }
 
-const mapStateToProps = ({ auth, error, misc, verifyusername }) => ({
+const mapStateToProps = ({ auth, error, misc, verifyUsername }) => ({
   createAccountStatus: auth.createAccountStatus,
   openStatus: misc.openStatus,
   user: auth.userInfo,
   errorMessage: error,
-  verifyusername: verifyusername
+  verifyUsername: verifyUsername
 });
 
 const mapDispatchToProps = dispatch => ({
