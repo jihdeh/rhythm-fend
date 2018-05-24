@@ -172,7 +172,7 @@ class Register extends Component {
   };
   onUsername = ({ value }) => {
     let error = "";
-    if (value.length < 3 && value) error = "username too short";
+    if (value.length <= 3 && value) error = "username too short";
     if (value.length > 8) error = "username too long";
     this.setState({ username: { value, error } });
   };
@@ -182,8 +182,7 @@ class Register extends Component {
     const { openStatus, verifyUsername } = this.props;
     return (
       <span>
-        {// get(openStatus, "registrationOpen")
-        true ? (
+        {get(openStatus, "registrationOpen") ? (
           <div className="register-container">
             <div className="wrap">
               <div className="content-left">
