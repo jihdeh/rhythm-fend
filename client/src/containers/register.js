@@ -473,7 +473,11 @@ class Register extends Component {
             </div>
           )
         ) : (
-          <h2>Loading...</h2>
+          <div style={{ background: "#121212", paddingTop: "13%" }}>
+            <div className="wrap">
+              <h2 style={{ color: "#FFFFFF" }}>Loading...</h2>
+            </div>
+          </div>
         )}
       </span>
     );
