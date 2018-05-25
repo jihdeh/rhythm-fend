@@ -1,12 +1,13 @@
 import React, { PureComponent } from "react";
+import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
-import SearchInput from "./authHeaders/searchInput";
 import LargeScreenMenu from "./authHeaders/lgHeader";
 import SmallScreenMenu from "./authHeaders/smHeader";
 
 class AuthenticatedHeader extends PureComponent {
   render() {
+    const { profile } = this.props;
     return (
       <div className="">
         <div className="row dashboard-menu">
@@ -26,7 +27,7 @@ class AuthenticatedHeader extends PureComponent {
                   src="../../images/nobody.jpg"
                   alt=""
                 />
-                <p>Doe</p>
+                <p>{profile.firstName}</p>
               </div>
               <SmallScreenMenu />
             </div>
@@ -38,4 +39,9 @@ class AuthenticatedHeader extends PureComponent {
   }
 }
 
-export default withRouter(AuthenticatedHeader);
+const mapStateToProps = ({ auth, profile }) => ({
+  user: auth.userInfo,
+  profile: profile.contestant
+});
+
+export default withRouter(connect(mapStateToProps)(AuthenticatedHeader));

@@ -106,6 +106,7 @@ class Edit extends Component {
             />
             <input
               type="file"
+              accept="image/*"
               onChange={event => this.getBase64(event, "profilePhoto")}
               className="change-picture__button"
             />

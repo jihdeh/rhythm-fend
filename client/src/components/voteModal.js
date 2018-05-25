@@ -11,7 +11,7 @@ export default class voteModal extends Component {
     };
   }
   render() {
-    const { amount, focus } = this.state;
+    const { focus } = this.state;
     const {
       voteCount,
       showcastvote,

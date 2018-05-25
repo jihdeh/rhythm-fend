@@ -190,6 +190,12 @@ class ContestantView extends Component {
                     </p>
                   </div>
                   <div className="col-contestant-profile-items">
+                    <p className="col-contestant-profile__key">Phone Number:</p>
+                    <p className="col-contestant-profile__value">
+                      {profile.phoneNumber}
+                    </p>
+                  </div>
+                  <div className="col-contestant-profile-items">
                     <p className="col-contestant-profile__key">Country:</p>
                     <p className="col-contestant-profile__value">
                       {profile.country}
@@ -291,19 +297,6 @@ class ContestantView extends Component {
                   allow="autoplay; encrypted-media"
                   allowFullScreen
                 />
-                <p className="col-contestant-fav-name">Name: Atom Dunra</p>
-                <p className="col-contestant-fav-location">Location: Anambra</p>
-                <p className="col-contestant-fav-code">Star Code: Atom231</p>
-                <div className="share-channel">
-                  <div className="share-channel-vote">
-                    <i className="fas fa-check" /> <span>Vote</span>
-                  </div>
-                  <div className="share-channel-social">
-                    <i className="vote-social-icons vote-social-icons-fb fab fa-facebook fa-2x" />
-                    <i className="vote-social-icons vote-social-icons-tw fab fa-twitter fa-2x" />
-                    <i className="vote-social-icons vote-social-icons-ig fab fa-instagram fa-2x" />
-                  </div>
-                </div>
               </div>
             </div>
             <div className="col-sm-4 col-md-6 col-lg-6">
