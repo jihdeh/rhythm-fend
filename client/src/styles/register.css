@@ -254,8 +254,8 @@ a:hover {
   border: transparent !important;
 }
 .Select-option {
-  background-color: rgba(0, 0, 0, 0.56);;
-  color: #fff;
+  background-color: rgba(0, 0, 0, 0.56) !important;
+  color: #fff !important;
 }
 .soundIt-subscribe .sa-registration-btn {
   color: #ffffff;
