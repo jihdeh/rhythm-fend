@@ -122,118 +122,126 @@ class ContestantView extends Component {
           loadingPaystack={loadingPaystack}
         />
         <ToastContainer ref="container" className="toast-top-right" />
-        {get(openStatus, "votingOpen") ? (
-          <div className="container-fluid">
-            <div className="row">
-              <div className="contestant-container">
-                <div>
-                  <p className="contestant-section__title">
-                    <b>Search results</b>
-                  </p>
-                  <form
-                    className="contestant-container__form"
-                    onSubmit={this.fetchResult}
-                  >
-                    <span className="username--cont">
-                      <input
-                        className="usernameInput searchInput"
-                        type="text"
-                        placeholder="Search by username"
-                        onChange={({ target }) =>
-                          this.setState({ username: target.value })
-                        }
-                        value={this.state.username || ""}
-                        required
-                      />
-                      <button className="search-input__button">
-                        <i className="fas fa-search searchpage-icon" />
-                      </button>
-
-                      {isLoading ? <Spinner color="#ffffff" /> : null}
-                    </span>
-                  </form>
-                </div>
-                <h4>SoundIT Africa Contestants</h4>
-                <div className="grid-suspenders" />
-                {searchResults.length ? (
-                  searchResults.map((contestant, key) => (
-                    <div key={key} className="col-sm-6 col-md-4 col-lg-3">
-                      <div className="col-contestant-result">
-                        <iframe
-                          width="100%"
-                          height="200px"
-                          src={contestant.contestantVideo[0]}
-                          title="Contestant video"
-                          frameBorder="0"
-                          allow="autoplay; encrypted-media"
-                          allowFullScreen
+        {openStatus ? (
+          get(openStatus, "votingOpen") ? (
+            <div className="container-fluid">
+              <div className="row">
+                <div className="contestant-container">
+                  <div>
+                    <p className="contestant-section__title">
+                      <b>Search results</b>
+                    </p>
+                    <form
+                      className="contestant-container__form"
+                      onSubmit={this.fetchResult}
+                    >
+                      <span className="username--cont">
+                        <input
+                          className="usernameInput searchInput"
+                          type="text"
+                          placeholder="Search by username"
+                          onChange={({ target }) =>
+                            this.setState({ username: target.value })
+                          }
+                          value={this.state.username || ""}
+                          required
                         />
-                        <p className="col-contestant-result-name">
-                          Name:{" "}
-                          <span className="col-contestant-result__right">
-                            {contestant.firstName} {contestant.lastName}
-                          </span>
-                        </p>
-                        <p className="col-contestant-result-location">
-                          Location:{" "}
-                          <span className="col-contestant-result__right">
-                            {contestant.state}, {contestant.country}
-                          </span>
-                        </p>
-                        <p className="col-contestant-result-code">
-                          Username:{" "}
-                          <span className="col-contestant-result__right">
-                            {contestant.username}
-                          </span>
-                        </p>
-                        <p className="col-contestant-result-code">
-                          <a
-                            href={`${window.location.origin}/rsg/${
-                              contestant.username
-                            }`}
-                            target="_blank"
-                            style={{ color: "#fe920f" }}
-                          >
-                            Profile Link
-                          </a>
-                        </p>
-                        <div className="share-channel">
-                          <div className="share-channel-vote">
-                            <i className="fas fa-check" />{" "}
-                            <span
-                              data-username={contestant.username}
-                              onClick={this.onShowcastvote}
-                            >
-                              Vote
+                        <button className="search-input__button">
+                          <i className="fas fa-search searchpage-icon" />
+                        </button>
+
+                        {isLoading ? <Spinner color="#ffffff" /> : null}
+                      </span>
+                    </form>
+                  </div>
+                  <h4>SoundIT Africa Contestants</h4>
+                  <div className="grid-suspenders" />
+                  {searchResults.length ? (
+                    searchResults.map((contestant, key) => (
+                      <div key={key} className="col-sm-6 col-md-4 col-lg-3">
+                        <div className="col-contestant-result">
+                          <iframe
+                            width="100%"
+                            height="200px"
+                            src={contestant.contestantVideo[0]}
+                            title="Contestant video"
+                            frameBorder="0"
+                            allow="autoplay; encrypted-media"
+                            allowFullScreen
+                          />
+                          <p className="col-contestant-result-name">
+                            Name:{" "}
+                            <span className="col-contestant-result__right">
+                              {contestant.firstName} {contestant.lastName}
                             </span>
-                          </div>
-                          <div className="share-channel-social">
-                            {contestant.facebook && (
-                              <i className="vote-social-icons vote-social-icons-fb fab fa-facebook fa-2x" />
-                            )}
-                            {contestant.twitter && (
-                              <i className="vote-social-icons vote-social-icons-tw fab fa-twitter fa-2x" />
-                            )}
-                            {contestant.instagram && (
-                              <i className="vote-social-icons vote-social-icons-ig fab fa-instagram fa-2x" />
-                            )}
+                          </p>
+                          <p className="col-contestant-result-location">
+                            Location:{" "}
+                            <span className="col-contestant-result__right">
+                              {contestant.state}, {contestant.country}
+                            </span>
+                          </p>
+                          <p className="col-contestant-result-code">
+                            Username:{" "}
+                            <span className="col-contestant-result__right">
+                              {contestant.username}
+                            </span>
+                          </p>
+                          <p className="col-contestant-result-code">
+                            <a
+                              href={`${window.location.origin}/rsg/${
+                                contestant.username
+                              }`}
+                              target="_blank"
+                              style={{ color: "#fe920f" }}
+                            >
+                              Profile Link
+                            </a>
+                          </p>
+                          <div className="share-channel">
+                            <div className="share-channel-vote">
+                              <i className="fas fa-check" />{" "}
+                              <span
+                                data-username={contestant.username}
+                                onClick={this.onShowcastvote}
+                              >
+                                Vote
+                              </span>
+                            </div>
+                            <div className="share-channel-social">
+                              {contestant.facebook && (
+                                <i className="vote-social-icons vote-social-icons-fb fab fa-facebook fa-2x" />
+                              )}
+                              {contestant.twitter && (
+                                <i className="vote-social-icons vote-social-icons-tw fab fa-twitter fa-2x" />
+                              )}
+                              {contestant.instagram && (
+                                <i className="vote-social-icons vote-social-icons-ig fab fa-instagram fa-2x" />
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))
-                ) : (
-                  <h2>No results found</h2>
-                )}
+                    ))
+                  ) : (
+                    <h2>No results found</h2>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <CurrentlyClosedComponent
+              title="Vote for your favourite Rising Star Gospel Contestant"
+              subtitle="Vote for your favourite contestant."
+              statustitle="Voting is currently closed. Check back on 01.06.2018"
+            />
+          )
         ) : (
-          <CurrentlyClosedComponent
-            title="Vote for your favourite Rising Star Gospel Contestant"
-            subtitle="Vote for your favourite contestant."
-            statustitle="Voting is currently closed. Check back on 01.06.2018"
-          />
+          <div style={{ background: "#121212", paddingTop: "13%" }}>
+            <div className="wrap">
+              <h2 style={{ color: "#FFFFFF" }}>Loading...</h2>
+            </div>
+          </div>
         )}
       </span>
     );
