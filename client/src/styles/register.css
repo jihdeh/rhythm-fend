@@ -239,6 +239,20 @@ a:hover {
   margin: 0 0 1.5em 0;
   width: 93%;
 }
+.soundIt-subscribe__country {
+  outline: none;
+  padding: 0.3em;
+  background: none;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 0.9em;
+  margin: 0 0 1.5em 0;
+  width: 93%;
+}
+.Select-control {
+  background-color: transparent !important;
+  border: transparent !important;
+}
 .soundIt-subscribe .sa-registration-btn {
   color: #ffffff;
   font-size: 0.9em;
