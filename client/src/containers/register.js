@@ -342,8 +342,8 @@ class Register extends Component {
                       className="soundIt-subscribe__country"
                       name="Country"
                       onChange={({ target }) =>
-                      this.setState({ country: target.value.trim() })
-                       }
+                        this.setState({ country: target.value.trim() })
+                      }
                       value={this.state.country || ""}
                       placeholder="Country"
                       searchable
