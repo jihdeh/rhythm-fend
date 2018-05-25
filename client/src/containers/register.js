@@ -186,281 +186,294 @@ class Register extends Component {
     const { openStatus, verifyUsername } = this.props;
     return (
       <span>
-        {!get(openStatus, "registrationOpen") ? (
-          <div className="register-container">
-            <div className="wrap">
-              <div className="content-left">
-                <div className="content-info">
-                  <h2>Brief History About Us</h2>
-                  <div className="slider">
-                    <div className="">
-                      <ul className="rslides callbacks callbacks1" id="slider4">
-                        <li>
-                          <div className="soundit-banner-info">
-                            <h3>Vivamus dui dolor</h3>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Aenean et placerat leo, non condimentum
-                              justo
-                            </p>
-                          </div>
-                        </li>
-                      </ul>
-                      <ul className="rslides callbacks callbacks1" id="slider4">
-                        <li>
-                          <div className="soundit-banner-info">
-                            <h3>Vivamus dui dolor</h3>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Aenean et placerat leo, non condimentum
-                              justo
-                            </p>
-                          </div>
-                        </li>
+        {openStatus ? (
+          get(openStatus, "registrationOpen") ? (
+            <div className="register-container">
+              <div className="wrap">
+                <div className="content-left">
+                  <div className="content-info">
+                    <h2>Brief History About Us</h2>
+                    <div className="slider">
+                      <div className="">
+                        <ul
+                          className="rslides callbacks callbacks1"
+                          id="slider4"
+                        >
+                          <li>
+                            <div className="soundit-banner-info">
+                              <h3>Vivamus dui dolor</h3>
+                              <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean et placerat leo, non
+                                condimentum justo
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
+                        <ul
+                          className="rslides callbacks callbacks1"
+                          id="slider4"
+                        >
+                          <li>
+                            <div className="soundit-banner-info">
+                              <h3>Vivamus dui dolor</h3>
+                              <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Aenean et placerat leo, non
+                                condimentum justo
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="clear"> </div>
+                    </div>
+                    <div className="agileinfo-follow">
+                      <h4>Follow us on:</h4>
+                    </div>
+                    <div className="agileinfo-social-grids">
+                      <ul>
+                        <a
+                          href="https://www.facebook.com/RisingStarGospel/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i className="social-icons fab fa-facebook-f fa-lg" />
+                        </a>
+                        <a
+                          href="https://twitter.com/RisingStarG"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i className="social-icons fab fa-twitter fa-lg" />
+                        </a>
+                        <a
+                          href="https://www.instagram.com/RisingStarG"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i className="social-icons fab fa-instagram fa-lg" />
+                        </a>
                       </ul>
                     </div>
-                    <div className="clear"> </div>
-                  </div>
-                  <div className="agileinfo-follow">
-                    <h4>Follow us on:</h4>
-                  </div>
-                  <div className="agileinfo-social-grids">
-                    <ul>
-                      <a
-                        href="https://www.facebook.com/RisingStarGospel/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <i className="social-icons fab fa-facebook-f fa-lg" />
-                      </a>
-                      <a
-                        href="https://twitter.com/RisingStarG"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <i className="social-icons fab fa-twitter fa-lg" />
-                      </a>
-                      <a
-                        href="https://www.instagram.com/RisingStarG"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <i className="social-icons fab fa-instagram fa-lg" />
-                      </a>
-                    </ul>
-                  </div>
-                  <div className="agile-signin">
-                    <h4>
-                      Already have an account <Link to="/">Sign In</Link>
-                    </h4>
+                    <div className="agile-signin">
+                      <h4>
+                        Already have an account <Link to="/">Sign In</Link>
+                      </h4>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="content-main">
-                <div className="soundIt-subscribe">
-                  <h4>New Contestant?</h4>
-                  <form onSubmit={this.onRegister}>
-                    <input
-                      type="text"
-                      onChange={({ target }) =>
-                        this.setState({ firstName: target.value })
-                      }
-                      value={this.state.firstName || ""}
-                      placeholder="First Name"
-                      required
-                    />
-                    <input
-                      type="text"
-                      placeholder="Last Name"
-                      onChange={({ target }) =>
-                        this.setState({ lastName: target.value })
-                      }
-                      value={this.state.lastName || ""}
-                      required
-                    />
-                    <span className="username--cont">
+                <div className="content-main">
+                  <div className="soundIt-subscribe">
+                    <h4>New Contestant?</h4>
+                    <form onSubmit={this.onRegister}>
                       <input
-                        className="usernameInput"
                         type="text"
-                        placeholder="username"
-                        onChange={({ target }) => this.onUsername(target)}
-                        onKeyUp={({ target }) =>
-                          this.verify(target.value.trim())
+                        onChange={({ target }) =>
+                          this.setState({ firstName: target.value })
                         }
-                        value={username.value || ""}
+                        value={this.state.firstName || ""}
+                        placeholder="First Name"
                         required
                       />
-                      <ActivityI
-                        username={username.value}
-                        verifyUsername={verifyUsername}
-                      />
-                      {username.error.length ? (
-                        <span className="error--holder">
-                          <i className="fas fa-exclamation-circle spacing--it" />
-                          {this.state.username.error}
-                        </span>
-                      ) : null}
-                    </span>
-                    <IntlTelInput
-                      placeholder="Phone number"
-                      defaultCountry={"auto"}
-                      geoIpLookup={lookup}
-                      onPhoneNumberBlur={this.handler}
-                      onPhoneNumberChange={this.handler}
-                      css={["intl-tel-input", "register-phone-input"]}
-                      utilsScript={"libphonenumber.js"}
-                    />
-                    <input
-                      type="email"
-                      name="Email"
-                      onChange={({ target }) =>
-                        this.setState({ email: target.value })
-                      }
-                      value={this.state.email || ""}
-                      placeholder="Email"
-                      required
-                    />
-                    <input
-                      type="password"
-                      name="Password"
-                      onChange={({ target }) =>
-                        this.setState({ password: target.value })
-                      }
-                      value={this.state.password || ""}
-                      placeholder="Password"
-                      required
-                    />
-                    <input
-                      type="password"
-                      name="Password"
-                      onChange={({ target }) =>
-                        this.setState({ confirmPassword: target.value })
-                      }
-                      value={this.state.confirmPassword || ""}
-                      placeholder="Confirm Password"
-                      required
-                    />
-                    <Select
-                      className="soundIt-subscribe__country"
-                      name="Country"
-                      value={country || ""}
-                      onChange={this.handleChange}
-                      placeholder="Country"
-                      searchable
-                      required={true}
-                      options={[
-                        { value: "Algeria", label: "Algeria" },
-                        { value: "Angola", label: "Angola" },
-                        { value: "Benin", label: "Benin" },
-                        { value: "Botswana", label: "Botswana" },
-                        { value: "Burkina Faso", label: "Burkina Faso" },
-                        { value: "Burundi", label: "Burundi" },
-                        { value: "Cameroon", label: "Cameroon" },
-                        { value: "Cape Verde", label: "Cape Verde" },
-                        {
-                          value: "Central African Republic",
-                          label: "Central African Republic"
-                        },
-                        { value: "Chad", label: "Chad" },
-                        { value: "Comoros", label: "Comoros" },
-                        { value: "Congo", label: "Congo" },
-                        {
-                          value: "Democratic Republic of the Congo",
-                          label: "Democratic Republic of the Congo"
-                        },
-                        { value: "Cote d Ivoire", label: "Cote d Ivoire" },
-                        { value: "Djibouti", label: "Djibouti" },
-                        { value: "Egypt", label: "Egypt" },
-                        {
-                          value: "Equatorial Guinea",
-                          label: "Equatorial Guinea"
-                        },
-                        { value: "Eritrea", label: "Eritrea" },
-                        { value: "Ethiopia", label: "Ethiopia" },
-                        { value: "Gabon", label: "Gabon" },
-                        { value: "The Gambia", label: "The Gambia" },
-                        { value: "Ghana", label: "Ghana" },
-                        { value: "Guinea", label: "Guinea" },
-                        { value: "Guinea-Bissau", label: "Guinea-Bissau" },
-                        { value: "Kenya", label: "Kenya" },
-                        { value: "Lesotho", label: "Lesotho" },
-                        { value: "Liberia", label: "Liberia" },
-                        { value: "Libya", label: "Libya" },
-                        { value: "Madagascar", label: "Madagascar" },
-                        { value: "Malawi", label: "Malawi" },
-                        { value: "Mali", label: "Mali" },
-                        { value: "Mauritania", label: "Mauritania" },
-                        { value: "Mauritius", label: "Mauritius" },
-                        { value: "Morocco", label: "Morocco" },
-                        { value: "Mozambique", label: "Mozambique" },
-                        { value: "Namibia", label: "Namibia" },
-                        { value: "Niger", label: "Niger" },
-                        { value: "Nigeria", label: "Nigeria" },
-                        { value: "Rwanda", label: "Rwanda" },
-                        {
-                          value: "Sao Tome and Principe",
-                          label: "Sao Tome and Principe"
-                        },
-                        { value: "Senegal", label: "Senegal" },
-                        { value: "Seychelles", label: "Seychelles" },
-                        { value: "Sierra Leone", label: "Sierra Leone" },
-                        { value: "Somalia", label: "Somalia" },
-                        { value: "South Africa", label: "South Africa" },
-                        { value: "Sudan (North)", label: "Sudan (North)" },
-                        {
-                          value: "South Sudan (Rep.)",
-                          label: "South Sudan (Rep.)"
-                        },
-                        { value: "Swaziland", label: "Swazilanda" },
-                        { value: "Tanzania", label: "Tanzania" },
-                        { value: "Togo", label: "Togo" },
-                        { value: "Tunisia", label: "Tunisia" },
-                        { value: "Uganda", label: "Uganda" },
-                        { value: "Zambia", label: "Zambia" },
-                        { value: "Zimbabwe", label: "Zimbabwe" }
-                      ]}
-                    />
-                    <input
-                      type="text"
-                      name="State"
-                      onChange={({ target }) =>
-                        this.setState({ state: target.value })
-                      }
-                      value={this.state.state || ""}
-                      placeholder="State"
-                      required
-                    />
-
-                    {loadingPaystackModule ? (
-                      <button className="sa-registration-btn spinner" disabled>
-                        <img src="/images/Spinner-1s-50px.svg" alt="" />{" "}
-                        <span>{loadingPaystackModule}</span>
-                      </button>
-                    ) : (
                       <input
-                        className={
-                          verifyUsername.taken || !username
-                            ? "sa-registration-btn no-click"
-                            : "sa-registration-btn"
+                        type="text"
+                        placeholder="Last Name"
+                        onChange={({ target }) =>
+                          this.setState({ lastName: target.value })
                         }
-                        type="submit"
-                        value="Sign Up"
+                        value={this.state.lastName || ""}
+                        required
                       />
-                    )}
-                  </form>
+                      <span className="username--cont">
+                        <input
+                          className="usernameInput"
+                          type="text"
+                          placeholder="username"
+                          onChange={({ target }) => this.onUsername(target)}
+                          onKeyUp={({ target }) =>
+                            this.verify(target.value.trim())
+                          }
+                          value={username.value || ""}
+                          required
+                        />
+                        <ActivityI
+                          username={username.value}
+                          verifyUsername={verifyUsername}
+                        />
+                        {username.error.length ? (
+                          <span className="error--holder">
+                            <i className="fas fa-exclamation-circle spacing--it" />
+                            {this.state.username.error}
+                          </span>
+                        ) : null}
+                      </span>
+                      <IntlTelInput
+                        placeholder="Phone number"
+                        defaultCountry={"auto"}
+                        geoIpLookup={lookup}
+                        onPhoneNumberBlur={this.handler}
+                        onPhoneNumberChange={this.handler}
+                        css={["intl-tel-input", "register-phone-input"]}
+                        utilsScript={"libphonenumber.js"}
+                      />
+                      <input
+                        type="email"
+                        name="Email"
+                        onChange={({ target }) =>
+                          this.setState({ email: target.value })
+                        }
+                        value={this.state.email || ""}
+                        placeholder="Email"
+                        required
+                      />
+                      <input
+                        type="password"
+                        name="Password"
+                        onChange={({ target }) =>
+                          this.setState({ password: target.value })
+                        }
+                        value={this.state.password || ""}
+                        placeholder="Password"
+                        required
+                      />
+                      <input
+                        type="password"
+                        name="Password"
+                        onChange={({ target }) =>
+                          this.setState({ confirmPassword: target.value })
+                        }
+                        value={this.state.confirmPassword || ""}
+                        placeholder="Confirm Password"
+                        required
+                      />
+                      <Select
+                        className="soundIt-subscribe__country"
+                        name="Country"
+                        value={country || ""}
+                        onChange={this.handleChange}
+                        placeholder="Country"
+                        searchable
+                        required={true}
+                        options={[
+                          { value: "Algeria", label: "Algeria" },
+                          { value: "Angola", label: "Angola" },
+                          { value: "Benin", label: "Benin" },
+                          { value: "Botswana", label: "Botswana" },
+                          { value: "Burkina Faso", label: "Burkina Faso" },
+                          { value: "Burundi", label: "Burundi" },
+                          { value: "Cameroon", label: "Cameroon" },
+                          { value: "Cape Verde", label: "Cape Verde" },
+                          {
+                            value: "Central African Republic",
+                            label: "Central African Republic"
+                          },
+                          { value: "Chad", label: "Chad" },
+                          { value: "Comoros", label: "Comoros" },
+                          { value: "Congo", label: "Congo" },
+                          {
+                            value: "Democratic Republic of the Congo",
+                            label: "Democratic Republic of the Congo"
+                          },
+                          { value: "Cote d Ivoire", label: "Cote d Ivoire" },
+                          { value: "Djibouti", label: "Djibouti" },
+                          { value: "Egypt", label: "Egypt" },
+                          {
+                            value: "Equatorial Guinea",
+                            label: "Equatorial Guinea"
+                          },
+                          { value: "Eritrea", label: "Eritrea" },
+                          { value: "Ethiopia", label: "Ethiopia" },
+                          { value: "Gabon", label: "Gabon" },
+                          { value: "The Gambia", label: "The Gambia" },
+                          { value: "Ghana", label: "Ghana" },
+                          { value: "Guinea", label: "Guinea" },
+                          { value: "Guinea-Bissau", label: "Guinea-Bissau" },
+                          { value: "Kenya", label: "Kenya" },
+                          { value: "Lesotho", label: "Lesotho" },
+                          { value: "Liberia", label: "Liberia" },
+                          { value: "Libya", label: "Libya" },
+                          { value: "Madagascar", label: "Madagascar" },
+                          { value: "Malawi", label: "Malawi" },
+                          { value: "Mali", label: "Mali" },
+                          { value: "Mauritania", label: "Mauritania" },
+                          { value: "Mauritius", label: "Mauritius" },
+                          { value: "Morocco", label: "Morocco" },
+                          { value: "Mozambique", label: "Mozambique" },
+                          { value: "Namibia", label: "Namibia" },
+                          { value: "Niger", label: "Niger" },
+                          { value: "Nigeria", label: "Nigeria" },
+                          { value: "Rwanda", label: "Rwanda" },
+                          {
+                            value: "Sao Tome and Principe",
+                            label: "Sao Tome and Principe"
+                          },
+                          { value: "Senegal", label: "Senegal" },
+                          { value: "Seychelles", label: "Seychelles" },
+                          { value: "Sierra Leone", label: "Sierra Leone" },
+                          { value: "Somalia", label: "Somalia" },
+                          { value: "South Africa", label: "South Africa" },
+                          { value: "Sudan (North)", label: "Sudan (North)" },
+                          {
+                            value: "South Sudan (Rep.)",
+                            label: "South Sudan (Rep.)"
+                          },
+                          { value: "Swaziland", label: "Swazilanda" },
+                          { value: "Tanzania", label: "Tanzania" },
+                          { value: "Togo", label: "Togo" },
+                          { value: "Tunisia", label: "Tunisia" },
+                          { value: "Uganda", label: "Uganda" },
+                          { value: "Zambia", label: "Zambia" },
+                          { value: "Zimbabwe", label: "Zimbabwe" }
+                        ]}
+                      />
+                      <input
+                        type="text"
+                        name="State"
+                        onChange={({ target }) =>
+                          this.setState({ state: target.value })
+                        }
+                        value={this.state.state || ""}
+                        placeholder="State"
+                        required
+                      />
+
+                      {loadingPaystackModule ? (
+                        <button
+                          className="sa-registration-btn spinner"
+                          disabled
+                        >
+                          <img src="/images/Spinner-1s-50px.svg" alt="" />{" "}
+                          <span>{loadingPaystackModule}</span>
+                        </button>
+                      ) : (
+                        <input
+                          className={
+                            verifyUsername.taken || !username
+                              ? "sa-registration-btn no-click"
+                              : "sa-registration-btn"
+                          }
+                          type="submit"
+                          value="Sign Up"
+                        />
+                      )}
+                    </form>
+                  </div>
                 </div>
+                <div className="clear"> </div>
               </div>
-              <div className="clear"> </div>
             </div>
-          </div>
+          ) : (
+            <div style={{ background: "#121212", paddingTop: "13%" }}>
+              <CurrentlyClosedComponent
+                title="Register to Enter The SoundIT Competition"
+                subtitle="Register to be a contestant on SoundIT Africa."
+                statustitle="Registration is currently closed. Check back on 01.06.2018"
+              />
+            </div>
+          )
         ) : (
-          <div style={{ background: "#121212", paddingTop: "13%" }}>
-            <CurrentlyClosedComponent
-              title="Register to Enter The SoundIT Competition"
-              subtitle="Register to be a contestant on SoundIT Africa."
-              statustitle="Registration is currently closed. Check back on 01.06.2018"
-            />
-          </div>
+          <h2>Loading...</h2>
         )}
       </span>
     );

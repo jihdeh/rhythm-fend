@@ -55,6 +55,16 @@ export const PHOTO_SET = [
     height: 2.8
   },
   {
+    src: "/images/gallery/4.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/5.png",
+    width: 4,
+    height: 2.8
+  },
+  {
     src: "/images/gallery/6.png",
     width: 4,
     height: 2.8
@@ -80,11 +90,6 @@ export const PHOTO_SET = [
     height: 2.8
   },
   {
-    src: "/images/gallery/11.png",
-    width: 4,
-    height: 2.8
-  },
-  {
     src: "/images/gallery/12.png",
     width: 4,
     height: 2.8
@@ -101,6 +106,51 @@ export const PHOTO_SET = [
   },
   {
     src: "/images/gallery/15.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/16.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/17.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/18.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/19.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/20.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/21.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/22.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/23.png",
+    width: 4,
+    height: 2.8
+  },
+  {
+    src: "/images/gallery/24.png",
     width: 4,
     height: 2.8
   }
