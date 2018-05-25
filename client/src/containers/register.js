@@ -178,9 +178,11 @@ class Register extends Component {
     if (value.length > 8) error = "username too long";
     this.setState({ username: { value, error } });
   };
-
+  handleChange = (country) => {
+    this.setState({ country });
+  }
   render() {
-    const { loadingPaystackModule, username } = this.state;
+    const { loadingPaystackModule, username, country } = this.state;
     const { openStatus, verifyUsername } = this.props;
     return (
       <span>
@@ -341,10 +343,8 @@ class Register extends Component {
                     <Select
                       className="soundIt-subscribe__country"
                       name="Country"
-                      onChange={({ target }) =>
-                        this.setState({ country: target.value.trim() })
-                      }
-                      value={this.state.country || ""}
+                      value={country || ""}
+                      onChange={this.handleChange}
                       placeholder="Country"
                       searchable
                       required={true}
