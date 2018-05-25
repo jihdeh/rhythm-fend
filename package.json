@@ -25,6 +25,6 @@
     "start": "NODE_ENV=production node index.js",
     "client": "cd client && npm start",
     "heroku-postbuild":
-      "cd client && NODE_ENV=development npm install && NODE_ENV=development npm run build"
+      "cd client && NODE_ENV=development npm install && npm run build"
   }
 }
