@@ -69,7 +69,7 @@ class Register extends Component {
     let emailInput = this.state.email.trim();
     let firstName = this.state.firstName.trim();
     let lastName = this.state.lastName.trim();
-    let username = this.state.username.trim();
+    let username = this.state.username.value.trim();
     let phoneNumber = this.state.phoneNumber;
     let password = this.state.password;
     let confirmPassword = this.state.confirmPassword;
@@ -115,7 +115,7 @@ class Register extends Component {
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
       email: email,
-      amount: 10000, //in kobo
+      amount: 100000, //in kobo
       ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
       firstname: firstName,
       lastname: lastName,
@@ -178,8 +178,8 @@ class Register extends Component {
     if (value.length > 8) error = "username too long";
     this.setState({ username: { value, error } });
   };
-  handleChange = country => {
-    this.setState({ country });
+  handleChange = ({ value }) => {
+    this.setState({ country: value });
   };
   render() {
     const { loadingPaystackModule, username, country } = this.state;

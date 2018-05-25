@@ -1,5 +1,6 @@
 import axios from "axios";
 import jwt from "jsonwebtoken";
+import get from "lodash/get";
 import {
   IS_AUTHENTICATED,
   CREATE_ACCOUNT_SUCCESS,
@@ -49,7 +50,9 @@ export const createAccount = accountDetails => async dispatch => {
     })
     .catch(error => {
       const { data } = error.response;
-      displayError(data.message)(dispatch);
+      console.log(data);
+      let errMsg = get(data, "message") || get(data, "message.message");
+      displayError(errMsg)(dispatch);
     });
 };
 
