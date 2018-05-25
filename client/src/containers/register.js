@@ -192,7 +192,7 @@ class Register extends Component {
               <div className="wrap">
                 <div className="content-left">
                   <div className="content-info">
-                    <h2>Brief History About Us</h2>
+                    <h2>A Brief Note To You</h2>
                     <div className="slider">
                       <div className="">
                         <ul

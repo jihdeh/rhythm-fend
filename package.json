@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "NODE_ENV=production node index.js",
-    "client": "cd client && yarn start",
-    "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
+    "client": "cd client && npm start",
+    "heroku-postbuild": "cd client && npm run build"
   }
 }
