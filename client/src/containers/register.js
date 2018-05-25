@@ -13,6 +13,8 @@ import "../../node_modules/react-intl-tel-input/dist/libphonenumber.js";
 import "../../node_modules/react-intl-tel-input/dist/main.css";
 import "../styles/register.css";
 import ActivityI from "../components/register/activityIndicator";
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
 const loadJSONP = (url, callback) => {
   const ref = window.document.getElementsByTagName("script")[0];
@@ -176,9 +178,11 @@ class Register extends Component {
     if (value.length > 8) error = "username too long";
     this.setState({ username: { value, error } });
   };
-
+  handleChange = (country) => {
+    this.setState({ country });
+  }
   render() {
-    const { loadingPaystackModule, username } = this.state;
+    const { loadingPaystackModule, username, country } = this.state;
     const { openStatus, verifyUsername } = this.props;
     return (
       <span>
@@ -336,15 +340,70 @@ class Register extends Component {
                       placeholder="Confirm Password"
                       required
                     />
-                    <input
-                      type="text"
+                    <Select
+                      className="soundIt-subscribe__country"
                       name="Country"
-                      onChange={({ target }) =>
-                        this.setState({ country: target.value.trim() })
-                      }
-                      value={this.state.country || ""}
+                      value={country || ""}
+                      onChange={this.handleChange}
                       placeholder="Country"
-                      required
+                      searchable
+                      required={true}
+                      options={[
+                        { value: 'Algeria', label: 'Algeria' },
+                        { value: 'Angola', label: 'Angola' },
+                        { value: 'Benin', label: 'Benin' },
+                        { value: 'Botswana', label: 'Botswana' },
+                        { value: 'Burkina Faso', label: 'Burkina Faso' },
+                        { value: 'Burundi', label: 'Burundi' },
+                        { value: 'Cameroon', label: 'Cameroon' },
+                        { value: 'Cape Verde', label: 'Cape Verde' },
+                        { value: 'Central African Republic', label: 'Central African Republic' },
+                        { value: 'Chad', label: 'Chad' },
+                        { value: 'Comoros', label: 'Comoros' },
+                        { value: 'Congo', label: 'Congo' },
+                        { value: 'Democratic Republic of the Congo', label: 'Democratic Republic of the Congo' },
+                        { value: 'Cote d Ivoire', label: 'Cote d Ivoire' },
+                        { value: 'Djibouti', label: 'Djibouti' },
+                        { value: 'Egypt', label: 'Egypt' },
+                        { value: 'Equatorial Guinea', label: 'Equatorial Guinea' },
+                        { value: 'Eritrea', label: 'Eritrea' },
+                        { value: 'Ethiopia', label: 'Ethiopia' },
+                        { value: 'Gabon', label: 'Gabon' },
+                        { value: 'The Gambia', label: 'The Gambia' },
+                        { value: 'Ghana', label: 'Ghana' },
+                        { value: 'Guinea', label: 'Guinea' },
+                        { value: 'Guinea-Bissau', label: 'Guinea-Bissau' },
+                        { value: 'Kenya', label: 'Kenya' },
+                        { value: 'Lesotho', label: 'Lesotho' },
+                        { value: 'Liberia', label: 'Liberia' },
+                        { value: 'Libya', label: 'Libya' },
+                        { value: 'Madagascar', label: 'Madagascar' },
+                        { value: 'Malawi', label: 'Malawi' },
+                        { value: 'Mali', label: 'Mali' },
+                        { value: 'Mauritania', label: 'Mauritania' },
+                        { value: 'Mauritius', label: 'Mauritius' },
+                        { value: 'Morocco', label: 'Morocco' },
+                        { value: 'Mozambique', label: 'Mozambique' },
+                        { value: 'Namibia', label: 'Namibia' },
+                        { value: 'Niger', label: 'Niger' },
+                        { value: 'Nigeria', label: 'Nigeria' },
+                        { value: 'Rwanda', label: 'Rwanda' },
+                        { value: 'Sao Tome and Principe', label: 'Sao Tome and Principe' },
+                        { value: 'Senegal', label: 'Senegal' },
+                        { value: 'Seychelles', label: 'Seychelles' },
+                        { value: 'Sierra Leone', label: 'Sierra Leone' },
+                        { value: 'Somalia', label: 'Somalia' },
+                        { value: 'South Africa', label: 'South Africa' },
+                        { value: 'Sudan (North)', label: 'Sudan (North)' },
+                        { value: 'South Sudan (Rep.)', label: 'South Sudan (Rep.)' },
+                        { value: 'Swaziland', label: 'Swazilanda' },
+                        { value: 'Tanzania', label: 'Tanzania' },
+                        { value: 'Togo', label: 'Togo' },
+                        { value: 'Tunisia', label: 'Tunisia' },
+                        { value: 'Uganda', label: 'Uganda' },
+                        { value: 'Zambia', label: 'Zambia' },
+                        { value: 'Zimbabwe', label: 'Zimbabwe' },
+                      ]}
                     />
                     <input
                       type="text"
