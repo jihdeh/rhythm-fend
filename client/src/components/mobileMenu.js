@@ -1,10 +1,14 @@
 import React, { PureComponent } from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import get from "lodash/get";
+import { bindActionCreators } from "redux";
 import "../styles/mobileMenu.css";
 
-export default class MobileMenu extends PureComponent {
+class MobileMenu extends PureComponent {
   render() {
+    const { openStatus } = this.props;
     return (
       <div className="header__top">
         <Navbar inverse collapseOnSelect>
@@ -37,9 +41,13 @@ export default class MobileMenu extends PureComponent {
               <NavItem eventKey={1} href="/search">
                 Vote
               </NavItem>
-              {/*<NavItem eventKey={2} href="/account">
-                Account
-              </NavItem>*/}
+              {openStatus ? (
+                get(openStatus, "registrationOpen") ? (
+                  <NavItem eventKey={2} href="/account">
+                    Account
+                  </NavItem>
+                ) : null
+              ) : null}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -47,3 +55,9 @@ export default class MobileMenu extends PureComponent {
     );
   }
 }
+
+const mapStateToProps = ({ misc }) => ({
+  openStatus: misc.openStatus
+});
+
+export default connect(mapStateToProps)(MobileMenu);

@@ -4,7 +4,7 @@
   "private": true,
   "proxy": "http://localhost:4450/",
   "engines": {
-    "node": "8.9.4"
+    "node": ">=8.9.x"
   },
   "dependencies": {
     "axios": "^0.18.0",

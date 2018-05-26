@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import get from "lodash/get";
+import { bindActionCreators } from "redux";
 import "../styles/header.css";
 
-export default class Header extends Component {
+class Header extends Component {
   render() {
+    const { openStatus } = this.props;
     return (
       <header
         className={
@@ -25,9 +29,13 @@ export default class Header extends Component {
               <div className="sa-liner" />
             </div>
             <ul className="sa-navigation">
-              {/*<li>
-                <Link to="/account">Account</Link>
-              </li>*/}
+              {openStatus ? (
+                get(openStatus, "registrationOpen") ? (
+                  <li>
+                    <Link to="/account">Account</Link>
+                  </li>
+                ) : null
+              ) : null}
               <li>
                 <Link to="/gallery">Gallery</Link>
               </li>
@@ -50,3 +58,9 @@ export default class Header extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ misc }) => ({
+  openStatus: misc.openStatus
+});
+
+export default connect(mapStateToProps)(Header);
