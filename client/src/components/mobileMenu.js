@@ -44,7 +44,7 @@ class MobileMenu extends PureComponent {
               {openStatus ? (
                 get(openStatus, "registrationOpen") ? (
                   <NavItem eventKey={2} href="/account">
-                    Account
+                    Login/Register
                   </NavItem>
                 ) : null
               ) : null}

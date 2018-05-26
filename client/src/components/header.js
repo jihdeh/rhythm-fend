@@ -32,7 +32,7 @@ class Header extends Component {
               {openStatus ? (
                 get(openStatus, "registrationOpen") ? (
                   <li>
-                    <Link to="/account">Account</Link>
+                    <Link to="/account">Login/Register</Link>
                   </li>
                 ) : null
               ) : null}
