@@ -22,7 +22,9 @@ class Edit extends Component {
       twitter: "",
       instagram: "",
       about: "",
-      profilePhoto: ""
+      profilePhoto: "",
+      defaultPhoto: false,
+      displayPhoto: "../../images/nobody.jpg"
     };
   }
 
@@ -54,22 +56,28 @@ class Edit extends Component {
 
   getBase64(evt) {
     let file = evt.target.files[0];
-    console.log(file);
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function() {
-      console.log(reader.result);
-    };
-    reader.onerror = function(error) {
-      console.log("Error: ", error);
-    };
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.setState({
+          displayPhoto: reader.result,
+          profilePhoto: file,
+          defaultPhoto: true
+        });
+      };
+      reader.onerror = function(error) {
+        console.log("Error: ", error);
+      };
+    }
   }
 
   onSubmit = evt => {
     evt.preventDefault();
     const { user: { token: profile } } = this.props;
-
-    this.props.updateProfile({ ...this.state }, profile);
+    let newState = Object.assign({}, this.state); // Copy state
+    newState.displayPhoto = null;
+    this.props.updateProfile({ ...newState }, profile);
     this.setState({
       isLoading: true
     });
@@ -88,6 +96,8 @@ class Edit extends Component {
       instagram,
       about,
       profilePhoto,
+      displayPhoto,
+      defaultPhoto,
       isLoading
     } = this.state;
 
@@ -97,11 +107,7 @@ class Edit extends Component {
           <div className="col-md-4 edit-profile__picture">
             <img
               className="edit-profile__image"
-              src={
-                profile.profilePhoto
-                  ? profile.profilePhoto
-                  : profilePhoto ? profilePhoto : "../../images/nobody.jpg"
-              }
+              src={profilePhoto && !defaultPhoto ? profilePhoto : displayPhoto}
               alt=""
             />
             <input

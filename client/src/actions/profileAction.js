@@ -31,6 +31,10 @@ export const getProfile = username => async dispatch => {
 
 export const updateProfile = (profile, { username }) => async dispatch => {
   try {
+    if (profile.profilePhoto) {
+      updateImage(username, profile.profilePhoto);
+    }
+    profile.profilePhoto = null;
     const url = `${process.env.REACT_APP_BASE_URL}/auth/${username}`;
     await axios.put(url, profile);
     await dispatch({
@@ -41,6 +45,24 @@ export const updateProfile = (profile, { username }) => async dispatch => {
   } catch (error) {
     const { data: { message } } = error.response;
     displayError(message.message)(dispatch);
+  }
+};
+
+export const updateImage = async (username, image) => {
+  try {
+    const form = new FormData();
+    form.append("image", image);
+    form.append("username", username);
+    const options = {
+      method: "PUT",
+      data: form,
+      url: `${process.env.REACT_APP_BASE_URL}/uploadProfileImage`
+    };
+
+    const upload = await axios(options);
+    console.log(upload);
+  } catch (error) {
+    console.log(error);
   }
 };
 
