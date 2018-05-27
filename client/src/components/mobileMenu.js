@@ -3,7 +3,6 @@ import { Nav, Navbar, NavItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import get from "lodash/get";
-import { bindActionCreators } from "redux";
 import "../styles/mobileMenu.css";
 
 class MobileMenu extends PureComponent {

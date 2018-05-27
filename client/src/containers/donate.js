@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { donate } from "../actions/miscActions";
-import "../styles/donate.css";
 
 class Donate extends Component {
   state = {
@@ -36,7 +35,7 @@ class Donate extends Component {
     const { name, email, phoneNumber, amount } = this.state;
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
-      email: email.trim() || "jide.b.tade@gmail.com",
+      email: email.trim() || "risingstargospel@gmail.com",
       amount: amount * 100, //in kobo
       ref: "" + Math.floor(Math.random() * 1000000000 + 1),
       metadata: {

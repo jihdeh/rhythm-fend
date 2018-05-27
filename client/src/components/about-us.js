@@ -1,5 +1,4 @@
 import React, { PureComponent } from "react";
-import "../styles/aboutUs.css";
 
 class About extends PureComponent {
   componentWillMount() {

@@ -2,20 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import get from "lodash/get";
-import { bindActionCreators } from "redux";
-import "../styles/header.css";
 
 class Header extends Component {
   render() {
     const { openStatus } = this.props;
     return (
-      <header
-        className={
-          window.location.pathname === "/"
-            ? "sa-header__xs_landing sa-header__xs sa-header__search"
-            : "sa-header__xs sa-header__search"
-        }
-      >
+      <header className="sa-header__xs sa-header__search">
         <nav>
           <Link to="/">
             <img

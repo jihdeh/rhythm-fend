@@ -41,117 +41,117 @@ here', making it look like readable English. Many desktop publishing packages`
 export const PHOTO_SET = [
   {
     src: "/images/gallery/1.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/2.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/3.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/4.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/5.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/6.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/7.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/8.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/9.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/10.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/12.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/13.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/14.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/15.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/16.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/17.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/18.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/19.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/20.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/21.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/22.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/23.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   },
   {
     src: "/images/gallery/24.png",
-    width: 4,
+    width: 3.7,
     height: 2.8
   }
 ];

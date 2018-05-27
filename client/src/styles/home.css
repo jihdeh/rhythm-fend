@@ -89,7 +89,7 @@ input:focus {
 .mobile-sa-text__title {
   display: none;
   padding-top: 11em !important;
-  background: url("//www.recall-entertainment.com/mizori/wp-content/themes/recall/img/bg/about_us_2_xxl.jpg"),
+  background: url("/images/banner2.png"),
     linear-gradient(to right, #653200, #666666);
   height: 100vh;
   background-blend-mode: multiply;

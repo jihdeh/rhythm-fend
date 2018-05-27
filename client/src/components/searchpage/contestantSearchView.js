@@ -6,7 +6,6 @@ import { getSearchResult } from "../../actions/miscActions";
 import { displayError } from "../../actions/errorActions";
 import Spinner from "react-activity/lib/Spinner";
 import CurrentlyClosedComponent from "../currentlyClosed";
-import "../../styles/searchpage.css";
 import "react-activity/lib/Spinner/Spinner.css";
 import { ToastContainer } from "react-toastr";
 import VoteModal from "../voteModal";

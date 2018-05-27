@@ -14,7 +14,6 @@ import "../../node_modules/react-intl-tel-input/dist/main.css";
 import ActivityI from "../components/register/activityIndicator";
 import Select from "react-select";
 import "react-select/dist/react-select.css";
-import "../styles/register.css";
 
 const loadJSONP = (url, callback) => {
   const ref = window.document.getElementsByTagName("script")[0];
@@ -115,7 +114,7 @@ class Register extends Component {
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
       email: email,
-      amount: 10000, //in kobo
+      amount: 100000, //in kobo
       ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
       firstname: firstName,
       lastname: lastName,
@@ -201,11 +200,12 @@ class Register extends Component {
                         >
                           <li>
                             <div className="soundit-banner-info">
-                              <h3>Vivamus dui dolor</h3>
+                              <h3>Applicants</h3>
                               <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Aenean et placerat leo, non
-                                condimentum justo
+                                To complete your registration you'd be required
+                                to pay a sum of ₦1000 for Nigerians and the
+                                equivalent for other countries in order to
+                                succesfully register.
                               </p>
                             </div>
                           </li>
@@ -216,11 +216,13 @@ class Register extends Component {
                         >
                           <li>
                             <div className="soundit-banner-info">
-                              <h3>Vivamus dui dolor</h3>
+                              <h3>Complaints/Support</h3>
                               <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Aenean et placerat leo, non
-                                condimentum justo
+                                If you run into any issues, do not be
+                                worried!.Just reach out to us at
+                                contact@soundit.africa or call +234 (80) 3298
+                                8276 / +234 (81) 5046 8397 with your issue. We
+                                are ready to help!.
                               </p>
                             </div>
                           </li>

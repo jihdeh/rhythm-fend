@@ -1,4 +1,4 @@
-.banner {
+.no-webp .banner {
   background: url("/images/banner1.png");
   background: url("/images/banner1.png"),
     linear-gradient(to right, #653200, #666666);
@@ -11,9 +11,35 @@
   padding: 3rem;
 }
 
-.banner-slide2 {
+.webp .banner {
+  background: url("/images/banner1.webp");
+  background: url("/images/banner1.webp"),
+    linear-gradient(to right, #653200, #666666);
+  height: 100vh;
+  background-blend-mode: overlay;
+  overflow: hidden;
+
+  background-position: 50% top;
+  background-repeat: no-repeat;
+  padding: 3rem;
+}
+
+.no-webp .banner-slide2 {
   background: url("/images/banner2.png");
   background: url("/images/banner2.png"),
+    linear-gradient(to left, #653200, #666666);
+  height: 100vh;
+  background-blend-mode: overlay;
+  overflow: hidden;
+
+  background-position: 50% top;
+  background-repeat: no-repeat;
+  padding: 3rem;
+}
+
+.webp .banner-slide2 {
+  background: url("/images/banner2.webp");
+  background: url("/images/banner2.webp"),
     linear-gradient(to left, #653200, #666666);
   height: 100vh;
   background-blend-mode: overlay;

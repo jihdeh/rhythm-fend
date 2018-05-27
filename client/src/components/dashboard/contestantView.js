@@ -6,7 +6,6 @@ import size from "lodash/size";
 import get from "lodash/get";
 import videoparser from "../../utils/youtubeParser/base";
 import "../../utils/youtubeParser/youtube";
-import "../../styles/dashboard.css";
 import {
   updateProfile,
   getProfile,

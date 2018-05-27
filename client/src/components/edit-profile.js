@@ -84,8 +84,6 @@ class Edit extends Component {
   };
 
   render() {
-    const { profile } = this.props;
-
     const {
       firstName,
       lastName,

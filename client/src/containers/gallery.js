@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../styles/gallery.css";
 import Video from "../components/gallery/video";
 import Gallery from "react-photo-gallery";
 import Measure from "react-measure";
@@ -109,7 +108,7 @@ class gallery extends Component {
             <h2>PAST SHOW VIDEOS</h2>
             <hr />
           </div>
-          <div className="sect--two">
+          <div className="container-fluid sect--two">
             <div>
               <div className="row">
                 <Video videoUrl={VIDEO_SET} click={this.onShowVideo} />

@@ -35,11 +35,15 @@ class SectionFour extends PureComponent {
             </p>
           </div>
           <div className="col-sm-6 section-four__right">
-            <img
-              className="section-four__picture img-responsive"
-              src="/images/gallery/collage.png"
-              alt="About colage SoundIT Africa"
-            />
+            <picture>
+              <source srcSet="/images/gallery/collage.webp" type="image/webp" />
+              <img
+                className="section-four__picture img-responsive"
+                data-src="/images/gallery/collage.png"
+                src="/images/gallery/collage.png"
+                alt="About colage SoundIT Africa"
+              />
+            </picture>
           </div>
         </div>
       </div>

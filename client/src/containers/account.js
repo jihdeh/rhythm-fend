@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../styles/account.css";
 import Login from "../components/login";
 
 class Account extends Component {
@@ -11,12 +10,12 @@ class Account extends Component {
             <p>Access your account</p>
           </div>
           <div className="account-form__form">
-            <Login /> 
+            <Login />
           </div>
           <div className="account-form__footer">
             <p>SOUNDIT AFRICA</p>
           </div>
-        </div> 
+        </div>
       </div>
     );
   }

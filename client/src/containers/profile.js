@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { ToastContainer } from "react-toastr";
 import { connect } from "react-redux";
-import "../styles/profile.css";
 import Bio from "../components/profile/bio";
 import Splitads from "../components/profile/splitads";
 import ProfileHeader from "../components/profile/profileHeader";

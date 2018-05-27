@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/currentlyClosed.css";
 
 const CurrentlyClosed = ({ title, subtitle, statustitle }) => (
   <div className="closed-wrapper">

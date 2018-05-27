@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
-import "../styles/vote.css";
 
 export default class voteModal extends Component {
   constructor(props) {

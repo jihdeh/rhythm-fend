@@ -22,7 +22,7 @@
     "koa-static": "^4.0.2"
   },
   "scripts": {
-    "start": "NODE_ENV=production node index.js",
+    "start": "node index.js",
     "client": "cd client && yarn start",
     "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
   }

@@ -25,34 +25,62 @@ class SectionFive extends PureComponent {
         <div className="section-five__work">
           <div className="section-five__left">
             <div className="section-five-img">
-              <img
-                className="section-five__picture img-responsive"
-                src="/images/gallery/A.png"
-                alt="SoundIT show gallery"
-              />
+              <picture>
+                <source
+                  srcSet="/images/gallery/A.webp?v=0.0.2"
+                  type="image/webp"
+                />
+                <img
+                  className="section-five__picture img-responsive"
+                  data-src="/images/gallery/A.png?v=0.0.2"
+                  src="/images/gallery/A.png?v=0.0.2"
+                  alt="SoundIT show gallery"
+                />
+              </picture>
             </div>
             <div className="section-five-img">
-              <img
-                className="section-five__picture img-responsive"
-                src="/images/gallery/C.png"
-                alt="SoundIT Africa show gallery"
-              />
+              <picture>
+                <source
+                  srcSet="/images/gallery/C.webp?v=0.0.2"
+                  type="image/webp"
+                />
+                <img
+                  className="section-five__picture img-responsive"
+                  data-src="/images/gallery/C.png?v=0.0.2"
+                  src="/images/gallery/C.png?v=0.0.2"
+                  alt="SoundIT Africa show gallery"
+                />
+              </picture>
             </div>
           </div>
           <div className="section-five__right">
             <div className="section-five-img">
-              <img
-                className="section-five__picture img-responsive"
-                src="/images/gallery/D.png"
-                alt="SoundIT Africa show gallery"
-              />
+              <picture>
+                <source
+                  srcSet="/images/gallery/D.webp?v=0.0.2"
+                  type="image/webp"
+                />
+                <img
+                  className="section-five__picture img-responsive"
+                  data-src="/images/gallery/D.png?v=0.0.2"
+                  src="/images/gallery/D.png?v=0.0.2"
+                  alt="SoundIT Africa show gallery"
+                />
+              </picture>
             </div>
             <div className="section-five-img">
-              <img
-                className="section-five__picture img-responsive"
-                src="/images/gallery/B.png"
-                alt="SoundIT Africa show gallery"
-              />
+              <picture>
+                <source
+                  srcSet="/images/gallery/B.webp?v=0.0.2"
+                  type="image/webp"
+                />
+                <img
+                  className="section-five__picture img-responsive"
+                  data-src="/images/gallery/B.png?v=0.0.2"
+                  src="/images/gallery/B.png?v=0.0.2"
+                  alt="SoundIT Africa show gallery"
+                />
+              </picture>
             </div>
           </div>
         </div>

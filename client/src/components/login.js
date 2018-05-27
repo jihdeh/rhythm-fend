@@ -7,7 +7,6 @@ import Spinner from "react-activity/lib/Spinner";
 import { login } from "../actions/authActions";
 import { displayError } from "../actions/errorActions";
 import "react-activity/lib/Spinner/Spinner.css";
-import "../styles/home.css";
 
 class LoginPage extends Component {
   state = {
