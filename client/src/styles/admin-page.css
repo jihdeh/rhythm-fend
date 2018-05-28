@@ -1,0 +1,62 @@
+.admin-page-container {
+  background: hsl(0, 0%, 7%);
+  width: 100%;
+  padding-bottom: 1em;
+  padding-top: 8em;
+  height: 100vh;
+}
+
+.admin-page-title {
+  color: white;
+  margin-left: 13px;
+}
+
+.admin-page-contestant-profile {
+  box-shadow: 3px 4px 1px black;
+  margin-top: 1em;
+}
+
+.admin-page-contestant-name {
+  display: flex;
+  border-bottom: 1px solid grey;
+  color: #fff;
+}
+
+.admin-page-contestant-edit {
+  display: flex;
+  margin-left: auto;
+  color: red;
+}
+
+.admin-page-contestant-edit:hover {
+  cursor: pointer;
+}
+
+.admin-page-contestant-image {
+  height: 4em;
+  width: 4em;
+}
+
+.admin-page-contestant-info {
+  display: flex;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.admin-page-contestant-text {
+  margin-left: 10px;
+}
+
+.admin-page-divider {
+  margin: 0 5px 0 5px;
+}
+
+@media (max-width: 767px) {
+  .admin-page-container {
+    padding-top: 5em;
+    height: 100%;
+  }
+  .admin-page-title {
+    margin-top: -1em;
+  }
+}

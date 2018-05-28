@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Loadable from "react-loadable";
+import AdminPage from "./admin-page";
 
 // -----STYLES------ //
 import "../styles/header.css";
@@ -150,6 +151,7 @@ const Main = props => {
         <Route exact path="/rsg/:username" component={Profile} />
         <Route exact path="/about" component={AboutUs} />
         <Route exact path="/gallery" component={Gallery} />
+        <Route exact path="/admin/users" component={AdminPage} />
 
         <PublicRoute
           authed={props.authed}

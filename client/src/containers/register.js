@@ -185,7 +185,7 @@ class Register extends Component {
     const { openStatus, verifyUsername } = this.props;
     return (
       <span>
-        {openStatus ? (
+        {!openStatus ? (
           get(openStatus, "registrationOpen") ? (
             <div className="register-container">
               <div className="wrap">
