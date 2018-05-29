@@ -18,24 +18,27 @@ class ContestantView extends Component {
       username: "",
       isLoading: false,
       voteCount: "",
-      showcastvote: false,
+      showCastVote: false,
       loadingPaystack: false,
       email: ""
     };
   }
+
   onchangeVoteCount = e => {
     this.setState({ voteCount: e.target.value });
   };
+
   onchangeVoteAmount = val => {
     this.setState({ voteCount: val });
   };
-  onShowcastvote = e => {
-    const username = e.currentTarget.dataset.username;
+
+  onShowCastVote = username => {
     this.setState(prevState => ({
-      showcastvote: !prevState.showcastvote,
+      showCastVote: !prevState.showCastVote,
       username
     }));
   };
+
   onVote = e => {
     const { voteCount, email, username } = this.state;
     this.setState({
@@ -43,6 +46,11 @@ class ContestantView extends Component {
     });
     this.loadPayStack(username, voteCount, email);
   };
+
+  handleClose = () => {
+    this.setState({ showCastVote: !this.state.showCastVote });
+  };
+
   successMesage = (username, voteCount) => {
     this.refs.container.success(
       `You have succesfully casted ${voteCount} vote(s) for ${username}`,
@@ -53,13 +61,15 @@ class ContestantView extends Component {
       }
     );
   };
-  loadPayStack = (username, voteCount, email) => {
+
+  loadPayStack = (username, voteCount, email = "vote@soundit.africa") => {
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
-      email: email || "jide.b.tade@gmail.com",
+      email: "vote@soundit.africa",
       amount: 5000 * Number(voteCount), //in kobo
       ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
       callback: response => {
+        console.log(username);
         this.props.vote({
           reference: response.reference,
           username,
@@ -68,7 +78,7 @@ class ContestantView extends Component {
         this.setState({
           voteCount: "",
           loadingPaystack: false,
-          showcastvote: false
+          showCastVote: false
         });
         this.successMesage(username, voteCount);
       },
@@ -76,7 +86,7 @@ class ContestantView extends Component {
         alert("window closed");
         this.setState({
           loadingPaystack: false,
-          showcastvote: false,
+          showCastVote: false,
           voteCount: ""
         });
       }
@@ -108,14 +118,15 @@ class ContestantView extends Component {
 
   render() {
     const { openStatus, searchResults = [] } = this.props;
-    const { isLoading, voteCount, showcastvote, loadingPaystack } = this.state;
+    const { isLoading, voteCount, showCastVote, loadingPaystack } = this.state;
 
     return (
       <span>
         <VoteModal
           voteCount={voteCount}
-          showcastvote={showcastvote}
+          showCastVote={showCastVote}
           onVote={this.onVote}
+          handleClose={this.handleClose}
           onchangeVoteAmount={this.onchangeVoteAmount}
           onchangeVoteCount={this.onchangeVoteCount}
           loadingPaystack={loadingPaystack}
@@ -198,12 +209,14 @@ class ContestantView extends Component {
                             </a>
                           </p>
                           <div className="share-channel">
-                            <div className="share-channel-vote">
+                            <div
+                              className="share-channel-vote"
+                              onClick={() =>
+                                this.onShowCastVote(contestant.username)
+                              }
+                            >
                               <i className="fas fa-check" />{" "}
-                              <span
-                                data-username={contestant.username}
-                                onClick={this.onShowcastvote}
-                              >
+                              <span data-username={contestant.username}>
                                 Vote
                               </span>
                             </div>

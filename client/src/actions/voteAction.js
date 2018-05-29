@@ -5,14 +5,14 @@ import {
 } from "../constants/actionTypes";
 import axios from "axios";
 
-const vote = ({ reference, uniqueCode, voteCount }) => dispatch => {
+const vote = ({ reference, username, voteCount }) => dispatch => {
   try {
     dispatch({
       type: VOTE_PENDING
     });
     const url = `${
       process.env.REACT_APP_BASE_URL
-    }/vote/${reference}?uniqueCode=${uniqueCode}&voteCount=${voteCount}`;
+    }/vote/${reference}?username=${username}&voteCount=${voteCount}`;
 
     const response = axios.post(url);
     dispatch({

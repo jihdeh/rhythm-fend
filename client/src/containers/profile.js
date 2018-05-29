@@ -30,32 +30,35 @@ class Profile extends Component {
       voteCount: "",
       email: "",
       show: false,
-      showcastvote: false,
+      showCastVote: false,
       loadingPaystack: false
     };
   }
+
   async componentDidMount() {
     const { match: { params } } = this.props;
     this.props.getProfilePending();
     this.props.getProfile(params.username);
   }
+
   handleClick = () => {
     this.setState(prevState => ({ show: !prevState.show }));
   };
+
   onchangeVoteCount = e => {
     this.setState({ voteCount: e.target.value });
   };
+
   onchangeVoteAmount = val => {
     this.setState({ voteCount: val });
   };
-  onShowcastvote = () => {
-    this.setState(
-      prevState => ({
-        showcastvote: !prevState.showcastvote
-      }),
-      () => console.log(this.state)
-    );
+
+  onShowCastVote = () => {
+    this.setState(prevState => ({
+      showCastVote: !prevState.showCastVote
+    }));
   };
+
   componentWillReceiveProps(nextProps) {
     const state = {
       ...nextProps.profile.contestant,
@@ -74,6 +77,11 @@ class Profile extends Component {
     });
     this.loadPayStack(username, voteCount, email);
   };
+
+  handleClose = () => {
+    this.setState({ showCastVote: !this.state.showCastVote });
+  };
+
   successMesage = (username, voteCount) => {
     this.refs.container.success(
       `You have succesfully casted ${voteCount} vote(s) for ${username}`,
@@ -84,11 +92,12 @@ class Profile extends Component {
       }
     );
   };
+
   loadPayStack = (username, voteCount, email) => {
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
-      email: email || "jide.b.tade@gmail.com",
-      amount: 10000 * Number(voteCount), //in kobo
+      email: "vote@soundit.africa",
+      amount: 5000 * Number(voteCount), //in kobo
       ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
       callback: response => {
         this.props.vote({
@@ -100,14 +109,14 @@ class Profile extends Component {
           voteCount: "",
           loadingPaystack: false
         });
-        this.onShowcastvote();
+        this.onShowCastVote();
         this.successMesage(username, voteCount);
       },
       onClose: () => {
         alert("window closed");
         this.setState({
           loadingPaystack: false,
-          showcastvote: false,
+          showCastVote: false,
           voteCount: ""
         });
       }
@@ -131,7 +140,7 @@ class Profile extends Component {
       contestantVideo,
       show,
       voteCount,
-      showcastvote,
+      showCastVote,
       loadingPaystack
     } = this.state;
 
@@ -145,8 +154,9 @@ class Profile extends Component {
       <div className="profile--container">
         <VoteModal
           voteCount={voteCount}
-          showcastvote={showcastvote}
+          showCastVote={showCastVote}
           onVote={this.onVote}
+          handleClose={this.handleClose}
           onchangeVoteAmount={this.onchangeVoteAmount}
           onchangeVoteCount={this.onchangeVoteCount}
           loadingPaystack={loadingPaystack}
@@ -179,8 +189,7 @@ class Profile extends Component {
                 show={show}
                 onchangeVoteCount={this.onchangeVoteCount}
                 voteCount={voteCount}
-                onShowcastvote={this.onShowcastvote}
-                showcastvote={showcastvote}
+                onShowCastVote={this.onShowCastVote}
                 onVote={this.onVote}
                 isAuthticated={isAuthticated}
                 loadingPaystack={loadingPaystack}

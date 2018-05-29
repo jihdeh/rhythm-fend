@@ -9,21 +9,24 @@ export default class voteModal extends Component {
       focus: false
     };
   }
+
   render() {
     const { focus } = this.state;
     const {
       voteCount,
-      showcastvote,
+      showCastVote,
       onVote,
       onchangeVoteAmount,
       onchangeVoteCount,
-      loadingPaystack
+      loadingPaystack,
+      handleClose
     } = this.props;
+
     return (
-      <Modal
-        onHide={() => this.setState({ showcastvote: false })}
-        show={showcastvote}
-      >
+      <Modal onHide={handleClose} show={showCastVote} container={this}>
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title">VOTE</Modal.Title>
+        </Modal.Header>
         <Modal.Body className="my--modal--cont">
           {loadingPaystack ? (
             <span className="loading--payment">Loading Payment Module...</span>
