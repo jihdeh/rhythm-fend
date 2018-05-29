@@ -69,7 +69,6 @@ class ContestantView extends Component {
       amount: 5000 * Number(voteCount), //in kobo
       ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
       callback: response => {
-        console.log(username);
         this.props.vote({
           reference: response.reference,
           username,
@@ -133,7 +132,7 @@ class ContestantView extends Component {
         />
         <ToastContainer ref="container" className="toast-top-right" />
         {openStatus ? (
-          !get(openStatus, "votingOpen") ? (
+          get(openStatus, "votingOpen") ? (
             <div className="container-fluid">
               <div className="row">
                 <div className="contestant-container">

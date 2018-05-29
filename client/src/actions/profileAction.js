@@ -34,7 +34,7 @@ export const updateProfile = (profile, { username }) => async dispatch => {
     if (profile.profilePhoto) {
       updateImage(username, profile.profilePhoto);
     }
-    profile.profilePhoto = null;
+    delete profile.profilePhoto;
     const url = `${process.env.REACT_APP_BASE_URL}/auth/${username}`;
     await axios.put(url, profile);
     await dispatch({

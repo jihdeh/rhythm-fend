@@ -109,7 +109,7 @@ class ContestantView extends Component {
                 <div className="col-contestant-profile-photo">
                   <img
                     className="dashboard-profile__image img-responsive"
-                    src="../../images/nobody.jpg"
+                    src={profile.profilePhoto || "../../images/nobody.jpg"}
                     alt=""
                   />
                 </div>

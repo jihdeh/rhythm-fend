@@ -123,6 +123,7 @@ class Profile extends Component {
     });
     handler.openIframe();
   };
+
   onClear = () => {
     this.refs.container.clear();
   };

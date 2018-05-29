@@ -135,8 +135,7 @@ class Donate extends Component {
               {!successfulDonation ? (
                 <span>
                   <h4>
-                    Please for appreciation! we'd like some information about
-                    you
+                    Please for appreciation we'd like some information about you
                   </h4>
                   <form onSubmit={this.submit}>
                     <label>

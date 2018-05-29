@@ -76,7 +76,12 @@ class Edit extends Component {
     evt.preventDefault();
     const { user: { token: profile } } = this.props;
     let newState = Object.assign({}, this.state); // Copy state
+    if (newState.displayPhoto === "../../images/nobody.jpg") {
+      //default
+      delete newState.profilePhoto;
+    }
     newState.displayPhoto = null;
+    delete newState.random;
     this.props.updateProfile({ ...newState }, profile);
     this.setState({
       isLoading: true
