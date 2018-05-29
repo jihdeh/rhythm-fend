@@ -36,7 +36,9 @@ class Profile extends Component {
   }
 
   async componentDidMount() {
-    const { match: { params } } = this.props;
+    const {
+      match: { params }
+    } = this.props;
     this.props.getProfilePending();
     this.props.getProfile(params.username);
   }
@@ -52,10 +54,9 @@ class Profile extends Component {
   onchangeVoteAmount = val => {
     this.setState({ voteCount: val });
   };
-
-  onShowCastVote = () => {
+  onShowcastvote = () => {
     this.setState(prevState => ({
-      showCastVote: !prevState.showCastVote
+      showcastvote: !prevState.showcastvote
     }));
   };
 
@@ -92,7 +93,12 @@ class Profile extends Component {
       }
     );
   };
-
+  errorMesage = message => {
+    this.refs.container.error(`Sorry, ${message}`, "", {
+      timeOut: 30000,
+      extendedTimeOut: 10000
+    });
+  };
   loadPayStack = (username, voteCount, email) => {
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
@@ -103,14 +109,15 @@ class Profile extends Component {
         this.props.vote({
           reference: response.reference,
           username,
-          voteCount
+          voteCount,
+          success: this.successMesage,
+          failed: this.errorMesage
         });
         this.setState({
           voteCount: "",
           loadingPaystack: false
         });
-        this.onShowCastVote();
-        this.successMesage(username, voteCount);
+        this.onShowcastvote();
       },
       onClose: () => {
         alert("window closed");
@@ -149,6 +156,7 @@ class Profile extends Component {
     const { error } = this.props.profile;
     const { userInfo } = this.props.auth;
     const isAuthticated = userInfo ? true : false;
+    console.log(this.props);
 
     return (
       <div className="profile--container">
