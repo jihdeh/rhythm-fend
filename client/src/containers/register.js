@@ -185,7 +185,6 @@ class Register extends Component {
     const { openStatus, verifyUsername } = this.props;
     return (
       <span>
-<<<<<<< HEAD
         {openStatus ? (
           get(openStatus, "registrationOpen") ? (
             <div className="register-container">
@@ -257,40 +256,6 @@ class Register extends Component {
                         >
                           <i className="social-icons fab fa-instagram fa-lg" />
                         </a>
-=======
-        {// get(openStatus, "registrationOpen") ? (
-        true ? (
-          <div className="register-container">
-            <div className="wrap">
-              <div className="content-left">
-                <div className="content-info">
-                  <h2>Brief History About Us</h2>
-                  <div className="slider">
-                    <div className="">
-                      <ul className="rslides callbacks callbacks1" id="slider4">
-                        <li>
-                          <div className="soundit-banner-info">
-                            <h3>Vivamus dui dolor</h3>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Aenean et placerat leo, non condimentum
-                              justo
-                            </p>
-                          </div>
-                        </li>
-                      </ul>
-                      <ul className="rslides callbacks callbacks1" id="slider4">
-                        <li>
-                          <div className="soundit-banner-info">
-                            <h3>Vivamus dui dolor</h3>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Aenean et placerat leo, non condimentum
-                              justo
-                            </p>
-                          </div>
-                        </li>
->>>>>>> updated voting
                       </ul>
                     </div>
                     <div className="agile-signin">
