@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
-import { ToastContainer } from "react-toastr";
+import { ToastContainer } from "react-toastify";
 import { connect } from "react-redux";
 import Bio from "../components/profile/bio";
 import Splitads from "../components/profile/splitads";
@@ -12,6 +12,7 @@ import { getStyle } from "../utils/helpers";
 import { getProfile, getProfilePending } from "../actions/profileAction";
 import vote from "../actions/voteAction";
 import VoteModal from "../components/voteModal";
+import "react-toastify/dist/ReactToastify.css";
 
 class Profile extends Component {
   constructor(props) {
@@ -83,22 +84,6 @@ class Profile extends Component {
     this.setState({ showCastVote: !this.state.showCastVote });
   };
 
-  successMesage = (username, voteCount) => {
-    this.refs.container.success(
-      `You have succesfully casted ${voteCount} vote(s) for ${username}`,
-      "",
-      {
-        timeOut: 30000,
-        extendedTimeOut: 10000
-      }
-    );
-  };
-  errorMesage = message => {
-    this.refs.container.error(`Sorry, ${message}`, "", {
-      timeOut: 30000,
-      extendedTimeOut: 10000
-    });
-  };
   loadPayStack = (username, voteCount, email) => {
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
@@ -109,9 +94,7 @@ class Profile extends Component {
         this.props.vote({
           reference: response.reference,
           username,
-          voteCount,
-          success: this.successMesage,
-          failed: this.errorMesage
+          voteCount
         });
         this.setState({
           voteCount: "",
@@ -159,6 +142,7 @@ class Profile extends Component {
 
     return (
       <div className="profile--container">
+        <ToastContainer hideProgressBar={true} />
         <VoteModal
           voteCount={voteCount}
           showCastVote={showCastVote}

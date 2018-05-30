@@ -1,17 +1,12 @@
+import axios from "axios";
+import { toast } from "react-toastify";
 import {
   VOTE_PENDING,
   VOTE_FULFILLED,
   VOTE_REJECTED
 } from "../constants/actionTypes";
-import axios from "axios";
 
-const vote = ({
-  reference,
-  username,
-  voteCount,
-  success,
-  failed
-}) => async dispatch => {
+const vote = ({ reference, username, voteCount }) => async dispatch => {
   try {
     dispatch({
       type: VOTE_PENDING
@@ -28,13 +23,24 @@ const vote = ({
       payload: response
     });
 
-    success(username, voteCount);
+    toast.success(
+      `You have succesfully casted ${voteCount} vote(s) for ${username}`,
+      {
+        position: toast.POSITION.TOP_RIGHT
+      }
+    );
   } catch (e) {
     await dispatch({
       type: VOTE_REJECTED,
       payload: e
     });
-    e.response ? failed(e.response.data.message) : failed(e);
+    e.response
+      ? toast.error(e.response.data.message, {
+          position: toast.POSITION.TOP_RIGHT
+        })
+      : toast.error(e.message, {
+          position: toast.POSITION.TOP_RIGHT
+        });
   }
 };
 
