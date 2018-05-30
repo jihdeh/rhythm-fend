@@ -56,7 +56,7 @@ class Profile extends Component {
   };
   onShowcastvote = () => {
     this.setState(prevState => ({
-      showcastvote: !prevState.showcastvote
+      showCastVote: !prevState.showCastVote
     }));
   };
 
@@ -156,7 +156,6 @@ class Profile extends Component {
     const { error } = this.props.profile;
     const { userInfo } = this.props.auth;
     const isAuthticated = userInfo ? true : false;
-    console.log(this.props);
 
     return (
       <div className="profile--container">
