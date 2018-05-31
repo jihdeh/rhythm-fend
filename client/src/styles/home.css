@@ -45,6 +45,10 @@ input:focus {
   border-radius: 3px;
 }
 
+.sa-form__login-input::placeholder {
+  color: #bababa !important;
+}
+
 .sa-actions p {
   display: inline-block;
 }
