@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
-import { ToastContainer } from "react-toastr";
+import { ToastContainer } from "react-toastify";
 import { connect } from "react-redux";
 import Bio from "../components/profile/bio";
 import Splitads from "../components/profile/splitads";
@@ -12,6 +12,7 @@ import { getStyle } from "../utils/helpers";
 import { getProfile, getProfilePending } from "../actions/profileAction";
 import vote from "../actions/voteAction";
 import VoteModal from "../components/voteModal";
+import "react-toastify/dist/ReactToastify.css";
 
 class Profile extends Component {
   constructor(props) {
@@ -36,7 +37,9 @@ class Profile extends Component {
   }
 
   async componentDidMount() {
-    const { match: { params } } = this.props;
+    const {
+      match: { params }
+    } = this.props;
     this.props.getProfilePending();
     this.props.getProfile(params.username);
   }
@@ -52,8 +55,7 @@ class Profile extends Component {
   onchangeVoteAmount = val => {
     this.setState({ voteCount: val });
   };
-
-  onShowCastVote = () => {
+  onShowcastvote = () => {
     this.setState(prevState => ({
       showCastVote: !prevState.showCastVote
     }));
@@ -82,17 +84,6 @@ class Profile extends Component {
     this.setState({ showCastVote: !this.state.showCastVote });
   };
 
-  successMesage = (username, voteCount) => {
-    this.refs.container.success(
-      `You have succesfully casted ${voteCount} vote(s) for ${username}`,
-      "",
-      {
-        timeOut: 30000,
-        extendedTimeOut: 10000
-      }
-    );
-  };
-
   loadPayStack = (username, voteCount, email) => {
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
@@ -109,8 +100,7 @@ class Profile extends Component {
           voteCount: "",
           loadingPaystack: false
         });
-        this.onShowCastVote();
-        this.successMesage(username, voteCount);
+        this.onShowcastvote();
       },
       onClose: () => {
         alert("window closed");
@@ -153,6 +143,7 @@ class Profile extends Component {
 
     return (
       <div className="profile--container">
+        <ToastContainer hideProgressBar={true} />
         <VoteModal
           voteCount={voteCount}
           showCastVote={showCastVote}
