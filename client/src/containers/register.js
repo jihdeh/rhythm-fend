@@ -183,7 +183,7 @@ class Register extends Component {
   render() {
     const { loadingPaystackModule, username, country } = this.state;
     const { openStatus, verifyUsername } = this.props;
-    return (
+    return ( 
       <span>
         {openStatus ? (
           get(openStatus, "registrationOpen") ? (
