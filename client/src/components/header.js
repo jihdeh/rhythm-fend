@@ -10,11 +10,18 @@ class Header extends Component {
       <header className="sa-header__xs sa-header__search">
         <nav>
           <Link to="/">
-            <img
-              alt="soundit logo"
-              className="sa-logo"
-              src="/images/logo.png"
-            />
+            <picture>
+              <source
+                srcSet="/images/logo.webp?v=0.0.2"
+                type="image/webp"
+              />
+              <img
+                className="sa-logo"
+                data-src="/images/logo.png?v=0.0.2"
+                src="/images/logo.png?v=0.0.2"
+                alt="soundit logo"
+              />
+            </picture>
           </Link>
           <div className="sa-menu__right">
             <div className="sa-liner__container">

@@ -13,12 +13,19 @@ class AuthenticatedHeader extends PureComponent {
         <div className="row dashboard-menu">
           <div className="menu">
             <Link to="/">
-              <img
-                style={{ width: "50px" }}
-                className="sa-logo"
-                src="/images/logo.png"
-                alt="Soundit logo"
-              />
+              <picture>
+                <source
+                  srcSet="/images/logo.webp?v=0.0.2"
+                  type="image/webp"
+                />
+                <img
+                  className="sa-logo"
+                  style={{ width: "50px" }}
+                  data-src="/images/logo.png?v=0.0.2"
+                  src="/images/logo.png?v=0.0.2"
+                  alt="soundit logo"
+                />
+              </picture>
             </Link>
             <div className="profile-right">
               <div className="profile-right__owner">

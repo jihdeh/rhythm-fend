@@ -7,7 +7,7 @@ import { displayError } from "../../actions/errorActions";
 import Spinner from "react-activity/lib/Spinner";
 import CurrentlyClosedComponent from "../currentlyClosed";
 import "react-activity/lib/Spinner/Spinner.css";
-import { ToastContainer } from "react-toastr";
+import { ToastContainer } from "react-toastify";
 import VoteModal from "../voteModal";
 import vote from "../../actions/voteAction";
 

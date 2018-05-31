@@ -14,11 +14,18 @@ class MobileMenu extends PureComponent {
           <Navbar.Header>
             <Navbar.Brand>
               <Link to="/">
-                <img
-                  alt="soundit logo"
-                  className="collapse-sa-logo"
-                  src="/images/logo.png"
-                />
+                <picture>
+                  <source
+                    srcSet="/images/logo.webp?v=0.0.2"
+                    type="image/webp"
+                  />
+                  <img
+                    className="collapse-sa-logo"
+                    data-src="/images/logo.png?v=0.0.2"
+                    src="/images/logo.png?v=0.0.2"
+                    alt="soundit logo"
+                  />
+                </picture>
               </Link>
             </Navbar.Brand>
             <Navbar.Toggle />
