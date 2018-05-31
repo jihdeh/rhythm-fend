@@ -183,9 +183,9 @@ class Register extends Component {
   render() {
     const { loadingPaystackModule, username, country } = this.state;
     const { openStatus, verifyUsername } = this.props;
-    return (
+    return ( 
       <span>
-        {!openStatus ? (
+        {openStatus ? (
           get(openStatus, "registrationOpen") ? (
             <div className="register-container">
               <div className="wrap">
