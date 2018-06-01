@@ -7,7 +7,7 @@ import get from "lodash/get";
 import videoparser from "../../utils/youtubeParser/base";
 import "../../utils/youtubeParser/youtube";
 import {
-  updateProfile,
+  updateVideo,
   getProfile,
   resetUpdateProfile
 } from "../../actions/profileAction";
@@ -59,7 +59,7 @@ class ContestantView extends Component {
     const { user: { token: profile } } = this.props;
     const { url } = this.state;
     const youtubeUrl = this.formatYoutubeUrl(url);
-    this.props.updateProfile({ contestantVideo: [youtubeUrl] }, profile);
+    this.props.updateVideo({ contestantVideo: [youtubeUrl] }, profile);
     this.setState({
       canSave: false,
       isLoading: true
@@ -117,7 +117,7 @@ class ContestantView extends Component {
                   <Link
                     target="_blank"
                     style={{ color: "#e33235" }}
-                    to={`${window.location}rsg/${profile.username}`}
+                    to={`${window.location.origin}/rsg/${profile.username}`}
                   >
                     Public Profile
                   </Link>
@@ -306,8 +306,8 @@ class ContestantView extends Component {
                   <Link
                     target="_blank"
                     style={{ color: "#e33235" }}
-                    to={`${window.location}rsg/${profile.username}`}
-                  >{`${window.location}rsg/${profile.username}`}</Link>{" "}
+                    to={`${window.location.origin}/rsg/${profile.username}`}
+                  >{`${window.location.origin}/rsg/${profile.username}`}</Link>{" "}
                   .<br /> Share this link with your friends and network to show
                   them where they can vote and see more about you.
                 </p>
@@ -345,7 +345,7 @@ const mapStateToProps = ({ auth, profile }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateProfile: bindActionCreators(updateProfile, dispatch),
+  updateVideo: bindActionCreators(updateVideo, dispatch),
   getProfile: bindActionCreators(getProfile, dispatch),
   resetUpdateProfile: bindActionCreators(resetUpdateProfile, dispatch)
 });

@@ -35,6 +35,22 @@ export const updateProfile = (profile, { username }) => async dispatch => {
       updateImage(username, profile.profilePhoto);
     }
     delete profile.profilePhoto;
+    delete profile.contestantVideo;
+    const url = `${process.env.REACT_APP_BASE_URL}/auth/${username}`;
+    await axios.put(url, profile);
+    await dispatch({
+      type: UPDATE_PROFILE,
+      payload: true
+    });
+    getProfile(username)(dispatch);
+  } catch (error) {
+    const { data: { message } } = error.response;
+    displayError(message.message)(dispatch);
+  }
+};
+
+export const updateVideo = (profile, { username }) => async dispatch => {
+  try {
     const url = `${process.env.REACT_APP_BASE_URL}/auth/${username}`;
     await axios.put(url, profile);
     await dispatch({
