@@ -19,7 +19,7 @@ class Profile extends Component {
     super(props);
     this.state = {
       fetching: true,
-      profilePicture: process.env.REACT_APP_DEFAULT_BACKGROUND,
+      profilePhoto: process.env.REACT_APP_DEFAULT_BACKGROUND,
       country: "",
       state: "",
       firstName: "",
@@ -37,9 +37,7 @@ class Profile extends Component {
   }
 
   async componentDidMount() {
-    const {
-      match: { params }
-    } = this.props;
+    const { match: { params } } = this.props;
     this.props.getProfilePending();
     this.props.getProfile(params.username);
   }
@@ -121,7 +119,7 @@ class Profile extends Component {
   render() {
     const {
       fetching,
-      profilePicture,
+      profilePhoto,
       country,
       state,
       firstName,
@@ -135,8 +133,8 @@ class Profile extends Component {
       loadingPaystack
     } = this.state;
 
-    const myStyle = getStyle("myStyle", fetching, profilePicture);
-    const myStyleProfile = getStyle("myStyleProfile", fetching, profilePicture);
+    const myStyle = getStyle("myStyle", fetching, profilePhoto);
+    const myStyleProfile = getStyle("myStyleProfile", fetching, profilePhoto);
     const { error } = this.props.profile;
     const { userInfo } = this.props.auth;
     const isAuthticated = userInfo ? true : false;
@@ -175,7 +173,7 @@ class Profile extends Component {
                 profilelink={profileUrl}
                 firstName={firstName}
                 lastName={lastName}
-                profilePicture={profilePicture}
+                profilePhoto={profilePhoto}
                 bio={about}
                 click={this.handleClick}
                 show={show}

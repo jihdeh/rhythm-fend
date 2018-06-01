@@ -40,7 +40,7 @@ export default class ProfileHeader extends Component {
                 <span className="search-profile-input-cont">
                   <Fasearch className="search--icon" />
                   {value ? null : (
-                    <span className="myplaceholdder">search for artists</span>
+                    <span className="myplaceholdder">search for contestants</span>
                   )}
                   <input
                     className="search-profile-input"

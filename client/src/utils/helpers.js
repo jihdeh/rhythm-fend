@@ -1,18 +1,18 @@
-export const getStyle = (type, activity, profilePicture) =>
+export const getStyle = (type, activity, profilePhoto) =>
   activity
     ? {
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))`
       }
     : type === "myStyle"
-      ? profilePicture
+      ? profilePhoto
         ? {
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${profilePicture})`
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${profilePhoto})`
           }
         : {
             backgroundImage: `linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.71)),url(/images/logo.png)`
           }
-      : profilePicture
-        ? { backgroundImage: `url(${profilePicture})` }
+      : profilePhoto
+        ? { backgroundImage: `url(${profilePhoto})` }
         : {
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, .71))`
           };
