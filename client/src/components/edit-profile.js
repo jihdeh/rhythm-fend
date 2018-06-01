@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { ToastContainer, toast } from "react-toastify";
 import {
   updateProfile,
   getProfile,
+  updatePassword,
   resetUpdateProfile
 } from "../actions/profileAction";
+import { displayError } from "../actions/errorActions";
 import Spinner from "react-activity/lib/Spinner";
 import "react-activity/lib/Spinner/Spinner.css";
+import "react-toastify/dist/ReactToastify.css";
 
 class Edit extends Component {
   constructor(props) {
@@ -21,9 +25,11 @@ class Edit extends Component {
       facebook: "",
       twitter: "",
       instagram: "",
+      password: "",
       about: "",
       profilePhoto: "",
       defaultPhoto: false,
+      isPwdLoading: false,
       displayPhoto: "../../images/nobody.jpg"
     };
   }
@@ -43,8 +49,10 @@ class Edit extends Component {
     if (nextProps.profileUpdated || nextProps.error) {
       this.props.resetUpdateProfile();
       this.setState({
-        isLoading: null
+        isLoading: null,
+        isPwdLoading: false
       });
+      this.successMesage();
     }
   }
 
@@ -74,7 +82,7 @@ class Edit extends Component {
 
   onSubmit = evt => {
     evt.preventDefault();
-    const { user: { token: profile } } = this.props;
+    const { user: { token: profile }, updateProfile } = this.props;
     let newState = Object.assign({}, this.state); // Copy state
     if (newState.displayPhoto === "../../images/nobody.jpg") {
       //default
@@ -82,9 +90,32 @@ class Edit extends Component {
     }
     newState.displayPhoto = null;
     delete newState.random;
-    this.props.updateProfile({ ...newState }, profile);
+    updateProfile({ ...newState }, profile);
     this.setState({
       isLoading: true
+    });
+  };
+
+  successMesage = () => {
+    toast.success(`succesfully updated`);
+  };
+
+  updatePassword = evt => {
+    evt.preventDefault();
+    const { password } = this.state;
+    const trimPassword = password.trim();
+    const {
+      user: { token: profile },
+      displayError,
+      updatePassword
+    } = this.props;
+    if (!trimPassword) {
+      displayError("Please enter password to update");
+      return;
+    }
+    updatePassword(profile, this.state.password);
+    this.setState({
+      isPwdLoading: true
     });
   };
 
@@ -101,11 +132,14 @@ class Edit extends Component {
       profilePhoto,
       displayPhoto,
       defaultPhoto,
-      isLoading
+      isLoading,
+      password,
+      isPwdLoading
     } = this.state;
 
     return (
       <div className="edit-profile-body">
+        <ToastContainer ref="container" className="toast-top-right" />
         <div className="row">
           <div className="col-md-4 edit-profile__picture">
             <img
@@ -204,6 +238,29 @@ class Edit extends Component {
                 {isLoading && <Spinner color="#ffffff" />}
               </div>
             </form>
+            <hr />
+            <div>
+              <form onSubmit={this.updatePassword}>
+                <input
+                  type="password"
+                  className="edit-profile-input"
+                  placeholder="Update password"
+                  onChange={({ target: { value } }) =>
+                    this.onInputChange(value.trim(), "password")
+                  }
+                  value={password.trim()}
+                />
+                <div>
+                  <input
+                    type="submit"
+                    value="Update Password"
+                    disabled={isPwdLoading}
+                    className="edit-profile-input__save"
+                  />
+                  {isPwdLoading && <Spinner color="#ffffff" />}
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -219,7 +276,9 @@ const mapStateToProps = ({ auth, profile }) => ({
 
 const mapDispatchToProps = dispatch => ({
   updateProfile: bindActionCreators(updateProfile, dispatch),
+  updatePassword: bindActionCreators(updatePassword, dispatch),
   getProfile: bindActionCreators(getProfile, dispatch),
+  displayError: bindActionCreators(displayError, dispatch),
   resetUpdateProfile: bindActionCreators(resetUpdateProfile, dispatch)
 });
 

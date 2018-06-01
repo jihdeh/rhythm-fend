@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 import {
   GET_PROFILE_PENDING,
   GET_PROFILE_FULFILLED,
@@ -57,6 +58,9 @@ export const updateVideo = (profile, { username }) => async dispatch => {
       type: UPDATE_PROFILE,
       payload: true
     });
+    toast.success(`You have succesfully uploaded your video`, {
+      position: toast.POSITION.TOP_RIGHT
+    });
     getProfile(username)(dispatch);
   } catch (error) {
     const { data: { message } } = error.response;
@@ -76,10 +80,27 @@ export const updateImage = async (username, image) => {
     };
 
     const upload = await axios(options);
-    console.log(upload);
   } catch (error) {
-    console.log(error);
+    toast.error("Error updating image, try again later", {
+      position: toast.POSITION.TOP_RIGHT
+    });
   }
+};
+
+export const updatePassword = ({ username }, password) => async dispatch => {
+  try {
+    const options = {
+      method: "PUT",
+      data: { username, password },
+      url: `${process.env.REACT_APP_BASE_URL}/updatePassword`
+    };
+
+    const updatePassword = await axios(options);
+    await dispatch({
+      type: UPDATE_PROFILE,
+      payload: true
+    });
+  } catch (error) {}
 };
 
 export const resetUpdateProfile = () => async dispatch => {
