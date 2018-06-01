@@ -157,8 +157,8 @@ export const PHOTO_SET = [
 ];
 
 export const VIDEO_SET = [
-  "https://www.youtube.com/embed/5J69oiaLUN0",
-  "https://www.youtube.com/embed/ZgzRQUQV35M",
-  "https://www.youtube.com/embed/PIdZfqNaq_Q",
-  "https://www.youtube.com/embed/oynB0sGUsBU"
+  "https://www.youtube.com/embed/5J69oiaLUN0?rel=0",
+  "https://www.youtube.com/embed/ZgzRQUQV35M?rel=0",
+  "https://www.youtube.com/embed/PIdZfqNaq_Q?rel=0",
+  "https://www.youtube.com/embed/oynB0sGUsBU?rel=0"
 ];

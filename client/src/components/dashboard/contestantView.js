@@ -50,9 +50,9 @@ class ContestantView extends Component {
         "https://www.youtube.com/embed/"
       );
     } else {
-      return url;
+      return `${url}?rel=0`;
     }
-    return newUrl;
+    return `${newUrl}?rel=0`;
   }
 
   onSave = async => {
@@ -307,7 +307,9 @@ class ContestantView extends Component {
                     target="_blank"
                     style={{ color: "#e33235" }}
                     to={`${window.location.origin}/rsg/${profile.username}`}
-                  >{`${window.location.origin}/rsg/${profile.username}`}</Link>{" "}
+                  >{`${window.location.origin}/rsg/${
+                    profile.username
+                  }`}</Link>{" "}
                   .<br /> Share this link with your friends and network to show
                   them where they can vote and see more about you.
                 </p>
