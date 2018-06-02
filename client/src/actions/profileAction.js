@@ -35,6 +35,7 @@ export const updateProfile = (profile, { username }) => async dispatch => {
     if (profile.profilePhoto) {
       updateImage(username, profile.profilePhoto);
     }
+    delete profile.password;
     delete profile.profilePhoto;
     delete profile.contestantVideo;
     const url = `${process.env.REACT_APP_BASE_URL}/auth/${username}`;
