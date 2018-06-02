@@ -82,7 +82,30 @@ class Edit extends Component {
 
   onSubmit = evt => {
     evt.preventDefault();
-    const { user: { token: profile }, updateProfile } = this.props;
+    const { firstName, lastName, country, state } = this.state;
+    const {
+      user: { token: profile },
+      updateProfile,
+      displayError
+    } = this.props;
+
+    if (firstName.trim() === "") {
+      displayError("Firstname required");
+      return;
+    }
+    if (lastName.trim() === "") {
+      displayError("Lastname required");
+      return;
+    }
+    if (country.trim() === "") {
+      displayError("Country required");
+      return;
+    }
+    if (state.trim() === "") {
+      displayError("State required");
+      return;
+    }
+
     let newState = Object.assign({}, this.state); // Copy state
     if (newState.displayPhoto === "../../images/nobody.jpg") {
       //default
