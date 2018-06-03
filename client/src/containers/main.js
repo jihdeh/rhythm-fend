@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import get from "lodash/get";
 import Loadable from "react-loadable";
 import AdminPage from "./admin-page";
 import UserDetails from "./userDetails";
@@ -48,6 +49,28 @@ function PublicRoute({ component: Component, authed, ...rest }) {
           <Component {...props} />
         ) : (
           <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+        )
+      }
+    />
+  );
+}
+
+function PrivateAdminRoute({
+  component: Component,
+  authed,
+  permission,
+  ...rest
+}) {
+  return (
+    <Route
+      {...rest}
+      render={props =>
+        authed && permission ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{ pathname: "/account", state: { from: props.location } }}
+          />
         )
       }
     />
@@ -152,7 +175,6 @@ const Main = props => {
         <Route exact path="/rsg/:username" component={Profile} />
         <Route exact path="/about" component={AboutUs} />
         <Route exact path="/gallery" component={Gallery} />
-        <Route exact path="/admin/users" component={AdminPage} />
         <Route exact path="/admin/users/details" component={UserDetails} />
 
         <PublicRoute
@@ -175,6 +197,15 @@ const Main = props => {
           authed={props.authed}
           path="/edit/profile"
           component={EditProfile}
+        />
+
+        <PrivateAdminRoute
+          authed={props.authed}
+          permission={
+            get(props, "permission") && props.permission.includes("main")
+          }
+          path="/wicked/users"
+          component={AdminPage}
         />
         <Route component={NoMatch} />
       </Switch>

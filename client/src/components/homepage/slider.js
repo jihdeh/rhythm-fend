@@ -46,14 +46,14 @@ class Slide extends Component {
             ) : (
               <div className="sa-text__promo">
                 <h2>How well would you sing for $5000?</h2>
-                <h4>Praise.Worship.Blessed</h4>
+                <h4>Praise.Worship.Voice</h4>
               </div>
             )}
           </div>
           <div className="banner-slide2">
             <div className="sa-text__promo">
               <h2>Brace yourself for SoundIT Africa 2</h2>
-              <h4>01.06.2018</h4>
+              <h4>Registration open</h4>
             </div>
           </div>
         </Slider>
