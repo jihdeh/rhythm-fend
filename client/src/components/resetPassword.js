@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { ToastContainer, toast } from 'react-toastify'
 import get from 'lodash/get'
-import queryString from 'query-string'
+import queryString from 'qs'
 import Spinner from 'react-activity/lib/Spinner'
 import { reset } from '../actions/authActions'
 import { displayError } from '../actions/errorActions'
@@ -20,7 +20,10 @@ class RequestResetPassword extends Component {
   }
 
   componentWillMount() {
-    const parse = queryString.parse(window.location.search)
+    const parse = queryString.parse(window.location.search, {
+      ignoreQueryPrefix: true
+    })
+    console.log(parse)
     if (!parse.code) {
       window.location.href = '/password/request'
       return
