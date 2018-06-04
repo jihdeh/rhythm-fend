@@ -7,6 +7,7 @@ import SectionFive from "../components/homepage/sectionFive";
 import Footer from "../components/footer";
 import Slider from "../components/homepage/slider";
 
+
 class LandingPage extends Component {
   componentWillMount() {
     window.scrollTo(0, 0);
