@@ -23,7 +23,6 @@ class RequestResetPassword extends Component {
     const parse = queryString.parse(window.location.search, {
       ignoreQueryPrefix: true
     })
-    console.log(parse)
     if (!parse.code) {
       window.location.href = '/password/request'
       return
@@ -53,7 +52,9 @@ class RequestResetPassword extends Component {
 
   onRequest = e => {
     let passwordInput = this.state.passwordInput.trim()
-    const parse = queryString.parse(window.location.search)
+    const parse = queryString.parse(window.location.search, {
+      ignoreQueryPrefix: true
+    })
     let confirmPasswordInput = this.state.confirmPasswordInput.trim()
     e.preventDefault()
 
