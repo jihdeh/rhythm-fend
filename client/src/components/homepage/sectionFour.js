@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
 
+
 class SectionFour extends PureComponent {
   render() {
     return (
@@ -35,6 +36,7 @@ class SectionFour extends PureComponent {
             </p>
           </div>
           <div className="col-sm-6 section-four__right">
+              
             <picture>
               <source srcSet="/images/gallery/collage.webp" type="image/webp" />
               <img
