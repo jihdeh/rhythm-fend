@@ -1,37 +1,38 @@
-import React, { Component } from 'react'
-import get from 'lodash/get'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { createAccount } from '../actions/authActions'
-import { displayError } from '../actions/errorActions'
-import { verifyUsername } from '../actions/verifyUsernameAction'
-import CurrentlyClosedComponent from '../components/currentlyClosed'
-import debounce from 'lodash/debounce'
-import IntlTelInput from 'react-intl-tel-input'
-import '../../node_modules/react-intl-tel-input/dist/libphonenumber.js'
-import '../../node_modules/react-intl-tel-input/dist/main.css'
-import ActivityI from '../components/register/activityIndicator'
-import Select from 'react-select'
-import 'react-select/dist/react-select.css'
+import React, { Component } from 'react';
+import get from 'lodash/get';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { createAccount } from '../actions/authActions';
+import { displayError } from '../actions/errorActions';
+import { verifyUsername } from '../actions/verifyUsernameAction';
+import CurrentlyClosedComponent from '../components/currentlyClosed';
+import debounce from 'lodash/debounce';
+import IntlTelInput from 'react-intl-tel-input';
+import '../../node_modules/react-intl-tel-input/dist/libphonenumber.js';
+import '../../node_modules/react-intl-tel-input/dist/main.css';
+import ActivityI from '../components/register/activityIndicator';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
 const loadJSONP = (url, callback) => {
-  const ref = window.document.getElementsByTagName('script')[0]
-  const script = window.document.createElement('script')
-  script.src = `${url + (url.indexOf('?') + 1 ? '&' : '?')}callback=${callback}`
-  ref.parentNode.insertBefore(script, ref)
+  const ref = window.document.getElementsByTagName('script')[0];
+  const script = window.document.createElement('script');
+  script.src = `${url +
+    (url.indexOf('?') + 1 ? '&' : '?')}callback=${callback}`;
+  ref.parentNode.insertBefore(script, ref);
   script.onload = () => {
-    script.remove()
-  }
-}
+    script.remove();
+  };
+};
 
 const lookup = callback => {
-  loadJSONP('https://ipinfo.io', 'sendBack')
+  loadJSONP('https://ipinfo.io', 'sendBack');
   window.sendBack = resp => {
-    const countryCode = resp && resp.country ? resp.country : ''
-    callback(countryCode)
-  }
-}
+    const countryCode = resp && resp.country ? resp.country : '';
+    callback(countryCode);
+  };
+};
 
 class Register extends Component {
   state = {
@@ -45,58 +46,58 @@ class Register extends Component {
     state: '',
     username: { value: '', error: '' },
     loadingPaystackModule: false
-  }
+  };
 
-  verify = debounce(this.props.verifyUsername, 1000)
+  verify = debounce(this.props.verifyUsername, 1000);
 
   componentWillReceiveProps(nextProps) {
     if (get(nextProps, 'createAccountStatus.data')) {
-      this.props.history.push('/')
+      this.props.history.push('/');
     }
     if (get(nextProps.errorMessage, 'error')) {
-      this.setState({ loadingPaystackModule: false })
+      this.setState({ loadingPaystackModule: false });
     }
   }
 
   validateEmail = email => {
-    var emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return emailPattern.test(email.toLowerCase())
-  }
+    var emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailPattern.test(email.toLowerCase());
+  };
 
   validateInput = () => {
-    let emailInput = this.state.email.trim()
-    let firstName = this.state.firstName.trim()
-    let lastName = this.state.lastName.trim()
-    let username = this.state.username.value.trim()
-    let phoneNumber = this.state.phoneNumber
-    let password = this.state.password
-    let confirmPassword = this.state.confirmPassword
+    let emailInput = this.state.email.trim();
+    let firstName = this.state.firstName.trim();
+    let lastName = this.state.lastName.trim();
+    let username = this.state.username.value.trim();
+    let phoneNumber = this.state.phoneNumber;
+    let password = this.state.password;
+    let confirmPassword = this.state.confirmPassword;
 
-    const hasNotFilledInputs = !emailInput || !password
-    const doPasswordMatch = confirmPassword !== password
+    const hasNotFilledInputs = !emailInput || !password;
+    const doPasswordMatch = confirmPassword !== password;
 
-    const isEmailValid = this.validateEmail(emailInput)
+    const isEmailValid = this.validateEmail(emailInput);
     if (hasNotFilledInputs) {
-      this.props.displayError('Both the email and password must be entered!')
-      return false
+      this.props.displayError('Both the email and password must be entered!');
+      return false;
     }
     if (doPasswordMatch) {
-      this.props.displayError("Passwords don't match!")
-      return false
+      this.props.displayError("Passwords don't match!");
+      return false;
     }
     if (!isEmailValid) {
-      this.props.displayError('A valid email address is required.')
-      return false
+      this.props.displayError('A valid email address is required.');
+      return false;
     }
-    return true
-  }
+    return true;
+  };
 
   onRegister = e => {
-    e.preventDefault()
-    if (!this.validateInput()) return
-    this.setState({ loadingPaystackModule: 'Loading payment module' })
-    this.loadPayStack()
-  }
+    e.preventDefault();
+    if (!this.validateInput()) return;
+    this.setState({ loadingPaystackModule: 'Loading payment module' });
+    this.loadPayStack();
+  };
 
   loadPayStack() {
     const {
@@ -109,7 +110,7 @@ class Register extends Component {
       country,
       state,
       username
-    } = this.state
+    } = this.state;
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
       email: email,
@@ -130,6 +131,11 @@ class Register extends Component {
             value: `${firstName} ${lastName}`
           },
           {
+            display_name: 'Username',
+            variable_name: 'username',
+            value: `${username}`
+          },
+          {
             display_name: 'Email',
             variable_name: 'email',
             value: `${email}`
@@ -138,6 +144,11 @@ class Register extends Component {
             display_name: 'Country',
             variable_name: 'country',
             value: `${country}`
+          },
+          {
+            display_name: 'State',
+            variable_name: 'state',
+            value: `${state}`
           }
         ]
       },
@@ -154,34 +165,34 @@ class Register extends Component {
           state,
           username: username.value,
           paymentReference: response.reference
-        })
-        this.setState({ loadingPaystackModule: 'Logging you in' })
+        });
+        this.setState({ loadingPaystackModule: 'Logging you in' });
       },
       onClose: () => {
-        this.setState({ loadingPaystackModule: false })
-        alert('window closed')
+        this.setState({ loadingPaystackModule: false });
+        alert('window closed');
       }
-    })
-    handler.openIframe()
+    });
+    handler.openIframe();
   }
 
   handler = (status, value, countryData, number, id) => {
     if (status) {
-      this.setState({ phoneNumber: number })
+      this.setState({ phoneNumber: number });
     }
-  }
+  };
   onUsername = ({ value }) => {
-    let error = ''
-    if (value.length <= 3 && value) error = 'username too short'
-    if (value.length > 8) error = 'username too long'
-    this.setState({ username: { value, error } })
-  }
+    let error = '';
+    if (value.length <= 3 && value) error = 'username too short';
+    if (value.length > 8) error = 'username too long';
+    this.setState({ username: { value, error } });
+  };
   handleChange = ({ value }) => {
-    this.setState({ country: value })
-  }
+    this.setState({ country: value });
+  };
   render() {
-    const { loadingPaystackModule, username, country } = this.state
-    const { openStatus, verifyUsernameChecked } = this.props
+    const { loadingPaystackModule, username, country } = this.state;
+    const { openStatus, verifyUsernameChecked } = this.props;
 
     return (
       <span>
@@ -451,7 +462,9 @@ class Register extends Component {
                       ) : (
                         <input
                           className={
-                            verifyUsername.taken || !username
+                            verifyUsername.taken ||
+                            !username ||
+                            get(username, 'error')
                               ? 'sa-registration-btn no-click'
                               : 'sa-registration-btn'
                           }
@@ -482,7 +495,7 @@ class Register extends Component {
           </div>
         )}
       </span>
-    )
+    );
   }
 }
 
@@ -492,12 +505,12 @@ const mapStateToProps = ({ auth, error, misc, verifyusername }) => ({
   user: auth.userInfo,
   errorMessage: error,
   verifyUsernameChecked: verifyusername
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   register: bindActionCreators(createAccount, dispatch),
   displayError: bindActionCreators(displayError, dispatch),
   verifyUsername: bindActionCreators(verifyUsername, dispatch)
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Register)
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
