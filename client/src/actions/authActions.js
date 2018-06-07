@@ -8,6 +8,7 @@ import {
   CHANGE_PASSWORD_SUCCESS,
   LOG_OUT
 } from '../constants/actionTypes'
+import notify from '../utils/notify'
 import { displayError } from './errorActions'
 import { getProfile } from './profileAction'
 
@@ -28,7 +29,6 @@ export const login = ({ email, password }) => dispatch => {
       getProfile(username)(dispatch)
     })
     .catch(error => {
-      console.log(error)
       const { data } = error.response
       displayError(data.message)(dispatch)
     })
@@ -51,6 +51,12 @@ export const createAccount = accountDetails => async dispatch => {
     })
     .catch(error => {
       const { data } = error.response
+      notify(
+        'Error  Registering',
+        `ERROR: ${JSON.stringify(error.response)} ..and.. ${JSON.stringify(
+          accountDetails
+        )}`
+      )
       let errMsg = get(data, 'message') || get(data, 'message.message')
       displayError(errMsg)(dispatch)
     })

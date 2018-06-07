@@ -33,6 +33,7 @@
     "react-toastify": "^4.0.1",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "slack-notify": "^0.1.6",
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
