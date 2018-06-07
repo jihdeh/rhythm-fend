@@ -133,7 +133,7 @@ class Register extends Component {
           {
             display_name: 'Username',
             variable_name: 'username',
-            value: `${username}`
+            value: `${username.value}`
           },
           {
             display_name: 'Email',
