@@ -89,6 +89,10 @@ class Register extends Component {
       this.props.displayError('A valid email address is required.');
       return false;
     }
+    if (!phoneNumber || !isNaN(phoneNumber)) {
+      this.props.displayError('Phone number is required.');
+      return false;
+    }
     return true;
   };
 
@@ -324,6 +328,7 @@ class Register extends Component {
                       <IntlTelInput
                         placeholder="Phone number"
                         defaultCountry={'auto'}
+                        required
                         geoIpLookup={lookup}
                         onPhoneNumberBlur={this.handler}
                         onPhoneNumberChange={this.handler}
