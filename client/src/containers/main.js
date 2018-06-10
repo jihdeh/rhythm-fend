@@ -1,31 +1,28 @@
-import React from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
-import get from 'lodash/get'
-import Loadable from 'react-loadable'
-import AdminPage from './admin-page'
-import PasswordRequest from './passwordRequest'
-import PasswordReset from './passwordReset'
-import UserDetails from './userDetails'
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Loadable from 'react-loadable';
+import PasswordRequest from './passwordRequest';
+import PasswordReset from './passwordReset';
 
 // -----STYLES------ //
-import '../styles/header.css'
-import '../styles/home.css'
-import '../styles/slider.css'
-import '../styles/gallery.css'
-import '../styles/edit-profile.css'
-import '../styles/account.css'
-import '../styles/donate.css'
-import '../styles/aboutUs.css'
-import '../styles/profile.css'
-import '../styles/register.css'
-import '../styles/searchpage.css'
-import '../styles/dashboard.css'
-import '../styles/currentlyClosed.css'
-import '../styles/vote.css'
+import '../styles/header.css';
+import '../styles/home.css';
+import '../styles/slider.css';
+import '../styles/gallery.css';
+import '../styles/edit-profile.css';
+import '../styles/account.css';
+import '../styles/donate.css';
+import '../styles/aboutUs.css';
+import '../styles/profile.css';
+import '../styles/register.css';
+import '../styles/searchpage.css';
+import '../styles/dashboard.css';
+import '../styles/currentlyClosed.css';
+import '../styles/vote.css';
 
 // ----END STYLES ----//
 
-import NoMatch from './noMatch'
+import NoMatch from './noMatch';
 
 function PrivateRoute({ component: Component, authed, ...rest }) {
   return (
@@ -39,7 +36,7 @@ function PrivateRoute({ component: Component, authed, ...rest }) {
         )
       }
     />
-  )
+  );
 }
 
 function PublicRoute({ component: Component, authed, ...rest }) {
@@ -54,29 +51,7 @@ function PublicRoute({ component: Component, authed, ...rest }) {
         )
       }
     />
-  )
-}
-
-function PrivateAdminRoute({
-  component: Component,
-  authed,
-  permission,
-  ...rest
-}) {
-  return (
-    <Route
-      {...rest}
-      render={props =>
-        authed && permission ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{ pathname: '/account', state: { from: props.location } }}
-          />
-        )
-      }
-    />
-  )
+  );
 }
 
 function AppLoader(props) {
@@ -87,13 +62,13 @@ function AppLoader(props) {
       >
         Error! <button onClick={props.retry}>Retry</button>
       </div>
-    )
+    );
   } else if (props.timedOut) {
     return (
       <div>
         Taking a long time... <button onClick={props.retry}>Retry</button>
       </div>
-    )
+    );
   } else if (props.pastDelay) {
     return (
       <div
@@ -101,9 +76,9 @@ function AppLoader(props) {
       >
         Loading...
       </div>
-    )
+    );
   } else {
-    return null
+    return null;
   }
 }
 
@@ -111,61 +86,61 @@ const Home = Loadable({
   loader: () => import('./home'),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
-})
+});
 
 const Dashboard = Loadable({
   loader: () => import('./dashboard'),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
-})
+});
 
 const Register = Loadable({
   loader: () => import('./register'),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
-})
+});
 
 const Donate = Loadable({
   loader: () => import('./donate'),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
-})
+});
 
 const Search = Loadable({
   loader: () => import('./searchpage'),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
-})
+});
 
 const AboutUs = Loadable({
   loader: () => import('./aboutUs'),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
-})
+});
 
 const Gallery = Loadable({
   loader: () => import('./gallery'),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
-})
+});
 
 const Account = Loadable({
   loader: () => import('./account'),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
-})
+});
 
 const Profile = Loadable({
   loader: () => import('./profile'),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
-})
+});
 
 const EditProfile = Loadable({
   loader: () => import('./editProfile'),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
-})
+});
 
 const Main = props => {
   return (
@@ -179,7 +154,6 @@ const Main = props => {
         <Route exact path="/gallery" component={Gallery} />
         <Route exact path="/password/request" component={PasswordRequest} />
         <Route exact path="/password/reset" component={PasswordReset} />
-        <Route exact path="/admin/users/details" component={UserDetails} />
 
         <PublicRoute
           authed={props.authed}
@@ -202,19 +176,10 @@ const Main = props => {
           path="/edit/profile"
           component={EditProfile}
         />
-
-        <PrivateAdminRoute
-          authed={props.authed}
-          permission={
-            get(props, 'permission') && props.permission.includes('main')
-          }
-          path="/wicked/users"
-          component={AdminPage}
-        />
         <Route component={NoMatch} />
       </Switch>
     </main>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
