@@ -99,6 +99,7 @@ class App extends Component {
         browser.name.toLowerCase() === 'ie' ||
         browser.name.toLowerCase() === 'crios')
     ) {
+      console.log(browser);
       return <BrowserOutOfDate {...this.props} {...this.state} />;
     }
 
