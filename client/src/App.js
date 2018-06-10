@@ -87,15 +87,15 @@ class App extends Component {
       browser &&
       browser.name &&
       ((browser.name.toLowerCase() === 'safari' &&
-        parseInt(browser.version.replace(/\..*$/gi, '')) < 8) ||
+        parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 8) ||
         (browser.name.toLowerCase() === 'firefox' &&
-          parseInt(browser.version.replace(/\..*$/gi, '')) < 50) ||
+          parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 50) ||
         (browser.name.toLowerCase() === 'opera' &&
-          parseInt(browser.version.replace(/\..*$/gi, '')) < 53) ||
+          parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 53) ||
         (browser.name.toLowerCase().slice(0, 5) === 'chrom' &&
-          parseInt(browser.version.replace(/\..*$/gi, '')) < 50) ||
+          parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 50) ||
         (browser.name.toLowerCase() === 'ios' &&
-          parseInt(browser.version.replace(/\..*$/gi, '')) < 10) ||
+          parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 10) ||
         browser.name.toLowerCase() === 'ie' ||
         browser.name.toLowerCase() === 'crios')
     ) {
