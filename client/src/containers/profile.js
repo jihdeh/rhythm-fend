@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { ToastContainer } from 'react-toastify'
+import get from "lodash/get";
 import { connect } from 'react-redux'
 import Bio from '../components/profile/bio'
 import Splitads from '../components/profile/splitads'
@@ -43,6 +44,17 @@ class Profile extends Component {
     this.props.getProfile(lowercaseUsername)
   }
 
+  componentWillReceiveProps(nextProps) {
+    const state = {
+      ...nextProps.profile.contestant,
+      fetching: nextProps.profile.fetching
+    }
+    const prev = { ...this.state }
+    if (state !== prev) {
+      this.setState({ ...prev, ...state })
+    }
+  }
+
   handleClick = () => {
     this.setState(prevState => ({ show: !prevState.show }))
   }
@@ -60,16 +72,6 @@ class Profile extends Component {
     }))
   }
 
-  componentWillReceiveProps(nextProps) {
-    const state = {
-      ...nextProps.profile.contestant,
-      fetching: nextProps.profile.fetching
-    }
-    const prev = { ...this.state }
-    if (state !== prev) {
-      this.setState({ ...prev, ...state })
-    }
-  }
 
   onVote = () => {
     const { voteCount, username, email } = this.state
@@ -189,7 +191,7 @@ class Profile extends Component {
             <div className="col-sm-7">
               <Singlerowads />
               <Splitads />
-              <Video videoUrl={contestantVideo} />
+              <Video videoUrl={get(contestantVideo, '[0]') && contestantVideo[0]} />
               <Splitads />
             </div>
             <div className="col-sm-1" />
