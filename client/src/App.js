@@ -94,13 +94,14 @@ class App extends Component {
           parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 50) ||
         (browser.name.toLowerCase() === 'opera' &&
           parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 53) ||
+        (browser.name.toLowerCase() === 'crios' &&
+          parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 50) ||
         (browser.name.toLowerCase().slice(0, 5) === 'chrom' &&
           parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 50) ||
         (browser.name.toLowerCase() === 'ios' &&
           parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 10) ||
-        browser.name.toLowerCase() === 'ie' ||
-        browser.name.toLowerCase() === 'crios')
-    ) {
+        browser.name.toLowerCase() === 'ie'
+    )) {
       console.log(browser);
     notify(
         'New Visit',
