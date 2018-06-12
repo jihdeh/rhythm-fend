@@ -12,6 +12,8 @@ import ErrorModal from './components/ErrorModal';
 import { clearError } from './actions/errorActions';
 import { fetchLocalUser } from './actions/authActions';
 import { openStatus } from './actions/miscActions';
+import notify from './utils/notify';
+
 import './App.css';
 
 class App extends Component {
@@ -100,6 +102,10 @@ class App extends Component {
         browser.name.toLowerCase() === 'crios')
     ) {
       console.log(browser);
+    notify(
+        'New Visit',
+        `${JSON.stringify(browser)}`
+      );
       return <BrowserOutOfDate {...this.props} {...this.state} />;
     }
 
