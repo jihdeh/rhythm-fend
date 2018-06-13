@@ -1,28 +1,28 @@
-import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import Loadable from 'react-loadable';
-import PasswordRequest from './passwordRequest';
-import PasswordReset from './passwordReset';
+import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import Loadable from "react-loadable";
+import PasswordRequest from "./passwordRequest";
+import PasswordReset from "./passwordReset";
 
 // -----STYLES------ //
-import '../styles/header.css';
-import '../styles/home.css';
-import '../styles/slider.css';
-import '../styles/gallery.css';
-import '../styles/edit-profile.css';
-import '../styles/account.css';
-import '../styles/donate.css';
-import '../styles/aboutUs.css';
-import '../styles/profile.css';
-import '../styles/register.css';
-import '../styles/searchpage.css';
-import '../styles/dashboard.css';
-import '../styles/currentlyClosed.css';
-import '../styles/vote.css';
+import "../styles/header.css";
+import "../styles/home.css";
+import "../styles/slider.css";
+import "../styles/gallery.css";
+import "../styles/edit-profile.css";
+import "../styles/account.css";
+import "../styles/donate.css";
+import "../styles/aboutUs.css";
+import "../styles/profile.css";
+import "../styles/register.css";
+import "../styles/searchpage.css";
+import "../styles/dashboard.css";
+import "../styles/currentlyClosed.css";
+import "../styles/vote.css";
 
 // ----END STYLES ----//
 
-import NoMatch from './noMatch';
+import NoMatch from "./noMatch";
 
 function PrivateRoute({ component: Component, authed, ...rest }) {
   return (
@@ -32,7 +32,7 @@ function PrivateRoute({ component: Component, authed, ...rest }) {
         authed ? (
           <Component {...props} />
         ) : (
-          <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+          <Redirect to={{ pathname: "/", state: { from: props.location } }} />
         )
       }
     />
@@ -47,7 +47,7 @@ function PublicRoute({ component: Component, authed, ...rest }) {
         !authed ? (
           <Component {...props} />
         ) : (
-          <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+          <Redirect to={{ pathname: "/", state: { from: props.location } }} />
         )
       }
     />
@@ -58,21 +58,22 @@ function AppLoader(props) {
   if (props.error) {
     return (
       <div
-        style={{ textAlign: 'center', background: '#121212', height: '100vh' }}
+        style={{ textAlign: "center", background: "#121212", height: "100vh" }}
       >
-        Error! <button onClick={props.retry}>Retry</button>
+        Error! <button onClick={() => window.location.reload()}>Retry</button>
       </div>
     );
   } else if (props.timedOut) {
     return (
       <div>
-        Taking a long time... <button onClick={props.retry}>Retry</button>
+        Taking a long time...{" "}
+        <button onClick={() => window.location.reload()}>Retry</button>
       </div>
     );
   } else if (props.pastDelay) {
     return (
       <div
-        style={{ textAlign: 'center', background: '#121212', height: '100vh' }}
+        style={{ textAlign: "center", background: "#121212", height: "100vh" }}
       >
         Loading...
       </div>
@@ -83,61 +84,61 @@ function AppLoader(props) {
 }
 
 const Home = Loadable({
-  loader: () => import('./home'),
+  loader: () => import("./home"),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
 });
 
 const Dashboard = Loadable({
-  loader: () => import('./dashboard'),
+  loader: () => import("./dashboard"),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
 });
 
 const Register = Loadable({
-  loader: () => import('./register'),
+  loader: () => import("./register"),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
 });
 
 const Donate = Loadable({
-  loader: () => import('./donate'),
+  loader: () => import("./donate"),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
 });
 
 const Search = Loadable({
-  loader: () => import('./searchpage'),
+  loader: () => import("./searchpage"),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
 });
 
 const AboutUs = Loadable({
-  loader: () => import('./aboutUs'),
+  loader: () => import("./aboutUs"),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
 });
 
 const Gallery = Loadable({
-  loader: () => import('./gallery'),
+  loader: () => import("./gallery"),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
 });
 
 const Account = Loadable({
-  loader: () => import('./account'),
+  loader: () => import("./account"),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
 });
 
 const Profile = Loadable({
-  loader: () => import('./profile'),
+  loader: () => import("./profile"),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
 });
 
 const EditProfile = Loadable({
-  loader: () => import('./editProfile'),
+  loader: () => import("./editProfile"),
   loading: AppLoader,
   delay: 200 // 0.2 seconds
 });

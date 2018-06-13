@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import { bindActionCreators } from 'redux';
-import { detect } from 'detect-browser';
-import Header from './components/header';
-import Main from './containers/main';
-import MobileMenu from './components/mobileMenu';
-import AuthenticatedHeader from './components/isAuthenticatedHeader';
-import BrowserOutOfDate from './components/outOfDate';
-import ErrorModal from './components/ErrorModal';
-import { clearError } from './actions/errorActions';
-import { fetchLocalUser } from './actions/authActions';
-import { openStatus } from './actions/miscActions';
-import notify from './utils/notify';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import { bindActionCreators } from "redux";
+import { detect } from "detect-browser";
+import Header from "./components/header";
+import Main from "./containers/main";
+import MobileMenu from "./components/mobileMenu";
+import AuthenticatedHeader from "./components/isAuthenticatedHeader";
+import BrowserOutOfDate from "./components/outOfDate";
+import ErrorModal from "./components/ErrorModal";
+import { clearError } from "./actions/errorActions";
+import { fetchLocalUser } from "./actions/authActions";
+import { openStatus } from "./actions/miscActions";
+import notify from "./utils/notify";
 
-import './App.css';
+import "./App.css";
 
 class App extends Component {
   state = {
@@ -35,10 +35,10 @@ class App extends Component {
 
   componentWillReceiveProps() {
     if (
-      (this.props.user || localStorage.getItem('token')) &&
-      this.props.location.pathname === '/account'
+      (this.props.user || localStorage.getItem("token")) &&
+      this.props.location.pathname === "/account"
     ) {
-      this.props.history.push('/dashboard');
+      this.props.history.push("/dashboard");
     }
   }
 
@@ -49,15 +49,15 @@ class App extends Component {
   enforceSSL() {
     const { protocol, host, pathname } = window.location;
     if (
-      process.env.REACT_APP_NODE_ENV === 'production' &&
-      protocol !== 'https:'
+      process.env.REACT_APP_NODE_ENV === "production" &&
+      protocol !== "https:"
     ) {
       window.location.replace(`https://${host}${pathname}`);
     }
   }
 
   beforeLoggedIn() {
-    const isAuthenticated = this.props.user || localStorage.getItem('token');
+    const isAuthenticated = this.props.user || localStorage.getItem("token");
     return (
       <span>
         <MobileMenu />
@@ -68,7 +68,7 @@ class App extends Component {
   }
 
   afterLoggedIn() {
-    const isAuthenticated = this.props.user || localStorage.getItem('token');
+    const isAuthenticated = this.props.user || localStorage.getItem("token");
     return (
       <span>
         <AuthenticatedHeader />
@@ -88,25 +88,22 @@ class App extends Component {
     if (
       browser &&
       browser.name &&
-      ((browser.name.toLowerCase() === 'safari' &&
-        parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 8) ||
-        (browser.name.toLowerCase() === 'firefox' &&
-          parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 50) ||
-        (browser.name.toLowerCase() === 'opera' &&
-          parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 53) ||
-        (browser.name.toLowerCase() === 'crios' &&
-          parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 50) ||
-        (browser.name.toLowerCase().slice(0, 5) === 'chrom' &&
-          parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 50) ||
-        (browser.name.toLowerCase() === 'ios' &&
-          parseInt(browser.version.replace(/\..*$/gi, ''), 10) < 10) ||
-        browser.name.toLowerCase() === 'ie'
-    )) {
+      ((browser.name.toLowerCase() === "safari" &&
+        parseInt(browser.version.replace(/\..*$/gi, ""), 10) < 8) ||
+        (browser.name.toLowerCase() === "firefox" &&
+          parseInt(browser.version.replace(/\..*$/gi, ""), 10) < 50) ||
+        (browser.name.toLowerCase() === "opera" &&
+          parseInt(browser.version.replace(/\..*$/gi, ""), 10) < 53) ||
+        (browser.name.toLowerCase() === "crios" &&
+          parseInt(browser.version.replace(/\..*$/gi, ""), 10) < 43) ||
+        (browser.name.toLowerCase().slice(0, 5) === "chrom" &&
+          parseInt(browser.version.replace(/\..*$/gi, ""), 10) < 43) ||
+        (browser.name.toLowerCase() === "ios" &&
+          parseInt(browser.version.replace(/\..*$/gi, ""), 10) < 10) ||
+        browser.name.toLowerCase() === "ie")
+    ) {
       console.log(browser);
-    notify(
-        'New Visit',
-        `${JSON.stringify(browser)}`
-      );
+      notify("New Visit", `${JSON.stringify(browser)}`);
       return <BrowserOutOfDate {...this.props} {...this.state} />;
     }
 
