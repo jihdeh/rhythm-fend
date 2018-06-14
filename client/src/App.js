@@ -100,7 +100,8 @@ class App extends Component {
           parseInt(browser.version.replace(/\..*$/gi, ""), 10) < 43) ||
         (browser.name.toLowerCase() === "ios" &&
           parseInt(browser.version.replace(/\..*$/gi, ""), 10) < 10) ||
-        browser.name.toLowerCase() === "ie")
+        browser.name.toLowerCase() === "ie" ||
+        browser.name.toLowerCase() === "android")
     ) {
       console.log(browser);
       notify("New Visit", `${JSON.stringify(browser)}`);
