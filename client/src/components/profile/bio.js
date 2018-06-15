@@ -63,8 +63,8 @@ const bio = ({
           <span className="mydetail--header">ABOUT</span>
           <span className="mydetail">
             {formatString(firstName)} is a contestant on soundItAfrica Season 2.
-            We believe he has great talent, and would give all it takes to get
-            you entertained. Cheers.
+            We believe this person has great talent, and would give all it takes
+            to get you entertained. Cheers.
           </span>
         </div>
       )}

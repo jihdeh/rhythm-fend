@@ -39,41 +39,29 @@ class ContestantView extends Component {
         "https://www.youtube.com/watch?v=",
         "https://www.youtube.com/embed/"
       );
-    }
-    else if (url.indexOf("www.youtube.com/watch") !== -1) {
+    } else if (url.indexOf("www.youtube.com/watch") !== -1) {
       newUrl = url.replace(
         "www.youtube.com/watch?v=",
         "https://www.youtube.com/embed/"
       );
-    }
-
-     else if (url.indexOf("https://youtu.be/") !== -1) {
+    } else if (url.indexOf("https://youtu.be/") !== -1) {
       newUrl = url.replace(
         "https://youtu.be/",
         "https://www.youtube.com/embed/"
       );
-    }
-
-    else if (url.indexOf("youtu.be/") !== -1) {
-      newUrl = url.replace(
-        "youtu.be/",
-        "https://www.youtube.com/embed/"
-      );
-    }
-     else if (url.indexOf("https://m.youtube.com/watch") !== -1) {
+    } else if (url.indexOf("youtu.be/") !== -1) {
+      newUrl = url.replace("youtu.be/", "https://www.youtube.com/embed/");
+    } else if (url.indexOf("https://m.youtube.com/watch") !== -1) {
       newUrl = url.replace(
         "https://m.youtube.com/watch?v=",
         "https://www.youtube.com/embed/"
       );
-    }
-    else if (url.indexOf("m.youtube.com/watch") !== -1) {
+    } else if (url.indexOf("m.youtube.com/watch") !== -1) {
       newUrl = url.replace(
         "m.youtube.com/watch?v=",
         "https://www.youtube.com/embed/"
       );
-    }
-
-     else {
+    } else {
       return `${url}?rel=0`;
     }
     return `${newUrl}?rel=0`;
@@ -173,9 +161,9 @@ class ContestantView extends Component {
                   ) : (
                     <p>
                       {profile.firstName} {profile.lastName} is a contestant on
-                      soundItAfrica Season 2. We believe he has great talent,
-                      and would give all it takes to get you entertained.
-                      Cheers.
+                      soundItAfrica Season 2. We believe this person has great
+                      talent, and would give all it takes to get you
+                      entertained. Cheers.
                     </p>
                   )}
                   {!profile.about && (

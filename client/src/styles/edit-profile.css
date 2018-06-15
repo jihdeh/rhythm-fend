@@ -62,23 +62,23 @@
     display: flex;
     align-items: center;
   }
-  .edit-profile-edit {
+  /*.edit-profile-edit {
     display: flex;
     justify-content: center;
-  }
+  }*/
   .edit-profile-input {
-    width: 30em;
+    /*width: 30em;*/
   }
 }
 
 @media (max-width: 493px) {
   .edit-profile-input {
-    width: 25em;
+    /*width: 25em;*/
   }
 }
 
 @media (max-width: 391px) {
   .edit-profile-input {
-    width: 20em;
+    /*width: 20em;*/
   }
 }
