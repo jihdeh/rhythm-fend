@@ -1,23 +1,23 @@
-import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
-import { ToastContainer } from 'react-toastify'
-import get from "lodash/get";
-import { connect } from 'react-redux'
-import Bio from '../components/profile/bio'
-import Splitads from '../components/profile/splitads'
-import ProfileHeader from '../components/profile/profileHeader'
-import Video from '../components/profile/video'
-import Singlerowads from '../components/profile/singlerowads'
-import Errorpage from '../components/profile/error'
-import { getStyle } from '../utils/helpers'
-import { getProfile, getProfilePending } from '../actions/profileAction'
-import vote from '../actions/voteAction'
-import VoteModal from '../components/voteModal'
-import 'react-toastify/dist/ReactToastify.css'
+import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { ToastContainer } from 'react-toastify';
+import get from 'lodash/get';
+import { connect } from 'react-redux';
+import Bio from '../components/profile/bio';
+import Splitads from '../components/profile/splitads';
+import ProfileHeader from '../components/profile/profileHeader';
+import Video from '../components/profile/video';
+import Singlerowads from '../components/profile/singlerowads';
+import Errorpage from '../components/profile/error';
+import { getStyle } from '../utils/helpers';
+import { getProfile, getProfilePending } from '../actions/profileAction';
+import vote from '../actions/voteAction';
+import VoteModal from '../components/voteModal';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Profile extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       fetching: true,
       profilePhoto: process.env.REACT_APP_DEFAULT_BACKGROUND,
@@ -34,56 +34,56 @@ class Profile extends Component {
       show: false,
       showCastVote: false,
       loadingPaystack: false
-    }
+    };
   }
 
   async componentDidMount() {
-    const { match: { params } } = this.props
-    const lowercaseUsername = params.username && params.username.toLowerCase()
-    this.props.getProfilePending()
-    this.props.getProfile(lowercaseUsername)
+    const { match: { params } } = this.props;
+    const lowercaseUsername = params.username && params.username.toLowerCase();
+    this.props.getProfilePending();
+    this.props.getProfile(lowercaseUsername);
   }
 
   componentWillReceiveProps(nextProps) {
     const state = {
       ...nextProps.profile.contestant,
       fetching: nextProps.profile.fetching
-    }
-    const prev = { ...this.state }
+    };
+    const prev = { ...this.state };
     if (state !== prev) {
-      this.setState({ ...prev, ...state })
+      this.setState({ ...prev, ...state });
     }
   }
 
   handleClick = () => {
-    this.setState(prevState => ({ show: !prevState.show }))
-  }
+    this.setState(prevState => ({ show: !prevState.show }));
+  };
 
   onchangeVoteCount = e => {
-    this.setState({ voteCount: e.target.value })
-  }
+    this.setState({ voteCount: e.target.value });
+  };
 
   onchangeVoteAmount = val => {
-    this.setState({ voteCount: val })
-  }
-  onShowcastvote = () => {
+    this.setState({ voteCount: val });
+  };
+
+  onShowCastVote = () => {
     this.setState(prevState => ({
       showCastVote: !prevState.showCastVote
-    }))
-  }
-
+    }));
+  };
 
   onVote = () => {
-    const { voteCount, username, email } = this.state
+    const { voteCount, username, email } = this.state;
     this.setState({
       loadingPaystack: true
-    })
-    this.loadPayStack(username, voteCount, email)
-  }
+    });
+    this.loadPayStack(username, voteCount, email);
+  };
 
   handleClose = () => {
-    this.setState({ showCastVote: !this.state.showCastVote })
-  }
+    this.setState({ showCastVote: !this.state.showCastVote });
+  };
 
   loadPayStack = (username, voteCount, email) => {
     var handler = window.PaystackPop.setup({
@@ -96,28 +96,28 @@ class Profile extends Component {
           reference: response.reference,
           username,
           voteCount
-        })
+        });
         this.setState({
           voteCount: '',
           loadingPaystack: false
-        })
-        this.onShowcastvote()
+        });
+        this.onShowcastvote();
       },
       onClose: () => {
-        alert('window closed')
+        alert('window closed');
         this.setState({
           loadingPaystack: false,
           showCastVote: false,
           voteCount: ''
-        })
+        });
       }
-    })
-    handler.openIframe()
-  }
+    });
+    handler.openIframe();
+  };
 
   onClear = () => {
-    this.refs.container.clear()
-  }
+    this.refs.container.clear();
+  };
 
   render() {
     const {
@@ -134,13 +134,14 @@ class Profile extends Component {
       voteCount,
       showCastVote,
       loadingPaystack
-    } = this.state
+    } = this.state;
 
-    const myStyle = getStyle('myStyle', fetching, profilePhoto)
-    const myStyleProfile = getStyle('myStyleProfile', fetching, profilePhoto)
-    const { error } = this.props.profile
-    const { userInfo } = this.props.auth
-    const isAuthticated = userInfo ? true : false
+    const myStyle = getStyle('myStyle', fetching, profilePhoto);
+    const myStyleProfile = getStyle('myStyleProfile', fetching, profilePhoto);
+    const { error } = this.props.profile;
+    const { userInfo } = this.props.auth;
+    const isAuthticated = userInfo ? true : false;
+    console.log(showCastVote);
 
     return (
       <div className="profile--container">
@@ -191,7 +192,9 @@ class Profile extends Component {
             <div className="col-sm-7">
               <Singlerowads />
               <Splitads />
-              <Video videoUrl={get(contestantVideo, '[0]') && contestantVideo[0]} />
+              <Video
+                videoUrl={get(contestantVideo, '[0]') && contestantVideo[0]}
+              />
               <Splitads />
             </div>
             <div className="col-sm-1" />
@@ -199,16 +202,16 @@ class Profile extends Component {
         </div>
         <Errorpage error={error} />
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => state
+const mapStateToProps = state => state;
 
 const mapDispatchToProps = dispatch => ({
   getProfile: bindActionCreators(getProfile, dispatch),
   getProfilePending: bindActionCreators(getProfilePending, dispatch),
   vote: bindActionCreators(vote, dispatch)
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile)
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

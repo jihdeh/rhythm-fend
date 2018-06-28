@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 
 class SectionThree extends PureComponent {
   render() {
@@ -11,21 +11,21 @@ class SectionThree extends PureComponent {
           <div>
             <img
               className="clients-section__logo"
-              src="https://www.artmakerz.net/wp-content/uploads/2016/11/justapp-one-colour-logo.png"
+              src="/images/partners/A.png"
               alt=""
             />
           </div>
           <div>
             <img
               className="clients-section__logo"
-              src="https://www.artmakerz.net/wp-content/uploads/2016/11/adexpert-logo-one-colour.png"
+              src="/images/partners/B.png"
               alt=""
             />
           </div>
           <div>
             <img
               className="clients-section__logo"
-              src="https://www.artmakerz.net/wp-content/uploads/2017/11/logo-myenglishteacher-client-artmakerz.png"
+              src="/images/partners/C.png"
               alt=""
             />
           </div>

@@ -1,7 +1,7 @@
-import React from "react";
-import Description from "./description";
-import Nameoverlay from "./nameoverlay";
-import { formatString } from "../../utils/helpers";
+import React from 'react';
+import Description from './description';
+import Nameoverlay from './nameoverlay';
+import { formatString } from '../../utils/helpers';
 
 const bio = ({
   myStyle,
