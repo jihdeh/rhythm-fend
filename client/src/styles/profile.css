@@ -470,7 +470,9 @@
   }
   .bio-buttons {
     justify-content: space-between;
-    margin: 0 5px;
+    margin: -4px 5px;
+    color: white;
+    display: block;
   }
   .share-btn {
     margin: 10px;
@@ -480,9 +482,7 @@
     margin-bottom: 0;
   }
   .pa--vote {
-    display: flex;
     width: 50%;
-    justify-content: space-around;
   }
   .child--vote {
     position: unset;
@@ -495,9 +495,6 @@
   }
 }
 @media (max-width: 647px) {
-  .Vote--button {
-    padding: 4px 25px;
-  }
   .quantity--input {
     width: 50%;
   }
@@ -545,7 +542,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40%;
     padding: 4px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -565,9 +561,6 @@
 }
 
 @media (max-width: 350px) {
-  .Vote--button {
-    width: 35%;
-  }
   .click--vote {
     margin-left: 2px;
   }

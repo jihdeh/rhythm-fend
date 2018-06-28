@@ -1,4 +1,5 @@
 import React from 'react';
+import get from 'lodash/get';
 import Description from './description';
 import Nameoverlay from './nameoverlay';
 import { formatString } from '../../utils/helpers';
@@ -19,7 +20,8 @@ const bio = ({
   onShowCastVote,
   onVote,
   loadingPaystack,
-  isAuthticated
+  isAuthticated,
+  openStatus
 }) => (
   <div className="contestant--profile">
     <div className="contestant--cont">
@@ -42,13 +44,14 @@ const bio = ({
                   show={show}
                 />
               </span>
-              {!isAuthticated && (
-                <span className="pa--vote">
-                  <span className="Vote--button" onClick={onShowCastVote}>
-                    Vote {formatString(firstName)}
+              {!isAuthticated &&
+                get(openStatus, 'votingOpen') && (
+                  <span className="pa--vote">
+                    <span className="Vote--button" onClick={onShowCastVote}>
+                      Vote {formatString(firstName)}
+                    </span>
                   </span>
-                </span>
-              )}
+                )}
             </div>
           ) : null}
         </div>

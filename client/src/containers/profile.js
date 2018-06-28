@@ -140,6 +140,7 @@ class Profile extends Component {
     const myStyleProfile = getStyle('myStyleProfile', fetching, profilePhoto);
     const { error } = this.props.profile;
     const { userInfo } = this.props.auth;
+    const { openStatus } = this.props.misc;
     const isAuthticated = userInfo ? true : false;
     console.log(showCastVote);
 
@@ -185,6 +186,7 @@ class Profile extends Component {
                 voteCount={voteCount}
                 onShowCastVote={this.onShowCastVote}
                 onVote={this.onVote}
+                openStatus={openStatus}
                 isAuthticated={isAuthticated}
                 loadingPaystack={loadingPaystack}
               />
