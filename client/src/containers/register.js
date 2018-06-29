@@ -488,7 +488,7 @@ class Register extends Component {
               <CurrentlyClosedComponent
                 title="Register to Enter The SoundIT Competition"
                 subtitle="Register to be a contestant on SoundIT Africa."
-                statustitle="Registration is currently closed. Check back on 01.06.2018"
+                statustitle="Registration is currently closed."
               />
             </div>
           )

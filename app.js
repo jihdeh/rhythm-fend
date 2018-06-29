@@ -13,11 +13,6 @@ import Frontend from './frontend';
 
 const forceSsl = (ctx, next) => {
   if (ctx.protocol !== 'https') {
-    console.log(
-      ctx.get('Host'),
-      ctx.url,
-      ['https://', ctx.get('Host'), ctx.url].join('')
-    );
     return ctx.redirect(['https://', ctx.get('Host'), ctx.url].join(''));
   }
   return next();
