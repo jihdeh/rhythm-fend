@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import get from "lodash/get";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import get from 'lodash/get';
 
 class Header extends Component {
   render() {
@@ -11,10 +11,7 @@ class Header extends Component {
         <nav>
           <Link to="/">
             <picture>
-              <source
-                srcSet="/images/logo.webp?v=0.0.2"
-                type="image/webp"
-              />
+              <source srcSet="/images/logo.webp?v=0.0.2" type="image/webp" />
               <img
                 className="sa-logo"
                 data-src="/images/logo.png?v=0.0.2"
@@ -29,7 +26,7 @@ class Header extends Component {
             </div>
             <ul className="sa-navigation">
               {openStatus ? (
-                get(openStatus, "registrationOpen") ? (
+                get(openStatus, 'registrationOpen') ? (
                   <li>
                     <Link to="/account">Login/Register</Link>
                   </li>
@@ -42,7 +39,7 @@ class Header extends Component {
                 <Link to="/donate">Donate</Link>
               </li>
               <li>
-                <Link to="/search">Vote</Link>
+                <Link to="/vote">Vote</Link>
               </li>
               <li>
                 <Link to="/about">About</Link>

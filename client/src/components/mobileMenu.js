@@ -1,9 +1,9 @@
-import React, { PureComponent } from "react";
-import { Nav, Navbar, NavItem } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import get from "lodash/get";
-import "../styles/mobileMenu.css";
+import React, { PureComponent } from 'react';
+import { Nav, Navbar, NavItem } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import get from 'lodash/get';
+import '../styles/mobileMenu.css';
 
 class MobileMenu extends PureComponent {
   render() {
@@ -44,11 +44,11 @@ class MobileMenu extends PureComponent {
               <NavItem eventKey={1} href="/donate">
                 Donate
               </NavItem>
-              <NavItem eventKey={1} href="/search">
+              <NavItem eventKey={1} href="/vote">
                 Vote
               </NavItem>
               {openStatus ? (
-                get(openStatus, "registrationOpen") ? (
+                get(openStatus, 'registrationOpen') ? (
                   <NavItem eventKey={2} href="/account">
                     Login/Register
                   </NavItem>

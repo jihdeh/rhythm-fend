@@ -34,7 +34,7 @@ class LandingPage extends Component {
           </div>
     </div>*/}
         <MobileHome />
-        <SectionThree />
+        {/*<SectionThree /> */}
         <SectionFour />
         <SectionFive />
         <SectionTwo />
