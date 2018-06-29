@@ -26,6 +26,7 @@ const forceSsl = (ctx, next) => {
 function App() {
   const app = new koa();
 
+  app.proxy = true;
   app.use(forceSsl);
   app.use(logger());
   app.use(cors());
