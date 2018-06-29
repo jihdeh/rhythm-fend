@@ -22,6 +22,9 @@ function App() {
 
   app.use(async (ctx, next) => {
     ctx.set('Expires', new Date(Date.now() + 2592000000).toUTCString());
+    ctx.set('X-Frame-Options', 'SAMEORIGIN');
+    ctx.set('X-Content-Type-Options', 'nosniff');
+    ctx.set('X-XSS-Protection', '1; mode=block');
     await next();
     return;
   });
