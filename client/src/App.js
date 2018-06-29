@@ -22,7 +22,7 @@ class App extends Component {
   };
 
   componentWillMount() {
-    this.enforceSSL();
+    // this.enforceSSL();
     detect();
     this.props.fetchLocalUser();
     this.props.checkOpenStatus();
