@@ -1,14 +1,15 @@
-import logger from "koa-logger";
-import koa from "koa";
-import cors from "@koa/cors";
-import forward from "koa-forward-request";
-import serve from "koa-static";
-import path from "path";
-import mount from "koa-mount";
-import Api from "./api";
-import compress from "koa-compress";
+import logger from 'koa-logger';
+import koa from 'koa';
+import cors from '@koa/cors';
+import forward from 'koa-forward-request';
+import serve from 'koa-static';
+import path from 'path';
+import mount from 'koa-mount';
+import Api from './api';
+import compress from 'koa-compress';
+import cacheControl from 'koa-cache-control';
 
-import Frontend from "./frontend";
+import Frontend from './frontend';
 
 function App() {
   const app = new koa();
@@ -17,6 +18,13 @@ function App() {
   app.use(cors());
 
   app.use(compress());
+  app.use(cacheControl({ maxage: 10 * 1000, public: true }));
+
+  app.use(async (ctx, next) => {
+    ctx.set('Expires', new Date(Date.now() + 2592000000).toUTCString());
+    await next();
+    return;
+  });
 
   forward(app);
 
@@ -41,16 +49,16 @@ function App() {
   // }
 
   app
-    .use(mount("/", Frontend()))
-    .use(mount("/search", Frontend()))
-    .use(mount("/gallery", Frontend()))
-    .use(mount("/account", Frontend()))
-    .use(mount("/dashboard", Frontend()))
-    .use(mount("/about", Frontend()))
-    .use(mount("/rsg/*", Frontend(), true))
-    .use(mount("/register", Frontend()))
-    .use(mount("/edit/profile", Frontend()))
-    .use(mount("/api", Api()));
+    .use(mount('/', Frontend()))
+    .use(mount('/vote', Frontend()))
+    .use(mount('/gallery', Frontend()))
+    .use(mount('/account', Frontend()))
+    .use(mount('/dashboard', Frontend()))
+    .use(mount('/about', Frontend()))
+    .use(mount('/rsg/*', Frontend(), true))
+    .use(mount('/register', Frontend()))
+    .use(mount('/edit/profile', Frontend()))
+    .use(mount('/api', Api()));
 
   return app;
 }
