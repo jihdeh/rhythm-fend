@@ -1,5 +1,5 @@
-import React, { PureComponent } from "react";
-import { Link } from "react-router-dom";
+import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 
 class SectionFive extends PureComponent {
   render() {
@@ -14,9 +14,9 @@ class SectionFive extends PureComponent {
             <h5 className="section-five__recentwork">
               <Link
                 to="/gallery"
-                style={{ color: "inherit", textDecoration: "none" }}
+                style={{ color: 'inherit', textDecoration: 'none' }}
               >
-                RECENT WORK{" "}
+                RECENT WORK{' '}
                 <i className="section-five__recentwork-arrow fas fa-arrow-right" />
               </Link>
             </h5>
