@@ -199,13 +199,15 @@ class ContestantView extends Component {
                               <img
                                 width="auto"
                                 height="200px"
+                                alt="Click to play"
+                                title="Click to play"
                                 onClick={() =>
                                   this.setState({
                                     displayFrame: !displayFrame,
                                     theFrame: contestant.firstName
                                   })
                                 }
-                                src="https://images.vexels.com/media/users/3/131784/isolated/preview/a9ff82db0cf438516e13b8c3bf918a00-jogar--cone-plana-by-vexels.png"
+                                src="/images/play.png"
                               />
                             </div>
                           ) : (
@@ -230,13 +232,15 @@ class ContestantView extends Component {
                                   <img
                                     width="auto"
                                     height="200px"
+                                    alt="Click to play"
+                                    title="Click to play"
                                     onClick={() =>
                                       this.setState({
                                         displayFrame: true,
                                         theFrame: contestant.firstName
                                       })
                                     }
-                                    src="https://images.vexels.com/media/users/3/131784/isolated/preview/a9ff82db0cf438516e13b8c3bf918a00-jogar--cone-plana-by-vexels.png"
+                                    src="/images/play.png"
                                   />
                                 </div>
                               )}
