@@ -303,7 +303,7 @@ class ContestantView extends Component {
                       </div>
                     ))
                   ) : (
-                    <h2>No results found</h2>
+                    <h2>Still loading, please hold</h2>
                   )}
                 </div>
               </div>
