@@ -1,26 +1,26 @@
-import React, { Component } from "react";
-import get from "lodash/get";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { getSearchResult } from "../../actions/miscActions";
-import { displayError } from "../../actions/errorActions";
-import Spinner from "react-activity/lib/Spinner";
-import CurrentlyClosedComponent from "../currentlyClosed";
-import "react-activity/lib/Spinner/Spinner.css";
-import { ToastContainer } from "react-toastify";
-import VoteModal from "../voteModal";
-import vote from "../../actions/voteAction";
+import React, { Component } from 'react';
+import get from 'lodash/get';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getSearchResult } from '../../actions/miscActions';
+import { displayError } from '../../actions/errorActions';
+import Spinner from 'react-activity/lib/Spinner';
+import CurrentlyClosedComponent from '../currentlyClosed';
+import 'react-activity/lib/Spinner/Spinner.css';
+import { ToastContainer } from 'react-toastify';
+import VoteModal from '../voteModal';
+import vote from '../../actions/voteAction';
 
 class ContestantView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      username: '',
       isLoading: false,
-      voteCount: "",
+      voteCount: '',
       showCastVote: false,
       loadingPaystack: false,
-      email: ""
+      email: ''
     };
   }
 
@@ -54,7 +54,7 @@ class ContestantView extends Component {
   successMesage = (username, voteCount) => {
     this.refs.container.success(
       `You have succesfully casted ${voteCount} vote(s) for ${username}`,
-      "",
+      '',
       {
         timeOut: 30000,
         extendedTimeOut: 10000
@@ -62,12 +62,26 @@ class ContestantView extends Component {
     );
   };
 
-  loadPayStack = (username, voteCount, email = "vote@soundit.africa") => {
+  loadPayStack = (username, voteCount, email = 'vote@soundit.africa') => {
     var handler = window.PaystackPop.setup({
       key: process.env.REACT_APP_PAYSTACK_KEY,
-      email: "vote@soundit.africa",
+      email: 'vote@soundit.africa',
       amount: 5000 * Number(voteCount), //in kobo
-      ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+      ref: '' + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+      metadata: {
+        custom_fields: [
+          {
+            display_name: 'Username',
+            variable_name: 'username',
+            value: `${username}`
+          },
+          {
+            display_name: 'Votes',
+            variable_name: 'votes',
+            value: `${voteCount}`
+          }
+        ]
+      },
       callback: response => {
         this.props.vote({
           reference: response.reference,
@@ -75,18 +89,18 @@ class ContestantView extends Component {
           voteCount
         });
         this.setState({
-          voteCount: "",
+          voteCount: '',
           loadingPaystack: false,
           showCastVote: false
         });
         this.successMesage(username, voteCount);
       },
       onClose: () => {
-        alert("window closed");
+        alert('window closed');
         this.setState({
           loadingPaystack: false,
           showCastVote: false,
-          voteCount: ""
+          voteCount: ''
         });
       }
     });
@@ -132,7 +146,7 @@ class ContestantView extends Component {
         />
         <ToastContainer ref="container" className="toast-top-right" />
         {openStatus ? (
-          get(openStatus, "votingOpen") ? (
+          get(openStatus, 'votingOpen') ? (
             <div className="container-fluid">
               <div className="row">
                 <div className="contestant-container">
@@ -152,7 +166,7 @@ class ContestantView extends Component {
                           onChange={({ target }) =>
                             this.setState({ username: target.value })
                           }
-                          value={this.state.username || ""}
+                          value={this.state.username || ''}
                           required
                         />
                         <button className="search-input__button">
@@ -179,19 +193,19 @@ class ContestantView extends Component {
                             allowFullScreen
                           />
                           <p className="col-contestant-result-name">
-                            Name:{" "}
+                            Name:{' '}
                             <span className="col-contestant-result__right">
                               {contestant.firstName} {contestant.lastName}
                             </span>
                           </p>
                           <p className="col-contestant-result-location">
-                            Location:{" "}
+                            Location:{' '}
                             <span className="col-contestant-result__right">
                               {contestant.state}, {contestant.country}
                             </span>
                           </p>
                           <p className="col-contestant-result-code">
-                            Username:{" "}
+                            Username:{' '}
                             <span className="col-contestant-result__right">
                               {contestant.username}
                             </span>
@@ -202,7 +216,7 @@ class ContestantView extends Component {
                                 contestant.username
                               }`}
                               target="_blank"
-                              style={{ color: "#fe920f" }}
+                              style={{ color: '#fe920f' }}
                             >
                               Profile Link
                             </a>
@@ -214,7 +228,7 @@ class ContestantView extends Component {
                                 this.onShowCastVote(contestant.username)
                               }
                             >
-                              <i className="fas fa-check" />{" "}
+                              <i className="fas fa-check" />{' '}
                               <span data-username={contestant.username}>
                                 Vote
                               </span>
@@ -248,9 +262,9 @@ class ContestantView extends Component {
             />
           )
         ) : (
-          <div style={{ background: "#121212", paddingTop: "13%" }}>
+          <div style={{ background: '#121212', paddingTop: '13%' }}>
             <div className="wrap">
-              <h2 style={{ color: "#FFFFFF" }}>Loading...</h2>
+              <h2 style={{ color: '#FFFFFF' }}>Loading...</h2>
             </div>
           </div>
         )}

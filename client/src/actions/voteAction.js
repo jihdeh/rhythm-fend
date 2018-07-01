@@ -1,10 +1,11 @@
-import axios from "axios";
-import { toast } from "react-toastify";
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import notify from '../utils/notify';
 import {
   VOTE_PENDING,
   VOTE_FULFILLED,
   VOTE_REJECTED
-} from "../constants/actionTypes";
+} from '../constants/actionTypes';
 
 const vote = ({ reference, username, voteCount }) => async dispatch => {
   try {
@@ -29,6 +30,7 @@ const vote = ({ reference, username, voteCount }) => async dispatch => {
         position: toast.POSITION.TOP_RIGHT
       }
     );
+    notify('New Vote', `Someone voted for ${username} with ${voteCount} votes`);
   } catch (e) {
     await dispatch({
       type: VOTE_REJECTED,
