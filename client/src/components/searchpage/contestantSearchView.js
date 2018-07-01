@@ -20,7 +20,9 @@ class ContestantView extends Component {
       voteCount: '',
       showCastVote: false,
       loadingPaystack: false,
-      email: ''
+      email: '',
+      displayFrame: false,
+      theFrame: null
     };
   }
 
@@ -131,7 +133,14 @@ class ContestantView extends Component {
 
   render() {
     const { openStatus, searchResults = [] } = this.props;
-    const { isLoading, voteCount, showCastVote, loadingPaystack } = this.state;
+    const {
+      isLoading,
+      voteCount,
+      showCastVote,
+      loadingPaystack,
+      displayFrame,
+      theFrame
+    } = this.state;
 
     return (
       <span>
@@ -183,15 +192,56 @@ class ContestantView extends Component {
                     searchResults.map((contestant, key) => (
                       <div key={key} className="col-sm-6 col-md-4 col-lg-3">
                         <div className="col-contestant-result">
-                          <iframe
-                            width="100%"
-                            height="200px"
-                            src={contestant.contestantVideo[0]}
-                            title="Contestant video"
-                            frameBorder="0"
-                            allow="autoplay; encrypted-media"
-                            allowFullScreen
-                          />
+                          {!displayFrame ? (
+                            <div
+                              style={{ margin: '0 auto', textAlign: 'center' }}
+                            >
+                              <img
+                                width="auto"
+                                height="200px"
+                                onClick={() =>
+                                  this.setState({
+                                    displayFrame: !displayFrame,
+                                    theFrame: contestant.firstName
+                                  })
+                                }
+                                src="https://images.vexels.com/media/users/3/131784/isolated/preview/a9ff82db0cf438516e13b8c3bf918a00-jogar--cone-plana-by-vexels.png"
+                              />
+                            </div>
+                          ) : (
+                            <span>
+                              {theFrame === contestant.firstName ? (
+                                <iframe
+                                  width="100%"
+                                  height="200px"
+                                  src={contestant.contestantVideo[0]}
+                                  title="Contestant video"
+                                  frameBorder="0"
+                                  allow="autoplay; encrypted-media"
+                                  allowFullScreen
+                                />
+                              ) : (
+                                <div
+                                  style={{
+                                    margin: '0 auto',
+                                    textAlign: 'center'
+                                  }}
+                                >
+                                  <img
+                                    width="auto"
+                                    height="200px"
+                                    onClick={() =>
+                                      this.setState({
+                                        displayFrame: true,
+                                        theFrame: contestant.firstName
+                                      })
+                                    }
+                                    src="https://images.vexels.com/media/users/3/131784/isolated/preview/a9ff82db0cf438516e13b8c3bf918a00-jogar--cone-plana-by-vexels.png"
+                                  />
+                                </div>
+                              )}
+                            </span>
+                          )}
                           <p className="col-contestant-result-name">
                             Name:{' '}
                             <span className="col-contestant-result__right">
