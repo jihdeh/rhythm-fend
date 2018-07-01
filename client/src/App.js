@@ -103,7 +103,6 @@ class App extends Component {
         browser.name.toLowerCase() === 'ie' ||
         browser.name.toLowerCase() === 'android')
     ) {
-      console.log(browser);
       notify('New Visit', `${JSON.stringify(browser)}`);
       return <BrowserOutOfDate {...this.props} {...this.state} />;
     }
