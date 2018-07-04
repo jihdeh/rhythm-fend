@@ -203,6 +203,9 @@ class Profile extends Component {
                 openStatus={openStatus}
                 isAuthticated={isAuthticated}
                 loadingPaystack={loadingPaystack}
+                contestantVideo={
+                  get(contestantVideo, '[0]') && contestantVideo[0]
+                }
               />
             </div>
             <div className="col-sm-7">

@@ -21,7 +21,8 @@ const bio = ({
   onVote,
   loadingPaystack,
   isAuthticated,
-  openStatus
+  openStatus,
+  contestantVideo
 }) => (
   <div className="contestant--profile">
     <div className="contestant--cont">
@@ -45,7 +46,8 @@ const bio = ({
                 />
               </span>
               {!isAuthticated &&
-                get(openStatus, 'votingOpen') && (
+                get(openStatus, 'votingOpen') &&
+                contestantVideo && (
                   <span className="pa--vote">
                     <span className="Vote--button" onClick={onShowCastVote}>
                       Vote {formatString(firstName)}
