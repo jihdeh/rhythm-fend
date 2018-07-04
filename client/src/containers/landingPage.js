@@ -15,26 +15,8 @@ class LandingPage extends Component {
     return (
       <div>
         <Slider />
-        {/* <div className="banner">
-          <div className="row">
-            <div className="sa-text">
-              <span className="sa-text__title">
-                <h1>
-                  SoundIT{" "}
-                  <img
-                    className="sa-brand__name-logo"
-                    src="/images/continent-icon-africa.png"
-                    alt=""
-                  />frica.
-                </h1>
-                <h4>Be the next Rising Gospel Star</h4>
-                <LoginPage />
-              </span>
-            </div>
-          </div>
-    </div>*/}
         <MobileHome />
-        {/*<SectionThree /> */}
+        <SectionThree />
         <SectionFour />
         <SectionFive />
         <SectionTwo />

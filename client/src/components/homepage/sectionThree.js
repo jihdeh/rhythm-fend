@@ -11,42 +11,42 @@ class SectionThree extends PureComponent {
           <div>
             <img
               className="clients-section__logo"
-              src="/images/partners/A.png"
-              alt=""
+              src="/images/partners/1.png"
+              alt="partners"
             />
           </div>
           <div>
             <img
               className="clients-section__logo"
-              src="/images/partners/B.png"
-              alt=""
+              src="/images/partners/2.png"
+              alt="partners"
             />
           </div>
           <div>
             <img
               className="clients-section__logo"
-              src="/images/partners/C.png"
-              alt=""
+              src="/images/partners/3.png"
+              alt="partners"
             />
           </div>
           <div>
             <img
               className="clients-section__logo"
-              src="https://www.artmakerz.net/wp-content/uploads/2016/11/cannapy-one-colour.png"
-              alt=""
+              src="/images/partners/4.png"
+              alt="partners"
             />
           </div>
           <div>
             <img
               className="clients-section__logo"
-              src="https://www.artmakerz.net/wp-content/uploads/2016/11/spydernet-logo-one-colour.png"
-              alt=""
+              src="/images/partners/5.png"
+              alt="partners"
             />
           </div>
           <div>
             <img
               className="clients-section__logo"
-              src="https://www.artmakerz.net/wp-content/uploads/2016/11/devtech-one-logo.png"
+              src="/images/partners/6.png"
               alt=""
             />
           </div>

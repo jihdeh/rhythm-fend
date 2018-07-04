@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import LoginPage from "../login";
+import React, { Component } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import LoginPage from '../login';
 
 class Slide extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class Slide extends Component {
                 <div className="sa-text">
                   <span className="sa-text__title">
                     <h1 className="sa-text-title__company-name">
-                      SoundIT{" "}
+                      SoundIT{' '}
                       <img
                         className="sa-brand__name-logo"
                         src="/images/continent-icon-africa.png"
@@ -53,7 +53,7 @@ class Slide extends Component {
           <div className="banner-slide2">
             <div className="sa-text__promo">
               <h2>Brace yourself for SoundIT Africa 2</h2>
-              <h4>Registration open</h4>
+              <h4>Voting is on</h4>
             </div>
           </div>
         </Slider>
